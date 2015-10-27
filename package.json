@@ -1,0 +1,19 @@
+{
+  "name": "socketio-over-nodejs",
+  "subdomain": "socketio-over-nodejs",
+  "preferGlobal": true,
+  "version": "3.0.0",
+  "author": {
+    "name": "#",
+    "email": "#"
+  },
+  "keywords": [
+    "webrtc"
+  ],
+  "analyze": false,
+  "dependencies": {
+    "mysql": "^2.6.2",
+    "node-static": "0.7.x",
+    "socket.io": "0.9.x"
+  }
+}
