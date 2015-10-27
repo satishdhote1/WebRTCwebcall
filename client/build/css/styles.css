@@ -503,6 +503,8 @@ input[type=submit] {
     height: 20%;
     width: 40%;
     background-color: rgba(71, 220, 176, 0.6);
+        padding: 10px;
+    color: #968787;
 }
 
 #file-progress1{
@@ -516,6 +518,8 @@ input[type=submit] {
     height: 20%;
     width: 40%;
     background-color: rgba(71, 141, 220, 0.47);
+        padding: 10px;
+    color: #968787;
 }
 
 #file-progress2{
@@ -524,11 +528,16 @@ input[type=submit] {
 }
 
 #widget-filesharing-container{
-  background-color: rgb(240, 228, 141); 
-  position: absolute ;
-  bottom: 0; 
-  top:130% ; 
-  width:100% ;height:100% ;
+    background-color: rgb(240, 228, 141);
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    top: 145%;
+    width: 80%;
+    height: 100%;
+    margin: 5%;
+    color: #A28686;
+    font-size: 20px;
 }
 
 
