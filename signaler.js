@@ -25,9 +25,9 @@ var file = new _static.Server('./client/build', {
 var https = require('https'),
 fs = require('fs');
 var sslOptions = {
-  key: fs.readFileSync('./ssl/server.key'),
-  cert: fs.readFileSync('./ssl/server.crt'),
-  ca: fs.readFileSync('./ssl/ca.crt'),
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.crt'),
+  ca: fs.readFileSync('ca.crt'),
   requestCert: true,
   rejectUnauthorized: false
 };
