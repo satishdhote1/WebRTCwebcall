@@ -1,6 +1,6 @@
 var fs = require('fs');
 var _static = require('node-static');
-
+var https = require('https');
 var file = new _static.Server('./client/build', {
     cache: 3600,
     gzip: true,
@@ -22,8 +22,7 @@ var file = new _static.Server('./client/build', {
 
 });*/
 
-var https = require('https'),
-fs = require('fs');
+
 var sslOptions = {
   key: fs.readFileSync('server.key'),
   cert: fs.readFileSync('server.crt'),
@@ -31,11 +30,12 @@ var sslOptions = {
   requestCert: true,
   rejectUnauthorized: false
 };
-var secureServer = https.createServer(sslOptions,app).listen('8084', function(){
-  console.log("Secure Express server listening on port 8084");
+
+var app = https.createServer(sslOptions, function(request, response){
+        request.addListener('end', function () {
+        file.serve(request, response);
+    }).resume();     
 });
-
-
 /*app.get('/getSession', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
        console.log( data );
@@ -121,7 +121,11 @@ function onNewNamespace(channel, sender) {
 }
 
 app.listen(8084);
-console.log("-------- server started on 8084 -------");
+//console.log("-------- server started on 8084 -------");
+
+/*var secureServer = https.createServer(sslOptions,app).listen('8084', function(){
+  console.log("Secure server listening on port 8084");
+});*/
 
 
 /*var restify = require('restify');
