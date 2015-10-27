@@ -7,7 +7,7 @@ var file = new _static.Server('./client/build', {
     indexFile: "index.html"
 });
 
-var app = require('http').createServer(function (request, response) {
+/*var app = require('http').createServer(function (request, response) {
 
     //console.log(" app request recived "+ request );
 
@@ -20,7 +20,21 @@ var app = require('http').createServer(function (request, response) {
     }).resume();
 
 
+});*/
+
+var https = require('https'),
+fs = require('fs');
+var sslOptions = {
+  key: fs.readFileSync('./ssl/server.key'),
+  cert: fs.readFileSync('./ssl/server.crt'),
+  ca: fs.readFileSync('./ssl/ca.crt'),
+  requestCert: true,
+  rejectUnauthorized: false
+};
+var secureServer = https.createServer(sslOptions,app).listen('8084', function(){
+  console.log("Secure Express server listening on port 8084");
 });
+
 
 /*app.get('/getSession', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
