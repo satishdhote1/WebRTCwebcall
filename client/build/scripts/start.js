@@ -278,11 +278,8 @@ rtcMultiConnection.onclose = rtcMultiConnection.onleave = function(e) {
 **************************************************************************************/
 
 function addNewMessage(e) {
-
     console.log("add new message ", e);
-
     if ("" != e.message && " " != e.message) {
-     
         var t = document.createElement("div");
         t.style["float"] = "left", 
         t.className = "user-activity user-activity-left", 
@@ -300,7 +297,6 @@ function addNewMessage(e) {
 
 function addNewMessagelocal(e) {
     if ("" != e.message && " " != e.message) {
-
         var t = document.createElement("div");
         t.style["float"] = "right", 
         t.className = "user-activity user-activity-right", 
@@ -312,7 +308,6 @@ function addNewMessagelocal(e) {
         n.innerHTML = e.message, 
         n.setAttribute("style","color:white"),
         document.getElementById("all-messages").appendChild(t), 
-
         $(".popup-messages").scrollTop($(".popup-messages")[0].scrollHeight) 
     }
 }
@@ -364,6 +359,42 @@ document.getElementById('send').onclick = function() {
     return false; 
 };
 
+
+function addNewFileLocal(e) {
+    console.log("add new message ", e);
+    if ("" != e.message && " " != e.message) {
+        var t = document.createElement("div");
+        t.style["float"] = "left", 
+        t.className = "user-activity ", 
+        t.setAttribute("style","    background-color: rgba(251, 255, 6, 0.37); line-height: 1.28;     padding: 9px;    margin: 2px;    width: 20%;    min-height: 20px;    height: 41px;")
+        t.innerHTML = '<div class="chatusername">' + e.header + "</div>";
+        var n = document.createElement("div");
+        n.className = "userchatmsg", 
+        n.setAttribute("style","color:white"),
+        t.appendChild(n), 
+        n.innerHTML = e.message, 
+        document.getElementById("widget-filesharing1").appendChild(t)
+    }
+}
+
+function addNewFileRemote(e) {
+    console.log("add new message ", e);
+    if ("" != e.message && " " != e.message) {
+        var t = document.createElement("div");
+        t.style["float"] = "left", 
+        t.className = "user-activity", 
+        t.setAttribute("style","    background-color: rgba(251, 255, 6, 0.37); line-height: 1.28;     padding: 9px;    margin: 2px;    width: 20%;    min-height: 20px;    height: 41px;")
+        t.setAttribute("style","background-color:rgba(6, 25, 255, 0.67)"),
+        t.innerHTML = '<div class="chatusername">' + e.header + "</div>";
+        var n = document.createElement("div");
+        n.className = "userchatmsg", 
+        n.setAttribute("style","color:white"),
+        t.appendChild(n), 
+        n.innerHTML = e.message, 
+        document.getElementById("widget-filesharing2").appendChild(t)
+    }
+}
+
 /***************************************************************88
 File sharing 
 ******************************************************************/
@@ -378,11 +409,18 @@ function updateLabel(e, r) {
 var progressHelper = {};
 
 rtcMultiConnection.onFileStart = function(e) {
-
-    addNewMessage({
+    alert("on file start");
+    console.log(e);
+/*    addNewMessage({
         header: rtcMultiConnection.extra.username,
         //message: "File shared: " + e.name + " ( " + bytesToSize(e.size) + " )",
         message: " ",
+        userinfo: getUserinfo(rtcMultiConnection.blobURLs[rtcMultiConnection.userid], "images/share-files.png"),
+        callback: function(r) {        }
+    });*/
+    addNewFileLocal({
+        header: ' User local ',
+        message: ' File shared ',
         userinfo: getUserinfo(rtcMultiConnection.blobURLs[rtcMultiConnection.userid], "images/share-files.png"),
         callback: function(r) {        }
     });
@@ -390,9 +428,7 @@ rtcMultiConnection.onFileStart = function(e) {
     var n = document.createElement("div");
     n.title = e.name, 
     n.innerHTML = "<label>0%</label><progress></progress>", 
-    //document.querySelector(".userchatmsg").appendChild(n), 
-    document.getElementById("widget-filesharing").appendChild(n),              
-    
+    document.getElementById("widget-filesharing1").appendChild(n),              
     progressHelper[e.uuid] = {
         div: n,
         progress: n.querySelector("progress"),
