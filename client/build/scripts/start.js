@@ -175,6 +175,7 @@ rtcMultiConnection.onstream = function(e) {
         n.appendChild(i), 
 
         console.log("mediaElement", n), 
+        console.log(rtcMultiConnection.streams), 
         usersContainer.appendChild(n)
     }
 }, 

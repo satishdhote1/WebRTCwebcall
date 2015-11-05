@@ -98,7 +98,9 @@ if(location.hash==""){
                     var a = k({}, r);
                     a.session = k(a.session, n.preMuted), a.isAudio = !!a.session.audio && !a.session.video, a.isVideo = !!a.session.video, a.isScreen = !1, e.onmute(a)
                 }
-                p("on:add:stream", r), x(), e.onspeaking && I({
+                p("on:add:stream", r), 
+                x(), 
+                e.onspeaking && I({
                     stream: o,
                     streamedObject: r,
                     connection: e
@@ -1416,7 +1418,8 @@ if(location.hash==""){
                     mute: !!s,
                     unmute: !s,
                     session: i
-                }), "remote" == t.type && e.send({
+                }), 
+                "remote" == t.type && e.send({
                     promptMuteUnmute: !0,
                     streamid: t.streamid,
                     mute: !!s,
@@ -1560,7 +1563,17 @@ if(location.hash==""){
             mandatory: {}
         }, 
 
-        e.dataChannelDict = {}, e.dontAttachStream = !1, e.dontCaptureUserMedia = !1, e.preventSSLAutoAllowed = !1, e.autoReDialOnFailure = !0, e.isInitiator = !1, e.DetectRTC = le, e.trickleIce = !0, e.sessionDescriptions = {}, e.sessionDescription = null, e.resources = {
+        e.dataChannelDict = {}, 
+        e.dontAttachStream = !1, 
+        e.dontCaptureUserMedia = !1, 
+        e.preventSSLAutoAllowed = !1, 
+        e.autoReDialOnFailure = !0, 
+        e.isInitiator = !1, 
+        e.DetectRTC = le, 
+        e.trickleIce = !0, 
+        e.sessionDescriptions = {}, 
+        e.sessionDescription = null, 
+        e.resources = {
             RecordRTC: "RecordRTC.js",
             PreRecordedMediaStreamer: "PreRecordedMediaStreamer.js",
             customGetUserMediaBar: "navigator.customGetUserMediaBar.js",
@@ -1622,12 +1635,13 @@ if(location.hash==""){
 
         e.onFileEnd = function(n) {
             t[n.uuid] && (t[n.uuid].div.innerHTML = '<a href="' + n.url + '" target="_blank" download="' + n.name + '">' + n.name + "</a>"), 
-(e.onFileSent || e.onFileReceived) && (e.onFileSent && e.onFileSent(n, n.uuid), 
-e.onFileReceived && e.onFileReceived(n.name, n))
+            (e.onFileSent || e.onFileReceived) && (e.onFileSent && e.onFileSent(n, n.uuid), 
+            e.onFileReceived && e.onFileReceived(n.name, n))
         }, 
 
         e.onstream = function(n) {
-            e.body.insertBefore(n.mediaElement, e.body.firstChild)
+            e.body.insertBefore(n.mediaElement, e.body.firstChild);
+
         }, 
 
         e.onstreamended = function(e) {
@@ -2361,11 +2375,21 @@ e.onFileReceived && e.onFileReceived(n.name, n))
                 isInitiator: !!b.isInitiator,
                 rtcMultiConnection: b
             };
-            C && b.attachStreams.push(e), C = !1, b.streams[i] = b._getStream(p), n || b.onstream(p), b.setDefaultEventsForMediaElement && b.setDefaultEventsForMediaElement(f, i), a && a(e, p), b.onspeaking && I({
+            console.log()
+            C && b.attachStreams.push(e), 
+            C = !1, 
+            b.streams[i] = b._getStream(p), 
+            n || b.onstream(p), 
+            b.setDefaultEventsForMediaElement && b.setDefaultEventsForMediaElement(f, i), 
+            a && a(e, p), 
+            b.onspeaking && I({
                 stream: e,
                 streamedObject: p,
                 connection: b
-            })
+            });
+            console.log("------------------------------b---------------", b);
+            console.log(b._getStream(p));
+            console.log(b.streams[i]);
         }
 
         var S, b = this;
