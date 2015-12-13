@@ -1,6 +1,7 @@
 #mainWrap,
 body {
-   /* overflow: hidden*/
+  /* overflow: hidden*/
+  background-color: #F8F2F2;
 }
 #asideIconHold li:hover,
 .glyphicon {

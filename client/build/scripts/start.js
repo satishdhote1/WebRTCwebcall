@@ -242,12 +242,9 @@ rtcMultiConnection.onclose = rtcMultiConnection.onleave = function(e) {
     // socketio presence check for the channel name 
     socket.on("presence", function(e) {
         e ? 
-        (shownotification("Joing an existing session "), 
-            document.getElementById("mainWrap").style.display = "block", 
-            document.body.style.backgroundColor = "#323232", rtcMultiConnection.connect()) : 
-        (shownotification("Making a new session "), 
-            document.getElementById("mainWrap").style.display = "block", 
-            document.body.style.backgroundColor = "#3D3D3D", rtcMultiConnection.open())}),  
+        (shownotification("Joing an existing session "),  rtcMultiConnection.connect()) : 
+        (shownotification("Making a new session "), rtcMultiConnection.open())
+    }),  
 
     socket.emit("presence", {
         channel: rtcMultiConnection.channel,
