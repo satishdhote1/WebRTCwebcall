@@ -13,6 +13,7 @@
 
 <script src="scripts/jquerybootstrap.js"></script>
 
+<<<<<<< HEAD
 </head>
 
 <body id="pagebody">
@@ -67,6 +68,69 @@
     
     <!-- .......................... Row 3 ................................ -->
     <div>
+=======
+
+</head>
+
+<body id="pagebody" style="height: 150%;">
+
+<div id="mainWrap">
+
+    <section>
+
+        <div id="contentWrap">
+            
+            <!-- ................................ top panel ....................... -->
+            <div id="topIconHolder" class="content-body" >
+                <ul>
+ 
+                    <li> <span id="username" style="color: #000;"></span></li>
+
+                    <li><input id="currenturl" type=text class="form-control" style="width:500px;" ></li>
+
+                    <li ><span class="numbers-of-users" id="numbersofusers" style="color:#FFF"></span></li>
+                   
+                    <!-- <li><span style="color: #000;" id='countdownMinutes'>3</span>:<span style="color: #000;" id='countdownSecond'>60</span></li> -->
+                    <li id="timerli"> Time Remaining <span id="countdownMinutes">3</span>:<span id="countdownSecond">60</span></li>
+                </ul>
+            </div>
+
+            <!-- .......................... Row 1 ................................ -->
+            
+            <!-- draw widget-->
+            <div id="widget-container" ></div>
+
+            <!-- Chat -->
+            <div id="chatbox" class="popup-box chat-popup"  >
+                
+                <div class=main-input-box>    
+                    <input type=text style="width:70%;" placeholder="Type message here">
+                    <button id="send" style="width:20%;">Send</button>
+                </div>
+                
+                <div class="popup-messages">
+                    <div id="all-messages" style="padding:5px;"></div>
+                </div>
+
+                <!-- who is typing -->
+                <p id="who-is-typing" hidden></p>
+            </div>
+
+            <!-- .......................... Row 2 ................................ -->
+            <!-- users videos -->
+            <div id="videoHold" class="content-body">
+                <ul class="users-container"></ul>
+            </div>
+
+        </div>
+        <input type="file" id="file">
+    
+    </section>
+
+
+    <!-- .......................... Row 3 ................................ -->
+    <div style="overflow-x:scroll;">
+>>>>>>> 23234274731cd42b8cce4497f5b7032aec16621f
 
         <!-- File sharing peer 1 -->
         <div id="widget-filesharing1" class="popup-box chat-popup">
@@ -78,15 +142,27 @@
         <div id="widget-filesharing2" class="popup-box chat-popup">
              <p> List of files shared by above person </p>
             <div id="file-progress2"></div>
+<<<<<<< HEAD
         </div>      
+=======
+        </div>
+        
+>>>>>>> 23234274731cd42b8cce4497f5b7032aec16621f
     </div>
 
     <!-- .......................... Row 4 ................................ -->
     <!-- File viewer -->
     <div id="widget-filesharing-container" >
+<<<<<<< HEAD
         <p> File Viewer </p>
     </div>
 
+=======
+    <p> File Viewer </p>
+    </div>
+
+</div>
+>>>>>>> 23234274731cd42b8cce4497f5b7032aec16621f
 
 <script src="scripts/init.js"></script>
 <script src="scripts/socket.io.js"></script>

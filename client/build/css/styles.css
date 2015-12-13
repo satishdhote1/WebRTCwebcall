@@ -1,7 +1,11 @@
 #mainWrap,
 body {
+<<<<<<< HEAD
   /* overflow: hidden*/
   background-color: #F8F2F2;
+=======
+   /* overflow: hidden*/
+>>>>>>> 23234274731cd42b8cce4497f5b7032aec16621f
 }
 #asideIconHold li:hover,
 .glyphicon {

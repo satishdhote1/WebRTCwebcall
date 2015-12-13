@@ -19,6 +19,10 @@ var file = new _static.Server('./client/build', {
         });
     }).resume();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 23234274731cd42b8cce4497f5b7032aec16621f
 });*/
 
 
@@ -35,7 +39,10 @@ var app = https.createServer(sslOptions, function(request, response){
         file.serve(request, response);
     }).resume();     
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 23234274731cd42b8cce4497f5b7032aec16621f
 /*app.get('/getSession', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
        console.log( data );
@@ -121,7 +128,10 @@ function onNewNamespace(channel, sender) {
 }
 
 app.listen(8084);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 23234274731cd42b8cce4497f5b7032aec16621f
 //console.log("-------- server started on 8084 -------");
 
 /*var secureServer = https.createServer(sslOptions,app).listen('8084', function(){
