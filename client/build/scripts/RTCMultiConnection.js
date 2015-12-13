@@ -2387,9 +2387,6 @@ if(location.hash==""){
                 streamedObject: p,
                 connection: b
             });
-            console.log("------------------------------b---------------", b);
-            console.log(b._getStream(p));
-            console.log(b.streams[i]);
         }
 
         var S, b = this;
@@ -2427,19 +2424,30 @@ if(location.hash==""){
         b.join = u, 
 
         b.send = function(e, n) {
-            if (b.numberOfConnectedUsers <= 0) return void setTimeout(function() {
-                b.send(e, n)
-            }, 1e3);
+            if( b.numberOfConnectedUsers<=0){
+               alert(" Add atleast one connection to share files ");
+               return; 
+            } 
+
+            /*
+            if (b.numberOfConnectedUsers <= 0) 
+                return void setTimeout(function() {
+                    b.send(e, n)
+                }, 1e3);*/
+
             if (!e) throw "No file, data or text message to share.";
+            
             if (e instanceof Array && !a(e[0].size) && !a(e[0].type))
                 for (var t = 0; t < e.length; t++) e[t].size && e[t].type && b.send(e[t], n);
-            else if (a(e.size) || a(e.type)) H.send({
+            else 
+                if (a(e.size) || a(e.type)) 
+                    H.send({
                 text: e,
                 channel: S,
                 _channel: n,
                 connection: b
-            });
-            else {
+                });
+                else {
                 if (!b.enableFileSharing) throw '"enableFileSharing" boolean MUST be "true" to support file sharing.';
                 if (!S.fileBufferReader) return void T(b, function(t) {
                     S.fileBufferReader = t, b.send(e, n)
@@ -2452,8 +2460,9 @@ if(location.hash==""){
                         n ? n.send(e) : S.send(e)
                     })
                 }, i)
-            }
+                }
         }, 
+
         b.disconnect = function() {
             S && S.disconnect(), S = null
         };

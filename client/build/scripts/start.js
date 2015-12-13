@@ -235,25 +235,13 @@ rtcMultiConnection.onclose = rtcMultiConnection.onleave = function(e) {
     };
 
     var o = "/";
-    //var o = "http://52.8.183.220:8084";
-
     socket = io.connect(o), 
 
-    // socketio presence check for the channel name 
     socket.on("presence", function(e) {
         e ? 
-<<<<<<< HEAD
         (shownotification("Joing an existing session "),  rtcMultiConnection.connect()) : 
         (shownotification("Making a new session "), rtcMultiConnection.open())
     }),  
-=======
-        (shownotification("Joing an existing session "), 
-            document.getElementById("mainWrap").style.display = "block", 
-            document.body.style.backgroundColor = "#323232", rtcMultiConnection.connect()) : 
-        (shownotification("Making a new session "), 
-            document.getElementById("mainWrap").style.display = "block", 
-            document.body.style.backgroundColor = "#3D3D3D", rtcMultiConnection.open())}),  
->>>>>>> 23234274731cd42b8cce4497f5b7032aec16621f
 
     socket.emit("presence", {
         channel: rtcMultiConnection.channel,
@@ -265,8 +253,6 @@ rtcMultiConnection.onclose = rtcMultiConnection.onleave = function(e) {
     //Code to open  signalling channel 
     rtcMultiConnection.openSignalingChannel = function(e) {
 
-        console.log("#startjs ---------------opensignalling channel || sender ",rtcMultiConnection.userid, "|| " , e.channel , "||", this.channel);
-
         var t = e.channel || this.channel;
         io.connect(o).emit("new-channel", {
             channel: t,
@@ -275,15 +261,12 @@ rtcMultiConnection.onclose = rtcMultiConnection.onleave = function(e) {
 
         var n = io.connect(o + t);    
         n.channel = t, 
-        console.log(" open channel " , n.channel);
 
         n.on("connect", function() {
-            console.log("#startjs-------------------n.channel connect ");
             e.callback && e.callback(n)
         }), 
 
         n.send = function(e) {
-            console.log("#startjs------------------n.emit ");
             n.emit("message", {
                 sender: rtcMultiConnection.userid,
                 data: e
@@ -383,8 +366,13 @@ document.getElementById('send').onclick = function() {
 };
 
 
+
+/***************************************************************88
+File sharing 
+******************************************************************/
+
 function addNewFileLocal(e) {
-    console.log("add new message ", e);
+    alert("add new message ", e);
     if ("" != e.message && " " != e.message) {
         var t = document.createElement("div");
         t.style["float"] = "left", 
@@ -418,9 +406,6 @@ function addNewFileRemote(e) {
     }
 }
 
-/***************************************************************88
-File sharing 
-******************************************************************/
 
 function updateLabel(e, r) {
     if (-1 != e.position) {
@@ -432,15 +417,7 @@ function updateLabel(e, r) {
 var progressHelper = {};
 
 rtcMultiConnection.onFileStart = function(e) {
-    alert("on file start");
-    console.log(e);
-/*    addNewMessage({
-        header: rtcMultiConnection.extra.username,
-        //message: "File shared: " + e.name + " ( " + bytesToSize(e.size) + " )",
-        message: " ",
-        userinfo: getUserinfo(rtcMultiConnection.blobURLs[rtcMultiConnection.userid], "images/share-files.png"),
-        callback: function(r) {        }
-    });*/
+
     addNewFileLocal({
         header: ' User local ',
         message: ' File shared ',
@@ -484,18 +461,6 @@ document.getElementById('file').onchange = function() {
     var file = this.files[0];
     rtcMultiConnection.send(file);
 };
-
-
-/********************************************************************
-	List of participants in session 
-**********************************************************************/
-
-var usersList = document.getElementById("userslist"),
-numbersOfUsers = document.getElementById("numbersofusers");
-numbersOfUsers.innerHTML = 1;
-
-var usersContainer = getElement(".users-container");
-
 
 /********************************************************************************8
         Linkify
@@ -549,6 +514,17 @@ window.linkify = function() {
     }
 }();
 
+
+/********************************************************************
+	List of participants in session 
+**********************************************************************/
+
+var usersList = document.getElementById("userslist"),
+numbersOfUsers = document.getElementById("numbersofusers");
+numbersOfUsers.innerHTML = 1;
+
+var usersContainer = getElement(".users-container");
+
 /**************************************************************************8
 draw 
 ******************************************************************************/
@@ -560,35 +536,12 @@ CanvasDesigner.setSelected('pencil');
 
 CanvasDesigner.setTools({
     pencil: true,
-    /*text: true,*/
     eraser: true
 });
 
 CanvasDesigner.appendTo(document.getElementById('widget-container'));
 
 
-/*********************************8
-	kick start 
-***************************************/
 $('document').ready(function(){
-    
-    $('#allow-mic').click(function(){
-      $(this).toggleClass('slash');
-    });
-
-    $('#allow-mic-landscape').click(function(){
-      $(this).toggleClass('slash');
-    });
-
-    $('#allow-webcam').click(function(){
-      $(this).toggleClass('slash');
-    });
-
-    $('#allow-webcam-landscape').click(function(){
-      $(this).toggleClass('slash');
-    });
-
   startcall();
-
 });
-

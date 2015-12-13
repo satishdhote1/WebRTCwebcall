@@ -1,12 +1,4 @@
 #mainWrap,
-body {
-<<<<<<< HEAD
-  /* overflow: hidden*/
-  background-color: #F8F2F2;
-=======
-   /* overflow: hidden*/
->>>>>>> 23234274731cd42b8cce4497f5b7032aec16621f
-}
 #asideIconHold li:hover,
 .glyphicon {
     cursor: pointer
@@ -59,10 +51,12 @@ section {
     position: relative
 }
 #topIconHolder {
+    background-color: #D9D9D9;
     height: 40px;
+    padding-left: 8%;
     line-height: 40px;
     position: absolute;
-    width: 105%
+    width: 100%
 }
 #topIconHolder ul {
     padding: 0;
@@ -82,9 +76,9 @@ section {
 
 #widget-container{
     position: absolute;
-    top: 4%;
-    width: 60%;
-    left: 3%;
+    top: 10%;
+    width: 40%;
+    left: 10%;
 }
 
 .slash:after {
@@ -103,37 +97,24 @@ section {
   background-color: #blue;
 }
 #chatbox{
-    top: 4%;
-    height: 28%;
+    top: 10%;
     width: 30%;
     background-color: rgba(85, 209, 245, 0.39);
     overflow-y: scroll;
-    /* margin-left: 75%; */
-    right: 2%;
+    right: 10%;
 }
 
 #file{
-/*    color: #000000;
-    width: 100%;
-    top: 28%;
-    position: absolute;*/
-/*    color: #000000;
-    width: 40%;
-    top: 90%;
-    left: 40%;
-    position: absolute;*/
-        color: #000000;
+    color: #000000;
     width: 30%;
     top: 90%;
     left: 42%;
     position: absolute;
 }
 #videoHold {
-/*    width: 100%;
-    padding-top: 35%;*/
     width: 80%;
     margin-left: 12%;
-    padding-top: 38%;
+    padding-top: 28%;
 }
 
 #videoHold ul,
