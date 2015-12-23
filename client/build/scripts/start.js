@@ -174,13 +174,15 @@ rtcMultiConnection.onstream = function(e) {
         var snapshotButton=document.createElement("div");
         snapshotButton.id="snapshotButton";
         snapshotButton.className="fa fa-camera";
-        snapshotButton.setAttribute("style","color: black; float: right;    padding-right: 40px; line-height: 1.4;");
+        snapshotButton.setAttribute("style","color: black; float: right;    padding-right: 40px; line-height: 1.4; font-size:35px");
+        //snapshotButton.setAttribute("style","snapshotButton");
         snapshotButton.onclick = function() {
             var liVideoContainer=event.path[1].id;
             var streamId= document.getElementById(liVideoContainer).childNodes[0].childNodes[0].childNodes[0].id;
             var snaspshot=document.createElement("img");
             rtcMultiConnection.streams[streamId].takeSnapshot(function(snapshot) {
                 snaspshot.src = snapshot;
+                snaspshot.setAttribute("style", "padding:10px");
                 document.getElementById("widget-filesharing-container").appendChild(snaspshot);
             });         
         };

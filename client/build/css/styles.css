@@ -544,3 +544,10 @@ input[type=submit] {
     color: #616150;
     padding: 4px 4px 4px 4px;
 }
+
+.snapshotButton{
+  color: black; float: right;    padding-right: 40px; line-height: 1.4;font-size: 35px;
+}
+/*.glyphicon {
+    font-size: 50px;
+}*/
