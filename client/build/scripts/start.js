@@ -184,6 +184,7 @@ rtcMultiConnection.onstream = function(e) {
                 snaspshot.src = snapshot;
                 snaspshot.setAttribute("style", "padding:10px");
                 document.getElementById("widget-filesharing-container").appendChild(snaspshot);
+                document.getElementById("widget-filesharing-container").setAttribute("style","overflow-x:auto");
             });         
         };
 
