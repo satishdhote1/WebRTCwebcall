@@ -1,6 +1,6 @@
 var fs = require('fs');
 var _static = require('node-static');
-var http = require('http');
+var https = require('https');
 
 
 var file = new _static.Server('./client/build', {
