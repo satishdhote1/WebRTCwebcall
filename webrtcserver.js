@@ -1,6 +1,6 @@
 var fs = require('fs');
 var _static = require('node-static');
-var https = require('https');
+var http = require('http');
 
 
 var file = new _static.Server('./client/build', {
@@ -9,15 +9,13 @@ var file = new _static.Server('./client/build', {
     indexFile: "index.html"
 });
 
-var sslOptions = {
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.crt'),
-  ca: fs.readFileSync('ca.crt'),
-  requestCert: true,
-  rejectUnauthorized: false
+var options = {
+  key: fs.readFileSync('/etc/apache2/ssl/villageexpert.key'),
+  cert: fs.readFileSync('/etc/apache2/ssl/edac0f74577a2bdf.crt'),
+  ca: fs.readFileSync('/etc/apache2/ssl/gd_bundle-g2-g1.crt'),
 };
 
-var app = https.createServer(sslOptions, function(request, response){
+var app = https.createServer(options, function(request, response){
         request.addListener('end', function () {
         file.serve(request, response);
     }).resume();     
