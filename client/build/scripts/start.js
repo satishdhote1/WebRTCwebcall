@@ -1,5 +1,4 @@
 function shownotification(message){
-
     alert(message);
 }
 
@@ -451,7 +450,8 @@ rtcMultiConnection.onFileEnd = function(e) {
     var r = progressHelper[e.uuid].div;
     r.innerHTML= '<a href="' + e.url + '" download="' + e.name + '">Download ' + e.name + ' </a>';
 
-    document.getElementById("widget-filesharing-container").innerHTML = document.getElementById("widget-filesharing-container").innerHTML + e.type.indexOf("image") ? 
+    document.getElementById("widget-filesharing-container").innerHTML = 
+        document.getElementById("widget-filesharing-container").innerHTML + e.type.indexOf("image") ? 
         '<img src="' + e.url + '" title="' + e.name + '">'
         :'<iframe src="' + e.url + '" title="' + e.name + '" style="width: 69%;border: 0;border-left: 1px solid black;height: inherit;"></iframe>', 
             setTimeout(function() {

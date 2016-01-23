@@ -55,9 +55,9 @@ section {
     height: 40px;
     padding-left: 8%;
     line-height: 40px;
-    position: absolute;
-    width: 100%
+    width: 100%;
 }
+
 #topIconHolder ul {
     padding: 0;
     margin: 0;
@@ -74,12 +74,6 @@ section {
     position: relative
 }
 
-#widget-container{
-    position: absolute;
-    top: 10%;
-    width: 40%;
-    left: 10%;
-}
 
 .slash:after {
     content: "\\";
@@ -96,13 +90,6 @@ section {
   color: #000;
   background-color: #blue;
 }
-#chatbox{
-    top: 10%;
-    width: 30%;
-    background-color: rgba(85, 209, 245, 0.39);
-    overflow-y: scroll;
-    right: 10%;
-}
 
 #file{
     color: #000000;
@@ -111,18 +98,11 @@ section {
     left: 42%;
     position: absolute;
 }
-#videoHold {
-    width: 80%;
-    margin-left: 12%;
-    padding-top: 28%;
-}
+
 
 #videoHold ul,
 
-.video {
-    width: 100%;
-    height: 100%
-}
+
 
 #videoHold ul {
     padding: 0;
@@ -132,22 +112,19 @@ section {
 }
 #videoHold ul li {
   float :right;
-/*float: right;
-  padding-left: 50%;
-  margin-top: -23%;*/
+
 }
 
 #videoHold ul li:first-child {
   float:left;
-/*  margin-right: 69%;
-  margin-top: 0%;*/
+
 }
 
 .video {
     position: absolute;
     top: 0;
     left: 0;
-   /* background-color: #000;*/
+
     transition: width .5s ease
 }
 
@@ -163,12 +140,7 @@ section {
 .modal-footer {
     text-align: left
 }
-@media only screen and (max-width: 540px) {
-    .chat-popup,
-    .chat-sidebar {
-        display: none!important
-    }
-}
+
 .chat-sidebar {
     width: 200px;
     position: fixed;
@@ -343,81 +315,6 @@ video {
 }
 
 
-.login {
-  position: relative;
-  margin: 0 auto;
-  padding: 20px 20px 20px;
-  width: 310px;
-  background: white;
-  border-radius: 3px;
-  @include box-shadow(0 0 200px rgba(white, .5), 0 1px 2px rgba(black, .3));
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: -8px; right: -8px; bottom: -8px; left: -8px;
-    z-index: -1;
-    background: rgba(black, .08);
-    border-radius: 4px;
-  }
-
-  h1 {
-    margin: -20px -20px 21px;
-    line-height: 40px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #555;
-    text-align: center;
-    text-shadow: 0 1px white;
-    background: #f3f3f3;
-    border-bottom: 1px solid #cfcfcf;
-    border-radius: 3px 3px 0 0;
-    @include linear-gradient(top, whiteffd, #eef2f5);
-    @include box-shadow(0 1px #f5f5f5);
-  }
-
-  p { margin: 20px 0 0; }
-  p:first-child { margin-top: 0; }
-
-  input[type=text], input[type=password] { width: 278px; }
-
-  p.remember_me {
-    float: left;
-    line-height: 31px;
-
-    label {
-      font-size: 12px;
-      color: #777;
-      cursor: pointer;
-    }
-
-    input {
-      position: relative;
-      bottom: 1px;
-      margin-right: 4px;
-      vertical-align: middle;
-    }
-  }
-
-  p.submit { text-align: right; }
-}
-
-.login-help {
-  margin: 20px 0;
-  font-size: 11px;
-  color: white;
-  text-align: center;
-  text-shadow: 0 1px #2a85a1;
-
-  a {
-    color: #cce7fa;
-    text-decoration: none;
-
-    &:hover { text-decoration: underline; }
-  }
-}
-
-
 
 :-moz-placeholder {
   color: #c9c9c9 !important;
@@ -483,13 +380,10 @@ input[type=submit] {
 }
 
 
-#widget-filesharing1{
-    top: 120%;
-    left: 5%;
-    height: 20%;
-    width: 40%;
+.filesharing1Box{
+    left:10%;
     background-color: rgba(71, 220, 176, 0.6);
-        padding: 10px;
+    padding: 10px;
     color: #968787;
 }
 
@@ -498,14 +392,12 @@ input[type=submit] {
   height:20px
 }
 
-#widget-filesharing2{
-    top: 120%;
-    left: 55%;
-    height: 20%;
-    width: 40%;
+.filesharing2Box{
+    left:10%;
     background-color: rgba(71, 141, 220, 0.47);
-        padding: 10px;
+    padding: 10px;
     color: #968787;
+    margin: 0 20px 0 20px;
 }
 
 #file-progress2{
@@ -515,20 +407,12 @@ input[type=submit] {
 
 #widget-filesharing-container{
     background-color: rgb(240, 228, 141);
-    position: absolute;
-    bottom: 0;
-    padding: 10px;
-    top: 145%;
-    width: 80%;
-    height: 100%;
-    margin: 5%;
     color: #A28686;
     font-size: 20px;
 }
 
-
 #timerli{
-      background-color: #55D1F5;
+    background-color: #55D1F5;
     color: white;
     size: 14;
     font-size: 20;
@@ -551,3 +435,48 @@ input[type=submit] {
 /*.glyphicon {
     font-size: 50px;
 }*/
+
+.bodyWhole{
+  height: 150%; background:#F3F3F3 
+}
+
+.userName{
+  color: #000;
+}
+
+.currentUrl{
+  width:500px;
+}
+
+.number-of-users{
+  color:#FFF
+}
+
+.countdown{
+  color: #000
+}
+
+.chatBox{
+    background-color: rgba(85, 209, 245, 0.39);
+    overflow-y: scroll;
+    left:10%;
+    margin: 0 20px 0 20px;
+}
+
+.chatBoard{
+    width: 100%;
+    height: 40%;
+    border: 0px;
+}
+
+.drawBox{
+    left:10%;
+}
+
+.videoBox{
+    left: 10%;
+}
+
+.filesharingBox{
+    left:10%;
+}
