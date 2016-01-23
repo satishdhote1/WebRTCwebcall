@@ -145,36 +145,23 @@ rtcMultiConnection.onstream = function(e) {
     
     if (t.setAttribute("preload", "none"), e.isScreen) {
         1 == islocalStream && (t.setAttribute("class", "local"), islocalStream = 0);
-        var n = document.createElement("li");
+        var n = document.createElement("div");
         n.setAttribute("id", e.userid + "_screen");
-        var i = document.createElement("div");
-        i.setAttribute("class", "custom_wrapper");
-        var o = document.createElement("div");
-        o.setAttribute("class", "video"), 
-
-        o.appendChild(t), 
-        i.appendChild(o), 
-        n.appendChild(i), 
-
-        console.log("mediaElement", n), 
+        n.setAttribute("class", "col-xs-6 col-sm-4 videoContainer");
+        n.appendChild(t), 
         usersContainer.appendChild(n)
     } 
 
     else {
         1 == islocalStream && (t.setAttribute("class", "local"), islocalStream = 0);
-        var n = document.createElement("li");
+        var n = document.createElement("div");
         n.setAttribute("id", e.userid);
-        var i = document.createElement("div");
-        i.setAttribute("class", "custom_wrapper");
-        var o = document.createElement("div");
-        o.setAttribute("class", "video");
+        n.setAttribute("class", "col-xs-6 col-sm-4 videoContainer");
 
         //add the snaspshot button
-        var snapshotButton=document.createElement("div");
+/*        var snapshotButton=document.createElement("div");
         snapshotButton.id="snapshotButton";
-        snapshotButton.className="fa fa-camera";
-        snapshotButton.setAttribute("style","color: black; float: right;    padding-right: 40px; line-height: 1.4; font-size:35px");
-        //snapshotButton.setAttribute("style","snapshotButton");
+        snapshotButton.className="fa fa-camera snapshotButton";
         snapshotButton.onclick = function() {
             var liVideoContainer=event.path[1].id;
             var streamId= document.getElementById(liVideoContainer).childNodes[0].childNodes[0].childNodes[0].id;
@@ -186,14 +173,10 @@ rtcMultiConnection.onstream = function(e) {
                 document.getElementById("widget-filesharing-container").setAttribute("style","overflow-x:auto");
             });         
         };
+*/
+        n.appendChild(t), 
+        //n.appendChild(snapshotButton);
 
-        o.appendChild(t), 
-        i.appendChild(o), 
-        n.appendChild(i), 
-        n.appendChild(snapshotButton);
-
-        console.log("mediaElement", n), 
-        console.log(rtcMultiConnection.streams), 
         usersContainer.appendChild(n)
     }
 }, 
@@ -525,8 +508,7 @@ window.linkify = function() {
 var usersList = document.getElementById("userslist"),
 numbersOfUsers = document.getElementById("numbersofusers");
 numbersOfUsers.innerHTML = 1;
-
-var usersContainer = getElement(".users-container");
+var usersContainer = document.getElementById("usersContainer");
 
 /**************************************************************************8
 draw 

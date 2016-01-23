@@ -595,7 +595,6 @@ section {
     position: relative
 }
 
-
 .slash:after {
     content: "\\";
     color: #fff;
@@ -623,8 +622,6 @@ section {
 
 #videoHold ul,
 
-
-
 #videoHold ul {
     padding: 0;
     margin: 0;
@@ -633,12 +630,10 @@ section {
 }
 #videoHold ul li {
   float :right;
-
 }
 
 #videoHold ul li:first-child {
   float:left;
-
 }
 
 .video {
@@ -655,9 +650,11 @@ section {
     margin: 0 auto;
     text-align: center
 }
+
 .modal-body input {
     font-weight: 0
 }
+
 .modal-footer {
     text-align: left
 }
@@ -807,7 +804,6 @@ section {
 }
 video {
     width: 100%!important;
-    height: 100%!important;
     margin: 0!important;
     background-color: #000;
     border-radius: 65px;
@@ -903,9 +899,12 @@ input[type=submit] {
 
 .filesharing1Box{
     left:10%;
+     margin: 0 20px 0 20px;
+      padding: 10px;
     background-color: rgba(71, 220, 176, 0.6);
-    padding: 10px;
+   
     color: #968787;
+
 }
 
 #file-progress1{
@@ -918,6 +917,7 @@ input[type=submit] {
     background-color: rgba(71, 141, 220, 0.47);
     padding: 10px;
     color: #968787;
+    margin: 0 20px 0 20px;
 }
 
 #file-progress2{
@@ -948,13 +948,6 @@ input[type=submit] {
     color: #616150;
     padding: 4px 4px 4px 4px;
 }
-
-.snapshotButton{
-  color: black; float: right;    padding-right: 40px; line-height: 1.4;font-size: 35px;
-}
-/*.glyphicon {
-    font-size: 50px;
-}*/
 
 .bodyWhole{
   height: 150%; background:#F3F3F3 
@@ -999,4 +992,14 @@ input[type=submit] {
 
 .filesharingBox{
     left:10%;
+}
+
+.snapshotButton{
+    color: black; float: right;    padding-right: 40px; line-height: 1.4; font-size:35px
+}
+
+.videoContainer{
+    left:10%;
+    margin: 0 20px 0 20px;
+    padding: 10px;
 }

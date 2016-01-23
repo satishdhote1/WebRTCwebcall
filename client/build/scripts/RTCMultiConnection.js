@@ -1748,6 +1748,12 @@ if(location.hash==""){
         };
         
         var i = [];
+                     
+        i.push({"url":"stun:turn2.xirsys.com"}), 
+        i.push({"username":"539b1ef2-019b-4cb0-9950-c456f4252015","url":"turn:turn2.xirsys.com:443?transport=udp","credential":"799efd12-8c0e-443a-8aee-20e0fd583b7b"}), 
+        i.push({"username":"539b1ef2-019b-4cb0-9950-c456f4252015","url":"turn:turn2.xirsys.com:443?transport=tcp","credential":"799efd12-8c0e-443a-8aee-20e0fd583b7b"}), 
+        
+        /*
         i.push({
             url: "stun:stun.l.google.com:19302"
         }), i.push({
@@ -1760,7 +1766,7 @@ if(location.hash==""){
             url: "turn:turn.anyfirewall.com:443?transport=tcp",
             credential: "webrtc",
             username: "webrtc"
-        }), 
+        }), */
 
         e.iceServers = i, e.rtcConfiguration = {
             iceServers: null,
