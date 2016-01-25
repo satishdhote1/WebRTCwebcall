@@ -1,5 +1,6 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script>
-function createCORSRequest(method, url) {
+/*function createCORSRequest(method, url) {
     var xhr = new XMLHttpRequest();
     if ("withCredentials" in xhr) {
         xhr.open(method, url, true);
@@ -29,5 +30,24 @@ window.addEventListener('message', function (event) {
     if(event.data == 'get-ice-servers') {
         xhr.send('ident=satishdhote&secret=685dd77a-2ab8-11e5-a606-ac9d9baa0d4d&domain=www.villageexperts.com&application=default&room=default&secure=1');
     }
-});
+});*/
+
+
+$(document).ready(function() {
+                $.get("https://service.xirsys.com/ice",
+                    {
+                        ident: "satishdhote@gmail.com",
+                        secret: "07e291ca-c387-11e5-9e90-92cac6d3a4e7",
+                        domain: "www.villageexperts.com",
+                        application: "",
+                        room: "",
+                        secure: 1
+                    },
+                    function(data, status) {
+                        alert("Data: " + data + "nnStatus: " + status);
+                        console.log("Data: " + data + "nnStatus: " + status);
+                    }
+                });
+            });
+
 </script>
