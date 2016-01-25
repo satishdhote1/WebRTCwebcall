@@ -1110,7 +1110,7 @@ if(location.hash==""){
         function n(n, s, r) {
             r || (r = o()), i.localStreams[r] = n;
             var a = e.video;
-            a && (a[z ? "mozSrcObject" : "src"] = z ? n : window.webkitURL.createObjectURL(n), a.play()), e.onsuccess(n, s, y, r), V.streams[y] = {
+            a && (a[z ? "mozSrcObject" : "src"] = z ? n : window.URL.createObjectURL(n), a.play()), e.onsuccess(n, s, y, r), V.streams[y] = {
                 stream: n,
                 streamid: r
             }, V.mutex = !1, V.queueRequests.length && t(V.queueRequests.shift())
@@ -1277,7 +1277,7 @@ if(location.hash==""){
                 fe.attachMediaStream(t, e)
             }, 1e3), fe.attachMediaStream(t, e)
         }
-        return t[z ? "mozSrcObject" : "src"] = z ? e : window.webkitURL.createObjectURL(e), t.controls = !0, t.autoplay = !!n.remote, t.muted = n.remote ? !1 : !0, z && t.addEventListener("ended", function() {
+        return t[z ? "mozSrcObject" : "src"] = z ? e : window.URL.createObjectURL(e), t.controls = !0, t.autoplay = !!n.remote, t.muted = n.remote ? !1 : !0, z && t.addEventListener("ended", function() {
             e.onended()
         }, !1), t.play(), t
     }
@@ -1748,53 +1748,34 @@ if(location.hash==""){
         };
         
         var i = [];
-                     
-/*        i.push({"url":"stun:turn2.xirsys.com"}), 
-        i.push({"username":"539b1ef2-019b-4cb0-9950-c456f4252015","url":"turn:turn2.xirsys.com:443?transport=udp","credential":"799efd12-8c0e-443a-8aee-20e0fd583b7b"}), 
-        i.push({"username":"539b1ef2-019b-4cb0-9950-c456f4252015","url":"turn:turn2.xirsys.com:443?transport=tcp","credential":"799efd12-8c0e-443a-8aee-20e0fd583b7b"}), 
-        */
-        
-i.push({"url": "stun:turn02.uswest.xirsys.com"}),
 
-i.push({
-credential: "11002432-c389-11e5-ac99-60f36f38401f",
-url: "turn:turn02.uswest.xirsys.com:443?transport=udp",
-username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"}),
+        i.push({"url": "stun:turn02.uswest.xirsys.com"}),
 
-i.push({
-credential: "11002432-c389-11e5-ac99-60f36f38401f",
-url: "turn:turn02.uswest.xirsys.com:443?transport=tcp",
-username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
-}),
-
-i.push({
-credential: "11002432-c389-11e5-ac99-60f36f38401f",
-url: "turn:turn02.uswest.xirsys.com:5349?transport=udp",
-username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
-}),
-
-i.push({
-credential: "11002432-c389-11e5-ac99-60f36f38401f",
-url: "turn:turn02.uswest.xirsys.com:5349?transport=tcp",
-username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
-}),
-
-        /*
         i.push({
-            url: "stun:stun.l.google.com:19302"
-        }), i.push({
-            url: "stun:stun.anyfirewall.com:3478"
-        }), i.push({
-            url: "turn:turn.bistri.com:80",
-            credential: "homeo",
-            username: "homeo"
-        }), i.push({
-            url: "turn:turn.anyfirewall.com:443?transport=tcp",
-            credential: "webrtc",
-            username: "webrtc"
-        }), */
+        credential: "11002432-c389-11e5-ac99-60f36f38401f",
+        url: "turn:turn02.uswest.xirsys.com:443?transport=udp",
+        username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"}),
 
-        e.iceServers = i, e.rtcConfiguration = {
+        i.push({
+        credential: "11002432-c389-11e5-ac99-60f36f38401f",
+        url: "turn:turn02.uswest.xirsys.com:443?transport=tcp",
+        username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
+        }),
+
+        i.push({
+        credential: "11002432-c389-11e5-ac99-60f36f38401f",
+        url: "turn:turn02.uswest.xirsys.com:5349?transport=udp",
+        username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
+        }),
+
+        i.push({
+        credential: "11002432-c389-11e5-ac99-60f36f38401f",
+        url: "turn:turn02.uswest.xirsys.com:5349?transport=tcp",
+        username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
+        }),
+
+        e.iceServers = i, 
+        e.rtcConfiguration = {
             iceServers: null,
             iceTransports: "all",
             peerIdentity: !1

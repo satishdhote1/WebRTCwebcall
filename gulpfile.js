@@ -30,8 +30,8 @@ gulp.task('js',function() {
       "client/build/scripts/socket.io.js",
       "client/build/scripts/RTCMultiConnection.js",
       "client/build/scripts/canvas-designer-widget.js",
-      "client/build/scripts/start.js",
-      "client/build.scripts/timer.js"
+      "client/build.scripts/timer.js",
+      "client/build/scripts/start.js"
     ]; 
     gulp.src(appJsList)
         .pipe(uglify())
