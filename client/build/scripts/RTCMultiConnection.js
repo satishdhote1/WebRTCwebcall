@@ -1748,31 +1748,45 @@ if(location.hash==""){
         };
         
         var i = [];
-
-        i.push({"url": "stun:turn02.uswest.xirsys.com"}),
-
+        
         i.push({
-        credential: "11002432-c389-11e5-ac99-60f36f38401f",
-        url: "turn:turn02.uswest.xirsys.com:443?transport=udp",
-        username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"}),
-
-        i.push({
-        credential: "11002432-c389-11e5-ac99-60f36f38401f",
-        url: "turn:turn02.uswest.xirsys.com:443?transport=tcp",
-        username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
+            url: "stun:stun.l.google.com:19302"
+        }), i.push({
+            url: "stun:stun.anyfirewall.com:3478"
+        }), i.push({
+            url: "turn:turn.bistri.com:80",
+            credential: "homeo",
+            username: "homeo"
+        }), i.push({
+            url: "turn:turn.anyfirewall.com:443?transport=tcp",
+            credential: "webrtc",
+            username: "webrtc"
         }),
 
-        i.push({
-        credential: "11002432-c389-11e5-ac99-60f36f38401f",
-        url: "turn:turn02.uswest.xirsys.com:5349?transport=udp",
-        username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
-        }),
+        // i.push({"url": "stun:turn02.uswest.xirsys.com"}),
 
-        i.push({
-        credential: "11002432-c389-11e5-ac99-60f36f38401f",
-        url: "turn:turn02.uswest.xirsys.com:5349?transport=tcp",
-        username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
-        }),
+        // i.push({
+        // credential: "11002432-c389-11e5-ac99-60f36f38401f",
+        // url: "turn:turn02.uswest.xirsys.com:443?transport=udp",
+        // username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"}),
+
+        // i.push({
+        // credential: "11002432-c389-11e5-ac99-60f36f38401f",
+        // url: "turn:turn02.uswest.xirsys.com:443?transport=tcp",
+        // username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
+        // }),
+
+        // i.push({
+        // credential: "11002432-c389-11e5-ac99-60f36f38401f",
+        // url: "turn:turn02.uswest.xirsys.com:5349?transport=udp",
+        // username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
+        // }),
+
+        // i.push({
+        // credential: "11002432-c389-11e5-ac99-60f36f38401f",
+        // url: "turn:turn02.uswest.xirsys.com:5349?transport=tcp",
+        // username: "1100239c-c389-11e5-bc7b-15aff7a41b0b"
+        // }),
 
         e.iceServers = i, 
         e.rtcConfiguration = {
