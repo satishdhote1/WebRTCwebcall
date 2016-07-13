@@ -1,0 +1,47 @@
+var fs = require('fs');
+var _static = require('node-static');
+var https = require('https');
+
+var properties ={       
+    "hostname"      : "host",        
+    "enviornment"   : "local",        
+    "host"          : "localhost",
+    "jsdebug"       :  true,          
+    "httpsPort"     :  8084
+};
+
+var file = new _static.Server("./", {
+    cache: 3600,
+    gzip: true,
+    indexFile: "index.html"
+});
+
+var options = {
+  key: fs.readFileSync('/etc/apache2/ssl/villageexperts.key'),
+  cert: fs.readFileSync('/etc/apache2/ssl/ed0be9191f0a4d2e.crt'),
+  ca: fs.readFileSync('/etc/apache2/ssl/gd_bundle-g2-g1.crt'),
+  requestCert: true,
+  rejectUnauthorized: false
+};
+
+/*var options = {
+  key: fs.readFileSync('ssl_certs/server.key'),
+  cert: fs.readFileSync('ssl_certs/server.crt'),
+  ca: fs.readFileSync('ssl_certs/ca.crt'),
+  requestCert: true,
+  rejectUnauthorized: false
+};*/
+
+var app = https.createServer(options, function(request, response){
+        request.addListener('end', function () {
+        file.serve(request, response);
+    }).resume();     
+});
+app.listen(properties.httpsPort);
+
+var realtimecomm= require('./realtimecomm.js')(app, properties);
+
+var restapi= require('./restapi.js')(realtimecomm, options ,app, properties);
+
+console.log("< ------------------------ HTTPS Server -------------------> ");
+console.log(" WebRTC server env => "+ properties.enviornment+ " running at\n "+properties.httpsPort+ "/\nCTRL + C to shutdown");

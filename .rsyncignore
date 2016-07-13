@@ -1,0 +1,15 @@
+# vcs files
+.git
+
+# sensitive data
+env/cert
+env/private/*
+
+# unnecessary on deployed applications
+env/secure
+build
+deploy
+test
+
+# will `npm install --production` on the server
+node_modules
