@@ -239,7 +239,7 @@
 </body>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-
+<script src="property.js"></script>
 <script>
 $('document').ready(function(){
     sessionid= init(true);
@@ -334,7 +334,7 @@ $('document').ready(function(){
         );
     } 
 
-/*    var session ={
+    var session ={
         sessionid : sessionid,
         socketAddr: props.signaller,
         turn:{
@@ -345,21 +345,9 @@ $('document').ready(function(){
                 room        : props.xirsys.room,
                 secure      : props.xirsys.secure
             }
-    };*/
-
-        
-    var session ={
-        sessionid : sessionid,
-        socketAddr: "https://www.villageexperts.com:8084/",
-        turn:{
-                username:"satishdhote",
-                secretkey:"07e291ca-c387-11e5-9e90-92cac6d3a4e7",
-                domain:"www.villageexperts.com",
-                application:"webrtc",
-                room:"service",
-                secure:1
-            }
     };
+
+
 
     var incoming={
         audio: true,
