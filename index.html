@@ -2,15 +2,13 @@
 <head>
     <title>WebRTC Call</title>
     <meta name="google-site-verification" content="8NqEkVsX8mkRCn13Qov4K0njgF0T6t97_a-NZNIXkpE" />
-    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jpcjjkpbiepbmhklnjoahacppaemhmpd">
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jocjeccncphlagaegaljdbpcimoiogal">
     <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.css">
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
+    
 </head>
-
-<body id="pagebody" class="bodyWhole">
 
 <body id="pagebody">
 
@@ -32,7 +30,7 @@
 
         <!-- ............. ................... alerts......................... -->
         
-        <div class="row" id="alertBox" hidden="true"></div>
+        <div class="row alertDiv" id="alertBox" hidden="true"></div>
 
         <!-- .......................... Row 1 widgets ......................... -->
         
@@ -58,21 +56,22 @@
 
                         <!-- when no remote -->
                         <div id="singleVideoContainer" class="row" hidden>
-                            <div class="col-sm-2 merge" > Waiting  ! </div>
+                            <div class="col-sm-2 merge text-success" > Waiting  ! </div>
                             <div class="col-sm-8 merge "> <video name="myAloneVideo" autoplay="autoplay" muted="true" /></div>
-                            <div class="col-sm-2 merge" > You are the only one in the session ...</div>
+                            <div class="col-sm-2 merge text-info" > You are the only one in the session ...</div>
                         </div>
 
                         <!-- when remote is connected -->
-                        <div id ="confVideoContainer"  class="row" style="display:inline" >
+                        <div id ="confVideoContainer"  class="row" hidden >
                             <div class="col-sm-4 merge" class="leftVideoClass" id="userVideo">
                                 <video name="myConferenceVideo" autoplay="autoplay" muted="true" />
                             </div>
 
-                            <div class="col-sm-4 merge" class="rightVideoClass" id="othersVideo" hidden>
+                            <div class="col-sm-4 merge" class="rightVideoClass" id="othersVideo">
+                                <video name="otherConferenceVideo" autoplay="autoplay" />
                             </div>
 
-                            <div class="col-sm-4 merge "  style="height:100%" id="chatbox" >
+                            <div class="col-sm-4 merge" style="height:100%" id="chatbox" >
                                 <div class="row">
 
                                     <div class="mainInputBox">   
@@ -213,21 +212,10 @@
     </div>
 
 </body>
-</body>
+
+<script src="property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-<script src="property.js"></script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-80976354-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 <script>
 $('document').ready(function(){
@@ -250,12 +238,13 @@ $('document').ready(function(){
     };
 
     var remote={
-        videoarr: ["myConferenceVideo"],
-        remoteVideoCount: "unlimited",
-        videoContainer : "othersVideo",
+        videoarr: ["myConferenceVideo", "otherConferenceVideo"],
         videoClass:"",
+        maxAllowed: "2",
+        videoContainer : "confVideoContainer",
         userDisplay:false,
-        userMetaDisplay:false    
+        userMetaDisplay:false,
+        dynamicVideos: false   
     };
 
     webrtcdomobj= new WebRTCdom(
@@ -290,6 +279,20 @@ $('document').ready(function(){
     };
 
     var widgets={
+        debug      : true,
+        timer      :{
+                        active:true,
+                        type: "backward",
+                        upperlimit: {
+                            hour:0 , 
+                            min: 3 , 
+                            sec: 0 
+                        },
+                        span:{
+                            id:"timerDiv",
+                            class:""
+                        }
+                    },
         chat        :{
                         active: true,
                         chatContainer: "",
