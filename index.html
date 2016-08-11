@@ -96,21 +96,13 @@
             </div> 
         </div>
 
-        <!-- .......................... Row 3 ................................ -->
+
+        <!-- .......................... Row 4 ................................ -->
         
         <div class="row fourthPanelClass"> 
             <div class="col-xs-12 filesharingBox merge" >
                 <div id="fileSharingRow" class="row fileSharingRow"> </div>
-            </div>
-        </div>
-
-        <br/><br/>
-
-        <!-- .......................... Row 4 ................................ -->
-        
-        <div class="row fifthPanelClass"> 
-            <div class="col-xs-12 filesharingBox merge" >
-                <div id="fileListingRow" class="row">  </div>
+                <div id="fileListingRow" class="row fileSharingRow"> </div>
             </div>
         </div>
 
@@ -232,7 +224,7 @@ $('document').ready(function(){
         userMetaDisplay:false,
         userdetails:{
             username:"Expert",
-            usercolor: "Blue",
+            usercolor: "#DDECEF",
             useremail: "abc@gmail.com"
         }
     };
@@ -308,6 +300,7 @@ $('document').ready(function(){
         fileShare   :{
                         active : true,
                         fileShareContainer : "fileSharingRow",
+                        fileListContainer : "fileListingRow",
                         button :{
                             id:"fileShareButton"
                         }
