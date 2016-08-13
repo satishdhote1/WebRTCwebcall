@@ -384,9 +384,10 @@ $('document').ready(function(){
                             resyncfiles:false
                         }
                     }, 
-        mute        :{
+        mute    :{
                     active: true,
                     audio   :{
+                            active: false,
                             button:{
                                 class_on:"pull-right glyphicon glyphicon-volume-up btn btn-default mediaButton",
                                 html_on:"",
@@ -395,14 +396,15 @@ $('document').ready(function(){
                             }
                         },
                     video : {
+                            active: true,
                             button:{
                                 class_on:"pull-right glyphicon glyphicon-eye-open btn btn-default videoButtonClass mediaButton",
                                 html_on:"",
                                 class_off:"pull-right glyphicon glyphicon-eye-close  btn btn-danger videoButtonClass mediaButton",
-                                html_off:"https://localhost:8086/multiparty_fullfeatures.html#3743150688569583"
+                                html_off:""
                             }
                         }
-                    }
+                }
     };
 
     var webrtcdevobj = new WebRTCdev ( 
