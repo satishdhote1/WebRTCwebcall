@@ -71,24 +71,8 @@
                                 <video name="otherConferenceVideo" autoplay="autoplay" />
                             </div>
 
-                            <div class="col-sm-4 merge" style="height:100%" id="chatbox" >
-                                <div class="row">
-
-                                    <div class="mainInputBox">   
-                                        <input type=text style="width:70%;float: left;" id="chatInput" class="form-control" placeholder="Type message here">
-                                        <button class="btn" id="chatInputButton">Send</button>
-                                    </div>
-
-                                    <div  id="chatBoard"  contenteditable class="chatMessagesClass">
-                                        <div id="all-messages" style="padding:5px;"></div>
-                                    </div>
-                                    <p id="who-is-typing" hidden></p>
-
-                                    <div class="fileinputClass" style="position:absolute" data-provides="fileinput">
-                                        <button class="btn" id="fileShareButton">File</button>
-                                       <!--  <span class="btn btn-default btn-file"><input id="fileShareButton" type="file" /></span> -->
-                                    </div>
-
+                            <div class="col-sm-4 merge" style="height:100%"  >
+                                <div class="row" id="chatContainer">
                                 </div>
                             </div>
                         </div>
@@ -285,24 +269,23 @@ $('document').ready(function(){
                             class:""
                         }
                     },
-        chat        :{
+        chat    :{
                         active: true,
-                        chatContainer: "",
-                        input:{
-                            id:"chatInput"
-                        },
+                        chatContainer: "chatContainer",
                         button:{
-                            id:"chatInputButton",
-                            class:"form-control btn-primary buttonChatSend",
-                            html:"Send"
+                            class_on:"btn btn-warning glyphicon glyphicon-font topPanelButton",
+                            html_on:"Chat",
+                            class_off:"btn btn-success glyphicon glyphicon-font topPanelButton",
+                            html_off:"Chat"
                         }
-                    },
+                },
         fileShare   :{
                         active : true,
                         fileShareContainer : "fileSharingRow",
                         fileListContainer : "fileListingRow",
-                        button :{
-                            id:"fileShareButton"
+                        button:{
+                            class:"btn btn-success glyphicon glyphicon-file topPanelButton",
+                            html:"File"
                         }
                     },
         location    :{
