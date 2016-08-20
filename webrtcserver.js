@@ -1,7 +1,8 @@
 var fs = require('fs');
 var _static = require('node-static');
 var https = require('https');
-
+var Log = require('log')
+  , log = new Log('info');
 var properties ={       
     "hostname"      : "host",        
     "enviornment"   : "local",        
@@ -40,7 +41,7 @@ var app = https.createServer(options, function(request, response){
 app.listen(properties.httpsPort);
 
 var _realtimecomm=require('./node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopmentServer.js').realtimecomm;
-var realtimecomm= _realtimecomm(app, properties , function(socket) {
+var realtimecomm= _realtimecomm(app, properties ,log , function(socket) {
     try {
         var params = socket.handshake.query;
 
