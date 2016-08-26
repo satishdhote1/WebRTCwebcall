@@ -122,7 +122,26 @@
                 <div class="modal-body">
                   <div id="settingsContainer">
 
-                    Inspectore <input class="form-control" type="text" id="inspectorlink" readonly><br/>
+                    <div class="row">
+                        <h4> URL to be Shared </h4>
+
+                        <div style="display: inline-flex;" style=" float: left;padding-left: 100px; padding-bottom: 10px;">
+                            <div>Listen-In</div> 
+                            <input class="form-control" type="text" id="inspectorlink" style="width:600px" readonly><br/>
+                        </div>
+
+                        <div style="display: inline-flex;" style=" float: left;padding-left: 100px; padding-bottom: 10px;">
+                            <div>Partner</div> 
+                            <input class="form-control" type="text" id="partnername" style="width:200px"><br/>
+                            <button class="btn" id="btnAddPartner" onclick="AddPartner()">Add</button>
+                            <input class="form-control" type="text" id="partnerlink" style="width:600px" readonly><br/>
+                        </div>
+
+                                                
+                    </div>
+
+            
+                    <h4>Session Information </h4>
                     Channel <input class="form-control" type="text" id="channelname" readonly> <br/>
                     User Id <input class="form-control" type="text" id="userid" readonly> <br/>
 
@@ -143,7 +162,6 @@
                         <div style="display: inline-flex;">
                             Screen <input class="form-control" type="text" id="inScreen" style="width:100px" readonly><br/>
                         </div>
-
                     </div>
 
                     <div class="row">
@@ -165,14 +183,14 @@
                         </div>                    
                     </div>                    
 
+                    <hr>
                     <div class="row">
-                         <button class="btn" id="btnGetPeers">Get Peers Info</button>
-                         <button class="btn" id="btnDebug">Debug</button>
+                        <button class="btn" id="btnGetPeers">Get Peers Info</button>
+                        <button class="btn" id="btnDebug">Debug</button>
                     </div> 
 
                     <div id="allpeerinfo" style="text-align: left;"></div>
                     <div id="allwebrtcdevinfo" style="text-align: left;"></div>
-
 
                   </div>
                 </div>
