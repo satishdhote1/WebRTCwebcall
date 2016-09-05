@@ -1,50 +1,61 @@
 {
-  "name": "Webcall",
-  "subdomain": "villageexperts",
-  "preferGlobal": true,
-  "version": "3.0.0",
-  "author": {
-    "name": "#",
-    "email": "#"
-  },
+    "name": "Webrtc",
+    "version": "1.2.0",
+    "description": "webrtc project",
+    "main": "webserver.js",
+    
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node webrtcserver.js"
+    },
 
-  "keywords": [
-    "webrtc"
-  ],
-  
-  "analyze": false,
-  "dependencies": {
-    "mysql": "^2.6.2",
-    "node-static": "0.7.x",
-    "socket.io": "0.9.x"
-  },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:satishdhote1/WebRTCwebcall.git"
+    },
 
-  "dependencies": {
-    "dotenv": "*",
-    "faker": "*",
-    "gulp": "*",
-    "gulp-add-src": "*",
-    "gulp-base64": "*",
-    "gulp-cat": "*",
-    "gulp-concat": "*",
-    "gulp-data-uri": "*",
-    "gulp-expect-file": "*",
-    "gulp-minify-css": "*",
-    "gulp-sass": "*",
-    "gulp-sequence": "*",
-    "gulp-uglify": "*",
-    "mocha": "*",
-    "phplint": "*",
-    "request": "*",
-    "underscore": "*"
-  },
-  "devDependencies": {
-    "babel-preset-es2015": "*",
-    "babel-preset-react": "*",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^6.1.0",
-    "gulp-util": "^3.0.7",
-    "react": "*",
-    "react-dom": "*"
-  }
+    "engines": {
+        "node": "5.*"
+    },
+
+    "dependencies": {
+        "googleapis": "^3.1.0",
+        "node-static": "^0.7.7",
+        "socket.io": "0.9.*",
+        "supervisor": "^0.10.0",
+        "restify": "*",
+        "webrtcdevelopment":"*"
+    },
+
+    "devDependencies": {
+        "apidoc": "*",
+        "grunt": "~0.4.5",
+        "grunt-apidoc": "^0.11.0",
+        "grunt-contrib-jshint": "~0.10.0",
+        "grunt-contrib-nodeunit": "~0.4.1",
+        "grunt-contrib-uglify": "~0.5.0",
+        "grunt-ec2":"*",
+        "grunt-rsync":"*",
+        "grunt-git-deploy":"*",
+        "grunt-contrib-watch":"*",
+        "gulp": "*",
+        "gulp-add-src": "^0.2.0",
+        "gulp-base64": "^0.1.3",
+        "gulp-cat": "^0.3.3",
+        "gulp-concat": "^2.6.0",
+        "gulp-minify-css": "^1.2.4",
+        "gulp-remote-src": "^0.4.1",
+        "gulp-sequence": "^0.4.5",
+        "gulp-uglify": "^1.5.3",
+        "jshint": "^2.6.0"
+    },
+
+    "keywords": [
+        "altanai",
+        "webserver",
+        "https"
+    ],
+
+    "author": "altanai <tara181989@gmail.com>",
+    "license": ""
 }
