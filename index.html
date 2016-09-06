@@ -9,7 +9,6 @@
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
     
 </head>
-
 <body id="pagebody">
 
     <div  id="elementToShare" class="container-fluid">
@@ -142,9 +141,19 @@
 
                                 <div style="display: inline-flex;" style=" float: left;padding-left: 100px; padding-bottom: 10px;">
                                     <div>Partner</div> 
-                                    <input class="form-control" type="text" id="partnername" style="width:200px"><br/>
-                                    <button class="btn" id="btnAddPartner" onclick="AddPartner()">Add</button>
-                                    <br/><input class="form-control" type="text" id="partnerlink" readonly><br/>
+                                    <div class="display: inline-flex;">
+                                        <div class="row">
+                                            <input class="form-control" type="text" style="width:500px" id="partnername">
+                                            <button class="btn" id="btnAddPartner" onclick="AddPartner()">Add</button><br/>
+                                        </div>
+                                        <div class="row">
+                                            <input class="form-control" type="text" style="width:500px" id="partnerlink" readonly>
+                                            <button class="btn" id="btnEmailPartner" onclick="EmailPartnerLink()">Email</button>
+                                            <button class="btn" id="btnEmailPartner" onclick="ClipboardCopyPartnerLink()">Copy to Clipboard</button>
+                                            <button class="btn" id="btnEmailPartner" onclick="sharePartnerLink()">Share</button>
+                                        </div>
+                                    </div>
+
                                 </div>                         
                             </div>
 
