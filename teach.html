@@ -20,8 +20,6 @@
 <style>
 .over-lap {display: block !important}
 
-
-
 /*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-START---------*/
 
 .right-section{background:#fff;border-radius:30px;padding:20px 0px 0px;border:1px solid #F00;margin-top:20px;position:relative}
@@ -164,6 +162,7 @@ td span .fa {
 
 </style>
 <body class="bodybg">
+
 <div class="container-fluid header-part">
   <div class="row">
     <div class="col-md-12 text-center">
@@ -179,6 +178,7 @@ td span .fa {
     </div>
   </div>
 </div>
+
 <section class="video-section">
   <div class="container-fluid">
     <div class="row">
@@ -186,21 +186,19 @@ td span .fa {
       <div class="">
           <div class="col-xs-6" style="padding:0;">
             <div class="inner-block">
-            <div class="button-corner">
-            <span  data-placement="bottom" data-toggle="tooltip" title="minimize"><i class="fa fa-minus-square"></i></span>
-      <span  data-placement="bottom" data-toggle="tooltip" title="maxsimize"><i class="fa fa-external-link-square"></i></span>
-            <span  data-placement="bottom" data-toggle="tooltip" title="close"><i class="fa fa-times-circle"></i></span>
-            
-            </div>
+              <div class="button-corner">
+                <span  data-placement="bottom" data-toggle="tooltip" title="minimize"><i class="fa fa-minus-square"></i></span>
+                <span  data-placement="bottom" data-toggle="tooltip" title="maxsimize"><i class="fa fa-external-link-square"></i></span>
+                <span  data-placement="bottom" data-toggle="tooltip" title="close"><i class="fa fa-times-circle"></i></span>
+              </div>
             </div>
           </div>
           <div class="col-xs-6" style="padding-right:0px;">
             <div class="inner-block">
             <div class="button-corner">
             <span  data-placement="bottom" data-toggle="tooltip" title="minimize"><i class="fa fa-minus-square"></i></span>
-      <span  data-placement="bottom" data-toggle="tooltip" title="maxsimize"><i class="fa fa-external-link-square"></i></span>
+            <span  data-placement="bottom" data-toggle="tooltip" title="maxsimize"><i class="fa fa-external-link-square"></i></span>
             <span  data-placement="bottom" data-toggle="tooltip" title="close"><i class="fa fa-times-circle"></i></span>
-            
             </div>
             </div>
           </div>
@@ -229,28 +227,37 @@ td span .fa {
           <div class="col-xs-6">
             <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
           </div>
-         
 
           <div class="col-md-12" style="margin-bottom:10px">
-           <button class="btn btn-info form-control recannect" data-placement="left" data-toggle="tooltip" title="ONLY for use if session gets disconnected"><span><i class="fa fa-link" aria-hidden="true"></i></span>Reconnect</button>
-          
+            <button class="btn btn-info form-control recannect" data-placement="left" data-toggle="tooltip" title="ONLY for use if session gets disconnected"><span><i class="fa fa-link" aria-hidden="true"></i></span>Reconnect</button>
           </div>
           <div class="clearfix"></div>
-          
           </div>
+
       <div class="panel-seassion">
           <div class="bg-ssion">
-          <div class="col-xs-6 text-center"><p class="seassion-text">Session</p></div>
+              <div class="col-xs-6 text-center"><p class="seassion-text">Session</p></div>
          
-           <div class="col-xs-3 text-center">
-              <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
-            </div>
-            <div class="col-xs-3 text-center border-right">
-              <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Stop"><i class="fa fa-circle"></i></button>
-            </div>
-           <div class="clearfix"></div>
+              <div class="col-xs-3 text-center">
+                <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
+              </div>
+
+              <div class="col-xs-3 text-center border-right">
+                <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Stop"><i class="fa fa-circle"></i></button>
+              </div>
+
+              <div class="clearfix"></div>
           </div>
       </div>
+
+      <!-- when no remote -->
+      <div id="singleVideoContainer" class="row" hidden>
+          <div class="col-sm-2 merge text-success" > Waiting  ! </div>
+          <div class="col-sm-8 merge "> <video name="myAloneVideo" autoplay="autoplay" muted="true" /></div>
+          <div class="col-sm-2 merge text-info" > You are the only one in the session ...</div>
+      </div>
+
+
       <div class="panel-seassion border-radius">
           <div class="video-part">
           <p class="video-header">farook Afsari</p>
@@ -303,63 +310,8 @@ td span .fa {
           <div class="sent-message-block">
           
           <div class="panel-seassion">
-             <div class="chating-area">
-            <div class="chat-text-area">
-            
-              <div class="col-xs-3" style="padding:0px;">
-                <div class="online-pro-pict"><img src="images/img-3.jpg" class="img-circle"></div>
-              </div>
-              <div class="col-xs-9" style="padding-left:0px;padding-right:5px;">
-                <div class="online-chat-text">Hi, I am ... ... ... .. <span>1 Min</span> </div>
-              </div>
-              <div class="clearfix"></div>
+            <div class="chating-area" id="chatContainer">
             </div>
-            <div class="chat-text-area">
-              <div class="col-xs-9" style="padding-right:0px;padding-left:5px">
-                <div class="online-chat-text-reply">Hi, I am ... ... ... .. <span>1 Min</span> </div>
-              </div>
-              <div class="col-xs-3" style="padding:0px;">
-                <div class="online-pro-pict"><img src="images/img-3.jpg" class="img-circle"></div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-            <div class="chat-text-area">
-              <div class="col-xs-3" style="padding:0px;">
-                <div class="online-pro-pict"><img src="images/img-3.jpg" class="img-circle"></div>
-              </div>
-              <div class="col-xs-9" style="padding-left:0px;padding-right:5px;">
-                <div class="online-chat-text">Hi, I am ... ... ... .. <span>1 Min</span> </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-            <div class="chat-text-area">
-              <div class="col-xs-9" style="padding-right:0px;padding-left:5px">
-                <div class="online-chat-text-reply">Hi, I am ... ... ... .. <span>1 Min</span> </div>
-              </div>
-              <div class="col-xs-3" style="padding:0px;">
-                <div class="online-pro-pict"><img src="images/img-3.jpg" class="img-circle"></div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-            <div class="chat-text-area">
-              <div class="col-xs-3" style="padding:0px;">
-                <div class="online-pro-pict"><img src="images/img-3.jpg" class="img-circle"></div>
-              </div>
-              <div class="col-xs-9" style="padding-left:0px;padding-right:5px;">
-                <div class="online-chat-text">Hi, I am ... ... ... .. <span>1 Min</span> </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-            <div class="chat-text-area">
-              <div class="col-xs-9" style="padding-right:0px;padding-left:5px;">
-                <div class="online-chat-text-reply">Hi, I am ... ... ... .. <span>1 Min</span> </div>
-              </div>
-              <div class="col-xs-3" style="padding:0px;">
-                <div class="online-pro-pict"><img src="images/img-3.jpg" class="img-circle"></div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
           </div>
           
           </div>
@@ -400,130 +352,78 @@ td span .fa {
           </div>
       </div>
       <div class="panel-seassion">
-      <div class="screen-share">
-      <div class="red-bg">
-          <div style="padding:0px 0px" class="col-xs-8 text-center">
-          <button class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Farook - Screen Share">Screen Share </button>
-          </div>
-         
-           <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-              <button title="Share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-              <i class="fa fa-external-link"></i></button>
+        <div class="screen-share">
+        <div class="red-bg">
+            <div style="padding:0px 0px" class="col-xs-8 text-center">
+            <button class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Farook - Screen Share">Screen Share </button>
             </div>
-            <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-              <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-              <i class="fa fa-desktop"></i></button>
+           
+             <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                <button title="Share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                <i class="fa fa-external-link"></i></button>
+              </div>
+              <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                <i class="fa fa-desktop"></i></button>
+              </div>
+             <div class="clearfix"></div>
             </div>
-           <div class="clearfix"></div>
-          </div>
-       <div class="yellow-bg">
-          <div style="padding:0px 0px" class="col-xs-8 text-center">
-          <button class="form-control seceen-btn-2"  data-toggle="tooltip" data-placement="bottom" title="Samantha - Screen Share">Screen Share </button>
-          </div>
-         
-           <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-              <button title="share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3">
-              <i class="fa fa-external-link"></i></button>
+        <div class="yellow-bg">
+            <div style="padding:0px 0px" class="col-xs-8 text-center">
+            <button class="form-control seceen-btn-2"  data-toggle="tooltip" data-placement="bottom" title="Samantha - Screen Share">Screen Share </button>
             </div>
-            <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-              <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3"><i class="fa fa-desktop"></i></button>
+           
+             <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                <button title="share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3">
+                <i class="fa fa-external-link"></i></button>
+              </div>
+              <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3"><i class="fa fa-desktop"></i></button>
+              </div>
+             <div class="clearfix"></div>
             </div>
-           <div class="clearfix"></div>
-          </div>
+        </div>
       </div>
-           </div>
            
       <div class="panel-seassion">
-           <div class="screen-share">
-           <div class="text-center">
-          <div class="fileUpload btn bg-red" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
-    <span>Upload A File</span>
-    <input type="file" class="upload"  />
-</div>
-           
+          <div class="screen-share">
+              <div class="text-center">
+                  <div class="fileUpload btn bg-red" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
+                    <span>Upload A File</span>
+                    <input type="file" class="upload"  />
+                  </div>
+               </div>
            </div>
-           </div>
-           </div>
+      </div>
            
     
-           <div class="border-radius">
-           <div class="red-bg-2">
+          <div class="border-radius">
+          <div class="red-bg-2">
           <div style="padding:0px 0px" class="col-xs-6">
-         <p class="text-center" style="color:#fff;margin:0;line-height:25px;font-weight:bold;">By Farook</p>
+          <p class="text-center" style="color:#fff;margin:0;line-height:25px;font-weight:bold;">By Farook</p>
           </div>
          
-           <div class="col-xs-2 text-right">
-              <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-              <i class="fa fa-external-link"></i></button>
-            </div>
-            <div class="col-xs-1 text-left" style="padding:0;">
-              <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-              <i class="fa fa-minus-square"></i></button>
-            </div>
-            <div class="col-xs-1 text-right" style="padding:0;">
-              <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-              <i class="fa fa-close"></i></button>
-            </div>
-            <div class="col-xs-2 text-center" >
-              <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-              <i class="fa fa-question"></i></button>
-            </div>
-            
-            
-            
-           <div class="clearfix"></div>
+               <div class="col-xs-2 text-right">
+                  <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                  <i class="fa fa-external-link"></i></button>
+                </div>
+                <div class="col-xs-1 text-left" style="padding:0;">
+                  <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                  <i class="fa fa-minus-square"></i></button>
+                </div>
+                <div class="col-xs-1 text-right" style="padding:0;">
+                  <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                  <i class="fa fa-close"></i></button>
+                </div>
+                <div class="col-xs-2 text-center" >
+                  <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                  <i class="fa fa-question"></i></button>
+                </div>  
+                <div class="clearfix"></div>
           </div>
-           <div class="table-section">
-           <table class="table">
-           <thead style="background:#333f4f;color:#FFF"> 
-            <tr>
-            
-             <th style="padding:5px 0px 5px 5px;border-right:1px solid #F00;">Time<span style="padding-left:4px;"><i class="fa fa-sort-alpha-desc"></i></span></th>
-             <th style="padding:5px 0px 5px 5px;border-right:1px solid #F00;">File Name</th>
-             <th style="padding:5px 0px 5px 5px;">Action</th>
-             </tr>
-              </thead>  
-                <tbody>   
-                    <tr class="active">   
-                         
-                            <td style="border-right:1px solid #F00;">11:10<sub>pm</sub></td>    
-                             <td  style="border-right:1px solid #F00;">File A</td>
-                              <td>
-                                 <span style="margin:0px 0px;padding:0px 5px"  data-toggle="tooltip" data-placement="bottom" title="DOWNLOAD" ><i class="fa fa-download"></i></span>
-                                 <span style="margin:0px 2px;padding:0px 5px"  data-toggle="tooltip" data-placement="bottom" title="VIEW"><i class="fa fa-eye-slash"></i></span>
-                                 <span style="margin:0px 0px;padding:0px 5px"  data-toggle="tooltip" data-placement="bottom" title="DELETE"><i class="fa fa-remove"></i></span>
-                                 </td>
-                                 </tr>   
-                        <tr class="success"> 
-                        
-                            <td  style="border-right:1px solid #F00;">11:10<sub>pm</sub></td>
-                                 <td  style="border-right:1px solid #F00;">File A</td> 
-                                 <td>
-                                 <span style="margin:0px 0px;padding:0px 5px"  data-toggle="tooltip" data-placement="bottom" title="DOWNLOAD" ><i class="fa fa-download"></i></span>
-                                 <span style="margin:0px 2px;padding:0px 5px"  data-toggle="tooltip" data-placement="bottom" title="VIEW"><i class="fa fa-eye-slash"></i></span>
-                                 <span style="margin:0px 0px;padding:0px 5px"  data-toggle="tooltip" data-placement="bottom" title="DELETE"><i class="fa fa-remove"></i></span>
-                                 </td>  
-                                   </tr>
-                         
-                        <tr  class="warning"> 
-                         <td  style="border-right:1px solid #F00;">11:10<sub>pm</sub></td>  
-                            <td  style="border-right:1px solid #F00;">File A</td>
-                             <td>
-                                 <span style="margin:0px 0px;padding:0px 5px"  data-toggle="tooltip" data-placement="bottom" title="DOWNLOAD" ><i class="fa fa-download"></i></span>
-                                 <span style="margin:0px 2px;padding:0px 5px"  data-toggle="tooltip" data-placement="bottom" title="VIEW"><i class="fa fa-eye-slash"></i></span>
-                                 <span style="margin:0px 0px;padding:0px 5px"  data-toggle="tooltip" data-placement="bottom" title="DELETE"><i class="fa fa-remove"></i></span>
-                                 </td>      </tr>
-                          
-                          <tr  class="danger">  
-                                  
-                                   <td  style="border-right:1px solid #F00;">11:10<sub>pm</sub></td> 
-                                       <td  style="border-right:1px solid #F00;">File A</td> 
-                                       <td>
-                                 <span style="margin:0px 0px"  data-toggle="tooltip" data-placement="bottom" title="DOWNLOAD" ><i class="fa fa-download"></i></span>
-                                 <span style="margin:0px 2px"  data-toggle="tooltip" data-placement="bottom" title="VIEW"><i class="fa fa-eye-slash"></i></span>
-                                 <span style="margin:0px 0px"  data-toggle="tooltip" data-placement="bottom" title="DELETE"><i class="fa fa-remove"></i></span>
-                                 </td>      </tr>    </tbody> </table>
-           </div>
+           
+          <div class="table-section" id="fileListingRow">
+          </div>
            
            
            </div>
