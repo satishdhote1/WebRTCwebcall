@@ -13,8 +13,9 @@
     <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jpcjjkpbiepbmhklnjoahacppaemhmpd">
     <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel=stylesheet href="minScripts/webrtcdevelopment_header.css">
-    <script src="minScripts/webrtcdevelopment_header.js"> </script>
+    <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.css">
+    <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
+    
 </head>
 <style>
 .over-lap {display: block !important}
@@ -177,6 +178,8 @@ td span .fa {
     </div>
   </div>
 </div>
+
+<div class="row alertDiv" id="alertBox" hidden="true"></div>
 
 <section class="video-section">
   <div class="container-fluid">
@@ -395,35 +398,37 @@ td span .fa {
            
     
           <div class="border-radius">
-          <div class="red-bg-2">
-          <div style="padding:0px 0px" class="col-xs-6">
-          <p class="text-center" style="color:#fff;margin:0;line-height:25px;font-weight:bold;">By Farook</p>
-          </div>
-         
-               <div class="col-xs-2 text-right">
+            <div class="red-bg-2">
+              <div style="padding:0px 0px" class="col-xs-6">
+              <p class="text-center" style="color:#fff;margin:0;line-height:25px;font-weight:bold;">By Farook</p>
+              </div>
+             
+              <div class="col-xs-2 text-right">
                   <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
                   <i class="fa fa-external-link"></i></button>
-                </div>
-                <div class="col-xs-1 text-left" style="padding:0;">
+              </div>
+              
+              <div class="col-xs-1 text-left" style="padding:0;">
                   <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
                   <i class="fa fa-minus-square"></i></button>
-                </div>
-                <div class="col-xs-1 text-right" style="padding:0;">
+              </div>
+              
+              <div class="col-xs-1 text-right" style="padding:0;">
                   <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
                   <i class="fa fa-close"></i></button>
-                </div>
-                <div class="col-xs-2 text-center" >
+              </div>
+              
+              <div class="col-xs-2 text-center" >
                   <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
                   <i class="fa fa-question"></i></button>
-                </div>  
-                <div class="clearfix"></div>
+              </div>  
+
+              <div class="clearfix"></div>
+            </div>
+            
+            <div class="table-section" id="fileListingRow">
+            </div>
           </div>
-           
-          <div class="table-section" id="fileListingRow">
-          </div>
-           
-           
-           </div>
            
            
           <div class="">
@@ -499,8 +504,9 @@ td span .fa {
 
 
 <script src="property.js"></script>
-<link rel=stylesheet href="minScripts/webrtcdevelopment.css">
-<script src="minScripts/webrtcdevelopment.js"></script>
+<link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
+<script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
+
 
 
 <!-- jQuery Version 1.11.1 --> 
@@ -597,121 +603,7 @@ $('document').ready(function(){
     
 
     var widgets={
-        debug      : true,
-        timer      :{
-                        active:true,
-                        type: "backward",
-                        upperlimit: {
-                            hour:0 , 
-                            min: 3 , 
-                            sec: 0 
-                        },
-                        span:{
-                            id:"timerDiv",
-                            class:""
-                        }
-                    },
-        chat    :{
-                    active: true,
-                    chatContainer: "chatContainer",
-                    button:{
-                        class_on:"btn btn-warning glyphicon glyphicon-font topPanelButton",
-                        html_on:"Chat",
-                        class_off:"btn btn-success glyphicon glyphicon-font topPanelButton",
-                        html_off:"Chat"
-                    }
-                },
-        fileShare   :{
-                        active : true,
-                        fileShareContainer : "fileSharingRow",
-                        fileListContainer : "fileListingRow",
-                        button:{
-                            class:"btn btn-success glyphicon glyphicon-file topPanelButton",
-                            html:"File"
-                        },
-                        props:{
-                            fileShare:"divided",
-                            fileList:"divided"
-                        }
-                    },
-        location    :{
-                         active : false
-                    },
-        screenrecord:{
-                        active: true,
-                        autoscreenrecord:false,
-                        screenrecordContainer: null,
-                        button:{
-                            class_on:"btn btn-warning glyphicon glyphicon-film topPanelButton",
-                            html_on:"Stop",
-                            class_off:"btn btn-success glyphicon glyphicon-film topPanelButton",
-                            html_off:"Record"
-                        }
-                    }, 
-        screenshare : {
-                        active:true,
-                        screenshareContainer: "widget-screenshareContainer",
-                        extensionID: props.extensionID,
-                        button:{
-                            installButton:{
-                                class_on:"btn btn-warning glyphicon glyphicon-inbox topPanelButton",
-                                html_on:"Stop Install",
-                                class_off:"btn btn-success glyphicon glyphicon-inbox topPanelButton",
-                                html_off:"Install Screen Share"
-                            },
-                            shareButton:{
-                                class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton",
-                                html_on:"Stop Sharing",
-                                class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton",
-                                html_off:"ScreenShare"
-                            },
-                            viewButton:{
-                                class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton",
-                                html_on:"Stop Viewing",
-                                class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton",
-                                html_off:"View Screen"
-                            }
-                        }
-                    },
-        videoRecord :{
-                        active: true,
-                        videoRecordContainer: true,
-                        button:{
-                            class_on:"pull-right glyphicon glyphicon-facetime-video btn btn-warning mediaButton",
-                            html_on:"",
-                            class_off:"pull-right glyphicon glyphicon-facetime-video btn btn-default mediaButton",
-                            html_off:""
-                        }
-                    },
-        snapshot :{
-                        active: true,
-                        snapshotContainer: true,
-                        button:{
-                            class_on:"pull-right glyphicon glyphicon-camera btn btn-default mediaButton",
-                            html_on:""
-                        }
-                    }, 
-        drawCanvas  :{
-                        active: true,
-                        drawCanvasContainer: "widget-drawContainer",
-                        button:{
-                            class_on:"btn btn-warning glyphicon glyphicon-edit topPanelButton",
-                            html_on:"close Draw",
-                            class_off:"btn btn-success glyphicon glyphicon-edit topPanelButton",
-                            html_off:"Draw"
-                        }
-                    }, 
-        texteditor  :{
-                        active: false
-                    },                   
-        reconnect   :{
-                        active: true,
-                        button:{
-                            class:"btn btn-success glyphicon glyphicon-refresh topPanelButton",
-                            html:"Reconnect",
-                            resyncfiles:false
-                        }
-                    }, 
+        debug      : false,
         mute    :{
                     active: true,
                     audio   :{
