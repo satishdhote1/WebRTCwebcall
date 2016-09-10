@@ -469,7 +469,6 @@ $(document).ready(function(){
 </script>
 
 <script>
-<script>
 $('document').ready(function(){
     sessionid = init(true);
 
@@ -611,21 +610,39 @@ $('document').ready(function(){
                             active: false,
                             button:{
                                 class_on:"pull-right btn btn-modify-video2 videoButtonClass mediaButton",
-                                html_on:'<i class="fa fa-microphone"></i>',
+                                html_on:'mic',
                                 class_off:"pull-right btn btn-modify-video2 videoButtonClass mediaButton",
-                                html_off:'<i class="fa fa-microphone"></i>'
+                                html_off:'mic'
                             }
                         },
                     video : {
                             active: true,
                             button:{
                                 class_on:"pull-right btn btn-modify-video2 videoButtonClass mediaButton",
-                                html_on:'<i class="fa fa-microphone"></i>',
+                                html_on:'cam',
                                 class_off:"pull-right btn btn-modify-video2 videoButtonClass mediaButton",
-                                html_off:'<i class="fa fa-video-camera"></i>'
+                                html_off:'cam'
                             }
                         }
-                }
+                },
+        videoRecord :{
+                        active: true,
+                        videoRecordContainer: true,
+                        button:{
+                            class_on:"pull-right glyphicon glyphicon-facetime-video btn btn-warning mediaButton",
+                            html_on:"rec",
+                            class_off:"pull-right glyphicon glyphicon-facetime-video btn btn-default mediaButton",
+                            html_off:"rec"
+                        }
+                    },
+        snapshot :{
+                        active: true,
+                        snapshotContainer: true,
+                        button:{
+                            class_on:"pull-right glyphicon glyphicon-camera btn btn-default mediaButton",
+                            html_on:"pic"
+                        }
+                    }, 
     };
 
     var webrtcdevobj = new WebRTCdev ( 
@@ -633,6 +650,7 @@ $('document').ready(function(){
     );
     startcall(webrtcdevobj);
 });
+</script>
 </script>
 </script>
 
