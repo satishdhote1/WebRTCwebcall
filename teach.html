@@ -231,7 +231,9 @@ td span .fa {
           </div>
 
           <div class="col-md-12" style="margin-bottom:10px">
-            <button class="btn btn-info form-control recannect" data-placement="left" data-toggle="tooltip" title="ONLY for use if session gets disconnected"><span><i class="fa fa-link" aria-hidden="true"></i></span>Reconnect</button>
+            <button id="reconnectBtn" class="btn btn-info form-control recannect" data-placement="left" data-toggle="tooltip" title="ONLY for use if session gets disconnected">
+                <span><i class="fa fa-link" aria-hidden="true"></i></span>Reconnect
+            </button>
           </div>
           <div class="clearfix"></div>
           </div>
@@ -252,261 +254,237 @@ td span .fa {
           </div>
       </div>
 
-      <!-- when no remote -->
-      <div id="singleVideoContainer" class="row" hidden>
-          <div class="col-sm-2 merge text-success" > Waiting  ! </div>
-          <div class="col-sm-8 merge "> <video name="myAloneVideo" autoplay="autoplay" muted="true" /></div>
-          <div class="col-sm-2 merge text-info" > You are the only one in the session ...</div>
-      </div>
-
-
-      <div class="panel-seassion border-radius">
-          <div class="video-part">
-          <p class="video-header">farook Afsari</p>
-          <div class="block-section">
-              <video class="video-block" controls src="#" id="myConferenceVideo"></video>
-            </div>
-            <div class="controler-video">
-            
-                <div class="col-xs-2 text-center">
-                  <button title="Video" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Stop"><i class="fa fa-video-camera"></i></button>
-                </div>
-                <div class="col-xs-2 text-center border-right">
-                  <button title="Audio" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom"  title="Stop"><i class="fa fa-microphone"></i></button>
-                </div>
-                 <div class="col-xs-2 text-center">
-                  <button title="Record" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom"  title="Stop"><i class="fa fa-circle"></i></button>
-                </div>
-                 <div class="col-xs-2 text-center">
-                  <button title="Stop Record" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom"  title="Stop">
-                  <i class="fa fa-dot-circle-o"></i></button>
-                </div>
-                 <div class="col-xs-2 text-center">
-                  <button title="SpanShot" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom"  title="Stop"><i class="fa fa-th-large"></i></button>
-                </div>
-                 <div class="col-xs-2 text-center">
-                  <button title="Minimize" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom"  title="Stop"><i class="fa fa-minus-square"></i></button>
-                </div>
-             
-              <div class="clearfix"></div> 
-            </div>
-          
-          </div>
-      </div>
-      <div class="panel-seassion border-radius" style="background:#fb9b85;">
-          <div class="message-sent">
-          <div class="col-xs-8 text-center" style="padding:0px 2px">
-          <input type="text" class="form-control send-mesg" placeholder="Send Message">
-          </div>
-         
-           <div class="col-xs-2 text-center" style="padding:0px 2px">
-              <button class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
-            </div>
-            <div class="col-xs-2 text-center" style="padding:0px 2px">
-              <button class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-            </div>
-           <div class="clearfix"></div>
-          </div>
-          <div class="sent-message-block">
-          
-          <div class="panel-seassion">
-            <div class="chating-area" id="chatContainer">
-            </div>
-          </div>
-          
-          </div>
-      </div>
-      <div class="panel-seassion border-radius">
-          <div class="video-part-2">
-          <p class="video-header-2">Altanai</p>
-          <div class="block-section">
-              <video src="#" controls class="video-block" id="othersConferenceVideo"></video>
-            </div>
-            <div class="controler-video">
-            
-              <div class="col-xs-2 text-center">
-                <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="VIDEO" data-original-title="Video"><i class="fa fa-video-camera"></i></button>
-              </div>
-              <div class="col-xs-2 text-center border-right">
-                <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="Audio" data-original-title="Audio"><i class="fa fa-microphone"></i></button>
-              </div>
-               <div class="col-xs-2 text-center">
-                <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="Record" data-original-title="Record"><i class="fa fa-circle"></i></button>
-              </div>
-               <div class="col-xs-2 text-center">
-                <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="Stop Record" data-original-title="Stop Record">
-                <i class="fa fa-dot-circle-o"></i></button>
-              </div>
-               <div class="col-xs-2 text-center">
-                <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="SpanShot" data-original-title="SpanShot"><i class="fa fa-th-large"></i></button>
-              </div>
-               <div class="col-xs-2 text-center">
-                <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="Minimize" data-original-title="Minimize"><i class="fa fa-minus-square"></i></button>
-              </div>
-             
-              <div class="clearfix"></div>
-               
-              
-            </div>
-          
-          </div>
-      </div>
-      <div class="panel-seassion">
-        <div class="screen-share">
-        <div class="red-bg">
-            <div style="padding:0px 0px" class="col-xs-8 text-center">
-            <button class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Farook - Screen Share">Screen Share </button>
-            </div>
-           
-             <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                <button title="Share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                <i class="fa fa-external-link"></i></button>
-              </div>
-              <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                <i class="fa fa-desktop"></i></button>
-              </div>
-             <div class="clearfix"></div>
-            </div>
-        <div class="yellow-bg">
-            <div style="padding:0px 0px" class="col-xs-8 text-center">
-            <button class="form-control seceen-btn-2"  data-toggle="tooltip" data-placement="bottom" title="Samantha - Screen Share">Screen Share </button>
-            </div>
-           
-             <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                <button title="share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3">
-                <i class="fa fa-external-link"></i></button>
-              </div>
-              <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3"><i class="fa fa-desktop"></i></button>
-              </div>
-             <div class="clearfix"></div>
-            </div>
+        <!-- when no remote -->
+        <div id="singleVideoContainer" class="row" hidden>
+            <video name="myAloneVideo" autoplay="autoplay" muted="true" />
         </div>
-      </div>
-           
-      <div class="panel-seassion">
-          <div class="screen-share">
-              <div class="text-center">
-                  <div class="fileUpload btn bg-red" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
-                    <span>Upload A File</span>
-                    <input type="file" class="upload"  />
+
+        <!-- when remotes are connected -->
+        <div id="confVideoContainer">
+            <div class="panel-seassion border-radius">
+              <div class="video-part">
+
+                <div class="block-section">
+                  <video class="video-block" controls src="#" name="myConferenceVideo"></video>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="panel-seassion border-radius" style="background:#fb9b85;">
+              <div class="message-sent">
+              <div class="col-xs-8 text-center" style="padding:0px 2px">
+              <input type="text" class="form-control send-mesg" placeholder="Send Message">
+              </div>
+             
+               <div class="col-xs-2 text-center" style="padding:0px 2px">
+                  <button class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
+                </div>
+                <div class="col-xs-2 text-center" style="padding:0px 2px">
+                  <button class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                </div>
+               <div class="clearfix"></div>
+              </div>
+              <div class="sent-message-block">
+              
+              <div class="panel-seassion">
+                <div class="chating-area" id="chatContainer">
+                </div>
+              </div>
+              
+              </div>
+            </div>
+
+            <div class="panel-seassion border-radius">
+                  <div class="video-part-2">
+                  <div class="block-section">
+                      <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
+                    </div>
+                    <div class="controler-video">
+                    
+                      <div class="col-xs-2 text-center">
+                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="VIDEO" data-original-title="Video"><i class="fa fa-video-camera"></i></button>
+                      </div>
+                      <div class="col-xs-2 text-center border-right">
+                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="Audio" data-original-title="Audio"><i class="fa fa-microphone"></i></button>
+                      </div>
+                       <div class="col-xs-2 text-center">
+                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="Record" data-original-title="Record"><i class="fa fa-circle"></i></button>
+                      </div>
+                       <div class="col-xs-2 text-center">
+                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="Stop Record" data-original-title="Stop Record">
+                        <i class="fa fa-dot-circle-o"></i></button>
+                      </div>
+                       <div class="col-xs-2 text-center">
+                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="SpanShot" data-original-title="SpanShot"><i class="fa fa-th-large"></i></button>
+                      </div>
+                       <div class="col-xs-2 text-center">
+                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3" title="Minimize" data-original-title="Minimize"><i class="fa fa-minus-square"></i></button>
+                      </div>
+                     
+                      <div class="clearfix"></div>
+                       
+                      
+                    </div>
+                  
                   </div>
+            </div>
+          
+            <div class="panel-seassion">
+                <div class="screen-share">
+                    <div class="red-bg">
+                    <div style="padding:0px 0px" class="col-xs-8 text-center">
+                    <button class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Farook - Screen Share">Screen Share </button>
+                    </div>
+                   
+                     <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                        <button title="Share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                        <i class="fa fa-external-link"></i></button>
+                      </div>
+                      <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                        <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                        <i class="fa fa-desktop"></i></button>
+                      </div>
+                     <div class="clearfix"></div>
+                    </div>
+                    <div class="yellow-bg">
+                    <div style="padding:0px 0px" class="col-xs-8 text-center">
+                    <button class="form-control seceen-btn-2"  data-toggle="tooltip" data-placement="bottom" title="Samantha - Screen Share">Screen Share </button>
+                    </div>
+                   
+                     <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                        <button title="share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3">
+                        <i class="fa fa-external-link"></i></button>
+                      </div>
+                      <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                        <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3"><i class="fa fa-desktop"></i></button>
+                      </div>
+                     <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="panel-seassion">
+              <div class="screen-share">
+                  <div class="text-center">
+                      <div class="fileUpload btn bg-red" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
+                        <span>Upload A File</span>
+                        <input type="file" class="upload"  />
+                      </div>
+                   </div>
                </div>
-           </div>
-      </div>
+            </div>
            
-    
-          <div class="border-radius">
-            <div class="red-bg-2">
-              <div style="padding:0px 0px" class="col-xs-6">
-              <p class="text-center" style="color:#fff;margin:0;line-height:25px;font-weight:bold;">By Farook</p>
-              </div>
-             
-              <div class="col-xs-2 text-right">
-                  <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                  <i class="fa fa-external-link"></i></button>
-              </div>
-              
-              <div class="col-xs-1 text-left" style="padding:0;">
-                  <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                  <i class="fa fa-minus-square"></i></button>
-              </div>
-              
-              <div class="col-xs-1 text-right" style="padding:0;">
-                  <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                  <i class="fa fa-close"></i></button>
-              </div>
-              
-              <div class="col-xs-2 text-center" >
-                  <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                  <i class="fa fa-question"></i></button>
-              </div>  
+            <div class="border-radius">
+                <div class="red-bg-2">
+                  <div style="padding:0px 0px" class="col-xs-6">
+                  <p class="text-center" style="color:#fff;margin:0;line-height:25px;font-weight:bold;">By Farook</p>
+                  </div>
+                 
+                  <div class="col-xs-2 text-right">
+                      <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                      <i class="fa fa-external-link"></i></button>
+                  </div>
+                  
+                  <div class="col-xs-1 text-left" style="padding:0;">
+                      <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                      <i class="fa fa-minus-square"></i></button>
+                  </div>
+                  
+                  <div class="col-xs-1 text-right" style="padding:0;">
+                      <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                      <i class="fa fa-close"></i></button>
+                  </div>
+                  
+                  <div class="col-xs-2 text-center" >
+                      <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                      <i class="fa fa-question"></i></button>
+                  </div>  
 
-              <div class="clearfix"></div>
-            </div>
-            
-            <div class="table-section" id="fileListingRow">
-            </div>
-          </div>
-           
-           
-          <div class="">
-           <div class="yellow-bg-2">
-        
-          <div style="padding:0px 0px" class="col-xs-6">
-            <p class="text-center" style="color:#000;margin:0;line-height:25px;font-weight:bold;">By Altanai</p>
-          </div>
-         
-          <div class="col-xs-2 text-right">
-            <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-            <i class="fa fa-external-link"></i></button>
-          </div>
-          <div class="col-xs-1 text-left" style="padding:0;">
-            <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-            <i class="fa fa-minus-square" style="color:#000;"></i></button>
-          </div>
-          <div class="col-xs-1 text-right" style="padding:0;">
-            <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-            <i class="fa fa-close" style="color:#000;"></i></button>
-          </div>
-          <div class="col-xs-2 text-center" >
-            <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-            <i class="fa fa-question" style="color:#000;"></i></button>
-          </div>
-   
-          <div class="clearfix"></div>
-          </div>
-          
-          <div class="table-section">
-          </div>
-            
-          </div>
-           
-          <div class="panel-seassion">
-              <div class="icon-markup-block"> 
-                  <div style="padding-right:0px;" class="col-xs-2 text-center">
-                    <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/13.png"></button>
-                  </div>
-                  <div class="col-xs-2 text-center" style="padding:0px;">
-                    <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
-                  </div>
-                  <div class="col-xs-2 text-center" style="padding:0px;">
-                    <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
-                  </div>
-                  <div class="col-xs-2 text-center" style="padding:0px;">
-                    <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
-                  </div>
-                  <div class="col-xs-2 text-center" style="padding:0px;">
-                    <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
-                  </div>
-                  <div class="col-xs-2 text-center" style="padding:0px;">
-                    <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
-                  </div>
                   <div class="clearfix"></div>
-              </div>
-        
-          </div>
+                </div> 
+                <div class="table-section" id="fileListingRow">
+                </div>
+            </div>
            
-          <div style="padding-top:0px;" class="panel-seassion">
-              <div class="icon-markup-block">           
-                <div class="clearfix"></div>
-              </div>
-          </div>
+            <div class="">
+                <div class="yellow-bg-2">
         
+                    <div style="padding:0px 0px" class="col-xs-6">
+                        <p class="text-center" style="color:#000;margin:0;line-height:25px;font-weight:bold;">By Altanai</p>
+                    </div>
+                     
+                    <div class="col-xs-2 text-right">
+                        <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                        <i class="fa fa-external-link"></i></button>
+                    </div>
+                      
+                    <div class="col-xs-1 text-left" style="padding:0;">
+                        <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                        <i class="fa fa-minus-square" style="color:#000;"></i></button>
+                    </div>
+                    
+                    <div class="col-xs-1 text-right" style="padding:0;">
+                        <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                        <i class="fa fa-close" style="color:#000;"></i></button>
+                    </div>
+                    
+                    <div class="col-xs-2 text-center" >
+                        <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                        <i class="fa fa-question" style="color:#000;"></i></button>
+                    </div>
+               
+                    <div class="clearfix"></div>
+                </div>
+          
+                <div class="table-section">
+                </div>
+            
+            </div>
+           
+            <div class="panel-seassion">
+                <div class="icon-markup-block"> 
+                      <div style="padding-right:0px;" class="col-xs-2 text-center">
+                        <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/13.png"></button>
+                      </div>
+                      <div class="col-xs-2 text-center" style="padding:0px;">
+                        <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
+                      </div>
+                      <div class="col-xs-2 text-center" style="padding:0px;">
+                        <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
+                      </div>
+                      <div class="col-xs-2 text-center" style="padding:0px;">
+                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
+                      </div>
+                      <div class="col-xs-2 text-center" style="padding:0px;">
+                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
+                      </div>
+                      <div class="col-xs-2 text-center" style="padding:0px;">
+                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
+                      </div>
+                      <div class="clearfix"></div>
+                </div>
+            </div>
+           
+            <div style="padding-top:0px;" class="panel-seassion">
+                <div class="icon-markup-block">           
+                    <div class="clearfix"></div>
+                </div>
+            </div>
         </div>
-          </div>
-          </div>
+                
+        </div>
+    </div>
+    </div>
             
         </div>
       </div>
 </section>
 
 
-<script src="property.js"></script>
+<script src="../property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-
 
 
 <!-- jQuery Version 1.11.1 --> 
@@ -601,27 +579,35 @@ $('document').ready(function(){
             }
     };
     
-
     var widgets={
-        debug      : false,
+        debug      : true,
+        reconnect   :{
+                        active: true,
+                        button:{
+                            id: "reconnectBtn",
+                            class:"btn btn-success glyphicon glyphicon-refresh topPanelButton",
+                            html:"Reconnect",
+                            resyncfiles:false
+                        }
+                    },
         mute    :{
                     active: true,
                     audio   :{
                             active: false,
                             button:{
-                                class_on:"pull-right glyphicon glyphicon-volume-up btn btn-default mediaButton",
-                                html_on:"",
-                                class_off:"pull-right glyphicon glyphicon-volume-off btn btn-danger mediaButton",
-                                html_off:""
+                                class_on:"pull-right btn btn-modify-video2 videoButtonClass mediaButton",
+                                html_on:'<i class="fa fa-microphone"></i>',
+                                class_off:"pull-right btn btn-modify-video2 videoButtonClass mediaButton",
+                                html_off:'<i class="fa fa-microphone"></i>'
                             }
                         },
                     video : {
                             active: true,
                             button:{
-                                class_on:"pull-right glyphicon glyphicon-eye-open btn btn-default videoButtonClass mediaButton",
-                                html_on:"",
-                                class_off:"pull-right glyphicon glyphicon-eye-close  btn btn-danger videoButtonClass mediaButton",
-                                html_off:""
+                                class_on:"pull-right btn btn-modify-video2 videoButtonClass mediaButton",
+                                html_on:'<i class="fa fa-microphone"></i>',
+                                class_off:"pull-right btn btn-modify-video2 videoButtonClass mediaButton",
+                                html_off:'<i class="fa fa-video-camera"></i>'
                             }
                         }
                 }
