@@ -159,7 +159,9 @@ td span .fa {
 }
 .btn.btn-info.recannect:hover span {background:#03F;}
 /*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-END---------*/
-
+video{
+    width: 100%!important; 
+}
 </style>
 <body class="bodybg">
 
@@ -185,7 +187,7 @@ td span .fa {
   <div class="container-fluid">
     <div class="row">
       <div  class="col-md-9" style="padding-right:0px;">
-        <div id="fileSharingRow">
+        <div id="fileSharingRow" style="margin: 10px;">
 
           <!--
             <div class="col-xs-6" style="padding:0;">
@@ -214,247 +216,253 @@ td span .fa {
       </div>
       <div class="col-md-3" style="padding-right:0px;">
       <div class="right-section">
-      <div class="main-block">
-      <div class="panel-seassion">
-          <div class="col-xs-6">
-            <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
-          </div>
-          <div class="col-xs-6">
-            <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
-          </div>
-          <div class="col-xs-6">
-            <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
-          </div>
-          <div class="col-xs-6">
-            <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
-          </div>
-          <div class="col-xs-6">
-            <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
-          </div>
-          <div class="col-xs-6">
-            <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
-          </div>
+            <div class="main-block">
 
-          <div class="col-md-12" style="margin-bottom:10px">
-            <button id="reconnectBtn" class="btn btn-info form-control recannect" data-placement="left" data-toggle="tooltip" title="ONLY for use if session gets disconnected">
-                <span><i class="fa fa-link" aria-hidden="true"></i></span>Reconnect
-            </button>
-          </div>
-          <div class="clearfix"></div>
-          </div>
-
-      <div class="panel-seassion">
-          <div class="bg-ssion">
-              <div class="col-xs-6 text-center"><p class="seassion-text">Session</p></div>
-         
-              <div class="col-xs-3 text-center">
-                <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
-              </div>
-
-              <div class="col-xs-3 text-center border-right">
-                <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Stop"><i class="fa fa-circle"></i></button>
-              </div>
-
-              <div class="clearfix"></div>
-          </div>
-      </div>
-
-        <!-- when no remote -->
-        <div id="singleVideoContainer" class="row" hidden>
-            <video name="myAloneVideo" autoplay="autoplay" muted="true" />
-        </div>
-
-        <!-- when remotes are connected -->
-        <div id="confVideoContainer">
-            <div class="panel-seassion border-radius">
-              <div class="video-part">
-
-                <div class="block-section">
-                  <video class="video-block" controls src="#" name="myConferenceVideo"></video>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="panel-seassion border-radius" style="background:#fb9b85;">
-                <div class="message-sent">
-                    <div id="chatInputText" class="col-xs-8 text-center" style="padding:0px 2px">
-                        <input type="text" class="form-control send-mesg" placeholder="Send Message">
-                    </div>
-             
-                    <div id="chatSendButton" class="col-xs-2 text-center" style="padding:0px 2px">
-                        <button class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
-                    </div>
-                
-                    <div class="col-xs-2 text-center" style="padding:0px 2px">
-                        <button class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                    </div>
-                    
-                    <div class="clearfix"></div>
-                </div>
-              <div class="sent-message-block">
-              
-              <div class="panel-seassion">
-                <div class="chating-area" id="chatContainer">
-                </div>
-              </div>
-              
-              </div>
-            </div>
-
-            <div class="panel-seassion border-radius">
-                <div class="video-part-2">
-                    <div class="block-section">
-                        <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
-                    </div>
-                </div>
-            </div>
-          
-            <div class="panel-seassion">
-                <div class="screen-share">
-                    <div class="red-bg">
-                        <div style="padding:0px 0px" class="col-xs-8 text-center">
-                        <button class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Farook - Screen Share">Screen Share </button>
-                    </div>
-                   
-                     <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                        <button title="Share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                        <i class="fa fa-external-link"></i></button>
-                      </div>
-                      <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                        <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                        <i class="fa fa-desktop"></i></button>
-                      </div>
-                     <div class="clearfix"></div>
-                    </div>
-                    <div class="yellow-bg">
-                    <div style="padding:0px 0px" class="col-xs-8 text-center">
-                    <button class="form-control seceen-btn-2"  data-toggle="tooltip" data-placement="bottom" title="Samantha - Screen Share">Screen Share </button>
-                    </div>
-                   
-                     <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                        <button title="share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3">
-                        <i class="fa fa-external-link"></i></button>
-                      </div>
-                      <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                        <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3"><i class="fa fa-desktop"></i></button>
-                      </div>
-                     <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="panel-seassion">
-              <div class="screen-share">
-                  <div class="text-center">
-                      <div class="fileUpload btn bg-red" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
-                        <span>Upload A File</span>
-                        <input type="file" class="upload"  />
-                      </div>
-                   </div>
-               </div>
-            </div>
-           
-            <div class="border-radius">
-                <div class="red-bg-2">
-                  <div style="padding:0px 0px" class="col-xs-6">
-                  <p class="text-center" style="color:#fff;margin:0;line-height:25px;font-weight:bold;">By Farook</p>
+                <!-- Timer and monitization -->
+                <div class="panel-seassion">
+                  <div class="col-xs-6">
+                    <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
                   </div>
-                 
-                  <div class="col-xs-2 text-right">
-                      <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                      <i class="fa fa-external-link"></i></button>
+                  <div class="col-xs-6">
+                    <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
                   </div>
-                  
-                  <div class="col-xs-1 text-left" style="padding:0;">
-                      <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                      <i class="fa fa-minus-square"></i></button>
+                  <div class="col-xs-6">
+                    <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
                   </div>
-                  
-                  <div class="col-xs-1 text-right" style="padding:0;">
-                      <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                      <i class="fa fa-close"></i></button>
+                  <div class="col-xs-6">
+                    <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
                   </div>
-                  
-                  <div class="col-xs-2 text-center" >
-                      <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                      <i class="fa fa-question"></i></button>
-                  </div>  
+                  <div class="col-xs-6">
+                    <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
+                  </div>
+                  <div class="col-xs-6">
+                    <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
+                  </div>
+
+                  <div class="col-md-12" style="margin-bottom:10px">
+                    <button id="reconnectBtn" class="btn btn-info form-control recannect" data-placement="left" data-toggle="tooltip" title="ONLY for use if session gets disconnected">
+                        <span><i class="fa fa-link" aria-hidden="true"></i></span>Reconnect
+                    </button>
+                  </div>
 
                   <div class="clearfix"></div>
-                </div> 
-                <div class="table-section" id="fileListingRow">
                 </div>
-            </div>
-           
-            <div class="">
-                <div class="yellow-bg-2">
-        
-                    <div style="padding:0px 0px" class="col-xs-6">
-                        <p class="text-center" style="color:#000;margin:0;line-height:25px;font-weight:bold;">By Altanai</p>
-                    </div>
-                     
-                    <div class="col-xs-2 text-right">
-                        <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                        <i class="fa fa-external-link"></i></button>
-                    </div>
-                      
-                    <div class="col-xs-1 text-left" style="padding:0;">
-                        <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                        <i class="fa fa-minus-square" style="color:#000;"></i></button>
-                    </div>
-                    
-                    <div class="col-xs-1 text-right" style="padding:0;">
-                        <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                        <i class="fa fa-close" style="color:#000;"></i></button>
-                    </div>
-                    
-                    <div class="col-xs-2 text-center" >
-                        <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                        <i class="fa fa-question" style="color:#000;"></i></button>
-                    </div>
-               
-                    <div class="clearfix"></div>
-                </div>
-          
-                <div class="table-section">
-                </div>
-            
-            </div>
-           
-            <div class="panel-seassion">
-                <div class="icon-markup-block"> 
-                      <div style="padding-right:0px;" class="col-xs-2 text-center">
-                        <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/13.png"></button>
+
+                <!-- Recording -->
+                <div class="panel-seassion">
+                  <div class="bg-ssion">
+                      <div class="col-xs-6 text-center"><p class="seassion-text">Session</p></div>
+                 
+                      <div class="col-xs-3 text-center">
+                        <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
                       </div>
-                      <div class="col-xs-2 text-center" style="padding:0px;">
-                        <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
+
+                      <div class="col-xs-3 text-center border-right">
+                        <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Stop"><i class="fa fa-circle"></i></button>
                       </div>
-                      <div class="col-xs-2 text-center" style="padding:0px;">
-                        <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
-                      </div>
-                      <div class="col-xs-2 text-center" style="padding:0px;">
-                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
-                      </div>
-                      <div class="col-xs-2 text-center" style="padding:0px;">
-                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
-                      </div>
-                      <div class="col-xs-2 text-center" style="padding:0px;">
-                        <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
-                      </div>
+
                       <div class="clearfix"></div>
+                  </div>
                 </div>
-            </div>
-           
-            <div style="padding-top:0px;" class="panel-seassion">
-                <div class="icon-markup-block">           
-                    <div class="clearfix"></div>
+
+                <!-- when no remote -->
+                <div id="singleVideoContainer" class="row" hidden>
+                    <video name="myAloneVideo" autoplay="autoplay" muted="true" />
                 </div>
-            </div>
-        </div>
+
+                <!-- when remotes are connected -->
+                <div id="confVideoContainer">
+
+                    <div class="panel-seassion border-radius">
+                      <div class="video-part">
+
+                        <div class="block-section">
+                          <video class="video-block" controls src="#" name="myConferenceVideo"></video>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="panel-seassion border-radius" style="background:#fb9b85;">
+                        <div class="message-sent">
+                            <div class="col-xs-8 text-center" style="padding:0px 2px">
+                                <input id="chatInputText" type="text" class="form-control send-mesg" placeholder="Send Message">
+                            </div>
+                     
+                            <div class="col-xs-2 text-center" style="padding:0px 2px">
+                                <button id="chatSendButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
+                            </div>
+                        
+                            <div class="col-xs-2 text-center" style="padding:0px 2px">
+                                <button class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                            </div>
+                            
+                            <div class="clearfix"></div>
+                        </div>
+                      <div class="sent-message-block">
+                      
+                      <div class="panel-seassion">
+                          <div class="chating-area" id="chatContainer"> </div>
+                      </div>
+                      
+                      </div>
+                    </div>
+
+                    <div class="panel-seassion border-radius">
+                        <div class="video-part-2">
+                            <div class="block-section">
+                                <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <!-- screenshare -->
+                    <div class="panel-seassion">
+                        <div class="screen-share">
+                            <div class="red-bg">
+                                <div style="padding:0px 0px" class="col-xs-8 text-center">
+                                <button class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Farook - Screen Share">Screen Share </button>
+                            </div>
+                           
+                             <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                                <button title="Share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                <i class="fa fa-external-link"></i></button>
+                              </div>
+                              <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                                <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                <i class="fa fa-desktop"></i></button>
+                              </div>
+                             <div class="clearfix"></div>
+                            </div>
+                            <div class="yellow-bg">
+                            <div style="padding:0px 0px" class="col-xs-8 text-center">
+                            <button class="form-control seceen-btn-2"  data-toggle="tooltip" data-placement="bottom" title="Samantha - Screen Share">Screen Share </button>
+                            </div>
+                           
+                             <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                                <button title="share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3">
+                                <i class="fa fa-external-link"></i></button>
+                              </div>
+                              <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                                <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3"><i class="fa fa-desktop"></i></button>
+                              </div>
+                             <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <!-- fileshare -->
+                    <div class="panel-seassion">
+                      <div class="screen-share">
+                          <div class="text-center">
+                              <div class="fileUpload btn bg-red" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
+                                <span>Upload A File</span>
+                                <input id="fileshareBtn" type="file" class="upload"  />
+                              </div>
+                           </div>
+                       </div>
+                    </div>
+                   
+                    <div class="border-radius">
+                        <div class="red-bg-2">
+                          <div style="padding:0px 0px" class="col-xs-6">
+                          <p class="text-center" style="color:#fff;margin:0;line-height:25px;font-weight:bold;">By Farook</p>
+                          </div>
+                         
+                          <div class="col-xs-2 text-right">
+                              <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                              <i class="fa fa-external-link"></i></button>
+                          </div>
+                          
+                          <div class="col-xs-1 text-left" style="padding:0;">
+                              <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                              <i class="fa fa-minus-square"></i></button>
+                          </div>
+                          
+                          <div class="col-xs-1 text-right" style="padding:0;">
+                              <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                              <i class="fa fa-close"></i></button>
+                          </div>
+                          
+                          <div class="col-xs-2 text-center" >
+                              <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                              <i class="fa fa-question"></i></button>
+                          </div>  
+
+                          <div class="clearfix"></div>
+                        </div> 
+                        <div class="table-section" id="fileListingRow">
+                        </div>
+                    </div>
+                   
+                    <div class="">
+                        <div class="yellow-bg-2">
                 
-        </div>
-    </div>
+                            <div style="padding:0px 0px" class="col-xs-6">
+                                <p class="text-center" style="color:#000;margin:0;line-height:25px;font-weight:bold;">By Altanai</p>
+                            </div>
+                             
+                            <div class="col-xs-2 text-right">
+                                <button title="Maxsimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                <i class="fa fa-external-link"></i></button>
+                            </div>
+                              
+                            <div class="col-xs-1 text-left" style="padding:0;">
+                                <button title="Minimize" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                <i class="fa fa-minus-square" style="color:#000;"></i></button>
+                            </div>
+                            
+                            <div class="col-xs-1 text-right" style="padding:0;">
+                                <button title="close" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                <i class="fa fa-close" style="color:#000;"></i></button>
+                            </div>
+                            
+                            <div class="col-xs-2 text-center" >
+                                <button title="help" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                <i class="fa fa-question" style="color:#000;"></i></button>
+                            </div>
+                       
+                            <div class="clearfix"></div>
+                        </div>
+                  
+                        <div class="table-section">
+                        </div>
+                    
+                    </div>
+                   
+                    <div class="panel-seassion">
+                        <div class="icon-markup-block"> 
+                              <div style="padding-right:0px;" class="col-xs-2 text-center">
+                                <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/13.png"></button>
+                              </div>
+                              <div class="col-xs-2 text-center" style="padding:0px;">
+                                <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
+                              </div>
+                              <div class="col-xs-2 text-center" style="padding:0px;">
+                                <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
+                              </div>
+                              <div class="col-xs-2 text-center" style="padding:0px;">
+                                <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
+                              </div>
+                              <div class="col-xs-2 text-center" style="padding:0px;">
+                                <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
+                              </div>
+                              <div class="col-xs-2 text-center" style="padding:0px;">
+                                <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
+                              </div>
+                              <div class="clearfix"></div>
+                        </div>
+                    </div>
+                   
+                    <div style="padding-top:0px;" class="panel-seassion">
+                        <div class="icon-markup-block">           
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                    
+          </div>
+      </div>
     </div>
             
         </div>
@@ -558,7 +566,7 @@ $('document').ready(function(){
     };
     
     var widgets={
-        debug      : true,
+        debug      : false,
         reconnect   :{
                         active: true,
                         button:{
@@ -584,10 +592,15 @@ $('document').ready(function(){
                     },
         chat    :{
                         active: true,
-                        chatContainer: "chatContainer",
+                        container: {
+                            id: "chatContainer"
+                        },
                         inputBox:{
                             text_id:"chatInputText",
                             sendbutton_id:"chatSendButton"
+                        },
+                        chatBox:{
+                            id: "chatBoard"
                         },
                         button:{
                             class_on:"btn btn-warning glyphicon glyphicon-font topPanelButton",
@@ -596,20 +609,20 @@ $('document').ready(function(){
                             html_off:"Chat"
                         }
                 },
-        fileShare   :{
-                        active : true,
-                        fileShareContainer : "fileSharingRow",
-                        fileListContainer : "fileListingRow",
-                        button:{
-                            id: "fileshareBtn",
-                            class:"btn btn-success glyphicon glyphicon-file topPanelButton",
-                            html:"File"
-                        },
-                        props:{
-                            fileShare:"divided",
-                            fileList:"divided"
-                        }
-                    },
+        fileShare :{
+                      active : true,
+                      fileShareContainer : "fileSharingRow",
+                      fileListContainer : "fileListingRow",
+                      button:{
+                          id: "fileshareBtn",
+                          class:"btn btn-success glyphicon glyphicon-file topPanelButton",
+                          html:"File"
+                      },
+                      props:{
+                          fileShare:"divided",
+                          fileList:"divided"
+                      }
+                  },
         mute    :{
                     active: true,
                     audio   :{
