@@ -3,30 +3,46 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>village expart</title>
-    <link href="css/mainstyle.css" rel="stylesheet">
-    <meta name="google-site-verification" content="8NqEkVsX8mkRCn13Qov4K0njgF0T6t97_a-NZNIXkpE" />
-    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jpcjjkpbiepbmhklnjoahacppaemhmpd">
     <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="altanai">
+    <link href="css/mainstyle.css" rel="stylesheet">
+    <title>WebRTC Call</title>
+    <meta name="google-site-verification" content="8NqEkVsX8mkRCn13Qov4K0njgF0T6t97_a-NZNIXkpE" />
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jpcjjkpbiepbmhklnjoahacppaemhmpd">
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.css">
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
-    
 </head>
 <style>
-.over-lap {display: block !important}
+.bodybg{
+  background:url(images/background.jpg) 100% 100%;
+  background-size:cover;
+  font-family:Arial, Helvetica, sans-serif;
+  background-attachment:fixed;
+  overflow:hidden;
+}
+
+.over-lap {
+  display: block !important
+}
 
 /*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-START---------*/
 
-.right-section{background:#fff;border-radius:30px;padding:20px 0px 0px;border:1px solid #F00;margin-top:20px;position:relative}
+.right-section{
+  background:#fff;
+  border-radius:30px;
+  padding:20px 0px 0px;
+  border:1px solid #F00;
+  margin-top:20px;
+  position:relative;
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
 .main-block{width:95%;margin:auto;}
 .time-function {
-    background: #000 none repeat scroll 0 0;
+    background: #b2b2b2 none repeat scroll 0 0;
     border-radius: 5px;
-    color: #fff;
     font-family: Helvetica;
     font-size: 12px;
     letter-spacing: 1px;
@@ -41,7 +57,7 @@
 .seassion-text{color:#000;font-weight:bold;margin:0px;line-height:30px;font-size:18px}
 .arrow {border-radius: 50%;display: inline-block;height: auto;left: -20px;position: absolute;text-align: center;top: 0;font-size: 22px;color:#F00;}
 .video-block{width:100%;}
-.video-part{background: #e61339;}
+.video-part{background: #ccccff;}
 .video-header{background:#e61339;color:#ffff00;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
 .controler-video {margin: 0;padding: 3px 0 9px;position:relative;}
 .btn-modify-video2.focus, .btn-modify-video2:focus, .btn-modify-video2:hover {color: #eaff00;}
@@ -51,7 +67,7 @@
 .send-mesg:focus{box-shadow:0px;}
 .send-mesg::-moz-placeholder{color:#FFF;}
 .online-pro-pict img {height: auto;width: 100%;}
-.sent-message-block{margin:3px 0px;height:300px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable;}
+.sent-message-block{margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background: #b2b2b2;}
 .online-pro-pict {border: 1px solid #CCC;border-radius: 50%;margin: 7px;overflow: hidden;}
 .online-chat-text span, .online-chat-text-reply span {color:#333;display: inherit;font-size: 10px;margin-top: 5px;}
 .online-chat-text {background:#fdd1c6;padding:5px;color:#000;margin:10px 0px 0px 0px;font-family:Helvetica;font-size:13px;font-weight:bold;
@@ -59,8 +75,8 @@ border-radius:5px}
 .online-chat-text-reply {background:#c44b31;padding:5px;color:#fff;margin:10px 0px 0px 0px;font-family:Helvetica;font-size:13px;font-weight:bold;
 border-radius:5px}
 .chat-text-area {margin: 5px 0px;}
-.chating-area {background: #fb9b85;overflow-x: scroll;}
-.video-part-2{background:#FF0;}
+.chating-area {overflow-y: scroll; overflow-x: hidden;}
+.video-part-2{background:#7030a0;}
 .video-header-2{background:#FF0;color:#000;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
 .btn-modify-video-3.focus, .btn-modify-video-3:focus, .btn-modify-video-3:hover {color:#FF0000;}
 .btn-modify-video-3{background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #000;font-size: 18px;}
@@ -95,9 +111,7 @@ border-radius:5px}
   border: 1px solid #fff;
 }
 .block-two {
-  
   padding-top: 0px;
-  
 }
 .inner-block {
   background: #fff;
@@ -129,6 +143,12 @@ td span .fa {
     opacity: 0;
     filter: alpha(opacity=0);
 }
+.fileViewing1Box{
+    color: #968787;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 .bg-red{background:#ff6600;color:#fff;}
 .table-section {
   font-size:12px;}
@@ -157,11 +177,12 @@ td span .fa {
   
 }
 .btn.btn-info.recannect:hover span {background:#03F;}
-/*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-END---------*/
+
 video{
     width: 100%!important; 
 }
 </style>
+
 <body class="bodybg">
 
   <div class="container-fluid header-part">
@@ -274,7 +295,7 @@ video{
                   <div id="confVideoContainer">
 
                       <div class="panel-seassion border-radius">
-                        <div>
+                        <div class="video-part">
 
                           <div class="block-section">
                             <video class="video-block" controls src="#" name="myConferenceVideo"></video>
@@ -283,7 +304,7 @@ video{
                         </div>
                       </div>
 
-                      <div class="panel-seassion border-radius" style="background:#fb9b85;">
+                      <div class="panel-seassion border-radius">
                           <div class="message-sent">
                               <div class="col-xs-8 text-center" style="padding:0px 2px">
                                   <input id="chatInputText" type="text" class="form-control send-mesg" placeholder="Send Message">
@@ -299,15 +320,17 @@ video{
                               
                               <div class="clearfix"></div>
                           </div>
+
                         <div class="sent-message-block" id="chatContainer">
                           <div class="panel-seassion">
                               <div class="chating-area" id="chatBoard"> </div>
+                              <div id="whoTyping"></div>
                           </div>
                         </div>
                       </div>
 
                       <div class="panel-seassion border-radius">
-                          <div>
+                          <div class="video-part-2">
                               <div class="block-section">
                                   <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
                               </div>
@@ -360,15 +383,14 @@ video{
                             <div class="text-center">
                                 <div class="fileUpload btn bg-red" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
                                   <span>Upload A File</span>
-                                  <input id="fileshareBtn" type="file" class="upload"  />
+                                  <input id="fileshareBtn" class="upload"  />
                                 </div>
                              </div>
                          </div>
                       </div>
                      
                       <div class="border-radius">
-                          <div class="table-section" id="fileListingRow">
-                          </div>
+                          <div class="table-section" id="fileListingRow"></div>
                       </div>
                      
                       <div class="panel-seassion">
@@ -418,6 +440,7 @@ video{
 <script src="../property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
+
 
 <!-- jQuery Version 1.11.1 --> 
 <script>
