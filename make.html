@@ -24,54 +24,88 @@
             <div class="col-md-5 container">
                 <div class="row">
                     <h4> URL to be Shared </h4>
-
-                    <div style="display: inline-flex;" style=" float: left;padding-left: 100px; padding-bottom: 10px;">
-                        <div>Listen-In</div> 
-                        <input class="form-control" type="text" id="inspectorlink" style="width:600px" readonly><br/>
-                    </div>
-                    </br>
-
-                    <div style="display: inline-flex;" style=" float: left;padding-left: 100px; padding-bottom: 10px;">
-                        <div>Partner</div> 
-                        <div class="display: inline-flex;">
-                            <div class="row">
-                                <input class="form-control" type="text" style="width:500px" id="partnername">
-                                <button class="btn" id="btnAddPartner" onclick="AddPartner()">Add</button><br/>
-                            </div>
-                            <div class="row">
-                                <input class="form-control" type="text" style="width:500px" id="partnerlink" readonly>
-                                <button class="btn" id="btnEmailPartner" onclick="EmailPartnerLink()">Email</button>
-                                <button class="btn" id="btnEmailPartner" onclick="ClipboardCopyPartnerLink()">Copy to Clipboard</button>
-                                <button class="btn" id="btnEmailPartner" onclick="sharePartnerLink()">Share</button>
-                            </div>
+                    <!-- style="display: inline-flex;"-->
+                    <div style=" float: left;padding-left: 100px; padding-bottom: 10px;">
+                        
+                        <div class="row">
+                            <p>Session Name </p> 
+                            <input class="form-control" type="text" id="sessionNameMakeSession" style="width:600px">
                         </div>
 
-                    </div>                         
+                        <div class="row">
+                            <p>App Type </p> 
+                            <input class="form-control" type="text" id="appnameMakeSession" style="width:600px" value="webrtcwebcall">
+                        </div>
+                        
+                        <div class="row">
+                            <p>Role </p> 
+                            <input class="form-control" type="text" id="roleMakeSession" style="width:600px" value="peer">
+                        </div>
+
+                        <div class="row">
+                            <p>User Name </p> 
+                            <input class="form-control" type="text" id="userNameMakeSession" style="width:600px">
+                        </div>
+
+                        <div class="row">
+                            <div class="row">
+                                <h4>Outgoing</h4>
+                                <input type="checkbox" id="inAudio" checked data-toggle="toggle" data-on="Audio On" data-off="Audio Off" data-onstyle="success" data-offstyle="danger">
+                                <input type="checkbox" id="inVideo" checked data-toggle="toggle" data-on="Video On" data-off="Video Off" data-onstyle="success" data-offstyle="danger">
+                                <input type="checkbox" id="inData" checked data-toggle="toggle" data-on="Data On" data-off="Data Off" data-onstyle="success" data-offstyle="danger">
+                                <input type="checkbox" id="inScreen" checked data-toggle="toggle" data-on="Screen On" data-off="Screen Off" data-onstyle="success" data-offstyle="danger">
+                            </div>
+
+                            <div class="row">
+                                <h4>Incoming</h4>
+                                <input type="checkbox" id="outAudio" checked data-toggle="toggle" data-on="Audio On" data-off="Audio Off" data-onstyle="success" data-offstyle="danger">
+                                <input type="checkbox" id="outVideo" checked data-toggle="toggle" data-on="Video On" data-off="Video Off" data-onstyle="success" data-offstyle="danger">
+                                <input type="checkbox" id="outData" checked data-toggle="toggle" data-on="Data On" data-off="Data Off" data-onstyle="success" data-offstyle="danger">
+                                <input type="checkbox" id="outScreen" checked data-toggle="toggle" data-on="Screen On" data-off="Screen Off" data-onstyle="success" data-offstyle="danger">                   
+                            </div> 
+                        </div>
+
+                        <br/><br/> 
+                        <button class="col-md-3 btn" id="btnAddPartner" onclick="createSession()">Create</button>
+                    </div>                      
                 </div>
+
+                <div style="display: inline-flex;" style=" float: left;padding-left: 100px; padding-bottom: 10px;">
+                    <p>Listen-In</p> 
+                    <input class="form-control" type="text" id="inspectorlink" style="width:600px" readonly><br/>
+                </div>
+
+                </br></br>
 
                 <div class="row">
                     <h4>Session Information </h4>
                     Channel <input class="form-control" type="text" id="channelname" readonly> <br/>
                     User Id <input class="form-control" type="text" id="userid" readonly> <br/>
+                    sessionlink <input class="form-control" type="text" id="sessionlink" readonly> <br/>
+                    <button id="sessionlinkGo">Go</button>
                 </div>
 
-                <div class="row">
-                    <div class="row">
-                        <h4>Outgoing</h4>
-                        <input type="checkbox" id="inAudio" checked data-toggle="toggle" data-on="Audio On" data-off="Audio Off" data-onstyle="success" data-offstyle="danger">
-                        <input type="checkbox" id="inVideo" checked data-toggle="toggle" data-on="Video On" data-off="Video Off" data-onstyle="success" data-offstyle="danger">
-                        <input type="checkbox" id="inData" checked data-toggle="toggle" data-on="Data On" data-off="Data Off" data-onstyle="success" data-offstyle="danger">
-                        <input type="checkbox" id="inScreen" checked data-toggle="toggle" data-on="Screen On" data-off="Screen Off" data-onstyle="success" data-offstyle="danger">
+                </br></br>
+
+                <div style="display: inline-flex;" style=" float: left;padding-left: 100px; padding-bottom: 10px;">
+                    <h4> Adding Partners </h4>
+
+                    <p>Partner</p> 
+                    <div class="display: inline-flex;">
+                        <div class="row">
+                            <input class="col-md-5 form-control" type="text" style="width:500px" id="partnername">
+                            <button class="col-md-3 btn" id="btnAddPartner" onclick="AddPartner()">Add</button><br/>
+                        </div>
+                        </br></br>
+                        <div class="row">
+                            <input class="form-control" type="text" style="width:500px" id="partnerlink" readonly>
+                            <button class="btn" id="btnEmailPartner" onclick="EmailPartnerLink()">Email</button>
+                            <button class="btn" id="btnEmailPartner" onclick="ClipboardCopyPartnerLink()">Copy to Clipboard</button>
+                            <button class="btn" id="btnEmailPartner" onclick="sharePartnerLink()">Share</button>
+                        </div>
                     </div>
 
-                    <div class="row">
-                        <h4>Incoming</h4>
-                        <input type="checkbox" id="outAudio" checked data-toggle="toggle" data-on="Audio On" data-off="Audio Off" data-onstyle="success" data-offstyle="danger">
-                        <input type="checkbox" id="outVideo" checked data-toggle="toggle" data-on="Video On" data-off="Video Off" data-onstyle="success" data-offstyle="danger">
-                        <input type="checkbox" id="outData" checked data-toggle="toggle" data-on="Data On" data-off="Data Off" data-onstyle="success" data-offstyle="danger">
-                        <input type="checkbox" id="outScreen" checked data-toggle="toggle" data-on="Screen On" data-off="Screen Off" data-onstyle="success" data-offstyle="danger">                   
-                    </div> 
-                </div>
+                </div>   
 
                 <div class="row">
                     <button class="btn" id="btnGetPeers">Get Peers Info</button>
@@ -87,9 +121,7 @@
 
 </body>
 
-<script src="property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-
 
 </html>
