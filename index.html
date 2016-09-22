@@ -78,7 +78,7 @@ border-radius:5px}
 .video-header-2{background:#FF0;color:#000;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
 .btn-modify-video-3.focus, .btn-modify-video-3:focus, .btn-modify-video-3:hover {color:#FF0000;}
 .btn-modify-video-3{background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #000;font-size: 18px;}
-.screen-share{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;border:1px solid #F00;}
+.screen-share{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
 .red-bg{background:#e61339 ;border-top-left-radius:10px;border-bottom-left-radius:10px;}
 .seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
 .seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
@@ -141,12 +141,13 @@ td span .fa {
 }
 .fileViewing1Box{
     color: #968787;
-    height: 400px;
     overflow-x: hidden;
     overflow-y: scroll;
     border: 10px solid white;
+    height: 400px;
 }
 .bg-red{background:#ff6600;color:#fff;}
+.bg-blue{background:#2e6da4;color:#fff;}
 .table-section {
   font-size:12px;}
 .border-radius {
@@ -203,7 +204,7 @@ video{
 
   <div class="row alertDiv" id="alertBox" hidden="true"></div>
 
-  <section class="video-section">
+  <section id="mainDiv" class="video-section">
     <div class="container-fluid">
       <div class="row">
         <div  class="col-md-9" style="padding-right:0px;">
@@ -236,7 +237,7 @@ video{
           </div>
         </div>
 
-        <div class="col-md-3" style="padding-right:0px;overflow-y:overflow;overflow-x:hidden;height:500px">
+        <div id="rightDiv" class="col-md-3" style="padding-right:0px;overflow-y:overflow;overflow-x:hidden;">
         <div class="right-section">
             <div class="main-block">
 
@@ -334,6 +335,7 @@ video{
                       </div>
                     
                       <!-- screenshare -->
+                      <!-- 
                       <div class="panel-seassion">
                           <div class="screen-share">
                               
@@ -371,13 +373,13 @@ video{
                               </div>
 
                           </div>
-                      </div>
+                      </div> -->
                      
                       <!-- fileshare -->
                       <div class="panel-seassion">
                         <div class="screen-share">
                             <div class="text-center">
-                                <div class="fileUpload btn bg-red" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
+                                <div class="fileUpload btn bg-blue" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
                                   <span>Upload A File</span>
                                   <input id="fileshareBtn" class="upload"  />
                                 </div>
@@ -432,19 +434,23 @@ video{
         </div>
   </section>
 
-<script src="property.js"></script>
+<script src="../property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
 
-<!-- jQuery Version 1.11.1 --> 
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
 
 <script>
+
+function adjustelement(){
+    $("#mainDiv").height(window.innerHeight- $(".header-part").height())
+    $("#rightDiv").height($("#mainDiv").height()-20);
+    $(".fileViewing1Box").css("height",$("#mainDiv").height()-50);
+    $('[data-toggle="tooltip"]').tooltip();
+}
 $('document').ready(function(){
+
+    adjustelement();
+
     sessionid = init(true);
 
     var searchParams = new URLSearchParams(window.location);
@@ -634,6 +640,7 @@ $('document').ready(function(){
         session, widgets
     );
     startcall(webrtcdevobj);
+
 });
 </script>
 
