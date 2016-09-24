@@ -66,6 +66,7 @@
 .send-mesg::-moz-placeholder{color:#FFF;}
 .online-pro-pict img {height: auto;width: 100%;}
 .sent-message-block{margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background: #b2b2b2;}
+.timer-block{margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background:rgba(119, 119, 119, 0.28);}
 .online-pro-pict {border: 1px solid #CCC;border-radius: 50%;margin: 7px;overflow: hidden;}
 .online-chat-text span, .online-chat-text-reply span {color:#333;display: inherit;font-size: 10px;margin-top: 5px;}
 .online-chat-text {background:#fdd1c6;padding:5px;color:#000;margin:10px 0px 0px 0px;font-family:Helvetica;font-size:13px;font-weight:bold;
@@ -241,26 +242,42 @@ video{
         <div class="right-section">
             <div class="main-block">
 
+                <div class="panel-seassion border-radius">
+                    <div class="message-sent">
+                        <div class="col-xs-8 text-center" style="padding:0px 2px"> Timer </div>
+            
+                        <div class="col-xs-2 text-center" style="padding:0px 2px">
+                          <button id="minimizeTimerButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                        </div>
+                      
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="timer-block" id="timeContainer">
+                        <div class="panel-seassion">
+                            <div class="col-xs-6">
+                              <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
+                            </div>
+                            <div class="col-xs-6">
+                              <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
+                            </div>
+                            <div class="col-xs-6">
+                              <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
+                            </div>
+                            <div class="col-xs-6">
+                              <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
+                            </div>
+                            <div class="col-xs-6">
+                              <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
+                            </div>
+                            <div class="col-xs-6">
+                              <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                   <!-- Timer and monitization -->
                   <div class="panel-seassion">
-                    <div class="col-xs-6">
-                      <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
-                    </div>
-                    <div class="col-xs-6">
-                      <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
-                    </div>
-                    <div class="col-xs-6">
-                      <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
-                    </div>
-                    <div class="col-xs-6">
-                      <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
-                    </div>
-                    <div class="col-xs-6">
-                      <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
-                    </div>
-                    <div class="col-xs-6">
-                      <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
-                    </div>
 
                     <div class="col-md-12" style="margin-bottom:10px">
                       <button id="reconnectBtn" class="btn btn-info form-control recannect" data-placement="left" data-toggle="tooltip" title="ONLY for use if session gets disconnected">
@@ -303,36 +320,35 @@ video{
                           </div>
                       </div>
 
-                      <div class="panel-seassion border-radius">
-                          <div class="message-sent">
-                              <div class="col-xs-8 text-center" style="padding:0px 2px">
+                        <div class="panel-seassion border-radius">
+                            <div class="message-sent">
+                                <div class="col-xs-8 text-center" style="padding:0px 2px">
                                   <input id="chatInputText" type="text" class="form-control send-mesg" placeholder="Send Message">
-                              </div>
+                                </div>
                        
-                              <div class="col-xs-2 text-center" style="padding:0px 2px">
+                                <div class="col-xs-2 text-center" style="padding:0px 2px">
                                   <button id="chatSendButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
-                              </div>
+                                </div>
                           
-                              <div class="col-xs-2 text-center" style="padding:0px 2px">
-                                  <button class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                              </div>
+                                <div class="col-xs-2 text-center" style="padding:0px 2px">
+                                  <button id="minimizeChatButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                </div>
                               
                               <div class="clearfix"></div>
-                          </div>
-
-                        <div class="sent-message-block" id="chatContainer">
-                          <div class="panel-seassion">
-                              <div class="chating-area" id="chatBoard"> </div>
-                              <div id="whoTyping"></div>
-                          </div>
+                            </div>
+                            <div class="sent-message-block" id="chatContainer">
+                                <div class="panel-seassion">
+                                    <div class="chating-area" id="chatBoard"> </div>
+                                    <div id="whoTyping"></div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
 
-                      <div class="video-part-2 panel-seassion border-radius">
-                              <div class="block-section">
-                                  <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
-                              </div>
-                      </div>
+                        <div class="video-part-2 panel-seassion border-radius">
+                            <div class="block-section">
+                                <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
+                            </div>
+                        </div>
                     
                       <!-- screenshare -->
                       <!-- 
@@ -434,10 +450,9 @@ video{
         </div>
   </section>
 
-<script src="../property.js"></script>
+<script src="property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-
 
 <script>
 
@@ -452,7 +467,6 @@ $('document').ready(function(){
     adjustelement();
 
     sessionid = init(true);
-
     var searchParams = new URLSearchParams(window.location);
     var role="participant",out_A=true, out_V=true ;
 
@@ -557,7 +571,11 @@ $('document').ready(function(){
                             currentTime_id:"currentTimeArea",
                             currentTimeZonr_id:"currentTimeZoneArea",
                             class_on:""
-                        }
+                        },
+                        container:{
+                            id:'timeContainer',
+                            minbutton_id:'minimizeTimerButton'
+                        },
                     },
         chat    :{
                         active: true,
@@ -566,7 +584,8 @@ $('document').ready(function(){
                         },
                         inputBox:{
                             text_id:"chatInputText",
-                            sendbutton_id:"chatSendButton"
+                            sendbutton_id:"chatSendButton",
+                            minbutton_id:"minimizeChatButton"
                         },
                         chatBox:{
                             id: "chatBoard"
@@ -639,7 +658,8 @@ $('document').ready(function(){
     var webrtcdevobj = new WebRTCdev ( 
         session, widgets
     );
-    startcall(webrtcdevobj);
+
+    startCall(webrtcdevobj);
 
 });
 </script>
