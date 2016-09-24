@@ -410,7 +410,7 @@ video{
                       <div class="panel-seassion">
                           <div class="icon-markup-block"> 
                                 <div style="padding-right:0px;" class="col-xs-2 text-center">
-                                  <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/13.png"></button>
+                                  <button id="shareCursorButton" data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Share cursor pointers"><img src="images/13.png"></button>
                                 </div>
                                 <div class="col-xs-2 text-center" style="padding:0px;">
                                   <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
@@ -453,6 +453,7 @@ video{
 <script src="property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
+
 
 <script>
 
@@ -651,7 +652,12 @@ $('document').ready(function(){
                         }
                     }, 
         cursor :{
-                    active : true
+                    active : true,
+                    button:{
+                        id: 'shareCursorButton',
+                        class_on:"pull-right btn btn-modify-video2 videoButtonClass",
+                        html_on:"<i class='fa fa-th-large' title='Cursor'></i>"
+                    }                   
                 }
     };
 
