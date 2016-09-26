@@ -351,27 +351,23 @@ video{
                         </div>
                     
                       <!-- screenshare -->
-                      <!-- 
+                      
                       <div class="panel-seassion">
                           <div class="screen-share">
                               
-                              <div class="red-bg">
-                                  <div style="padding:0px 0px" class="col-xs-8 text-center">
-                                      <button class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Farook - Screen Share">Screen Share </button>
-                                  </div>
-                             
-                                  <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                                      <button title="Share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                                      <i class="fa fa-external-link"></i></button>
-                                  </div>
+                                <div class="red-bg">
+                                    <div style="padding:0px 0px" class="col-xs-8 text-center">
+                                        <button id="scrShareButton" class="open"  data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
+                                        <button id="scrInstallButton" class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Install Screen Share">scrInstallButton </button>
+                                    </div>
                                   
-                                  <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                                      <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                    <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
+                                      <button id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
                                       <i class="fa fa-desktop"></i></button>
-                                  </div>
+                                    </div>
 
-                                  <div class="clearfix"></div>
-                              </div>
+                                    <div class="clearfix"></div>
+                                </div>
 
                               <div class="yellow-bg">
                                   <div style="padding:0px 0px" class="col-xs-8 text-center">
@@ -389,7 +385,7 @@ video{
                               </div>
 
                           </div>
-                      </div> -->
+                      </div>
                      
                       <!-- fileshare -->
                       <div class="panel-seassion">
@@ -453,7 +449,6 @@ video{
 <script src="property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-
 
 <script>
 
@@ -658,7 +653,35 @@ $('document').ready(function(){
                         class_on:"pull-right btn btn-modify-video2 videoButtonClass",
                         html_on:"<i class='fa fa-th-large' title='Cursor'></i>"
                     }                   
-                }
+                },
+        screenshare : {
+                        active:true,
+                        screenshareContainer: "fileSharingRow",
+                        extensionID: props.extensionID,
+                        button:{
+                            installButton:{
+                                id:"scrInstallButton",
+                                class_on:"btn btn-warning glyphicon glyphicon-inbox topPanelButton",
+                                html_on:"Stop Install",
+                                class_off:"btn btn-success glyphicon glyphicon-inbox topPanelButton",
+                                html_off:"Install Screen Share"
+                            },
+                            shareButton:{
+                                id:"scrShareButton",
+                                class_on:"close",
+                                html_on:"Stop Sharing",
+                                class_off:"open",
+                                html_off:"ScreenShare"
+                            },
+                            viewButton:{
+                                id:"scrViewButton",
+                                class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton",
+                                html_on:"Stop Viewing",
+                                class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton",
+                                html_off:"View Screen"
+                            }
+                        }
+                    },
     };
 
     var webrtcdevobj = new WebRTCdev ( 
