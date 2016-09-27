@@ -334,7 +334,7 @@ video{
                               
                                 <div class="red-bg">
                                     <div style="padding:0px 0px" class="col-xs-8 text-center">
-                                        <button id="scrShareButton" class="form-control seceen-btn open"  data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
+                                        <button id="scrShareButton" class="form-control screen-btn off"  data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
                                         <button hidden=true id="scrInstallButton" class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
                                     </div>
                                   
@@ -411,6 +411,7 @@ video{
 <script src="property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
+
 <script>
 
 function adjustelement(){
@@ -573,18 +574,18 @@ $('document').ready(function(){
                     audio   :{
                             active: true,
                             button:{
-                                class_on:"pull-right btn btn-modify-video2 videoButtonClass ",
+                                class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
                                 html_on:"<i class='fa fa-microphone'></i>",
-                                class_off:"pull-right btn btn-modify-video2 videoButtonClass ",
+                                class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
                                 html_off:"<i class='fa fa-microphone'></i>"
                             }
                         },
                     video : {
                             active: true,
                             button:{
-                                class_on:"pull-right btn btn-modify-video2 videoButtonClass ",
+                                class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
                                 html_on:"<i class='fa fa-video-camera'></i>",
-                                class_off:"pull-right btn btn-modify-video2 videoButtonClass ",
+                                class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
                                 html_off:"<i class='fa fa-video-camera'></i>"
                             }
                         }
@@ -593,9 +594,9 @@ $('document').ready(function(){
                         active: true,
                         videoRecordContainer: true,
                         button:{
-                            class_on:"pull-right btn btn-modify-video2 videoButtonClass",
+                            class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
                             html_on:"<i class='fa fa-circle' title='Stop recording this Video'></i>",
-                            class_off:"pull-right btn btn-modify-video2 videoButtonClass",
+                            class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
                             html_off:"<i class='fa fa-circle' title='Record this Video'></i>"
                         }
                     },
@@ -629,16 +630,16 @@ $('document').ready(function(){
                             },
                             shareButton:{
                                 id:"scrShareButton",
-                                class_on:"form-control seceen-btn close",
+                                class_on:"form-control screen-btn on",
                                 html_on:"Stop Sharing",
-                                class_off:"form-control seceen-btn open",
+                                class_off:"form-control screen-btn off",
                                 html_off:"ScreenShare"
                             },
                             viewButton:{
                                 id:"scrViewButton",
-                                class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton",
+                                class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton on",
                                 html_on:"Stop Viewing",
-                                class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton",
+                                class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton off",
                                 html_off:"View Screen"
                             }
                         }
