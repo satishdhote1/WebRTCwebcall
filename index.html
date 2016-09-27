@@ -10,7 +10,7 @@
     <link href="css/mainstyle.css" rel="stylesheet">
     <title>WebRTC Call</title>
     <meta name="google-site-verification" content="8NqEkVsX8mkRCn13Qov4K0njgF0T6t97_a-NZNIXkpE" />
-    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jpcjjkpbiepbmhklnjoahacppaemhmpd">
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/fpbpheeciohmabdiffbhhjadopklgabo">
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.css">
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
 </head>
@@ -208,34 +208,11 @@ video{
   <section id="mainDiv" class="video-section">
     <div class="container-fluid">
       <div class="row">
+        
         <div  class="col-md-9" style="padding-right:0px;">
-          <div id="fileSharingRow" style="margin: 10px;">
-
-            <!--
-              <div class="col-xs-6" style="padding:0;">
-                <div class="inner-block">
-                  <div class="button-corner">
-                    <span  data-placement="bottom" data-toggle="tooltip" title="minimize"><i class="fa fa-minus-square"></i></span>
-                    <span  data-placement="bottom" data-toggle="tooltip" title="maxsimize"><i class="fa fa-external-link-square"></i></span>
-                    <span  data-placement="bottom" data-toggle="tooltip" title="close"><i class="fa fa-times-circle"></i></span>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-xs-6" style="padding-right:0px;">
-                <div class="inner-block">
-                  <div class="button-corner">
-                  <span  data-placement="bottom" data-toggle="tooltip" title="minimize"><i class="fa fa-minus-square"></i></span>
-                  <span  data-placement="bottom" data-toggle="tooltip" title="maxsimize"><i class="fa fa-external-link-square"></i></span>
-                  <span  data-placement="bottom" data-toggle="tooltip" title="close"><i class="fa fa-times-circle"></i></span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="clearfix"></div> 
-            -->
-
-          </div>
+            <div id="screenShareRow" style="margin: 10px;"></div>
+            <div id="drawBoardRow" style="margin: 10px;"></div>
+            <div id="fileSharingRow" style="margin: 10px;"></div>
         </div>
 
         <div id="rightDiv" class="col-md-3" style="padding-right:0px;overflow-y:overflow;overflow-x:hidden;">
@@ -289,7 +266,7 @@ video{
                   </div>
 
                   <!-- Recording -->
-                  <!--                 
+                                  
                   <div class="panel-seassion">
                     <div class="bg-ssion">
                         <div class="col-xs-6 text-center"><p class="seassion-text">Session</p></div>
@@ -304,7 +281,7 @@ video{
 
                         <div class="clearfix"></div>
                     </div>
-                  </div> -->
+                  </div>
 
                   <!-- when no remote -->
                   <div id="singleVideoContainer" class="row" hidden>
@@ -357,8 +334,8 @@ video{
                               
                                 <div class="red-bg">
                                     <div style="padding:0px 0px" class="col-xs-8 text-center">
-                                        <button id="scrShareButton" class="open"  data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
-                                        <button id="scrInstallButton" class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Install Screen Share">scrInstallButton </button>
+                                        <button id="scrShareButton" class="form-control seceen-btn open"  data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
+                                        <button hidden=true id="scrInstallButton" class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
                                     </div>
                                   
                                     <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
@@ -368,21 +345,6 @@ video{
 
                                     <div class="clearfix"></div>
                                 </div>
-
-                              <div class="yellow-bg">
-                                  <div style="padding:0px 0px" class="col-xs-8 text-center">
-                                  <button class="form-control seceen-btn-2"  data-toggle="tooltip" data-placement="bottom" title="Samantha - Screen Share">Screen Share </button>
-                                  </div>
-                                 
-                                   <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                                      <button title="share" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3">
-                                      <i class="fa fa-external-link"></i></button>
-                                    </div>
-                                    <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                                      <button title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video-3"><i class="fa fa-desktop"></i></button>
-                                    </div>
-                                   <div class="clearfix"></div>
-                              </div>
 
                           </div>
                       </div>
@@ -449,7 +411,6 @@ video{
 <script src="property.js"></script>
 <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-
 <script>
 
 function adjustelement(){
@@ -656,7 +617,7 @@ $('document').ready(function(){
                 },
         screenshare : {
                         active:true,
-                        screenshareContainer: "fileSharingRow",
+                        screenshareContainer: "screenShareRow",
                         extensionID: props.extensionID,
                         button:{
                             installButton:{
@@ -668,9 +629,9 @@ $('document').ready(function(){
                             },
                             shareButton:{
                                 id:"scrShareButton",
-                                class_on:"close",
+                                class_on:"form-control seceen-btn close",
                                 html_on:"Stop Sharing",
-                                class_off:"open",
+                                class_off:"form-control seceen-btn open",
                                 html_off:"ScreenShare"
                             },
                             viewButton:{
@@ -690,6 +651,9 @@ $('document').ready(function(){
 
     startCall(webrtcdevobj);
 
+    onSessionConnect=function(){
+        adjustelement();
+    };
 });
 </script>
 
