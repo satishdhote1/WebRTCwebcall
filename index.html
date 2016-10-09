@@ -15,7 +15,7 @@
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
 </head>
 <style>
-.bodybg{
+    .bodybg{
       background:url(images/background.jpg) 100% 100%;
       background-size:cover;
       font-family:Arial, Helvetica, sans-serif;
@@ -54,12 +54,24 @@
     .bg-ssion{border-radius:10px;background:#ffda96;padding:5px 0px}
     .arrow {border-radius: 50%;display: inline-block;height: auto;left: -20px;position: absolute;text-align: center;top: 0;font-size: 22px;color:#F00;}
     .video-block{width:100%;}
-    .video-part{background: #ccccff;}
+
     .video-header{background:#e61339;color:#ffff00;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
     .controler-video {margin: 0;padding: 3px 0 9px;position:relative;}
     .btn-modify-video2.focus, .btn-modify-video2:focus, .btn-modify-video2:hover {color: #eaff00;}
     .btn-modify-video2 {background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #fff;font-size: 18px;}
-    .message-sent{border-radius:10px;background:#09F;padding:4px 0px;}
+
+    .send-chat-header-class{
+        border-radius: 10px;
+        background: #09F;
+        padding: 4px 0px;
+        overflow: hidden;
+        width: 100%;
+        margin: 0;
+    }
+    .send-message-block-class{
+      margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background: #b2b2b2;
+    }
+
     .timer{    font-size: 15px;
         font-weight: bold;
         text-transform: uppercase;
@@ -72,7 +84,7 @@
     .send-mesg:focus{box-shadow:0px;}
     .send-mesg::-moz-placeholder{color:#FFF;}
     .online-pro-pict img {height: auto;width: 100%;}
-    .sent-message-block{margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background: #b2b2b2;}
+    
     .timer-block{margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background:rgba(119, 119, 119, 0.28);}
     .online-pro-pict {border: 1px solid #CCC;border-radius: 50%;margin: 7px;overflow: hidden;}
     .online-chat-text span, .online-chat-text-reply span {color:#333;display: inherit;font-size: 10px;margin-top: 5px;}
@@ -82,11 +94,17 @@
     border-radius:5px}
     .chat-text-area {margin: 5px 0px;}
     .chating-area {overflow-y: scroll; overflow-x: hidden;}
-    .video-part-2{background:#7030a0;}
+
+    .video-class{background: #ccccff;position:relative;}
+    .chat-class{position:relative;}
+
     .video-header-2{background:#FF0;color:#000;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
     .btn-modify-video-3.focus, .btn-modify-video-3:focus, .btn-modify-video-3:hover {color:#FF0000;}
     .btn-modify-video-3{background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #000;font-size: 18px;}
-    .screen-share{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
+    
+    .screen-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
+    .file-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
+    
     .red-bg{background:#e61339 ;border-top-left-radius:10px;border-bottom-left-radius:10px;}
     .seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
     .seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
@@ -156,13 +174,8 @@
     }
     .bg-red{background:#ff6600;color:#fff;}
     .bg-blue{background:#2e6da4;color:#fff;}
-    .table-section {
-      font-size:12px;}
-    .border-radius {
-        border-radius: 15px;
-        overflow: hidden;
-      margin:5px 0px;
-    }
+    .table-section { font-size:12px;}
+    .border-radius { border-radius: 15px; overflow: hidden; margin:5px 0px;}
     .videoButtonClass {
         padding :5px;
     }
@@ -194,6 +207,18 @@
     video{
         width: 100%!important; 
     }
+
+    .rightDiv-class{
+        padding-right:0px;
+        overflow-y:overflow;
+        overflow-x:hidden;
+    }
+
+    .centreDiv-class{
+        padding-right: 0px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 </style>
 
 <body class="bodybg">
@@ -220,13 +245,13 @@
     <div class="container-fluid">
       <div class="row">
         
-        <div  class="col-md-9" style="padding-right:0px;">
+        <div id="centreDiv" class="col-md-9 centreDiv-class">
             <div id="screenShareRow" style="margin: 10px;"></div>
             <div id="drawBoardRow" style="margin: 10px;"></div>
             <div id="fileSharingRow" style="margin: 10px;"></div>
         </div>
 
-        <div id="rightDiv" class="col-md-3" style="padding-right:0px;overflow-y:overflow;overflow-x:hidden;">
+        <div id="rightDiv" class="col-md-3 rightDiv-class">
         <div class="right-section">
             <div class="main-block">
 
@@ -234,9 +259,8 @@
                 <div class="panel-seassion">
                     <div class="timer">
                         <div class="col-xs-8 text-center" style="padding:0px 2px"> Timer </div>
-            
                         <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                          <button id="minimizeTimerButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                            <button id="minimizeTimerButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
                         </div>
                       
                       <div class="clearfix"></div>
@@ -297,46 +321,45 @@
                   <!-- when remotes are connected -->
                   <div id="confVideoContainer">
 
-                      <div class="video-part panel-seassion border-radius">
+                      <div class="video-class">
                           <div class="block-section">
-                            <video class="video-block" controls src="#" name="myConferenceVideo"></video>
+                              <video class="video-block" controls src="#" name="myConferenceVideo"></video>
                           </div>
                       </div>
 
-                        <div class="panel-seassion border-radius">
-                            <div class="message-sent">
-                                <div class="col-xs-8 text-center" style="padding:0px 2px">
+                      <div class="chat-class border-radius">
+                          <div class="send-chat-header-class row" id="chatHeader">
+                              <div class="col-xs-8 text-center" style="padding:0px 2px">
                                   <input id="chatInputText" type="text" class="form-control send-mesg" placeholder="Send Message">
-                                </div>
+                              </div>
                        
-                                <div class="col-xs-2 text-center" style="padding:0px 2px">
+                              <div class="col-xs-2 text-center" style="padding:0px 2px">
                                   <button id="chatSendButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
-                                </div>
+                              </div>
                           
-                                <div class="col-xs-2 text-center" style="padding:0px 2px">
+                              <div class="col-xs-2 text-center" style="padding:0px 2px">
                                   <button id="minimizeChatButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                                </div>
-                              
-                              <div class="clearfix"></div>
-                            </div>
-                            <div class="sent-message-block" id="chatContainer">
-                                <div class="panel-seassion">
-                                    <div class="chating-area" id="chatBoard"> </div>
-                                    <div id="whoTyping"></div>
-                                </div>
-                            </div>
-                        </div>
+                              </div>
+                          </div>
 
-                        <div class="video-part-2 panel-seassion border-radius">
-                            <div class="block-section">
-                                <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
-                            </div>
-                        </div>
+                          <div class="sent-message-block-class" id="chatContainer">
+                              <div class="panel-seassion">
+                                  <div class="chating-area" id="chatBoard"> </div>
+                                  <div id="whoTyping"></div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="video-class">
+                          <div class="block-section">
+                              <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
+                          </div>
+                      </div>
                     
                       <!-- screenshare -->
                       
                       <div class="panel-seassion">
-                          <div class="screen-share">
+                          <div class="screen-share-class">
                               
                                 <div class="red-bg">
                                     <div style="padding:0px 0px" class="col-xs-8 text-center">
@@ -357,7 +380,7 @@
                      
                       <!-- fileshare -->
                       <div class="panel-seassion">
-                        <div class="screen-share">
+                        <div class="file-share-class">
                             <div class="text-center">
                                 <div class="fileUpload btn bg-blue" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
                                   <span>Upload A File</span>
@@ -419,10 +442,10 @@
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
 
 <script>
-
 function adjustelement(){
     $("#mainDiv").height(window.innerHeight- $(".header-part").height())
     $("#rightDiv").height($("#mainDiv").height()-20);
+    $("#centreDiv").height($("#mainDiv").height()-20);
     $(".fileViewing1Box").css("height",$("#mainDiv").height()-50);
     $('[data-toggle="tooltip"]').tooltip();
 }
