@@ -80,6 +80,24 @@
         margin: 5px;
         border-radius: 5px;
         height: 30px;}
+
+    .recordClass{    font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #ffffff;
+        background-color: #2aabd2;
+        margin: 5px;
+        border-radius: 5px;
+        height: 30px;}
+
+    .reconnectClass{    font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #ffffff;
+        background-color: #2aabd2;
+        margin: 5px;
+        border-radius: 5px;
+        height: 30px;}
     .send-mesg{background:#efbf00;color:#fff;border-radius:8px;padding:2px 0px 3px 5px;height:auto;border:0px;}
     .send-mesg:focus{box-shadow:0px;}
     .send-mesg::-moz-placeholder{color:#FFF;}
@@ -262,7 +280,6 @@
                         <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
                             <button id="minimizeTimerButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
                         </div>
-                      
                       <div class="clearfix"></div>
                     </div>
                     <div class="timer-block" id="timeContainer">
@@ -287,7 +304,7 @@
 
                 <!-- Reconnect Button -->
                 <div class="panel-seassion">
-                    <div class="col-md-12 " style="margin-bottom:10px">
+                    <div class="reconnectClass">
                       <button id="reconnectBtn" class="btn btn-info form-control recannect" data-placement="left" data-toggle="tooltip" title="ONLY for use if session gets disconnected">
                           <span><i class="fa fa-link" aria-hidden="true"></i></span>Reconnect
                       </button>
@@ -298,7 +315,7 @@
 
                 <!-- Recording -->
                 <div class="panel-seassion">
-                    <div class="timer">
+                    <div class="recordClass">
                         <div class="col-xs-6 text-center" style="padding:0px 2px">Session</div>
                    
                         <div class="col-xs-3 text-center">
@@ -325,6 +342,7 @@
                           <div class="block-section">
                               <video class="video-block" controls src="#" name="myConferenceVideo"></video>
                           </div>
+                          <br/><br/>
                       </div>
 
                       <div class="chat-class border-radius">
@@ -354,29 +372,21 @@
                           <div class="block-section">
                               <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
                           </div>
+                          <br/><br/>
                       </div>
                     
                       <!-- screenshare -->
-                      
                       <div class="panel-seassion">
-                          <div class="screen-share-class">
-                              
-                                <div class="red-bg">
-                                    <div style="padding:0px 0px" class="col-xs-8 text-center">
-                                        <button id="scrShareButton" class="form-control screen-btn off"  data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
-                                        <button display="none" hidden=true id="scrInstallButton" class="form-control seceen-btn"  data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
-                                    </div>
-                                  
-                                    <div style="padding:5px 3px 0 2px" class="col-xs-2 text-center">
-                                      <button id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                                      <i class="fa fa-desktop"></i></button>
-                                    </div>
-
-                                    <div class="clearfix"></div>
+                        <div class="file-share-class">
+                            <div class="text-center">
+                                <div class="fileUpload btn bg-blue" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
+                                    <button id="scrShareButton" class="screen-btn off" style="background: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
+                                    <button display="none" id="scrInstallButton" class="screenInstall-btn off" data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
+                                    <button display="none" id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
                                 </div>
-
-                          </div>
-                      </div>
+                             </div>
+                         </div>
+                      </div>                      
                      
                       <!-- fileshare -->
                       <div class="panel-seassion">
@@ -652,16 +662,16 @@ $('document').ready(function(){
                         button:{
                             installButton:{
                                 id:"scrInstallButton",
-                                class_on:"btn btn-warning glyphicon glyphicon-inbox topPanelButton",
+                                class_on:"screeninstall-btn on",
                                 html_on:"Stop Install",
-                                class_off:"btn btn-success glyphicon glyphicon-inbox topPanelButton",
+                                class_off:"screeninstall-btn off",
                                 html_off:"Install Screen Share"
                             },
                             shareButton:{
                                 id:"scrShareButton",
-                                class_on:"form-control screen-btn on",
+                                class_on:"screen-btn on",
                                 html_on:"Stop Sharing",
-                                class_off:"form-control screen-btn off",
+                                class_off:"screen-btn off",
                                 html_off:"ScreenShare"
                             },
                             viewButton:{
