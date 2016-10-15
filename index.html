@@ -27,6 +27,16 @@
       display: block !important
     }
 
+    video{
+        position: relative;
+        top: 0;
+        left: 0;
+        transition: width .5s ease;
+        margin: 0;
+        background-color: #000;
+        border-radius: 50px;
+        width: 100%!important; 
+    }
     /*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-START---------*/
 
     .right-section{
@@ -221,11 +231,6 @@
       
     }
     .btn.btn-info.recannect:hover span {background:#03F;}
-
-    video{
-        width: 100%!important; 
-    }
-
     .rightDiv-class{
         padding-right:0px;
         overflow-y:overflow;
@@ -604,8 +609,8 @@ $('document').ready(function(){
                           html:"File"
                       },
                       props:{
-                          fileShare:"divided",
-                          fileList:"divided"
+                          fileShare:"divided",   //Can be divided , chatpreview  , single   , hidden 
+                          fileList:"divided"     //Can be divided , single   , hidden
                       }
                   },
         mute    :{
