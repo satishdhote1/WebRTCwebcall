@@ -7,15 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="altanai">
-    <link href="css/mainstyle.css" rel="stylesheet">
     <title>WebRTC Call</title>
     <meta name="google-site-verification" content="8NqEkVsX8mkRCn13Qov4K0njgF0T6t97_a-NZNIXkpE" />
     <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jpcjjkpbiepbmhklnjoahacppaemhmpd">
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.css">
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
+    <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
+    <link href="css/mainstyle.css" rel="stylesheet">
 </head>
 <style>
-    .bodybg{
+    body{
       background:url(images/background.jpg) 100% 100%;
       background-size:cover;
       font-family:Arial, Helvetica, sans-serif;
@@ -23,6 +24,18 @@
       overflow:hidden;
     }
 
+    body::-webkit-scrollbar {
+        width: 1em;
+    }
+     
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+     
+    body::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
     .over-lap {
       display: block !important
     }
@@ -40,12 +53,12 @@
     /*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-START---------*/
 
     .right-section{
-      background:#fff;
-      border-radius:30px;
-      padding:20px 0px 0px;
-      border:1px solid #F00;
-      margin-top:20px;
-      position:relative;
+    background: rgba(255, 255, 255, 0.27);
+    border-radius: 30px;
+    padding: 20px 0px 0px;
+    /* border: 1px solid #F00; */
+    margin-top: 20px;
+    position: relative;
     }
     .main-block{width:95%;margin:auto;}
     .time-function {
@@ -177,10 +190,10 @@
     }
     .fileUpload {
         border-radius: 10px;
-        margin:0px;
-        overflow: hidden;
         position: relative;
-        width: 150px;
+        width: 130px;
+        margin-left: 10px;
+        align-items: center;
     }
     .fileUpload input.upload {
         position: absolute;
@@ -231,20 +244,24 @@
       
     }
     .btn.btn-info.recannect:hover span {background:#03F;}
+
+
+.centreDiv-class {
+    background: rgba(255, 255, 255, 0.55);
+    padding-right: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    }
+
     .rightDiv-class{
         padding-right:0px;
         overflow-y:overflow;
         overflow-x:hidden;
     }
 
-    .centreDiv-class{
-        padding-right: 0px;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
 </style>
 
-<body class="bodybg">
+<body>
 
   <div class="container-fluid header-part">
     <div class="row">
@@ -272,6 +289,7 @@
             <div id="screenShareRow" style="margin: 10px;"></div>
             <div id="drawBoardRow" style="margin: 10px;"></div>
             <div id="fileSharingRow" style="margin: 10px;"></div>
+            <div id="fileListingRow" style="margin: 10px;"></div>
         </div>
 
         <div id="rightDiv" class="col-md-3 rightDiv-class">
@@ -345,7 +363,7 @@
 
                       <div class="video-class">
                           <div class="block-section">
-                              <video class="video-block" controls src="#" name="myConferenceVideo"></video>
+                              <video class="video-block" controls name="myConferenceVideo"></video>
                           </div>
                           <br/><br/>
                       </div>
@@ -375,38 +393,28 @@
 
                       <div class="video-class">
                           <div class="block-section">
-                              <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
+                              <video controls class="video-block" name="otherConferenceVideo"></video>
                           </div>
                           <br/><br/>
-                      </div>
-                    
-                      <!-- screenshare -->
-                      <div class="panel-seassion">
-                        <div class="file-share-class">
-                            <div class="text-center">
-                                <div class="fileUpload btn bg-blue" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
-                                    <button id="scrShareButton" class="screen-btn off" style="background: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
-                                    <button display="none" id="scrInstallButton" class="screenInstall-btn off" data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
-                                    <button display="none" id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                                </div>
-                             </div>
-                         </div>
-                      </div>                      
+                      </div>                   
                      
                       <!-- fileshare -->
                       <div class="panel-seassion">
                         <div class="file-share-class">
-                            <div class="text-center">
-                                <div class="fileUpload btn bg-blue" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
-                                  <span>Upload A File</span>
-                                  <input id="fileshareBtn" class="upload"  />
+                            <div class="row text-center">
+
+                                <div class="col=-md-4 fileUpload btn bg-blue">
+                                    <input id="fileshareBtn" class="upload" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">Upload a file</button>
                                 </div>
+
+                                <div class="col-md-4 fileUpload btn bg-blue">
+                                    <button id="scrShareButton" class="screen-btn off" style="background: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
+                                    <button display="none" id="scrInstallButton" class="screenInstall-btn off" data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
+                                    <button display="none" id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                </div>
+
                              </div>
                          </div>
-                      </div>
-                     
-                      <div class="border-radius">
-                          <div class="table-section" id="fileListingRow"></div>
                       </div>
                      
                       <div class="panel-seassion">
@@ -453,255 +461,254 @@
   </section>
 
 <script src="property.js"></script>
-<link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
 
 <script>
-function adjustelement(){
-    $("#mainDiv").height(window.innerHeight- $(".header-part").height())
-    $("#rightDiv").height($("#mainDiv").height()-20);
-    $("#centreDiv").height($("#mainDiv").height()-20);
-    $(".fileViewing1Box").css("height",$("#mainDiv").height()-50);
-    $('[data-toggle="tooltip"]').tooltip();
-}
-$('document').ready(function(){
+  function adjustelement(){
+      $("#mainDiv").height(window.innerHeight- $(".header-part").height())
+      $("#rightDiv").height($("#mainDiv").height()-20);
+      $("#centreDiv").height($("#mainDiv").height()-20);
+      $(".fileViewing1Box").css("height",$("#mainDiv").height()-50);
+      $('[data-toggle="tooltip"]').tooltip();
+  }
+  $('document').ready(function(){
 
-    adjustelement();
+      adjustelement();
 
-    sessionid = init(true);
-    var searchParams = new URLSearchParams(window.location);
-    var role="participant",out_A=true, out_V=true ;
+      sessionid = init(true);
+      var searchParams = new URLSearchParams(window.location);
+      var role="participant",out_A=true, out_V=true ;
 
-    if(searchParams.get('audio')=="0"){
-        out_A=false;
-    }
+      if(searchParams.get('audio')=="0"){
+          out_A=false;
+      }
 
-    if(searchParams.get('video')=="0"){
-        out_V=false;
-    }
+      if(searchParams.get('video')=="0"){
+          out_V=false;
+      }
 
-    if(searchParams.get('name')){
-        username=searchParams.get('name');
-    }else{
-        username="Expert";
-    }
+      if(searchParams.get('name')){
+          username=searchParams.get('name');
+      }else{
+          username="Expert";
+      }
 
-    if(searchParams.get('email')){
-        useremail=searchParams.get('email');
-    }else{
-        useremail="abc@gmail.com";
-    }
+      if(searchParams.get('email')){
+          useremail=searchParams.get('email');
+      }else{
+          useremail="abc@gmail.com";
+      }
 
-    var webrtcdomobj;
+      var webrtcdomobj;
 
-    console.log("searchParams" , searchParams);
+      console.log("searchParams" , searchParams);
 
-    var local={
-        video: "myAloneVideo",
-        videoClass:"",
-        videoContainer : "singleVideoContainer",
-        userDisplay:false,
-        userMetaDisplay:false,
-        userdetails:{
-            username: username,
-            usercolor: "#DDECEF",
-            useremail: useremail
-        }
-    };
+      var local={
+          video: "myAloneVideo",
+          videoClass:"",
+          videoContainer : "singleVideoContainer",
+          userDisplay:false,
+          userMetaDisplay:false,
+          userdetails:{
+              username: username,
+              usercolor: "#DDECEF",
+              useremail: useremail
+          }
+      };
 
-    var remote={
-        videoarr: ["myConferenceVideo", "otherConferenceVideo"],
-        videoClass:"",
-        maxAllowed: "6",
-        videoContainer : "confVideoContainer",
-        userDisplay:false,
-        userMetaDisplay:false,
-        dynamicVideos: false 
-    };
+      var remote={
+          videoarr: ["myConferenceVideo", "otherConferenceVideo"],
+          videoClass:"",
+          maxAllowed: "6",
+          videoContainer : "confVideoContainer",
+          userDisplay:false,
+          userMetaDisplay:false,
+          dynamicVideos: false 
+      };
 
-    var incoming={
-        audio:  false,
-        video:  true,
-        data:   true,
-        screen: true
-    };
+      var incoming={
+          audio:  false,
+          video:  true,
+          data:   true,
+          screen: true
+      };
 
-    var outgoing={
-        audio:  false,
-        video:  true,
-        data:   true,
-        screen: true
-    };
+      var outgoing={
+          audio:  false,
+          video:  true,
+          data:   true,
+          screen: true
+      };
 
-    webrtcdomobj= new WebRTCdom(
-        local, remote, incoming, outgoing
-    );
+      webrtcdomobj= new WebRTCdom(
+          local, remote, incoming, outgoing
+      );
 
-    var session ={
-        sessionid : sessionid,
-        socketAddr: props.signaller,
-        turn:{
-                username    : props.xirsys.username,
-                secretkey   : props.xirsys.secretkey,
-                domain      : props.xirsys.domain,
-                application : props.xirsys.application,
-                room        : props.xirsys.room,
-                secure      : props.xirsys.secure
-            }
-    };
-    
-    var widgets={
-        debug      : false,
-        reconnect   :{
-                        active: true,
-                        button:{
-                            id: "reconnectBtn",
-                            class:"btn btn-success glyphicon glyphicon-refresh topPanelButton",
-                            html:"Reconnect",
-                            resyncfiles:false
-                        }
-                    },
-        timer      :{
-                        active:true,
-                        type: "backward",
-                        upperlimit: {
-                            hour:0 , 
-                            min: 3 , 
-                            sec: 0 
-                        },
-                        span:{
-                            currentTime_id:"currentTimeArea",
-                            currentTimeZonr_id:"currentTimeZoneArea",
-                            class_on:""
-                        },
-                        container:{
-                            id:'timeContainer',
-                            minbutton_id:'minimizeTimerButton'
-                        },
-                    },
-        chat    :{
-                        active: true,
-                        container: {
-                            id: "chatContainer"
-                        },
-                        inputBox:{
-                            text_id:"chatInputText",
-                            sendbutton_id:"chatSendButton",
-                            minbutton_id:"minimizeChatButton"
-                        },
-                        chatBox:{
-                            id: "chatBoard"
-                        },
-                        button:{
-                            class_on:"btn btn-warning glyphicon glyphicon-font topPanelButton",
-                            html_on:"Chat",
-                            class_off:"btn btn-success glyphicon glyphicon-font topPanelButton",
-                            html_off:"Chat"
-                        }
-                },
-        fileShare :{
-                      active : true,
-                      fileShareContainer : "fileSharingRow",
-                      fileListContainer : "fileListingRow",
-                      button:{
-                          id: "fileshareBtn",
-                          class:"btn btn-success glyphicon glyphicon-file topPanelButton",
-                          html:"File"
+      var session ={
+          sessionid : sessionid,
+          socketAddr: props.signaller,
+          turn:{
+                  username    : props.xirsys.username,
+                  secretkey   : props.xirsys.secretkey,
+                  domain      : props.xirsys.domain,
+                  application : props.xirsys.application,
+                  room        : props.xirsys.room,
+                  secure      : props.xirsys.secure
+              }
+      };
+      
+      var widgets={
+          debug      : false,
+          reconnect   :{
+                          active: true,
+                          button:{
+                              id: "reconnectBtn",
+                              class:"btn btn-success glyphicon glyphicon-refresh topPanelButton",
+                              html:"Reconnect",
+                              resyncfiles:false
+                          }
                       },
-                      props:{
-                          fileShare:"divided",   //Can be divided , chatpreview  , single   , hidden 
-                          fileList:"divided"     //Can be divided , single   , hidden
-                      }
+          timer      :{
+                          active:true,
+                          type: "backward",
+                          upperlimit: {
+                              hour:0 , 
+                              min: 3 , 
+                              sec: 0 
+                          },
+                          span:{
+                              currentTime_id:"currentTimeArea",
+                              currentTimeZonr_id:"currentTimeZoneArea",
+                              class_on:""
+                          },
+                          container:{
+                              id:'timeContainer',
+                              minbutton_id:'minimizeTimerButton'
+                          },
+                      },
+          chat    :{
+                          active: true,
+                          container: {
+                              id: "chatContainer"
+                          },
+                          inputBox:{
+                              text_id:"chatInputText",
+                              sendbutton_id:"chatSendButton",
+                              minbutton_id:"minimizeChatButton"
+                          },
+                          chatBox:{
+                              id: "chatBoard"
+                          },
+                          button:{
+                              class_on:"btn btn-warning glyphicon glyphicon-font topPanelButton",
+                              html_on:"Chat",
+                              class_off:"btn btn-success glyphicon glyphicon-font topPanelButton",
+                              html_off:"Chat"
+                          }
                   },
-        mute    :{
-                    active: true,
-                    audio   :{
-                            active: true,
-                            button:{
-                                class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
-                                html_on:"<i class='fa fa-microphone'></i>",
-                                class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
-                                html_off:"<i class='fa fa-microphone'></i>"
-                            }
+          fileShare :{
+                        active : true,
+                        fileShareContainer : "fileSharingRow",
+                        fileListContainer : "fileListingRow",
+                        button:{
+                            id: "fileshareBtn",
+                            class:"btn btn-success glyphicon glyphicon-file topPanelButton",
+                            html:"File"
                         },
-                    video : {
-                            active: true,
-                            button:{
-                                class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
-                                html_on:"<i class='fa fa-video-camera'></i>",
-                                class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
-                                html_off:"<i class='fa fa-video-camera'></i>"
-                            }
-                        }
-                },
-        videoRecord :{
-                        active: true,
-                        videoRecordContainer: true,
-                        button:{
-                            class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
-                            html_on:"<i class='fa fa-circle' title='Stop recording this Video'></i>",
-                            class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
-                            html_off:"<i class='fa fa-circle' title='Record this Video'></i>"
+                        props:{
+                            fileShare:"divided",   //Can be divided , chatpreview  , single   , hidden 
+                            fileList:"divided"     //Can be divided , single   , hidden
                         }
                     },
-        snapshot :{
-                        active: true,
-                        snapshotContainer: true,
-                        button:{
-                            class_on:"pull-right btn btn-modify-video2 videoButtonClass",
-                            html_on:"<i class='fa fa-th-large' title='Take a snapshot'></i>"
-                        }
-                    }, 
-        cursor :{
-                    active : true,
-                    button:{
-                        id: 'shareCursorButton',
-                        class_on:"pull-right btn btn-modify-video2 videoButtonClass",
-                        html_on:"<i class='fa fa-th-large' title='Cursor'></i>"
-                    }                   
-                },
-        screenshare : {
-                        active:true,
-                        screenshareContainer: "screenShareRow",
-                        extensionID: props.extensionID,
-                        button:{
-                            installButton:{
-                                id:"scrInstallButton",
-                                class_on:"screeninstall-btn on",
-                                html_on:"Stop Install",
-                                class_off:"screeninstall-btn off",
-                                html_off:"Install Screen Share"
-                            },
-                            shareButton:{
-                                id:"scrShareButton",
-                                class_on:"screen-btn on",
-                                html_on:"Stop Sharing",
-                                class_off:"screen-btn off",
-                                html_off:"ScreenShare"
-                            },
-                            viewButton:{
-                                id:"scrViewButton",
-                                class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton on",
-                                html_on:"Stop Viewing",
-                                class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton off",
-                                html_off:"View Screen"
-                            }
-                        }
-                    },
-    };
+          mute    :{
+                      active: true,
+                      audio   :{
+                              active: true,
+                              button:{
+                                  class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
+                                  html_on:"<i class='fa fa-microphone'></i>",
+                                  class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
+                                  html_off:"<i class='fa fa-microphone'></i>"
+                              }
+                          },
+                      video : {
+                              active: true,
+                              button:{
+                                  class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
+                                  html_on:"<i class='fa fa-video-camera'></i>",
+                                  class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
+                                  html_off:"<i class='fa fa-video-camera'></i>"
+                              }
+                          }
+                  },
+          videoRecord :{
+                          active: true,
+                          videoRecordContainer: true,
+                          button:{
+                              class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
+                              html_on:"<i class='fa fa-circle' title='Stop recording this Video'></i>",
+                              class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
+                              html_off:"<i class='fa fa-circle' title='Record this Video'></i>"
+                          }
+                      },
+          snapshot :{
+                          active: true,
+                          snapshotContainer: true,
+                          button:{
+                              class_on:"pull-right btn btn-modify-video2 videoButtonClass",
+                              html_on:"<i class='fa fa-th-large' title='Take a snapshot'></i>"
+                          }
+                      }, 
+          cursor :{
+                      active : true,
+                      button:{
+                          id: 'shareCursorButton',
+                          class_on:"pull-right btn btn-modify-video2 videoButtonClass",
+                          html_on:"<i class='fa fa-th-large' title='Cursor'></i>"
+                      }                   
+                  },
+          screenshare : {
+                          active:true,
+                          screenshareContainer: "screenShareRow",
+                          extensionID: props.extensionID,
+                          button:{
+                              installButton:{
+                                  id:"scrInstallButton",
+                                  class_on:"screeninstall-btn on",
+                                  html_on:"Stop Install",
+                                  class_off:"screeninstall-btn off",
+                                  html_off:"Install Screen Share"
+                              },
+                              shareButton:{
+                                  id:"scrShareButton",
+                                  class_on:"screen-btn on",
+                                  html_on:"Stop Sharing",
+                                  class_off:"screen-btn off",
+                                  html_off:"ScreenShare"
+                              },
+                              viewButton:{
+                                  id:"scrViewButton",
+                                  class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton on",
+                                  html_on:"Stop Viewing",
+                                  class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton off",
+                                  html_off:"View Screen"
+                              }
+                          }
+                      },
+      };
 
-    var webrtcdevobj = new WebRTCdev ( 
-        session, widgets
-    );
+      var webrtcdevobj = new WebRTCdev ( 
+          session, widgets
+      );
 
-    startCall(webrtcdevobj);
+      startCall(webrtcdevobj);
 
-    onSessionConnect=function(){
-        adjustelement();
-    };
+      onSessionConnect=function(){
+          adjustelement();
+      };
 
-    document.getElementById(timerobj.container.id).hidden=true;
-});
+      document.getElementById(timerobj.container.id).hidden=true;
+  });
 </script>
 
 
