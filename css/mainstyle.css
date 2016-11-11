@@ -125,13 +125,7 @@ background-color:#A6393D;
 border:1px solid #333333;
 } 
 
-.connect-btn {
-    background: #fff none repeat scroll 0 0;
-    border-radius: 10px;
-    color: #333;
-    margin-top: 8px;
-    padding: 3px 7px;transition:all 0.3s ease-in-out 0s;
-}
+
 .connect-btn:hover{background:#666;color:#fff;
 
 /*-----------------------NEW SEARCH POAGE--------------------*/
@@ -594,10 +588,3 @@ to { left: -100%; }
     text-align: center;
 }
 .loader{background:rgba(41,102,149,0.8);width:100%;height:100%;}
-
-
-
-
-
-
-

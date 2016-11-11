@@ -7,35 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="altanai">
-    <link href="css/mainstyle.css" rel="stylesheet">
     <title>WebRTC Call</title>
     <meta name="google-site-verification" content="8NqEkVsX8mkRCn13Qov4K0njgF0T6t97_a-NZNIXkpE" />
     <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jpcjjkpbiepbmhklnjoahacppaemhmpd">
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.css">
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
+    <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
+    <link href="css/mainstyle.css" rel="stylesheet">
 </head>
 <style>
-    .bodybg{
-      background:url(images/background.jpg) 100% 100%;
-      background-size:cover;
-      font-family:Arial, Helvetica, sans-serif;
-      background-attachment:fixed;
+
+    body{
       overflow:hidden;
     }
-
+    .mainContainer{
+        background: url(images/background.jpg) 100% 100%;
+        background-size: cover;
+        font-family: Arial, Helvetica, sans-serif;
+        background-attachment: fixed;
+    }
+    body::-webkit-scrollbar {
+        width: 1em;
+    }
+     
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+     
+    body::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
     .over-lap {
       display: block !important
     }
 
+    video{
+        position: relative;
+        top: 0;
+        left: 0;
+        transition: width .5s ease;
+        margin: 0;
+        background-color: #000;
+        border-radius: 50px;
+        width: 100%!important; 
+    }
     /*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-START---------*/
 
     .right-section{
-      background:#fff;
-      border-radius:30px;
-      padding:20px 0px 0px;
-      border:1px solid #F00;
-      margin-top:20px;
-      position:relative;
+    background: rgba(255, 255, 255, 0.27);
+    border-radius: 30px;
+    padding: 20px 0px 0px;
+    /* border: 1px solid #F00; */
+    margin-top: 20px;
+    position: relative;
     }
     .main-block{width:95%;margin:auto;}
     .time-function {
@@ -50,12 +75,16 @@
     }
     .panel-seassion{position:relative;}
     .btn-modify-video.focus, .btn-modify-video:focus, .btn-modify-video:hover {color: #748970;}
-    .btn-modify-video {background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #f60000;font-size: 22px;}
-    .bg-ssion{border-radius:10px;background:#ffda96;padding:5px 0px}
-    .arrow {border-radius: 50%;display: inline-block;height: auto;left: -20px;position: absolute;text-align: center;top: 0;font-size: 22px;color:#F00;}
+    .btn-modify-video {
+      background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #f60000;font-size: 22px;}
+    .bg-ssion{
+      border-radius:10px;background:#ffda96;padding:5px 0px}
+    .arrow {
+      border-radius: 50%;display: inline-block;height: auto;left: -20px;position: absolute;text-align: center;top: 0;font-size: 22px;color:#F00;}
     .video-block{width:100%;}
 
-    .video-header{background:#e61339;color:#ffff00;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
+    .video-header{
+      background:#e61339;color:#ffff00;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
     .controler-video {margin: 0;padding: 3px 0 9px;position:relative;}
     .btn-modify-video2.focus, .btn-modify-video2:focus, .btn-modify-video2:hover {color: #eaff00;}
     .btn-modify-video2 {background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #fff;font-size: 18px;}
@@ -69,7 +98,12 @@
         margin: 0;
     }
     .send-message-block-class{
-      margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background: #b2b2b2;
+      margin:3px 0px;
+      height:150px;
+      overflow-x: scroll;
+      overflow-x: -moz-hidden-unscrollable; 
+      background: rgb(218, 209, 209);
+      height: 150px;
     }
 
     .timer{    font-size: 15px;
@@ -90,7 +124,8 @@
         border-radius: 5px;
         height: 30px;}
 
-    .reconnectClass{    font-size: 15px;
+    .reconnectClass{    
+    font-size: 15px;
         font-weight: bold;
         text-transform: uppercase;
         color: #ffffff;
@@ -98,10 +133,19 @@
         margin: 5px;
         border-radius: 5px;
         height: 30px;}
-    .send-mesg{background:#efbf00;color:#fff;border-radius:8px;padding:2px 0px 3px 5px;height:auto;border:0px;}
-    .send-mesg:focus{box-shadow:0px;}
-    .send-mesg::-moz-placeholder{color:#FFF;}
-    .online-pro-pict img {height: auto;width: 100%;}
+    .send-mesg{
+      background:#fff;
+      color:#000;
+      border-radius:8px;
+      padding:2px 0px 3px 5px;
+      height:auto;
+      border:0px;}
+    .send-mesg:focus{
+      box-shadow:0px;}
+    .send-mesg::-moz-placeholder{
+      color:#FFF;}
+    .online-pro-pict img {
+      height: auto;width: 100%;}
     
     .timer-block{margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background:rgba(119, 119, 119, 0.28);}
     .online-pro-pict {border: 1px solid #CCC;border-radius: 50%;margin: 7px;overflow: hidden;}
@@ -114,7 +158,13 @@
     .chating-area {overflow-y: scroll; overflow-x: hidden;}
 
     .video-class{background: #ccccff;position:relative;}
-    .chat-class{position:relative;}
+    .chat-class{
+      position:relative;    
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      overflow: hidden;
+      margin: 5px 0px;
+    }
 
     .video-header-2{background:#FF0;color:#000;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
     .btn-modify-video-3.focus, .btn-modify-video-3:focus, .btn-modify-video-3:hover {color:#FF0000;}
@@ -167,10 +217,10 @@
     }
     .fileUpload {
         border-radius: 10px;
-        margin:0px;
-        overflow: hidden;
         position: relative;
-        width: 150px;
+        width: 130px;
+        margin-left: 10px;
+        align-items: center;
     }
     .fileUpload input.upload {
         position: absolute;
@@ -221,9 +271,12 @@
       
     }
     .btn.btn-info.recannect:hover span {background:#03F;}
-
-    video{
-        width: 100%!important; 
+    
+    .centreDiv-class {
+    background: rgba(255, 255, 255, 0.55);
+    padding-right: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
     }
 
     .rightDiv-class{
@@ -232,19 +285,14 @@
         overflow-x:hidden;
     }
 
-    .centreDiv-class{
-        padding-right: 0px;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
 </style>
 
-<body class="bodybg">
+<body>
 
-  <div class="container-fluid header-part">
-    <div class="row">
+  <div class="container-fluid header-part" style="height:100px">
+    <div class="row" style="height:100px">
       <div class="col-md-12 text-center">
-        <div class="logo"> <img src="images/logo.png" alt="logo" > </div>
+        <div class="logo"> <img src="images/logo.png" alt="logo" style="height: 85px;" > </div>
         <div class="over-lap">
           <div class="profile pull-left"> <img src="images/img-3.jpg" class="img-responsive"> </div>
           <div class="pull-right">
@@ -259,14 +307,16 @@
 
   <div class="row alertDiv" id="alertBox" hidden="true"></div>
 
-  <section id="mainDiv" class="video-section">
+  <section id="mainDiv" class="video-section mainContainer">
     <div class="container-fluid">
       <div class="row">
         
         <div id="centreDiv" class="col-md-9 centreDiv-class">
             <div id="screenShareRow" style="margin: 10px;"></div>
+            <div id="screenRecordRow" style="margin: 10px;" hidden></div>
             <div id="drawBoardRow" style="margin: 10px;"></div>
             <div id="fileSharingRow" style="margin: 10px;"></div>
+            <div id="fileListingRow" style="margin: 10px;"></div>
         </div>
 
         <div id="rightDiv" class="col-md-3 rightDiv-class">
@@ -316,14 +366,14 @@
                 <!-- Recording -->
                 <div class="panel-seassion">
                     <div class="recordClass">
-                        <div class="col-xs-6 text-center" style="padding:0px 2px">Session</div>
+                        <div id="scrRecordStatus" class="col-xs-6 text-center" style="padding:0px 2px">Record</div>
                    
                         <div class="col-xs-3 text-center">
-                          <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
+                          <button id="scrRecordBtn" class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
                         </div>
 
-                        <div class="col-xs-3 text-center border-right">
-                          <button class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Stop"><i class="fa fa-circle"></i></button>
+                        <div class="col-xs-3 text-center border-right" style="color:#ccc">
+                          <button id="scrStopRecordBtn" class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Stop"><i class="fa fa-circle"></i></button>
                         </div>
 
                         <div class="clearfix"></div>
@@ -340,7 +390,7 @@
 
                       <div class="video-class">
                           <div class="block-section">
-                              <video class="video-block" controls src="#" name="myConferenceVideo"></video>
+                              <video class="video-block" controls name="myConferenceVideo"></video>
                           </div>
                           <br/><br/>
                       </div>
@@ -370,38 +420,28 @@
 
                       <div class="video-class">
                           <div class="block-section">
-                              <video src="#" controls class="video-block" name="otherConferenceVideo"></video>
+                              <video controls class="video-block" name="otherConferenceVideo"></video>
                           </div>
                           <br/><br/>
-                      </div>
-                    
-                      <!-- screenshare -->
-                      <div class="panel-seassion">
-                        <div class="file-share-class">
-                            <div class="text-center">
-                                <div class="fileUpload btn bg-blue" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
-                                    <button id="scrShareButton" class="screen-btn off" style="background: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
-                                    <button display="none" id="scrInstallButton" class="screenInstall-btn off" data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
-                                    <button display="none" id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                                </div>
-                             </div>
-                         </div>
-                      </div>                      
+                      </div>                   
                      
                       <!-- fileshare -->
                       <div class="panel-seassion">
                         <div class="file-share-class">
-                            <div class="text-center">
-                                <div class="fileUpload btn bg-blue" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">
-                                  <span>Upload A File</span>
-                                  <input id="fileshareBtn" class="upload"  />
+                            <div class="row text-center">
+
+                                <div class="col=-md-4 fileUpload btn bg-blue">
+                                    <input id="fileshareBtn" class="upload" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">Upload a file</button>
                                 </div>
+
+                                <div class="col-md-4 fileUpload btn bg-blue">
+                                    <button id="scrShareButton" class="screen-btn off" style="background: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
+                                    <button display="none" id="scrInstallButton" class="screenInstall-btn off" data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
+                                    <button display="none" id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                </div>
+
                              </div>
                          </div>
-                      </div>
-                     
-                      <div class="border-radius">
-                          <div class="table-section" id="fileListingRow"></div>
                       </div>
                      
                       <div class="panel-seassion">
@@ -448,104 +488,106 @@
   </section>
 
 <script src="property.js"></script>
-<link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
 
 <script>
-function adjustelement(){
+
+  function adjustelement(){
     $("#mainDiv").height(window.innerHeight- $(".header-part").height())
     $("#rightDiv").height($("#mainDiv").height()-20);
     $("#centreDiv").height($("#mainDiv").height()-20);
-    $(".fileViewing1Box").css("height",$("#mainDiv").height()-50);
+    $(".fileViewing1Box").css("height",$("#mainDiv").height()-150);
+    $(".filesharing1Box").css("height","130px");
     $('[data-toggle="tooltip"]').tooltip();
-}
-$('document').ready(function(){
+  }
 
-    adjustelement();
+  $('document').ready(function(){
 
-    sessionid = init(true);
-    var searchParams = new URLSearchParams(window.location);
-    var role="participant",out_A=true, out_V=true ;
+      adjustelement();
 
-    if(searchParams.get('audio')=="0"){
-        out_A=false;
-    }
+      sessionid = init(true);
+      var searchParams = new URLSearchParams(window.location);
+      var role="participant",out_A=true, out_V=true ;
 
-    if(searchParams.get('video')=="0"){
-        out_V=false;
-    }
+      if(searchParams.get('audio')=="0"){
+          out_A=false;
+      }
 
-    if(searchParams.get('name')){
-        username=searchParams.get('name');
-    }else{
-        username="Expert";
-    }
+      if(searchParams.get('video')=="0"){
+          out_V=false;
+      }
 
-    if(searchParams.get('email')){
-        useremail=searchParams.get('email');
-    }else{
-        useremail="abc@gmail.com";
-    }
+      if(searchParams.get('name')){
+          username=searchParams.get('name');
+      }else{
+          username="Expert";
+      }
 
-    var webrtcdomobj;
+      if(searchParams.get('email')){
+          useremail=searchParams.get('email');
+      }else{
+          useremail="abc@gmail.com";
+      }
 
-    console.log("searchParams" , searchParams);
+      var webrtcdomobj;
 
-    var local={
-        video: "myAloneVideo",
-        videoClass:"",
-        videoContainer : "singleVideoContainer",
-        userDisplay:false,
-        userMetaDisplay:false,
-        userdetails:{
-            username: username,
-            usercolor: "#DDECEF",
-            useremail: useremail
-        }
-    };
+      console.log("searchParams" , searchParams);
 
-    var remote={
-        videoarr: ["myConferenceVideo", "otherConferenceVideo"],
-        videoClass:"",
-        maxAllowed: "6",
-        videoContainer : "confVideoContainer",
-        userDisplay:false,
-        userMetaDisplay:false,
-        dynamicVideos: false 
-    };
+      var local={
+          video: "myAloneVideo",
+          videoClass:"",
+          videoContainer : "singleVideoContainer",
+          userDisplay:false,
+          userMetaDisplay:false,
+          userdetails:{
+              username: username,
+              usercolor: "#DDECEF",
+              useremail: useremail
+          }
+      };
 
-    var incoming={
-        audio:  false,
-        video:  true,
-        data:   true,
-        screen: true
-    };
+      var remote={
+          videoarr: ["myConferenceVideo", "otherConferenceVideo"],
+          videoClass:"",
+          maxAllowed: "6",
+          videoContainer : "confVideoContainer",
+          userDisplay:false,
+          userMetaDisplay:false,
+          dynamicVideos: false 
+      };
 
-    var outgoing={
-        audio:  false,
-        video:  true,
-        data:   true,
-        screen: true
-    };
+      var incoming={
+          audio:  false,
+          video:  true,
+          data:   true,
+          screen: true
+      };
 
-    webrtcdomobj= new WebRTCdom(
-        local, remote, incoming, outgoing
-    );
+      var outgoing={
+          audio:  false,
+          video:  true,
+          data:   true,
+          screen: true
+      };
 
-    var session ={
-        sessionid : sessionid,
-        socketAddr: props.signaller,
-        turn:{
-                username    : props.xirsys.username,
-                secretkey   : props.xirsys.secretkey,
-                domain      : props.xirsys.domain,
-                application : props.xirsys.application,
-                room        : props.xirsys.room,
-                secure      : props.xirsys.secure
-            }
-    };
-    
-    var widgets={
+      webrtcdomobj= new WebRTCdom(
+          local, remote, incoming, outgoing
+      );
+
+      var session ={
+          sessionid : sessionid,
+          socketAddr: props.signaller,
+          turn:{
+                  username    : props.xirsys.username,
+                  secretkey   : props.xirsys.secretkey,
+                  domain      : props.xirsys.domain,
+                  application : props.xirsys.application,
+                  room        : props.xirsys.room,
+                  secure      : props.xirsys.secure
+              }
+      };
+      
+      var widgets={
         debug      : false,
         reconnect   :{
                         active: true,
@@ -604,8 +646,8 @@ $('document').ready(function(){
                           html:"File"
                       },
                       props:{
-                          fileShare:"divided",
-                          fileList:"divided"
+                          fileShare:"divided",   //Can be divided , chatpreview  , single   , hidden 
+                          fileList:"divided"     //Can be divided , single   , hidden
                       }
                   },
         mute    :{
@@ -651,9 +693,32 @@ $('document').ready(function(){
                     active : true,
                     button:{
                         id: 'shareCursorButton',
-                        class_on:"pull-right btn btn-modify-video2 videoButtonClass",
-                        html_on:"<i class='fa fa-th-large' title='Cursor'></i>"
+                        class_on:"pull-right btn btn-modify-video2 videoButtonClass On",
+                        html_on:"<i class='fa fa-hand-o-up' title='Cursor'></i>",
+                        class_off:"pull-right btn btn-modify-video2 videoButtonClass Off",
+                        html_off:"<i class='fa fa-hand-o-up' title='Cursor'></i>"
                     }                   
+                },
+        fullscreen :{
+                    active : true,
+                    button:{
+                        id: 'fullScreenButton',
+                        class_on:"pull-right btn btn-modify-video2 videoButtonClass On",
+                        html_on:"<i class='fa fa-laptop' title='full Screen'></i>",
+                        class_off:"pull-right btn btn-modify-video2 videoButtonClass Off",
+                        html_off:"<i class=' fa fa-laptop' title='full Screen'></i>"
+                    }                   
+                },
+
+        screenrecord:{
+                    active : true,
+                    videoRecordContainer: true,
+                        button:{
+                            class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
+                            html_on:"<i class='fa fa-circle' title='Stop recording this Video'></i>",
+                            class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
+                            html_off:"<i class='fa fa-circle' title='Record this Video'></i>"
+                        }
                 },
         screenshare : {
                         active:true,
@@ -696,9 +761,11 @@ $('document').ready(function(){
     };
 
     document.getElementById(timerobj.container.id).hidden=true;
-});
+  });
+
+
 </script>
 
-
+<!--  glyphicon glyphicon-hand-left-->
 </body>
 </html>
