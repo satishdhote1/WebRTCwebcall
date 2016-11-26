@@ -1,8 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-.bodybg{background:url(../images/background.jpg) 100% 100%;background-size:cover;font-family:Arial, Helvetica, sans-serif;background-attachment:fixed;}
-.header-part{background:rgba(255,255,255,0.9);width:100%;}
-.logo{padding:10px 0px;}
+
 .over-lap {
     position: absolute;
     right: 50px;
@@ -33,7 +31,9 @@ h1.search-title {
     text-align: center;
     text-transform: uppercase;
     width: 100%;
-}.border4side{border:1px solid #eee;}
+}
+
+.border4side{border:1px solid #eee;}
 .bg-gray{background:#faf8ff;}
 .search-profile > img {
     height: 100%;
@@ -595,31 +595,10 @@ to { left: -100%; }
 }
 .loader{background:rgba(41,102,149,0.8);width:100%;height:100%;}
 
-
-
-
-.bodybg{
-      background:url(images/background.jpg) 100% 100%;
-      background-size:cover;
-      font-family:Arial, Helvetica, sans-serif;
-      background-attachment:fixed;
-      overflow:hidden;
-    }
-
     .over-lap {
       display: block !important
     }
 
-    video{
-        position: relative;
-        top: 0;
-        left: 0;
-        transition: width .5s ease;
-        margin: 0;
-        background-color: #000;
-        border-radius: 50px;
-        width: 100%!important; 
-    }
     /*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-START---------*/
 
     .right-section{
@@ -665,32 +644,7 @@ to { left: -100%; }
       margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background: #b2b2b2;
     }
 
-    .timer{    font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #2aabd2;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;}
 
-    .recordClass{    font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #2aabd2;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;}
-
-    .reconnectClass{    font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #2aabd2;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;}
     .send-mesg{background:#efbf00;color:#fff;border-radius:8px;padding:2px 0px 3px 5px;height:auto;border:0px;}
     .send-mesg:focus{box-shadow:0px;}
     .send-mesg::-moz-placeholder{color:#FFF;}
@@ -705,8 +659,6 @@ to { left: -100%; }
     border-radius:5px}
     .chat-text-area {margin: 5px 0px;}
     .chating-area {overflow-y: scroll; overflow-x: hidden;}
-
-    .video-class{background: #ccccff;position:relative;}
     .chat-class{position:relative;}
 
     .video-header-2{background:#FF0;color:#000;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
@@ -876,8 +828,7 @@ to { left: -100%; }
 
     .video-header{background:#e61339;color:#ffff00;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
     .controler-video {margin: 0;padding: 3px 0 9px;position:relative;}
-    .btn-modify-video2.focus, .btn-modify-video2:focus, .btn-modify-video2:hover {color: #eaff00;}
-    .btn-modify-video2 {background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #fff;font-size: 18px;}
+
 
     .send-chat-header-class{
         border-radius: 10px;
@@ -891,49 +842,7 @@ to { left: -100%; }
       margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background: #b2b2b2;
     }
 
-    .timer{    font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #2aabd2;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;}
 
-    .recordClass{    font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #2aabd2;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;}
-
-    .reconnectClass{    font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #2aabd2;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;}
-    .send-mesg{background:#efbf00;color:#fff;border-radius:8px;padding:2px 0px 3px 5px;height:auto;border:0px;}
-    .send-mesg:focus{box-shadow:0px;}
-    .send-mesg::-moz-placeholder{color:#FFF;}
-    .online-pro-pict img {height: auto;width: 100%;}
-    
-    .timer-block{margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background:rgba(119, 119, 119, 0.28);}
-    .online-pro-pict {border: 1px solid #CCC;border-radius: 50%;margin: 7px;overflow: hidden;}
-    .online-chat-text span, .online-chat-text-reply span {color:#333;display: inherit;font-size: 10px;margin-top: 5px;}
-    .online-chat-text {background:#fdd1c6;padding:5px;color:#000;margin:10px 0px 0px 0px;font-family:Helvetica;font-size:13px;font-weight:bold;
-    border-radius:5px}
-    .online-chat-text-reply {background:#c44b31;padding:5px;color:#fff;margin:10px 0px 0px 0px;font-family:Helvetica;font-size:13px;font-weight:bold;
-    border-radius:5px}
-    .chat-text-area {margin: 5px 0px;}
-    .chating-area {overflow-y: scroll; overflow-x: hidden;}
-
-    .video-class{background: #ccccff;position:relative;}
-    .chat-class{position:relative;}
 
     .video-header-2{background:#FF0;color:#000;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
     .btn-modify-video-3.focus, .btn-modify-video-3:focus, .btn-modify-video-3:hover {color:#FF0000;}
@@ -984,38 +893,12 @@ to { left: -100%; }
     td span .fa {
         cursor: pointer;
     }
-    .fileUpload {
-        border-radius: 10px;
-        position: relative;
-        width: 130px;
-        margin-left: 10px;
-        align-items: center;
-    }
-    .fileUpload input.upload {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 0;
-        padding: 0;
-        font-size: 20px;
-        cursor: pointer;
-        opacity: 0;
-        filter: alpha(opacity=0);
-    }
-    .fileViewing1Box{
-        color: #968787;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        border: 10px solid white;
-        height: 400px;
-    }
+
     .bg-red{background:#ff6600;color:#fff;}
     .bg-blue{background:#2e6da4;color:#fff;}
     .table-section { font-size:12px;}
     .border-radius { border-radius: 15px; overflow: hidden; margin:5px 0px;}
-    .videoButtonClass {
-        padding :5px;
-    }
+
     .button-corner {
         float: right;
         margin-right: 5px;
@@ -1025,21 +908,7 @@ to { left: -100%; }
         float: right;
         margin-right: 20px;
     }
-    .btn.btn-info.recannect{font-size:15px;font-weight:bold;text-transform:uppercase; }
-    .btn.btn-info.recannect > span {
-        background:#0099FF;
-        border-radius: 3px;
-        color:#FFF;
-        height: 34px;
-        left:16px;
-        line-height: 34px;
-        position: absolute;
-        text-align: center;
-        top: 0;
-        width: 34px;
-      
-    }
-    .btn.btn-info.recannect:hover span {background:#03F;}
+
     .rightDiv-class{
         padding-right:0px;
         overflow-y:overflow;

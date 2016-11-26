@@ -1,6 +1,4 @@
-sudo rsync -avz -e "ssh -i /home/altanai/webrtcWSwksppace/villagexpert/farook/webrtckeypair.pem" \
-	~/webrtcWSwksppace/villagexpert/villageexperts_webrtc/ \
-	ubuntu@54.193.124.35:~/villageexperts_webrtc/
+# sudo rsync -avz -e "ssh -i /mnt/f/villageexperts/farookvillage/webrtckeypair.pem"
+# 	/mnt/f/villageexperts/villageexperts_webrtc/ ubuntu@dev.villageexperts.com:/home/ubuntu/villageexperts_webrtc/
 
-
-rsync /home/altanai/webrtcWSwksppace/villagexpert/villageexperts_webrtc/ -i /home/altanai/webrtcWSwksppace/villagexpert/farook/webrtckeypair.pem ubuntu@54.193.124.35:~/villageexperts_webrtc/ --rsh ssh --recursive --delete --exclude=.git* --exclude=*.scss --exclude=node_modules --exclude=cache --exclude=logs -avz --verbose
+sudo rsync /mnt/f/villageexperts/villageexperts_webrtc/ -i /mnt/f/villageexperts/farookvillage/webrtckeypair.pem ubuntu@dev.villageexperts.com:/home/ubuntu/villageexperts_webrtc/ --rsh ssh --recursive --delete --exclude=.git* --exclude=*.scss --exclude=node_modules --exclude=cache --exclude=logs -avz --verbose
