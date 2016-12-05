@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -428,949 +427,17 @@
         padding-left:10px;
         color: #fff;font-size: 18px;}
 
-</style>
-
-<body>
-
-  <div class="row alertDiv" id="alertBox" hidden="true"></div>
-
-  <section id="mainDiv" contenteditable class="video-section mainContainer">
-    <div class="container-fluid">
-        <div class="row">
-        
-            <div id="centreDiv" class="col-md-9 centreDiv-class">
-                <div id="screenShareRow" style="margin: 10px;"></div>
-                <div id="screenRecordRow" style="margin: 10px;" hidden></div>
-                <div id="drawBoardRow" style="margin: 10px;"></div>
-                <div id="fileSharingRow" style="margin: 10px;"></div>
-                <div id="fileListingRow" style="margin: 10px;"></div>
-            </div>
-
-            <div id="rightDiv" class="col-md-3 rightDiv-class">
-            <div class="right-section">
-
-            <div class="container-fluid header-part">
-                <div class="row" style="height:100px">
-                  <div class="col-md-12 text-center">
-                    <div class="logo"> <img class="logoClass" src="images/villagexpertslogo2.png" alt="logo" > </div>
-                    <div class="over-lap">
-                      <div class="profile pull-left"> <img hidden style="visibility: hidden !important;" src="images/img-3.jpg" class="img-responsive"> </div>
-                      <div class="pull-right">
-                        <p id="loginname" class="loginname">...</p>
-                        <button id="logoutBtn" class="btn btn-info bg-blue">End Session</button>
-                      </div>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="main-block">
-
-                <!-- Timer and monitization -->
-                <div class="panel-seassion">
-                    <div class="timer">
-                        <div class="col-xs-8 text-center" style="padding:0px 2px"> Timer </div>
-                        <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                            <button id="minimizeTimerButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div class="timer-block" id="timeContainer" hidden>
-                        <div class="panel-seassion">
-                            <div class="col-xs-6">
-                              <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
-                            </div>
-                            <div class="col-xs-6">
-                              <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
-                            </div>
-                            <div class="col-xs-6">
-                              <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
-                              <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
-                            </div>
-                            <div class="col-xs-6">
-                                <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
-                                <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bandwidth and Network stats -->
-                <div class="panel-seassion">
-                    <div class="timer">
-                        <div class="col-xs-8 text-center" style="padding:0px 2px"> Network stats </div>
-                        <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                            <button id="minimizeBandwidthButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                        </div>
-                      <div class="clearfix"></div>
-                    </div>
-                    <div class="timer-block" id="bandwidthContainer" hidden>
-                        <div class="panel-seassion">
-                            <div class="col-xs-6">
-                              <p id="outgoingbandwidth" class="time-function" >1Mbps</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Reconnect Button -->
-                <div class="panel-seassion">
-                    <div class="reconnectClass">
-                        <div id="reconnectBtn" class="col-xs-8 text-center" style="padding:0px 2px">Reconnect</div>
-                    </div>
-
-                    <div class="clearfix"></div>
-                </div>
-
-                <!-- Recording -->
-                <div class="panel-seassion">
-                    <div class="recordClass">
-                        <div id="scrRecordStatus" class="col-xs-8 text-center" style="padding:0px 2px">Session Record</div>
-                   
-                        <div class="col-xs-3 text-center">
-                          <button id="scrRecordBtn" class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
-                        </div>
-
-                        <div class="col-xs-3 text-center border-right" style="color:#ccc">
-                          <button id="scrStopRecordBtn" class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Stop"><i class="fa fa-circle"></i></button>
-                        </div>
-
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-
-                  <!-- when no remote -->
-                  <div id="singleVideoContainer" class="row" hidden>
-                      <video name="myAloneVideo" autoplay="autoplay" muted="true" />
-                  </div>
-
-                  <!-- when remotes are connected -->
-                  <div id="confVideoContainer">
-
-                      <div class="video-container-class">
-                          <div class="block-section">
-                              <video class="video-block" controls name="myConferenceVideo"></video>
-                          </div>
-                          <br/><br/>
-                      </div>
-
-                      <div class="chat-class border-radius">
-                            <div class="send-chat-header-class row" id="chatHeader">
-                                  <div class="col-xs-8 text-center" style="padding:0px 2px">
-                                      <input id="chatInputText" type="text" class="form-control send-mesg" placeholder="Send Message">
-                                  </div>
-                           
-                                  <div class="col-xs-2 text-center" style="padding:0px 2px">
-                                      <button id="chatSendButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
-                                  </div>
-                              
-                                  <div class="col-xs-2 text-center" style="padding:0px 2px">
-                                      <button id="minimizeChatButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                                  </div>
-                            </div>
-
-                            <div class="sent-message-block-class" id="chatContainer" style="background-color: white;">
-                                <div class="panel-seassion">
-                                  <div class="chating-area" id="chatBoard"> </div>
-                                  <div id="whoTyping"></div>
-                                </div>
-                            </div>
-                      </div>
-
-                      <div class="video-container-class">
-                          <div class="block-section">
-                              <video controls class="video-block" name="otherConferenceVideo"></video>
-                          </div>
-                          <br/><br/>
-                      </div>                   
-                     
-                      <!-- fileshare -->
-                      <div class="panel-seassion">
-                        <div class="file-share-class">
-                            <div class="row text-center">
-
-                                <div class="col=-md-4 fileUpload btn bg-blue">
-                                    <input id="fileshareBtn" class="upload" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">Upload a file</button>
-                                </div>
-
-                                <div class="col-md-4 fileUpload btn bg-blue">
-                                    <button id="scrShareButton" class="screen-btn off" style="background: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
-                                    <button display="none" id="scrInstallButton" class="screenInstall-btn off" data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
-                                    <button display="none" id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
-                                </div>
-
-                             </div>
-                         </div>
-                      </div>
-                     
-                      <div class="panel-seassion">
-                          <div class="icon-markup-block"> 
-                                <div style="padding-right:0px;" class="col-xs-2 text-center">
-                                  <button id="shareCursorButton" data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Share cursor pointers"><img src="images/13.png"></button>
-                                </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
-                                </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
-                                </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
-                                </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
-                                </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
-                                </div>
-                                <div class="clearfix"></div>
-                          </div>
-                      </div>
-
-                      <!-- ............................Cursors resting position .................. -->
-
-                      <div id="cursor1" class="cursor1Class" style="width:0"></div>
-                      <div id="cursor2" class="cursor2Class" style="width:0"></div>
-
-                      <div style="padding-top:0px;" class="panel-seassion">
-                          <div class="icon-markup-block">           
-                              <div class="clearfix"></div>
-                          </div>
-                      </div>
-                  </div>
-            </div>
-
-            </div>
-    
-            </div>
-              
-          </div>
-        </div>
-  </section>
-
-<script src="property.js"></script>
-<script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-
-<script>
-
-    //$('video' ).css('cursor', 'move').draggable().resizable();
-
-  function adjustelement(){
-    /*$("#mainDiv").height(window.innerHeight- $(".header-part").height())*/
-    $("#mainDiv").height(window.innerHeight);
-    $("#rightDiv").height($("#mainDiv").height()-20);
-    $("#centreDiv").height($("#mainDiv").height()-20);
-    $(".fileViewing1Box").css("height",$("#mainDiv").height()-150);
-    $(".filesharing1Box").css("height","130px");
-    $('[data-toggle="tooltip"]').tooltip();
-  }
-
-  $('document').ready(function(){
-
-      adjustelement();
-
-      sessionid = init(true);
-      var searchParams = new URLSearchParams(window.location);
-      var role="participant",out_A=true, out_V=true ;
-
-      if(searchParams.get('audio')=="0"){
-          out_A=false;
-      }
-
-      if(searchParams.get('video')=="0"){
-          out_V=false;
-      }
-
-      if(searchParams.get('name')){
-          username=searchParams.get('name');
-      }else{
-          username="Expert";
-      }
-
-      if(searchParams.get('email')){
-          useremail=searchParams.get('email');
-      }else{
-          useremail="abc@gmail.com";
-      }
-
-      var webrtcdomobj;
-
-      console.log("searchParams" , searchParams);
-
-      var local={
-          video: "myAloneVideo",
-          videoClass:"video-class",
-          videoContainer : "singleVideoContainer",
-          userDisplay:false,
-          userMetaDisplay:false,
-          userdetails:{
-              username: username,
-              usercolor: "#DDECEF",
-              useremail: useremail
-          }
-      };
-
-      var remote={
-          videoarr: ["myConferenceVideo", "otherConferenceVideo"],
-          videoClass:"video-class",
-          maxAllowed: "6",
-          videoContainer : "confVideoContainer",
-          userDisplay:false,
-          userMetaDisplay:false,
-          dynamicVideos: false 
-      };
-
-      var incoming={
-          audio:  false,
-          video:  true,
-          data:   true,
-          screen: true
-      };
-
-      var outgoing={
-          audio:  false,
-          video:  true,
-          data:   true,
-          screen: true
-      };
-
-      webrtcdomobj= new WebRTCdom(
-          local, remote, incoming, outgoing
-      );
-
-      var session ={
-          sessionid : sessionid,
-          socketAddr: props.signaller,
-          turn:{
-                  username    : props.xirsys.username,
-                  secretkey   : props.xirsys.secretkey,
-                  domain      : props.xirsys.domain,
-                  application : props.xirsys.application,
-                  room        : props.xirsys.room,
-                  secure      : props.xirsys.secure
-              }
-      };
-      
-      var widgets={
-        debug      : false,
-        reconnect   :{
-                        active: true,
-                        button:{
-                            id: "reconnectBtn",
-                            class:"btn btn-success glyphicon glyphicon-refresh topPanelButton",
-                            html:"Reconnect",
-                            resyncfiles:false
-                        }
-                    },
-        timer      :{
-                        active:true,
-                        type: "backward",
-                        upperlimit: {
-                            hour:0 , 
-                            min: 3 , 
-                            sec: 0 
-                        },
-                        span:{
-                            currentTime_id:"currentTimeArea",
-                            currentTimeZonr_id:"currentTimeZoneArea",
-                            class_on:""
-                        },
-                        container:{
-                            id:'timeContainer',
-                            minbutton_id:'minimizeTimerButton'
-                        },
-                    },
-        chat    :{
-                        active: true,
-                        container: {
-                            id: "chatContainer"
-                        },
-                        inputBox:{
-                            text_id:"chatInputText",
-                            sendbutton_id:"chatSendButton",
-                            minbutton_id:"minimizeChatButton"
-                        },
-                        chatBox:{
-                            id: "chatBoard"
-                        },
-                        button:{
-                            class_on:"btn btn-warning glyphicon glyphicon-font topPanelButton",
-                            html_on:"Chat",
-                            class_off:"btn btn-success glyphicon glyphicon-font topPanelButton",
-                            html_off:"Chat"
-                        }
-                },
-        fileShare :{
-                      active : true,
-                      fileShareContainer : "fileSharingRow",
-                      fileListContainer : "fileListingRow",
-                      button:{
-                          id: "fileshareBtn",
-                          class:"btn btn-success glyphicon glyphicon-file topPanelButton",
-                          html:"File"
-                      },
-                      props:{
-                          fileShare:"divided",   //Can be divided , chatpreview  , single   , hidden 
-                          fileList:"divided"     //Can be divided , single   , hidden
-                      }
-                  },
-        mute    :{
-                    active: true,
-                    audio   :{
-                            active: true,
-                            button:{
-                                class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
-                                html_on:"<i class='fa fa-microphone'></i>",
-                                class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
-                                html_off:"<i class='fa fa-microphone'></i>"
-                            }
-                        },
-                    video : {
-                            active: true,
-                            button:{
-                                class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
-                                html_on:"<i class='fa fa-video-camera'></i>",
-                                class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
-                                html_off:"<i class='fa fa-video-camera'></i>"
-                            }
-                        }
-                },
-        videoRecord :{
-                        active: true,
-                        videoRecordContainer: true,
-                        button:{
-                            class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
-                            html_on:"<i class='fa fa-circle' title='Stop recording this Video'></i>",
-                            class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
-                            html_off:"<i class='fa fa-circle' title='Record this Video'></i>"
-                        }
-                    },
-        snapshot :{
-                        active: true,
-                        snapshotContainer: true,
-                        button:{
-                            class_on:"pull-right btn btn-modify-video2 videoButtonClass",
-                            html_on:"<i class='fa fa-th-large' title='Take a snapshot'></i>"
-                        }
-                    }, 
-        cursor :{
-                    active : true,
-                    button:{
-                        id: 'shareCursorButton',
-                        class_on:"pull-right btn btn-modify-video2 videoButtonClass On",
-                        html_on:"<i class='fa fa-hand-o-up' title='Cursor'></i>",
-                        class_off:"pull-right btn btn-modify-video2 videoButtonClass Off",
-                        html_off:"<i class='fa fa-hand-o-up' title='Cursor'></i>"
-                    }                   
-                },
-        fullscreen :{
-                    active : true,
-                    button:{
-                        id: 'fullScreenButton',
-                        class_on:"pull-right btn btn-modify-video2 videoButtonClass On",
-                        html_on:"<i class='fa fa-laptop' title='full Screen'></i>",
-                        class_off:"pull-right btn btn-modify-video2 videoButtonClass Off",
-                        html_off:"<i class=' fa fa-laptop' title='full Screen'></i>"
-                    }                   
-                },
-
-        screenrecord:{
-                    active : true,
-                    videoRecordContainer: true,
-                        button:{
-                            id: "scrRecordBtn",
-                            class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
-                            html_on:"<i class='fa fa-circle' title='Stop recording this Video'></i>",
-                            class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
-                            html_off:"<i class='fa fa-circle' title='Record this Video'></i>"
-                        }
-                },
-                
-        screenshare : {
-                        active:true,
-                        screenshareContainer: "screenShareRow",
-                        extensionID: props.extensionID,
-                        button:{
-                            installButton:{
-                                id:"scrInstallButton",
-                                class_on:"screeninstall-btn on",
-                                html_on:"Stop Install",
-                                class_off:"screeninstall-btn off",
-                                html_off:"Install Screen Share"
-                            },
-                            shareButton:{
-                                id:"scrShareButton",
-                                class_on:"screen-btn on",
-                                html_on:"Stop Sharing",
-                                class_off:"screen-btn off",
-                                html_off:"ScreenShare"
-                            },
-                            viewButton:{
-                                id:"scrViewButton",
-                                class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton on",
-                                html_on:"Stop Viewing",
-                                class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton off",
-                                html_off:"View Screen"
-                            }
-                        }
-                    },
-    };
-
-    var webrtcdevobj = new WebRTCdev ( 
-        session, widgets
-    );
-
-    startCall(webrtcdevobj);
-
-    onSessionConnect=function(){
-        adjustelement();
-    };
-
-    document.getElementById(timerobj.container.id).hidden=true;
-
-  });
-
-document.getElementById("logoutBtn").onclick=function(){
-  window.location="https://www.villageexperts.com/";
-}
-
-
-</script>
-
-<!--  glyphicon glyphicon-hand-left-->
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="altanai">
-    <title>WebRTC Call</title>
-    <meta name="google-site-verification" content="8NqEkVsX8mkRCn13Qov4K0njgF0T6t97_a-NZNIXkpE" />
-    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jpcjjkpbiepbmhklnjoahacppaemhmpd">
-    <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.css">
-    <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
-    <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
-    <link href="css/mainstyle.css" rel="stylesheet">
-</head>
-<style>
-
-    body{
-      overflow:hidden;
-    }
-    .mainContainer{
-        background: url(images/background.jpg) 100% 100%;
-        background-size: cover;
-        font-family: Arial, Helvetica, sans-serif;
-        background-attachment: fixed;
-    }
-    body::-webkit-scrollbar {
-        width: 1em;
-    }
-     
-    body::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    }
-     
-    body::-webkit-scrollbar-thumb {
-      background-color: darkgrey;
-      outline: 1px solid slategrey;
-    }
-    .over-lap {
-      display: block !important
-    }
-
-    .header-part{
-      height:100px;
-        /*      
-        width:25%;
-        float:right*/
-    }
-
-    .col-xs-8{
-        width: inherit;
-        margin-left: 10px;
-    }
-
-    /*.bodybg{background:url(../images/background.jpg) 100% 100%;background-size:cover;font-family:Arial, Helvetica, sans-serif;background-attachment:fixed;}*/
-
-    .logo{padding:10px 0px;}
-
-    .logoClass{
-      height: 85px; 
-        width: 100%;
-      background: rgba(255, 255, 255, 0.76);
-    }
-
-    .over-lap {
-        position: absolute;
-        right: 5px;
-        top: 0px;
-    }
-
-    video{
-        position: relative;
-        top: 0;
-        left: 0;
-        transition: width .5s ease;
-        margin: 0;
-        background-color: #000;
-        border-radius: 50px;
-        width: 100%!important; 
-    }
-    .videoButtonClass {
-        padding :5px;
-    }
-
-    /*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-START---------*/
-
-    .right-section{
-        background: rgba(255, 255, 255, 0.27);
-        border-radius: 30px;
-        padding: 10px 0px 0px;
-        margin-top: 20px;
-        position: relative;
-    }
-    .main-block{width:95%;margin:auto;}
-    .time-function {
-        background: #b2b2b2 none repeat scroll 0 0;
-        border-radius: 5px;
-        font-family: Helvetica;
-        font-size: 12px;
-        letter-spacing: 1px;
-        padding: 7px 0;
-        text-align: center;
-        width: 100%;
-    }
-    .panel-seassion{position:relative;}
-    .btn-modify-video.focus, .btn-modify-video:focus, .btn-modify-video:hover {color: #748970;}
-    .btn-modify-video {
-      background: rgba(0,0,0,0);
-      border: 0px;
-      padding: 5px;
-      color: #f60000;
-      font-size: 22px;
-    }
-    .bg-ssion{
-      border-radius:10px;background:#ffda96;padding:5px 0px}
-    .arrow {
-      border-radius: 50%;
-      display: inline-block;
-      height: auto;
-      left: -20px;
-      position: absolute;
-      text-align: center;
-      top: 0;
-      font-size: 22px;
-      color:#F00;
-    }
-    .video-block{width:100%;}
-
-    .video-header{
-      background:#e61339;
-      color:#ffff00;
-      margin:0;
-      padding:5px 0px;
-      text-align:center;
-      font-size:16px;
-      font-weight:bold;
-    }
-    .controler-video {
-        margin: 0;
-        padding: 3px 0 9px;
-        position:relative;
-    }
-    .btn-modify-video2.focus, .btn-modify-video2:focus, .btn-modify-video2:hover {
-        color: #eaff00;
-    }
-    .btn-modify-video2 {
-        background: rgba(0,0,0,0);
-        border: 0px;
-        padding: 0px;
-        color: #fff;
-        font-size: 18px;
-    }
-    .send-chat-header-class{
-        border-radius: 10px;
-        background: #09F;
-        padding: 4px 0px;
-        overflow: hidden;
-        width: 100%;
-        margin: 0;
-    }
-    .send-message-block-class{
-      margin:3px 0px;
-      height:150px;
-      overflow-x: scroll;
-      overflow-x: -moz-hidden-unscrollable; 
-      background: rgb(218, 209, 209);
-      height: 150px;
-    }
-
-    .timer{    
-        font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #2aabd2;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;}
-
-    .reconnectClass{
-        font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #2aabd2;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;
-    }
-    .recordClass{    font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #2aabd2;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;}
-    .btn.btn-info.reconnect{font-size:15px;font-weight:bold;text-transform:uppercase; }
-    .btn.btn-info.reconnect > span {
-        background:#0099FF;
-        border-radius: 3px;
-        color:#FFF;
-        height: 34px;
-        left:16px;
-        line-height: 34px;
-        position: absolute;
-        text-align: center;
-        top: 0;
-        width: 34px;
-    }
-    .btn.btn-info.reconnect:hover span {background:#03F;}
-
-    .send-mesg{
-          background:#fff;
-          color:#000;
-          border-radius:8px;
-          padding:2px 0px 3px 5px;
-          height:auto;
-          border:0px;
-    }
-    .send-mesg:focus{
-      box-shadow:0px;}
-    .send-mesg::-moz-placeholder{
-      color:#FFF;}
-
-    .online-pro-pict img {
-      height: auto;width: 100%;}
-    
-    .timer-block{
-        margin:3px 0px;
-        height:150px;
-        overflow-x: scroll;
-        overflow-x: -moz-hidden-unscrollable; 
-        background:rgba(119, 119, 119, 0.28);
-    }
-    .online-pro-pict {
-        border: 1px solid #CCC;
+    .profile.pull-left{
         border-radius: 50%;
-        margin: 7px;
+        height: 80px;
+        margin-right: 25px;
         overflow: hidden;
-    }
-    .online-chat-text span, .online-chat-text-reply span {color:#333;display: inherit;font-size: 10px;margin-top: 5px;}
-    .online-chat-text {
-        background:#fdd1c6;
-        padding:5px;color:#000;
-        margin:10px 0px 0px 0px;
-        font-family:Helvetica;
-        font-size:13px;
-        font-weight:bold;
-        border-radius:5px
-    }
-    .online-chat-text-reply {
-        background:#c44b31;
-        padding:5px;
-        color:#fff;
-        margin:10px 0px 0px 0px;
-        font-family:Helvetica;
-        font-size:13px;
-        font-weight:bold;
-    border-radius:5px}
-    .chat-text-area {margin: 5px 0px;}
-    .chating-area {overflow-y: scroll; overflow-x: hidden;}
-
-    .video-container-class{
-      background: #ccccff;position:relative;
+        width: 80px;
     }
 
-    .video-class{
-       /*width:305px; 
-       height:160px; */ 
-       /*background:transparent url('images/logo.png') no-repeat 0 0; */
-       -webkit-background-size:cover; 
-       -moz-background-size:cover; 
-       -o-background-size:cover; 
-       background-size:cover; 
+    .profile.pull-right{
+        margin-right: 25px;
     }
-
-    .video-class::-webkit-media-controls {
-          display: none;
-        }
-        -webkit-media-controls-play-button {}
-
-        -webkit-media-controls-volume-slider {}
-
-        -webkit-media-controls-mute-button {}
-
-        -webkit-media-controls-timeline {}
-
-        -webkit-media-controls-current-time-display {}
-
-        -webkit-media-controls-enclosure {
-            display:none !important;
-        }
-
-    .chat-class{
-      position:relative;    
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      overflow: hidden;
-      margin: 5px 0px;
-    }
-
-    .video-header-2{background:#FF0;color:#000;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
-    .btn-modify-video-3.focus, .btn-modify-video-3:focus, .btn-modify-video-3:hover {color:#FF0000;}
-    .btn-modify-video-3{background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #000;font-size: 18px;}
-    
-    .screen-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
-    .file-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
-    
-    .red-bg{background:#e61339 ;border-top-left-radius:10px;border-bottom-left-radius:10px;}
-    .seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
-    .seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
-    .seceen-btn-2{background:#999900;color:#fff;border-radius:8px;border:0px;}
-    .seceen-btn-2:hover{background:#9C0;color:#fff;border-radius:8px;border:0px;}
-    .yellow-bg{background:#FF0;border-top-left-radius:10px;border-bottom-left-radius:10px;margin:5px 0px}
-    .yellow-bg-2{background:#FF0;border-top-left-radius:5px;border-top-right-radius:5px;margin:5px 0px 0 0;color:#000;padding:5px 0px}
-    .yellow-bg-2 .fa{color:#000;}
-    .red-bg-2{background:#e61339 ;border-top-left-radius:5px;border-top-right-radius:5px;margin:5px 0px 0 0;color:#fff;padding:5px 0px}
-    .red-bg-2 .fa{color:#fff;}
-    .panel-seassion table {font-size: 10px;}
-    .btn-modify-chat {
-      background: rgba(0,0,0,0);
-      border: 0px;
-      color: #666;
-      font-size: 16px;
-      padding: 3px 0px
-    }
-    .btn-modify-chat .fa {
-      line-height: 19px;
-      margin: 0;
-      padding: 0;
-    }
-    .icon-markup-block{background:#f3f3f3;border-radius:5px;margin:5px 0px;}
-    .block-one {
-      border: 1px solid #fff;
-    }
-    .block-two {
-      padding-top: 0px;
-    }
-    .inner-block {
-      background: #fff;
-      height: 1670px;
-      margin-top: 15px;
-      margin-bottom: 15px;
-      position:relative;
-    }
-    .button-corner
-    {}
-    td span .fa {
-        cursor: pointer;
-    }
-    .fileUpload {
-        border-radius: 10px;
-        position: relative;
-        width: 130px;
-        margin-left: 10px;
-        align-items: center;
-    }
-    .fileUpload input.upload {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 0;
-        padding: 0;
-        font-size: 20px;
-        cursor: pointer;
-        opacity: 0;
-        filter: alpha(opacity=0);
-    }
-    .fileViewing1Box{
-        color: #968787;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        border: 10px solid white;
-        height: 400px;
-    }
-    .bg-red{background:#ff6600;color:#fff;}
-    .bg-blue{background:#2e6da4;color:#fff;}
-    .table-section { font-size:12px;}
-    .border-radius { border-radius: 15px; overflow: hidden; margin:5px 0px;}
-
-    .button-corner {
-        float: right;
-        margin-right: 5px;
-        cursor:pointer;
-    }
-    .minTimerBtn{
-        float: right;
-        margin-right: 20px;
-    }
-    .btn.btn-info.recannect{font-size:15px;font-weight:bold;text-transform:uppercase; }
-    .btn.btn-info.recannect > span {
-        background:#0099FF;
-        border-radius: 3px;
-        color:#FFF;
-        height: 34px;
-        left:16px;
-        line-height: 34px;
-        position: absolute;
-        text-align: center;
-        top: 0;
-        width: 34px;
-      
-    }
-    .btn.btn-info.recannect:hover span {background:#03F;}
-    
-    .centreDiv-class {
-    background: rgba(255, 255, 255, 0.55);
-    padding-right: 0px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    }
-
-    .rightDiv-class{
-        padding-right:0px;
-        overflow-y:overflow;
-        overflow-x:hidden;
-    }
-
-    .btn-modify-video2.focus, .btn-modify-video2:focus, .btn-modify-video2:hover {color: #eaff00;}
-    .btn-modify-video2 {
-        background: rgba(0,0,0,0);
-        border: 0px;
-        padding: 0px;
-        padding-left:10px;
-        color: #fff;font-size: 18px;}
 </style>
 
 <body>
@@ -1396,13 +463,13 @@ document.getElementById("logoutBtn").onclick=function(){
                 <div class="row" style="height:100px">
                   <div class="col-md-12 text-center">
                     <div class="logo"> <img class="logoClass" src="images/villagexpertslogo2.png" alt="logo" > </div>
-                    <div class="over-lap">
-                      <div class="profile pull-left"> <img hidden style="visibility: hidden !important;" src="images/img-3.jpg" class="img-responsive"> </div>
-                      <div class="pull-right">
-                        <p id="loginname" class="loginname">...</p>
-                        <button id="logoutBtn" class="btn btn-info bg-blue">End Session</button>
-                      </div>
-                      <div class="clearfix"></div>
+                        <div class="over-lap">
+                            <div class="profile pull-left"> <img hidden style="visibility: hidden !important;" src="images/img-3.jpg" class="img-responsive"> </div>
+                            <div class="profile pull-right">
+                                <p id="loginname" class="loginname">...</p>
+                                <button id="logoutBtn" class="btn btn-info bg-blue">End Session</button>
+                            </div>
+                        <div class="clearfix"></div>
                     </div>
                   </div>
                 </div>
@@ -1421,13 +488,14 @@ document.getElementById("logoutBtn").onclick=function(){
                     </div>
 
                     <div class="timer-block" id="timeContainer" hidden>
-                        <div class="panel-seassion">
+                        <div id="localtime" class="panel-seassion">
                             <div class="col-xs-6">
-                              <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
+                                <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
                             </div>
                             <div class="col-xs-6">
                               <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
                             </div>
+                            <!--                             
                             <div class="col-xs-6">
                               <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
                               <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
@@ -1435,8 +503,30 @@ document.getElementById("logoutBtn").onclick=function(){
                             <div class="col-xs-6">
                                 <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
                                 <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
+                            </div> -->
+                        </div>
+
+                        <div id="remotetime" class="panel-seassion">
+                            <div class="col-xs-6">
+                                <p id="remoteTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
+                            </div>
+                            <div class="col-xs-6">
+                              <p id="remoteTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
                             </div>
                         </div>
+
+                        <div id="countdown" class="panel-seassion">
+                            <div class="col-xs-4">
+                                <p id="countdownHours" class="time-function" title="Hours"></p>
+                            </div>
+                            <div class="col-xs-4">
+                                <p id="countdownMinutes" class="time-function" title="Minutes"></p>
+                            </div>
+                            <div class="col-xs-4">
+                                <p id="countdownSeconds" class="time-function" title="Seconds"></p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -1461,7 +551,7 @@ document.getElementById("logoutBtn").onclick=function(){
                 <!-- Reconnect Button -->
                 <div class="panel-seassion">
                     <div class="reconnectClass">
-                        <div id="reconnectBtn" class="col-xs-8 text-center" style="padding:0px 2px">Reconnect</div>
+                        <div id="reconnectBtn" class="col-xs-8 text-center" style="padding:0px 2px" title="Reconnect">Reconnect</div>
                     </div>
 
                     <div class="clearfix"></div>
@@ -1470,18 +560,10 @@ document.getElementById("logoutBtn").onclick=function(){
                 <!-- Recording -->
                 <div class="panel-seassion">
                     <div class="recordClass">
-                        <div id="scrRecordStatus" class="col-xs-8 text-center" style="padding:0px 2px">Session Record</div>
-                   
-                        <div class="col-xs-3 text-center">
-                          <button id="scrRecordBtn" class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
-                        </div>
-
-                        <div class="col-xs-3 text-center border-right" style="color:#ccc">
-                          <button id="scrStopRecordBtn" class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Stop"><i class="fa fa-circle"></i></button>
-                        </div>
-
-                        <div class="clearfix"></div>
+                        <div id="scrRecordBtn" class="col-xs-8 text-center Off" style="padding:0px 2px" title="Record">Session Record <i class="fa fa-circle"></i></div>
                     </div>
+
+                    <div class="clearfix"></div>
                 </div>
 
                   <!-- when no remote -->
@@ -1707,17 +789,24 @@ document.getElementById("logoutBtn").onclick=function(){
                             resyncfiles:false
                         }
                     },
-        timer      :{
+          timer      :{
                         active:true,
                         type: "backward",
+                        counter:{
+                            hours: "countdownHours",
+                            minutes:"countdownMinutes",
+                            seconds :"countdownSeconds"
+                        },
                         upperlimit: {
                             hour:0 , 
                             min: 3 , 
-                            sec: 0 
+                            sec: 60 
                         },
                         span:{
                             currentTime_id:"currentTimeArea",
-                            currentTimeZonr_id:"currentTimeZoneArea",
+                            currentTimeZone_id:"currentTimeZoneArea",
+                            remoteTime_id :"remoteTimeArea",
+                            remoteTimeZone_id:"remoteTimeZoneArea",
                             class_on:""
                         },
                         container:{
@@ -1824,10 +913,10 @@ document.getElementById("logoutBtn").onclick=function(){
                     videoRecordContainer: true,
                         button:{
                             id: "scrRecordBtn",
-                            class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
-                            html_on:"<i class='fa fa-circle' title='Stop recording this Video'></i>",
-                            class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
-                            html_off:"<i class='fa fa-circle' title='Record this Video'></i>"
+                            class_on:"col-xs-8 text-center On",
+                            html_on:"Session is Recording <i class='fa fa-stop'></i>",
+                            class_off:"col-xs-8 text-center Off",
+                            html_off:"Session Record <i class='fa fa-circle'></i>"
                         }
                 },
                 
@@ -1875,14 +964,12 @@ document.getElementById("logoutBtn").onclick=function(){
 
   });
 
-document.getElementById("logoutBtn").onclick=function(){
-  window.location="https://www.villageexperts.com/";
-}
+    document.getElementById("logoutBtn").onclick=function(){
+      window.location="https://www.villageexperts.com/";
+    }
 
 
 </script>
-
 <!--  glyphicon glyphicon-hand-left-->
 </body>
 </html>
->>>>>>> 20a9fafcfce3015fa08af443967aa4d28682440e
