@@ -5,15 +5,9 @@
     position: absolute;
     right: 50px;
     top: 7px;
-	display:none;
+  display:none;
 }
-.profile.pull-left {
-    border-radius: 50%;
-    height: 80px;
-    margin-right: 25px;
-    overflow: hidden;
-    width: 80px;
-}
+
 .search-background{background:rgba(255,255,255,0.2);margin-top:25px;padding-bottom:20px;border:solid 1px #666;margin-bottom:25px;}
 .background-blue{background:#617bff; border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px}
@@ -79,8 +73,8 @@ h1.search-title {
     padding: 7px 0;
     text-align: center;
     width: 200px;
-	margin-top:20px;
-	transition:all 0.3s ease-in-out 0s;
+  margin-top:20px;
+  transition:all 0.3s ease-in-out 0s;
 }
 .col-sm-2.pull-right.count:hover{background:#d1d900;}
 .marginTOP{margin-top:10px;}
@@ -96,7 +90,7 @@ h1.search-title {
     font-size: 16px;
     padding: 10px 0 !important;
     text-align: center;
-	
+  
 }
 .table-hover tr td {
     color: #fff;
@@ -281,8 +275,8 @@ button {
     text-shadow: 1px 1px 1px #999;
     text-transform: uppercase;
     width: 100%;
-	border:3px solid rgba(0,0,0,0);
-	margin: 35px 35px 55px 35px;
+  border:3px solid rgba(0,0,0,0);
+  margin: 35px 35px 55px 35px;
    position:relative;
     transition: all 1s ease 0s;
     width: 220px;
@@ -293,8 +287,8 @@ button {
   transition: all 1s ease;
    border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
-box-shadow:0px 0px 10px rgba(0,0,0,0.5);	
-	
+box-shadow:0px 0px 10px rgba(0,0,0,0.5);  
+  
 }
 .fa {
   -webkit-transition: all 1s ease;
@@ -377,7 +371,7 @@ to { left: -100%; }
     font-size: 20px;
     padding-right: 10px;
     padding-top: 13px;
-	color:#fff;
+  color:#fff;
     
 }
 .hidden { display: none; }
@@ -388,28 +382,28 @@ to { left: -100%; }
     position: absolute;
     top: -9px;
     width: 75px;
-	background:#fff; border-radius: 3px;}
+  background:#fff; border-radius: 3px;}
 .panel-box {
     background:url(../images/sba-services.jpg) center no-repeat;background-size:cover;
     border-radius: 3px;
     height: 560px;
     margin: 30px auto 0 auto;
     width: 90%;
-	
+  
 }
 .search-header {
     background: #363965;
     color: #00CC99;
     font-family: 'Roboto', sans-serif;
     font-size:18px;
-   	position:relative;
+    position:relative;
     padding: 15px 0 15px 20px;;
     text-align: left;
     text-transform: uppercase;
-	border-top-left-radius:3px;
-	border-top-right-radius:3px;
-	font-weight:400;
-	letter-spacing:1px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  font-weight:400;
+  letter-spacing:1px;
 }
 .search-header span {
     color:#ff7676;
@@ -425,15 +419,15 @@ to { left: -100%; }
     border-bottom-right-radius: 3px;
     height: 100%;
     max-height: 510px;
-	padding: 15px;
-	overflow-y: scroll;
-	margin-bottom:15px;
+  padding: 15px;
+  overflow-y: scroll;
+  margin-bottom:15px;
 }
 .seclect-box {
     background: #fff;
     padding: 5px;
-	margin-bottom: 5px;
-	
+  margin-bottom: 5px;
+  
 }
 .search-box{height:70px;width:70px;border-radius:50%;overflow:hidden; border: 1px solid #eee;}
 .search-box img{width:100%;height:100%;}
@@ -457,7 +451,7 @@ to { left: -100%; }
     margin: 20px auto;
     position: relative;
     width: 35px;
-	box-shadow: 0 0 5px #666;
+  box-shadow: 0 0 5px #666;
 }
 .squaredOne label::after {
      background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #666 0%, #000 100%) repeat scroll 0 0;
@@ -517,7 +511,7 @@ to { left: -100%; }
     position: relative;
     text-align: left;
     text-shadow: 1px 1px 1px #333;
-	overflow:hidden;
+  overflow:hidden;
 }
 .result-hder > span {
     background: #2e4fc8 none repeat scroll 0 0;
@@ -544,7 +538,7 @@ to { left: -100%; }
 .result-list > li a > p.text-center {
     color: #06F;
     font-size: 15px;
-	 border-bottom: 1px solid #eee;
+   border-bottom: 1px solid #eee;
 }
 .list-inline.result-list{margin:0px 10px;}
 .result-list > li a {text-decoration:none;}
@@ -552,7 +546,7 @@ to { left: -100%; }
 .result-list > li a > p.text-center:hover {
     color: #352f2f;
     font-size: 15px;
-	 border-bottom: 1px solid #ddd;
+   border-bottom: 1px solid #ddd;
 }
 .disable-section{opacity:0.5;cursor:not-allowed;}
 .value-holder {
@@ -579,11 +573,11 @@ to { left: -100%; }
     height: 100px;
     overflow: hidden;
     width: 100px;
-	margin-top:25px;
+  margin-top:25px;
 }
 .person-img img {
     width: 100%;
-	height:100%;
+  height:100%;
 }
 .wellcome-text > p {
     color: white;
