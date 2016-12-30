@@ -129,14 +129,11 @@
     .video-block{width:100%;}
 
     .video-header{
-      background:#e61339;
-      color:#ffff00;
+      background:#2aabd2;
       margin:0;
-      padding:5px 0px;
       text-align:center;
-      font-size:16px;
-      font-weight:bold;
     }
+
     .controler-video {
         margin: 0;
         padding: 3px 0 9px;
@@ -177,7 +174,8 @@
         background-color: #2aabd2;
         margin: 5px;
         border-radius: 5px;
-        height: 30px;}
+        height: 30px;
+    }
 
     .reconnectClass{
         font-size: 15px;
@@ -430,219 +428,236 @@
 
 <body>
 
-  <div class="row alertDiv" id="alertBox" hidden="true"></div>
+    <div class="row alertDiv" id="alertBox" hidden="true"></div>
 
-  <section id="mainDiv" contenteditable class="video-section mainContainer">
-    <div class="container-fluid">
-        <div class="row">
+    <section id="mainDiv" contenteditable class="video-section mainContainer">
+        <div class="container-fluid">
+            <div class="row">
         
-            <div id="centreDiv" class="col-md-9 centreDiv-class">
-                <div id="screenShareRow" style="margin: 10px;"></div>
-                <div id="screenRecordRow" style="margin: 10px;" hidden></div>
-                <div id="drawBoardRow" style="margin: 10px;"></div>
-                <div id="fileSharingRow" style="margin: 10px;"></div>
-                <div id="fileListingRow" style="margin: 10px;"></div>
-            </div>
-
-            <div id="rightDiv" class="col-md-3 rightDiv-class">
-            <div class="right-section">
-
-            <div class="container-fluid header-part">
-                <div class="row" style="height:100px">
-                  <div class="col-md-12 text-center">
-                    <div class="logo"> <img class="logoClass" src="images/villagexpertslogo2.png" alt="logo" > </div>
-                    <div class="over-lap">
-                      <div class="profile pull-left"> <img hidden style="visibility: hidden !important;" src="images/img-3.jpg" class="img-responsive"> </div>
-                      <div class="pull-right">
-                        <p id="loginname" class="loginname">...</p>
-                        <button id="logoutBtn" class="btn btn-info bg-blue">End Session</button>
-                      </div>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="main-block">
-
-                <!-- Timer and monitization -->
-                <div class="panel-seassion">
-                    <div class="timer">
-                        <div class="col-xs-8 text-center" style="padding:0px 2px"> Timer </div>
-                        <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                            <button id="minimizeTimerButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div class="timer-block" id="timeContainer" hidden>
-                        <div class="panel-seassion">
-                            <div class="col-xs-6">
-                              <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
-                            </div>
-                            <div class="col-xs-6">
-                              <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
-                            </div>
-                            <div class="col-xs-6">
-                              <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
-                              <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
-                            </div>
-                            <div class="col-xs-6">
-                                <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
-                                <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
+                <div id="centreDiv" class="col-md-9 centreDiv-class">
+                    <div id="screenShareRow" style="margin: 10px;"></div>
+                    <div id="screenRecordRow" style="margin: 10px;" hidden></div>
+                    <div id="drawBoardRow" style="margin: 10px;"></div>
+                    <div id="fileSharingRow" style="margin: 10px;"></div>
+                    <div id="fileListingRow" style="margin: 10px;"></div>
                 </div>
 
-                <!-- Bandwidth and Network stats -->
-                <div class="panel-seassion">
-                    <div class="timer">
-                        <div class="col-xs-8 text-center" style="padding:0px 2px"> Network stats </div>
-                        <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                            <button id="minimizeBandwidthButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                        </div>
-                      <div class="clearfix"></div>
-                    </div>
-                    <div class="timer-block" id="bandwidthContainer" hidden>
-                        <div class="panel-seassion">
-                            <div class="col-xs-6">
-                              <p id="outgoingbandwidth" class="time-function" >1Mbps</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div id="rightDiv" class="col-md-3 rightDiv-class">
+                    <div class="right-section">
 
-                <!-- Reconnect Button -->
-                <div class="panel-seassion">
-                    <div class="reconnectClass">
-                        <div id="reconnectBtn" class="col-xs-8 text-center" style="padding:0px 2px">Reconnect</div>
-                    </div>
-
-                    <div class="clearfix"></div>
-                </div>
-
-                <!-- Recording -->
-                <div class="panel-seassion">
-                    <div class="recordClass">
-                        <div id="scrRecordStatus" class="col-xs-8 text-center" style="padding:0px 2px">Session Record</div>
-                   
-                        <div class="col-xs-3 text-center">
-                          <button id="scrRecordBtn" class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
-                        </div>
-
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-
-                  <!-- when no remote -->
-                  <div id="singleVideoContainer" class="row" hidden>
-                      <video name="myAloneVideo" autoplay="autoplay" muted="true" />
-                  </div>
-
-                  <!-- when remotes are connected -->
-                  <div id="confVideoContainer">
-
-                      <div class="video-container-class">
-                          <div class="block-section">
-                              <video class="video-block" controls name="myConferenceVideo"></video>
-                          </div>
-                          <br/><br/>
-                      </div>
-
-                      <div class="chat-class border-radius">
-                            <div class="send-chat-header-class row" id="chatHeader">
-                                <div class="col-xs-8 text-center" style="padding:0px 2px; width:60% ; float:left">
-                                    <input id="chatInputText" type="text" class="form-control send-mesg" placeholder="Send Message">
+                        <div class="container-fluid header-part">
+                            <div class="row" style="height:100px">
+                              <div class="col-md-12 text-center">
+                                <div class="logo"> <img class="logoClass" src="images/villagexpertslogo2.png" alt="logo" > </div>
+                                <div class="over-lap">
+                                  <div class="profile pull-left"> <img hidden style="visibility: hidden !important;" src="images/img-3.jpg" class="img-responsive"> </div>
+                                  <div class="pull-right">
+                                    <p id="loginname" class="loginname">...</p>
+                                    <button id="logoutBtn" class="btn btn-info bg-blue">End Session</button>
+                                  </div>
+                                  <div class="clearfix"></div>
                                 </div>
-                           
-                                <div class="col-xs-2 text-center" style="padding:0px 2px ; float:right">
-                                    <button id="chatSendButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
-                                </div>
-                              
-                                <div class="col-xs-2 text-center" style="padding:0px 2px ; float:right">
-                                    <button id="minimizeChatButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                                </div>
+                              </div>
                             </div>
+                        </div>
 
-                            <div class="sent-message-block-class" id="chatContainer" style="background-color: white;">
-                                <div class="panel-seassion">
-                                    <div class="chating-area" id="chatBoard"> </div>
-                                    <div id="whoTyping"></div>
-                                </div>
-                            </div>
-                      </div>
+                        <div class="main-block">
 
-                      <div class="video-container-class">
-                            <div class="block-section">
-                                <video controls class="video-block" name="otherConferenceVideo"></video>
-                            </div>
-                            <br/><br/>
-                      </div>                   
-                     
-                      <!-- fileshare -->
-                      <div class="panel-seassion">
-                            <div class="file-share-class">
-                                <div class="row text-center">
-
-                                    <div class="col=-md-4 fileUpload btn bg-blue">
-                                        <input id="fileshareBtn" class="upload" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">Upload a file</button>
+                            <!-- Timer and monitization -->
+                            <div class="panel-seassion">
+                                <div class="timer">
+                                    <div class="col-xs-8 text-center" style="padding:0px 2px"> Timer </div>
+                                    <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
+                                        <button id="minimizeTimerButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
                                     </div>
+                                    <div class="clearfix"></div>
+                                </div>
 
-                                    <div class="col-md-4 fileUpload btn bg-blue">
-                                        <button id="scrShareButton" class="screen-btn off" style="background: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
-                                        <button display="none" id="scrInstallButton" class="screenInstall-btn off" data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
-                                        <button display="none" id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                <div class="timer-block" id="timeContainer" hidden>
+                                    <div class="panel-seassion">
+                                        <div class="col-xs-6">
+                                          <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                          <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                          <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
+                                          <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
+                                            <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
+                                        </div>
                                     </div>
-
-                                 </div>
+                                </div>
                             </div>
-                      </div>
-                     
-                      <div class="panel-seassion">
-                          <div class="icon-markup-block"> 
-                                <div style="padding-right:0px;" class="col-xs-2 text-center">
-                                  <button id="shareCursorButton" data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Share cursor pointers"><img src="images/13.png"></button>
+
+                            <!-- Bandwidth and Network stats -->
+                            <div class="panel-seassion">
+                                <div class="timer">
+                                    <div class="col-xs-8 text-center" style="padding:0px 2px"> Network stats </div>
+                                    <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
+                                        <button id="minimizeBandwidthButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                    </div>
+                                  <div class="clearfix"></div>
                                 </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
+                                <div class="timer-block" id="bandwidthContainer" hidden>
+                                    <div class="panel-seassion">
+                                        <div class="col-xs-6">
+                                          <p id="outgoingbandwidth" class="time-function" >1Mbps</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
+                            </div>
+
+                            <!-- Reconnect Button -->
+                            <div class="panel-seassion">
+                                <div class="reconnectClass">
+                                    <div id="reconnectBtn" class="col-xs-8 text-center" style="padding:0px 2px">Reconnect</div>
                                 </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
-                                </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
-                                </div>
-                                <div class="col-xs-2 text-center" style="padding:0px;">
-                                  <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
-                                </div>
+
                                 <div class="clearfix"></div>
-                          </div>
-                      </div>
+                            </div>
 
-                      <!-- ............................Cursors resting position .................. -->
+                            <!-- Recording -->
+                            <div class="panel-seassion">
+                                <div class="recordClass">
+                                    <div id="scrRecordStatus" class="col-xs-8 text-center" style="padding:0px 2px">Session Record</div>
+                               
+                                    <div class="col-xs-3 text-center">
+                                      <button id="scrRecordBtn" class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
+                                    </div>
 
-                      <div id="cursor1" class="cursor1Class" style="width:0"></div>
-                      <div id="cursor2" class="cursor2Class" style="width:0"></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
 
-                      <div style="padding-top:0px;" class="panel-seassion">
-                          <div class="icon-markup-block">           
-                              <div class="clearfix"></div>
-                          </div>
-                      </div>
-                  </div>
-            </div>
+                            <!-- when no remote -->
+                            <div id="singleVideoContainer" class="row" hidden>
+                                <video name="myAloneVideo" autoplay="autoplay" muted="true" />
+                            </div>
 
-            </div>
+                            <!-- when remotes are connected -->
+                            <div id="confVideoContainer">
+
+                                <!-- Remotes video -->
+                                <div class="video-container-class">
+                                        <div class="video-header">
+                                            <div class="col-xs-8 text-center" style="padding:0px 2px"> . </div>
+                                            <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
+                                                <button id="minimizeVideoButtonLocal" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="block-section">
+                                            <video controls class="video-block" name="otherConferenceVideo"></video>
+                                        </div>
+                                        <br/><br/>
+                                </div> 
+
+                                <!-- chat -->
+                                <div class="chat-class border-radius">
+                                        <div class="send-chat-header-class row" id="chatHeader">
+                                            <div class="col-xs-8 text-center" style="padding:0px 2px; width:60% ; float:left">
+                                                <input id="chatInputText" type="text" class="form-control send-mesg" placeholder="Send Message">
+                                            </div>
+                                       
+                                            <div class="col-xs-2 text-center" style="padding:0px 2px ; float:right">
+                                                <button id="chatSendButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
+                                            </div>
+                                          
+                                            <div class="col-xs-2 text-center" style="padding:0px 2px ; float:right">
+                                                <button id="minimizeChatButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div class="sent-message-block-class" id="chatContainer" style="background-color: white;">
+                                            <div class="panel-seassion">
+                                                <div class="chating-area" id="chatBoard"> </div>
+                                                <div id="whoTyping"></div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <!-- local video -->
+                                <div class="video-container-class">
+                                        <div class="video-header">
+                                            <div class="col-xs-8 text-center" style="padding:0px 2px"> . </div>
+                                            <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
+                                                <button id="minimizeVideoButtonRemote" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="block-section">
+                                            <video class="video-block" controls name="myConferenceVideo"></video>
+                                        </div>
+                                        <br/><br/>
+                                </div>
+                                 
+                                <!-- fileshare -->
+                                <div class="panel-seassion">
+                                        <div class="file-share-class">
+                                            <div class="row text-center">
+
+                                                <div class="col=-md-4 fileUpload btn bg-blue">
+                                                    <input id="fileshareBtn" class="upload" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">Upload a file</button>
+                                                </div>
+
+                                                <div class="col-md-4 fileUpload btn bg-blue">
+                                                    <button id="scrShareButton" class="screen-btn off" style="background: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
+                                                    <button display="none" id="scrInstallButton" class="screenInstall-btn off" data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
+                                                    <button display="none" id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                                </div>
+
+                                             </div>
+                                        </div>
+                                </div>
+                                 
+                                 <!-- Drawboard  -->
+                                <div class="panel-seassion">
+                                      <div class="icon-markup-block"> 
+                                            <div style="padding-right:0px;" class="col-xs-2 text-center">
+                                              <button class="btn btn-modify-chat" title="Share cursor pointers"><img src="images/13.png"></button>
+                                            </div>
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
+                                            </div>
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
+                                            </div>
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
+                                            </div>
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
+                                            </div>
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                      </div>
+                                </div>
+
+                                  <!-- ............................Cursors resting position .................. -->
+
+                                <div id="cursor1" class="cursor1Class" style="width:0" hidden ></div>
+                                <div id="cursor2" class="cursor2Class" style="width:0" hidden ></div>
+
+                                <div style="padding-top:0px;" class="panel-seassion">
+                                    <div class="icon-markup-block">           
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                              </div>
+                        </div>
+
+                    </div>
     
             </div>
               
           </div>
         </div>
-  </section>
+    </section>
 
 <script src="property.js"></script>
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
@@ -696,8 +711,8 @@
               video: "myAloneVideo",
               videoClass:"video-class",
               videoContainer : "singleVideoContainer",
-              userDisplay:true,
-              userMetaDisplay:true,
+              userDisplay:false,
+              userMetaDisplay:false,
               userdetails:{
                   username: username,
                   usercolor: "#DDECEF",
@@ -710,8 +725,8 @@
               videoClass:"video-class",
               maxAllowed: 6,
               videoContainer : "confVideoContainer",
-              userDisplay:true,
-              userMetaDisplay:true,
+              userDisplay:false,
+              userMetaDisplay:false,
               dynamicVideos: false 
             };
 
