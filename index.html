@@ -18,7 +18,8 @@
 <style>
 
     body{
-      overflow:hidden;
+      /*overflow:hidden;*/
+      cursor: pointer;
     }
     .mainContainer{
         background: url(images/background.jpg) 100% 100%;
@@ -53,9 +54,7 @@
         width: inherit;
         margin-left: 10px;
     }
-
-    /*.bodybg{background:url(../images/background.jpg) 100% 100%;background-size:cover;font-family:Arial, Helvetica, sans-serif;background-attachment:fixed;}*/
-
+    
     .logo{padding:10px 0px;}
 
     .logoClass{
@@ -95,7 +94,7 @@
     }
     .main-block{width:95%;margin:auto;}
     .time-function {
-        background: #b2b2b2 none repeat scroll 0 0;
+        background: none repeat scroll 0 0;
         border-radius: 5px;
         font-family: Helvetica;
         font-size: 12px;
@@ -132,6 +131,7 @@
       background:#2aabd2;
       margin:0;
       text-align:center;
+      height: 30px;
     }
 
     .controler-video {
@@ -171,10 +171,19 @@
         font-weight: bold;
         text-transform: uppercase;
         color: #ffffff;
-        background-color: #2aabd2;
+        background-color: #7D71A3;
         margin: 5px;
         border-radius: 5px;
         height: 30px;
+        padding:0px 2px
+    }
+    
+    .timer-block{
+        margin:3px 0px;
+        height:150px;
+        overflow-x: scroll;
+        overflow-x: -moz-hidden-unscrollable; 
+        background:rgba(119, 119, 119, 0.28);
     }
 
     .reconnectClass{
@@ -182,19 +191,25 @@
         font-weight: bold;
         text-transform: uppercase;
         color: #ffffff;
-        background-color: #2aabd2;
+        background-color: #7D71A3;
         margin: 5px;
         border-radius: 5px;
         height: 30px;
+        padding:0px 2px
     }
-    .recordClass{    font-size: 15px;
+
+    .recordClass{    
+        font-size: 15px;
         font-weight: bold;
         text-transform: uppercase;
         color: #ffffff;
-        background-color: #2aabd2;
+        background-color: #7D71A3;
         margin: 5px;
         border-radius: 5px;
-        height: 30px;}
+        height: 30px;
+        padding:0px 2px
+    }
+    
     .btn.btn-info.reconnect{font-size:15px;font-weight:bold;text-transform:uppercase; }
     .btn.btn-info.reconnect > span {
         background:#0099FF;
@@ -226,13 +241,7 @@
     .online-pro-pict img {
       height: auto;width: 100%;}
     
-    .timer-block{
-        margin:3px 0px;
-        height:150px;
-        overflow-x: scroll;
-        overflow-x: -moz-hidden-unscrollable; 
-        background:rgba(119, 119, 119, 0.28);
-    }
+
     .online-pro-pict {
         border: 1px solid #CCC;
         border-radius: 50%;
@@ -300,7 +309,6 @@
       margin: 5px 0px;
     }
 
-    .video-header-2{background:#FF0;color:#000;margin:0;padding:5px 0px;text-align:center;font-size:16px;font-weight:bold;}
     .btn-modify-video-3.focus, .btn-modify-video-3:focus, .btn-modify-video-3:hover {color:#FF0000;}
     .btn-modify-video-3{background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #000;font-size: 18px;}
     
@@ -344,8 +352,7 @@
       margin-bottom: 15px;
       position:relative;
     }
-    .button-corner
-    {}
+
     td span .fa {
         cursor: pointer;
     }
@@ -405,10 +412,10 @@
     .btn.btn-info.recannect:hover span {background:#03F;}
     
     .centreDiv-class {
-    background: rgba(255, 255, 255, 0.55);
-    padding-right: 0px;
-    overflow-x: hidden;
-    overflow-y: auto;
+        background: rgba(255, 255, 255, 0.55);
+        padding-right: 0px;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .rightDiv-class{
@@ -424,13 +431,31 @@
         padding: 0px;
         padding-left:10px;
         color: #fff;font-size: 18px;}
+
+    .profile.pull-left{
+        border-radius: 50%;
+        height: 80px;
+        margin-right: 25px;
+        overflow: hidden;
+        width: 80px;
+    }
+
+    .profile.pull-right{
+        margin-right: 25px;
+    }
+
+    #logoutBtn{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
 </style>
 
 <body>
 
     <div class="row alertDiv" id="alertBox" hidden="true"></div>
 
-    <section id="mainDiv" contenteditable class="video-section mainContainer">
+    <section id="mainDiv" class="video-section mainContainer">
         <div class="container-fluid">
             <div class="row">
         
@@ -465,22 +490,26 @@
 
                             <!-- Timer and monitization -->
                             <div class="panel-seassion">
+
                                 <div class="timer">
-                                    <div class="col-xs-8 text-center" style="padding:0px 2px"> Timer </div>
+                                    <div class="col-xs-8 text-center" style="padding:0px 2px"> 
+                                        Timer <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    </div>
                                     <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
                                         <button id="minimizeTimerButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
 
-                                <div class="timer-block" id="timeContainer" hidden>
-                                    <div class="panel-seassion">
+                                <div class="timer-block" id="timeContainer">
+                                    <div id="localtime" class="panel-seassion">
                                         <div class="col-xs-6">
-                                          <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Current Local Time"></p>
+                                            <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="" data-original-title="Current Local Time">13:29:58</p>
                                         </div>
                                         <div class="col-xs-6">
-                                          <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="Time Zone"></p>
+                                          <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="" data-original-title="Time Zone">Asia/Calcutta</p>
                                         </div>
+                                        <!--                             
                                         <div class="col-xs-6">
                                           <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
                                           <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
@@ -488,8 +517,30 @@
                                         <div class="col-xs-6">
                                             <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
                                             <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
+                                        </div> -->
+                                    </div>
+
+                                    <div id="remotetime" class="panel-seassion">
+                                        <div class="col-xs-6">
+                                            <p id="remoteTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="" data-original-title="Current Local Time"></p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                          <p id="remoteTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="" data-original-title="Time Zone">Asia/Calcutta</p>
                                         </div>
                                     </div>
+
+                                    <div id="countdown" class="panel-seassion">
+                                        <div class="col-xs-4">
+                                            <p id="countdownHours" class="time-function" title="Hours">0</p>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <p id="countdownMinutes" class="time-function" title="Minutes">3</p>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <p id="countdownSeconds" class="time-function" title="Seconds">-15</p>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -514,7 +565,8 @@
                             <!-- Reconnect Button -->
                             <div class="panel-seassion">
                                 <div class="reconnectClass">
-                                    <div id="reconnectBtn" class="col-xs-8 text-center" style="padding:0px 2px">Reconnect</div>
+                                    <div id="reconnectBtn" class="col-xs-8 text-center" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
+                                    </div>
                                 </div>
 
                                 <div class="clearfix"></div>
@@ -523,10 +575,8 @@
                             <!-- Recording -->
                             <div class="panel-seassion">
                                 <div class="recordClass">
-                                    <div id="scrRecordStatus" class="col-xs-8 text-center" style="padding:0px 2px">Session Record</div>
-                               
-                                    <div class="col-xs-3 text-center">
-                                      <button id="scrRecordBtn" class="btn btn-modify-video" data-toggle="tooltip" data-placement="bottom" title="Record"><i class="fa fa-stop"></i></button>
+                                    <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off">
+                                        Session Record
                                     </div>
 
                                     <div class="clearfix"></div>
@@ -544,10 +594,7 @@
                                 <!-- Remotes video -->
                                 <div class="video-container-class">
                                         <div class="video-header">
-                                            <div class="col-xs-8 text-center" style="padding:0px 2px"> . </div>
-                                            <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                                                <button id="minimizeVideoButtonLocal" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                                            </div>
+                                            <div class="col-xs-6 text-center">Remote</div>
                                         </div>
                                         <div class="block-section">
                                             <video controls class="video-block" name="otherConferenceVideo"></video>
@@ -557,35 +604,32 @@
 
                                 <!-- chat -->
                                 <div class="chat-class border-radius">
-                                        <div class="send-chat-header-class row" id="chatHeader">
-                                            <div class="col-xs-8 text-center" style="padding:0px 2px; width:60% ; float:left">
-                                                <input id="chatInputText" type="text" class="form-control send-mesg" placeholder="Send Message">
-                                            </div>
-                                       
-                                            <div class="col-xs-2 text-center" style="padding:0px 2px ; float:right">
-                                                <button id="chatSendButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
-                                            </div>
-                                          
-                                            <div class="col-xs-2 text-center" style="padding:0px 2px ; float:right">
-                                                <button id="minimizeChatButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                                            </div>
+                                    <div class="send-chat-header-class row" id="chatHeader">
+                                        <div class="col-xs-8 text-center" style="padding:0px 2px; width:60% ; float:left">
+                                            <input id="chatInputText" type="text" class="form-control send-mesg" placeholder="Send Message">
                                         </div>
+                                   
+                                        <div class="col-xs-2 text-center" style="padding:0px 2px ;">
+                                            <button id="chatSendButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
+                                        </div>
+                                      
+                                        <div class="col-xs-2 text-center" style="padding:0px 2px ; float:right">
+                                            <button id="minimizeChatButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                        </div>
+                                    </div>
 
-                                        <div class="sent-message-block-class" id="chatContainer" style="background-color: white;">
-                                            <div class="panel-seassion">
-                                                <div class="chating-area" id="chatBoard"> </div>
-                                                <div id="whoTyping"></div>
-                                            </div>
+                                    <div class="sent-message-block-class" id="chatContainer" style="background-color: white;">
+                                        <div class="panel-seassion">
+                                            <div class="chating-area" id="chatBoard"> </div>
+                                            <div id="whoTyping"></div>
                                         </div>
+                                    </div>
                                 </div>
 
                                 <!-- local video -->
                                 <div class="video-container-class">
                                         <div class="video-header">
-                                            <div class="col-xs-8 text-center" style="padding:0px 2px"> . </div>
-                                            <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                                                <button id="minimizeVideoButtonRemote" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                                            </div>
+                                            <div class="col-xs-6 text-center">Local</div>
                                         </div>
                                         <div class="block-section">
                                             <video class="video-block" controls name="myConferenceVideo"></video>
@@ -662,7 +706,8 @@
 <script src="property.js"></script>
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
 
-<script>
+    <script>
+ 
     $('document').ready(function(){
 
         //$('video' ).css('cursor', 'move').draggable().resizable();
@@ -712,7 +757,7 @@
               videoClass:"video-class",
               videoContainer : "singleVideoContainer",
               userDisplay:false,
-              userMetaDisplay:false,
+              userMetaDisplay:true,
               userdetails:{
                   username: username,
                   usercolor: "#DDECEF",
@@ -726,7 +771,7 @@
               maxAllowed: 6,
               videoContainer : "confVideoContainer",
               userDisplay:false,
-              userMetaDisplay:false,
+              userMetaDisplay:true,
               dynamicVideos: false 
             };
 
@@ -887,15 +932,27 @@
                                 html_off:"<i class='fa fa-hand-o-up' title='Cursor'></i>"
                             }                   
                         },
-                fullscreen :{
+
+                minmax  :{
                             active : true,
-                            button:{
-                                id: 'fullScreenButton',
-                                class_on:"pull-right btn btn-modify-video2 videoButtonClass On",
-                                html_on:"<i class='fa fa-laptop' title='full Screen'></i>",
-                                class_off:"pull-right btn btn-modify-video2 videoButtonClass Off",
-                                html_off:"<i class=' fa fa-laptop' title='full Screen'></i>"
-                            }                   
+                            max:{
+                                button:{
+                                    id: 'maxVideoButton',
+                                    class_on:"pull-right btn btn-modify-video2 videoButtonClass On",
+                                    html_on:"<i class='fa fa-laptop' title='full Screen'></i>",
+                                    class_off:"pull-right btn btn-modify-video2 videoButtonClass Off",
+                                    html_off:"<i class=' fa fa-laptop' title='full Screen'></i>"
+                                }  
+                            } ,
+                            min :{
+                                button:{
+                                    id: 'minVideoButton',
+                                    class_on:"pull-right btn btn-modify-video2 videoButtonClass On",
+                                    html_on:"<i class='fa fa-minus' title='minimize Video'></i>",
+                                    class_off:"pull-right btn btn-modify-video2 videoButtonClass Off",
+                                    html_off:"<i class='fa fa-minus' title='minimize Video'></i>"
+                                }  
+                            }                    
                         },
 
                 screenrecord:{
@@ -956,8 +1013,7 @@
     
     });
 
-</script>
-
+    </script>
 <!--  glyphicon glyphicon-hand-left-->
 </body>
 </html>
