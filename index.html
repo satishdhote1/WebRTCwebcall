@@ -102,7 +102,10 @@
         padding: 7px 0;
         text-align: center;
         width: 100%;
+        background-color: white;
     }
+
+
     .panel-seassion{position:relative;}
     .btn-modify-video.focus, .btn-modify-video:focus, .btn-modify-video:hover {color: #748970;}
     .btn-modify-video {
@@ -128,7 +131,7 @@
     .video-block{width:100%;}
 
     .video-header{
-      background:#2aabd2;
+      /*background:#2aabd2;*/
       margin:0;
       text-align:center;
       height: 30px;
@@ -356,24 +359,7 @@
     td span .fa {
         cursor: pointer;
     }
-    .fileUpload {
-        border-radius: 10px;
-        position: relative;
-        width: 130px;
-        margin-left: 10px;
-        align-items: center;
-    }
-    .fileUpload input.upload {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 0;
-        padding: 0;
-        font-size: 20px;
-        cursor: pointer;
-        opacity: 0;
-        filter: alpha(opacity=0);
-    }
+
     .fileViewing1Box{
         color: #968787;
         overflow-x: hidden;
@@ -381,8 +367,7 @@
         border: 10px solid white;
         height: 400px;
     }
-    .bg-red{background:#ff6600;color:#fff;}
-    .bg-blue{background:#2e6da4;color:#fff;}
+
     .table-section { font-size:12px;}
     .border-radius { border-radius: 15px; overflow: hidden; margin:5px 0px;}
 
@@ -449,10 +434,12 @@
         top: 20px;
         right: 20px;
     }
+
+
+    canvas { background: black; }
+
 </style>
-
 <body>
-
     <div class="row alertDiv" id="alertBox" hidden="true"></div>
 
     <section id="mainDiv" class="video-section mainContainer">
@@ -478,7 +465,7 @@
                                   <div class="profile pull-left"> <img hidden style="visibility: hidden !important;" src="images/img-3.jpg" class="img-responsive"> </div>
                                   <div class="pull-right">
                                     <p id="loginname" class="loginname">...</p>
-                                    <button id="logoutBtn" class="btn btn-info bg-blue">End Session</button>
+                                    <button id="logoutBtn" class="btn btn-info timer">End Session</button>
                                   </div>
                                   <div class="clearfix"></div>
                                 </div>
@@ -637,19 +624,17 @@
                                         <br/><br/>
                                 </div>
                                  
-                                <!-- fileshare -->
+                                <!-- fileshare and screenshare -->
                                 <div class="panel-seassion">
                                         <div class="file-share-class">
                                             <div class="row text-center">
 
-                                                <div class="col=-md-4 fileUpload btn bg-blue">
-                                                    <input id="fileshareBtn" class="upload" data-toggle="tooltip" data-placement="bottom" title="Select Files to Upload">Upload a file</button>
-                                                </div>
+                                                <input id="fileshareBtn" class="col-md-4 timer" style="padding:10px ;margin-left: 20px;font-weight: normal;" value="File " title="Select Files to Upload">
 
-                                                <div class="col-md-4 fileUpload btn bg-blue">
-                                                    <button id="scrShareButton" class="screen-btn off" style="background: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Screen Share">Screen Share </button>
-                                                    <button display="none" id="scrInstallButton" class="screenInstall-btn off" data-toggle="tooltip" data-placement="top" title="Install Screen Share">Install Screenshare </button>
-                                                    <button display="none" id="scrViewButton" title="desktop" data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-video2">
+                                                <div class="col-md-4 timer" style="padding :10px; width: 46%; font-weight: normal;">
+                                                    <div id="scrShareButton" class="screen-btn off" title="Screen Share">Screen Share </div>
+                                                    <div display="none" id="scrInstallButton" class="screenInstall-btn off" title="Install Screen Share">Install Screenshare </div>
+                                                    <div display="none" id="scrViewButton" title="desktop"  class="btn btn-modify-video2"></div>
                                                 </div>
 
                                              </div>
@@ -657,7 +642,7 @@
                                 </div>
                                  
                                  <!-- Drawboard  -->
-                                <div class="panel-seassion">
+                                <div class="panel-seassion" hidden>
                                       <div class="icon-markup-block"> 
                                             <div style="padding-right:0px;" class="col-xs-2 text-center">
                                               <button class="btn btn-modify-chat" title="Share cursor pointers"><img src="images/13.png"></button>
@@ -757,7 +742,7 @@
               videoClass:"video-class",
               videoContainer : "singleVideoContainer",
               userDisplay:false,
-              userMetaDisplay:true,
+              userMetaDisplay:false,
               userdetails:{
                   username: username,
                   usercolor: "#DDECEF",
@@ -771,19 +756,19 @@
               maxAllowed: 6,
               videoContainer : "confVideoContainer",
               userDisplay:false,
-              userMetaDisplay:true,
+              userMetaDisplay:false,
               dynamicVideos: false 
             };
 
             var incoming={
-                audio:  false,
+                audio:  true,
                 video:  true,
                 data:   true,
                 screen: true
             };
 
             var outgoing={
-                audio:  false,
+                audio:  true,
                 video:  true,
                 data:   true,
                 screen: true
