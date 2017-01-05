@@ -131,10 +131,15 @@
     .video-block{width:100%;}
 
     .video-header{
-      /*background:#2aabd2;*/
-      margin:0;
-      text-align:center;
-      height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    /* background-color: #7D71A3; */
+    margin: 5px;
+    border-radius: 5px;
+    height: 20px;
+    padding: 0px 2px;
     }
 
     .controler-video {
@@ -154,7 +159,7 @@
     }
     .send-chat-header-class{
         border-radius: 10px;
-        background: #09F;
+        background: #676a84;
         padding: 4px 0px;
         overflow: hidden;
         width: 100%;
@@ -177,7 +182,7 @@
         background-color: #7D71A3;
         margin: 5px;
         border-radius: 5px;
-        height: 30px;
+        height: 20px;
         padding:0px 2px
     }
     
@@ -189,30 +194,6 @@
         background:rgba(119, 119, 119, 0.28);
     }
 
-    .reconnectClass{
-        font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #7D71A3;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;
-        padding:0px 2px
-    }
-
-    .recordClass{    
-        font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: #7D71A3;
-        margin: 5px;
-        border-radius: 5px;
-        height: 30px;
-        padding:0px 2px
-    }
-    
     .btn.btn-info.reconnect{font-size:15px;font-weight:bold;text-transform:uppercase; }
     .btn.btn-info.reconnect > span {
         background:#0099FF;
@@ -435,10 +416,10 @@
         right: 20px;
     }
 
-
     canvas { background: black; }
 
 </style>
+
 <body>
     <div class="row alertDiv" id="alertBox" hidden="true"></div>
 
@@ -465,7 +446,7 @@
                                   <div class="profile pull-left"> <img hidden style="visibility: hidden !important;" src="images/img-3.jpg" class="img-responsive"> </div>
                                   <div class="pull-right">
                                     <p id="loginname" class="loginname">...</p>
-                                    <button id="logoutBtn" class="btn btn-info timer">End Session</button>
+                                    <button id="logoutBtn" class="timer">End Session</button>
                                   </div>
                                   <div class="clearfix"></div>
                                 </div>
@@ -488,7 +469,7 @@
                                     <div class="clearfix"></div>
                                 </div>
 
-                                <div class="timer-block" id="timeContainer">
+                                <div class="timer-block" id="timeContainer" hidden>
                                     <div id="localtime" class="panel-seassion">
                                         <div class="col-xs-6">
                                             <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="" data-original-title="Current Local Time">13:29:58</p>
@@ -551,22 +532,16 @@
 
                             <!-- Reconnect Button -->
                             <div class="panel-seassion">
-                                <div class="reconnectClass">
+                                <div class="timer">
                                     <div id="reconnectBtn" class="col-xs-8 text-center" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
                                     </div>
                                 </div>
-
-                                <div class="clearfix"></div>
                             </div>
 
                             <!-- Recording -->
                             <div class="panel-seassion">
-                                <div class="recordClass">
-                                    <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off">
-                                        Session Record
-                                    </div>
-
-                                    <div class="clearfix"></div>
+                                <div class="timer">
+                                    <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off" style="padding:0px 2px">Session Record</div>
                                 </div>
                             </div>
 
@@ -581,7 +556,7 @@
                                 <!-- Remotes video -->
                                 <div class="video-container-class">
                                         <div class="video-header">
-                                            <div class="col-xs-6 text-center">Remote</div>
+                                            <div class="text-center">Remote</div>
                                         </div>
                                         <div class="block-section">
                                             <video controls class="video-block" name="otherConferenceVideo"></video>
@@ -616,31 +591,31 @@
                                 <!-- local video -->
                                 <div class="video-container-class">
                                         <div class="video-header">
-                                            <div class="col-xs-6 text-center">Local</div>
+                                            <div class="text-center">Local</div>
                                         </div>
                                         <div class="block-section">
                                             <video class="video-block" controls name="myConferenceVideo"></video>
                                         </div>
                                         <br/><br/>
                                 </div>
-                                 
-                                <!-- fileshare and screenshare -->
+                                
+                                <!-- File share -->
                                 <div class="panel-seassion">
-                                        <div class="file-share-class">
-                                            <div class="row text-center">
-
-                                                <input id="fileshareBtn" class="col-md-4 timer" style="padding:10px ;margin-left: 20px;font-weight: normal;" value="File " title="Select Files to Upload">
-
-                                                <div class="col-md-4 timer" style="padding :10px; width: 46%; font-weight: normal;">
-                                                    <div id="scrShareButton" class="screen-btn off" title="Screen Share">Screen Share </div>
-                                                    <div display="none" id="scrInstallButton" class="screenInstall-btn off" title="Install Screen Share">Install Screenshare </div>
-                                                    <div display="none" id="scrViewButton" title="desktop"  class="btn btn-modify-video2"></div>
-                                                </div>
-
-                                             </div>
-                                        </div>
+                                    <div class="timer">
+                                        <input id="fileshareBtn" class="col-xs-8 text-center" value="FILE SHARE" style="text-align: left ; padding:0px 2px;background-color:transparent;    border: none;" title="Select Files to Upload">
+                                    </div>
                                 </div>
-                                 
+
+
+                                <!-- Screenshare -->
+                                <div class="panel-seassion">
+                                    <div class="timer">
+                                        <div id="scrShareButton" class="col-xs-8 text-center screen-btn off" title="Screen Share" style="padding:0px 2px">Screen Share </div>
+                                        <div display="none" id="scrInstallButton" class="col-xs-8 text-center screenInstall-btn off" title="Install Screen Share" style="padding:0px 2px">Install Screenshare </div>
+                                        <div display="none" id="scrViewButton" title="desktop"  class="col-xs-8 text-center" style="padding:0px 2px"></div>
+                                    </div>
+                                </div>
+
                                  <!-- Drawboard  -->
                                 <div class="panel-seassion" hidden>
                                       <div class="icon-markup-block"> 
@@ -966,9 +941,9 @@
                                     },
                                     shareButton:{
                                         id:"scrShareButton",
-                                        class_on:"screen-btn on",
+                                        class_on:"col-xs-8 text-center screen-btn on",
                                         html_on:"Stop Sharing",
-                                        class_off:"screen-btn off",
+                                        class_off:"col-xs-8 text-center screen-btn off",
                                         html_off:"ScreenShare"
                                     },
                                     viewButton:{
