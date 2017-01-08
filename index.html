@@ -425,7 +425,7 @@
 
     <section id="mainDiv" class="video-section mainContainer">
         <div class="container-fluid">
-            <div class="row">
+            <div id="parentDiv" class="row">
         
                 <div id="centreDiv" class="col-md-9 centreDiv-class">
                     <div id="screenShareRow" style="margin: 10px;"></div>
@@ -464,7 +464,7 @@
                                         Timer <i class="fa fa-clock-o" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                                        <button id="minimizeTimerButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                        <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -472,10 +472,10 @@
                                 <div class="timer-block" id="timeContainer" hidden>
                                     <div id="localtime" class="panel-seassion">
                                         <div class="col-xs-6">
-                                            <p id="currentTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="" data-original-title="Current Local Time">13:29:58</p>
+                                            <p id="currentTimeArea" class="time-function" title="" data-original-title="Current Local Time">13:29:58</p>
                                         </div>
                                         <div class="col-xs-6">
-                                          <p id="currentTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="" data-original-title="Time Zone">Asia/Calcutta</p>
+                                          <p id="currentTimeZoneArea" class="time-function" title="" data-original-title="Time Zone">Asia/Calcutta</p>
                                         </div>
                                         <!--                             
                                         <div class="col-xs-6">
@@ -490,10 +490,10 @@
 
                                     <div id="remotetime" class="panel-seassion">
                                         <div class="col-xs-6">
-                                            <p id="remoteTimeArea" class="time-function" data-placement="top" data-toggle="tooltip" title="" data-original-title="Current Local Time"></p>
+                                            <p id="remoteTimeArea" class="time-function" title="" data-original-title="Current Local Time"></p>
                                         </div>
                                         <div class="col-xs-6">
-                                          <p id="remoteTimeZoneArea" class="time-function" data-placement="top" data-toggle="tooltip" title="" data-original-title="Time Zone">Asia/Calcutta</p>
+                                          <p id="remoteTimeZoneArea" class="time-function" title="" data-original-title="Time Zone">Asia/Calcutta</p>
                                         </div>
                                     </div>
 
@@ -517,7 +517,7 @@
                                 <div class="timer">
                                     <div class="col-xs-8 text-center" style="padding:0px 2px"> Network stats </div>
                                     <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                                        <button id="minimizeBandwidthButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                        <button id="minimizeBandwidthButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
                                     </div>
                                   <div class="clearfix"></div>
                                 </div>
@@ -541,7 +541,7 @@
                             <!-- Recording -->
                             <div class="panel-seassion">
                                 <div class="timer">
-                                    <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off" style="padding:0px 2px">Session Record</div>
+                                    <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off" style="padding:0px 2px">Session Record <i class='fa fa-circle'></i></div>
                                 </div>
                             </div>
 
@@ -572,11 +572,11 @@
                                         </div>
                                    
                                         <div class="col-xs-2 text-center" style="padding:0px 2px ;">
-                                            <button id="chatSendButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Sent"><i class="fa fa-paper-plane"></i></button>
+                                            <button id="chatSendButton" class="btn btn-modify-video2" title="Sent"><i class="fa fa-paper-plane"></i></button>
                                         </div>
                                       
                                         <div class="col-xs-2 text-center" style="padding:0px 2px ; float:right">
-                                            <button id="minimizeChatButton" class="btn btn-modify-video2" data-toggle="tooltip" data-placement="bottom" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                            <button id="minimizeChatButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
                                         </div>
                                     </div>
 
@@ -602,10 +602,9 @@
                                 <!-- File share -->
                                 <div class="panel-seassion">
                                     <div class="timer">
-                                        <input id="fileshareBtn" class="col-xs-8 text-center" value="FILE SHARE" style="text-align: left ; padding:0px 2px;background-color:transparent;    border: none;" title="Select Files to Upload">
+                                        <input id="fileshareBtn" class="col-xs-8 text-center" value="SHARE A FILE" style="text-align: left ; padding:0px 2px;background-color:transparent; border: none;" title="Select Files to Upload">
                                     </div>
                                 </div>
-
 
                                 <!-- Screenshare -->
                                 <div class="panel-seassion">
@@ -619,9 +618,6 @@
                                  <!-- Drawboard  -->
                                 <div class="panel-seassion" hidden>
                                       <div class="icon-markup-block"> 
-                                            <div style="padding-right:0px;" class="col-xs-2 text-center">
-                                              <button class="btn btn-modify-chat" title="Share cursor pointers"><img src="images/13.png"></button>
-                                            </div>
                                             <div class="col-xs-2 text-center" style="padding:0px;">
                                               <button class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
                                             </div>
@@ -656,10 +652,9 @@
                         </div>
 
                     </div>
-    
-            </div>
+                </div>
               
-          </div>
+            </div>
         </div>
     </section>
 
@@ -699,7 +694,7 @@
             if(searchParams.get('name')){
                username=searchParams.get('name');
             }else{
-               username="Expert";
+               username="LOCAL";
             }
 
             if(searchParams.get('email')){
@@ -918,13 +913,13 @@
                 screenrecord:{
                             active : true,
                             videoRecordContainer: true,
-                                button:{
-                                    id: "scrRecordBtn",
-                                    class_on:"col-xs-8 text-center screenRecordBtnClass On",
-                                    html_on:"Session is Recording <i class='fa fa-stop'></i>",
-                                    class_off:"col-xs-8 text-center screenRecordBtnClass Off",
-                                    html_off:"Session Record <i class='fa fa-circle'></i>"
-                                }
+                            button:{
+                                id: "scrRecordBtn",
+                                class_on:"col-xs-8 text-center screenRecordBtnClass On",
+                                html_on:"Session is Recording <i class='fa fa-stop'></i>",
+                                class_off:"col-xs-8 text-center screenRecordBtnClass Off",
+                                html_off:"Session Record <i class='fa fa-circle'></i>"
+                            }
                         },
                         
                 screenshare : {
