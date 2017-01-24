@@ -131,15 +131,15 @@
     .video-block{width:100%;}
 
     .video-header{
-    font-size: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #ffffff;
-    /* background-color: #7D71A3; */
-    margin: 5px;
-    border-radius: 5px;
-    height: 20px;
-    padding: 0px 2px;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #ffffff;
+        /* background-color: #7D71A3; */
+        margin: 5px;
+        border-radius: 5px;
+        height: 20px;
+        padding: 0px 2px;
     }
 
     .controler-video {
@@ -244,7 +244,9 @@
         margin: 7px;
         overflow: hidden;
     }
-    .online-chat-text span, .online-chat-text-reply span {color:#333;display: inherit;font-size: 10px;margin-top: 5px;}
+    .online-chat-text span, .online-chat-text-reply span {
+        color:#333;display: inherit;font-size: 10px;margin-top: 5px;
+    }
     .online-chat-text {
         background:#fdd1c6;
         padding:5px;color:#000;
@@ -266,13 +268,14 @@
     .chat-text-area {margin: 5px 0px;}
     .chating-area {overflow-y: scroll; overflow-x: hidden;}
 
-    .video-container-class{
-      background: #ccccff;position:relative;
+    .video-container-class-local{
+      position:relative; background-color: #ccccff;
+    }
+    .video-container-class-remote{
+      position:relative; background-color: #bee3e9;
     }
 
     .video-class{
-       /*width:305px; 
-       height:160px; */ 
        /*background:transparent url('images/logo.png') no-repeat 0 0; */
        -webkit-background-size:cover; 
        -moz-background-size:cover; 
@@ -281,21 +284,21 @@
     }
 
     .video-class::-webkit-media-controls {
-          display: none;
-        }
-        -webkit-media-controls-play-button {}
+        display: none;
+    }
+    -webkit-media-controls-play-button {}
 
-        -webkit-media-controls-volume-slider {}
+    -webkit-media-controls-volume-slider {}
 
-        -webkit-media-controls-mute-button {}
+    -webkit-media-controls-mute-button {}
 
-        -webkit-media-controls-timeline {}
+    -webkit-media-controls-timeline {}
 
-        -webkit-media-controls-current-time-display {}
+    -webkit-media-controls-current-time-display {}
 
-        -webkit-media-controls-enclosure {
-            display:none !important;
-        }
+    -webkit-media-controls-enclosure {
+        display:none !important;
+    }
 
     .chat-class{
       position:relative;    
@@ -308,19 +311,17 @@
     .btn-modify-video-3.focus, .btn-modify-video-3:focus, .btn-modify-video-3:hover {color:#FF0000;}
     .btn-modify-video-3{background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #000;font-size: 18px;}
     
-    .screen-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
-    .file-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
+    .screen-share-class{
+        border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
+    .file-share-class{
+        border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
     
     .red-bg{background:#e61339 ;border-top-left-radius:10px;border-bottom-left-radius:10px;}
     .seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
     .seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
     .seceen-btn-2{background:#999900;color:#fff;border-radius:8px;border:0px;}
     .seceen-btn-2:hover{background:#9C0;color:#fff;border-radius:8px;border:0px;}
-    .yellow-bg{background:#FF0;border-top-left-radius:10px;border-bottom-left-radius:10px;margin:5px 0px}
-    .yellow-bg-2{background:#FF0;border-top-left-radius:5px;border-top-right-radius:5px;margin:5px 0px 0 0;color:#000;padding:5px 0px}
-    .yellow-bg-2 .fa{color:#000;}
-    .red-bg-2{background:#e61339 ;border-top-left-radius:5px;border-top-right-radius:5px;margin:5px 0px 0 0;color:#fff;padding:5px 0px}
-    .red-bg-2 .fa{color:#fff;}
+
     .panel-seassion table {font-size: 10px;}
     .btn-modify-chat {
       background: rgba(0,0,0,0);
@@ -349,12 +350,7 @@
       position:relative;
     }
 
-    td span .fa {
-        cursor: pointer;
-    }
-
-    .fileViewing1Box{
-        color: #968787;
+    .fileViewing-box{
         overflow-x: hidden;
         overflow-y: scroll;
         border: 10px solid white;
@@ -567,14 +563,14 @@
                             <div id="confVideoContainer">
 
                                 <!-- Remotes video -->
-                                <div class="video-container-class">
-                                        <div class="video-header">
-                                            <div class="text-center">Remote</div>
-                                        </div>
-                                        <div class="block-section">
-                                            <video controls class="video-block" name="otherConferenceVideo"></video>
-                                        </div>
-                                        <br/><br/>
+                                <div class="video-container-class-remote">
+                                    <div class="video-header">
+                                        <div class="text-center">Remote</div>
+                                    </div>
+                                    <div class="block-section">
+                                        <video controls class="video-block" name="otherConferenceVideo"></video>
+                                    </div>
+                                    <br/><br/>
                                 </div> 
 
                                 <!-- chat -->
@@ -602,7 +598,7 @@
                                 </div>
 
                                 <!-- local video -->
-                                <div class="video-container-class">
+                                <div class="video-container-class-local">
                                     <div class="video-header">
                                         <div class="text-center">Local</div>
                                     </div>
@@ -721,16 +717,16 @@
             console.log("searchParams" , searchParams);
 
             var local={
-              video: "myAloneVideo",
-              videoClass:"video-class",
-              videoContainer : "singleVideoContainer",
-              userDisplay:false,
-              userMetaDisplay:false,
-              userdetails:{
-                  username: username,
-                  usercolor: "#DDECEF",
-                  useremail: useremail
-              }
+                video: "myAloneVideo",
+                videoClass:"video-class",
+                videoContainer : "singleVideoContainer",
+                userDisplay:false,
+                userMetaDisplay:false,
+                userdetails:{
+                      username: username,
+                      usercolor: '#ccccff',
+                      useremail: useremail
+                }
             };
 
             var remote={
@@ -740,7 +736,12 @@
               videoContainer : "confVideoContainer",
               userDisplay:false,
               userMetaDisplay:false,
-              dynamicVideos: false 
+              dynamicVideos: false ,
+                userdetails:{
+                      username: 'REMOTE',
+                      usercolor: '#bee3e9',
+                      useremail: 'unknown'
+                }
             };
 
             var incoming={
@@ -791,7 +792,7 @@
             var widgets={
                 debug       : false,
                 reconnect   :{
-                                active: false,
+                                active: true,
                                 button:{
                                     id: "reconnectBtn",
                                     class:"btn btn-success glyphicon glyphicon-refresh topPanelButton",
