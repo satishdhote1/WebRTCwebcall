@@ -150,7 +150,7 @@
     .btn-modify-video2 {
         background: rgba(0,0,0,0);
         border: 0px;
-        padding: 0px;
+        padding: 5px;
         color: #fff;
         font-size: 18px;
     }
@@ -231,45 +231,15 @@
     .send-mesg::-moz-placeholder{
       color:#FFF;}
 
-    .online-pro-pict img {
-      height: auto;width: 100%;}
-    
 
-    .online-pro-pict {
-        border: 1px solid #CCC;
-        border-radius: 50%;
-        margin: 7px;
-        overflow: hidden;
-    }
-    .online-chat-text span, .online-chat-text-reply span {
-        color:#333;display: inherit;font-size: 10px;margin-top: 5px;
-    }
-    .online-chat-text {
-        background:#fdd1c6;
-        padding:5px;color:#000;
-        margin:10px 0px 0px 0px;
-        font-family:Helvetica;
-        font-size:13px;
-        font-weight:bold;
-        border-radius:5px
-    }
-    .online-chat-text-reply {
-        background:#c44b31;
-        padding:5px;
-        color:#fff;
-        margin:10px 0px 0px 0px;
-        font-family:Helvetica;
-        font-size:13px;
-        font-weight:bold;
-        border-radius:5px}
     .chat-text-area {margin: 5px 0px;}
     .chating-area {overflow-y: scroll; overflow-x: hidden;}
 
     .video-container-class-local{
-      position:relative; background-color: #a69afe;
+      position:relative; background-color: #c7c2e6;
     }
     .video-container-class-remote{
-      position:relative; background-color: #bee3e9;
+      position:relative; background-color: #a69afe;
     }
 
     .video-class{
@@ -307,18 +277,22 @@
 
     .screen-share-class{
         border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
-    .file-share-class{
-        border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
-    
-    .red-bg{background:#e61339 ;border-top-left-radius:10px;border-bottom-left-radius:10px;}
+
     .seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
     .seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
 
+
+    .file-share-class{
+        border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;
+    }
     .fileViewing-box{
         overflow-x: hidden;
         overflow-y: scroll;
-        border: 10px solid white;
+        border: 10px solid rgba(255, 255, 255, 0.58);
         height: 400px;
+    }
+    .filesharing-box{
+        border: 10px solid rgba(255, 255, 255, 0.58);
     }
 
     .table-section { font-size:12px;}
@@ -664,7 +638,7 @@
                 userMetaDisplay:false,
                 userdetails:{
                       username: username,
-                      usercolor: '#a69afe',
+                      usercolor: '#c7c2e6',
                       useremail: useremail
                 }
             };
@@ -679,7 +653,7 @@
               dynamicVideos: false ,
                 userdetails:{
                       username: 'REMOTE',
-                      usercolor: '#bee3e9',
+                      usercolor: '#a69afe',
                       useremail: 'unknown'
                 }
             };
