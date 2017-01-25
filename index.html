@@ -45,9 +45,6 @@
 
     .header-part{
       height:100px;
-        /*      
-        width:25%;
-        float:right*/
     }
 
     .col-xs-8{
@@ -264,12 +261,12 @@
         font-family:Helvetica;
         font-size:13px;
         font-weight:bold;
-    border-radius:5px}
+        border-radius:5px}
     .chat-text-area {margin: 5px 0px;}
     .chating-area {overflow-y: scroll; overflow-x: hidden;}
 
     .video-container-class-local{
-      position:relative; background-color: #ccccff;
+      position:relative; background-color: #a69afe;
     }
     .video-container-class-remote{
       position:relative; background-color: #bee3e9;
@@ -308,9 +305,6 @@
       margin: 5px 0px;
     }
 
-    .btn-modify-video-3.focus, .btn-modify-video-3:focus, .btn-modify-video-3:hover {color:#FF0000;}
-    .btn-modify-video-3{background: rgba(0,0,0,0);border: 0px;padding: 0px;color: #000;font-size: 18px;}
-    
     .screen-share-class{
         border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
     .file-share-class{
@@ -319,36 +313,6 @@
     .red-bg{background:#e61339 ;border-top-left-radius:10px;border-bottom-left-radius:10px;}
     .seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
     .seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
-    .seceen-btn-2{background:#999900;color:#fff;border-radius:8px;border:0px;}
-    .seceen-btn-2:hover{background:#9C0;color:#fff;border-radius:8px;border:0px;}
-
-    .panel-seassion table {font-size: 10px;}
-    .btn-modify-chat {
-      background: rgba(0,0,0,0);
-      border: 0px;
-      color: #666;
-      font-size: 16px;
-      padding: 3px 0px
-    }
-    .btn-modify-chat .fa {
-      line-height: 19px;
-      margin: 0;
-      padding: 0;
-    }
-    .icon-markup-block{background:#f3f3f3;border-radius:5px;margin:5px 0px;}
-    .block-one {
-      border: 1px solid #fff;
-    }
-    .block-two {
-      padding-top: 0px;
-    }
-    .inner-block {
-      background: #fff;
-      height: 1670px;
-      margin-top: 15px;
-      margin-bottom: 15px;
-      position:relative;
-    }
 
     .fileViewing-box{
         overflow-x: hidden;
@@ -396,26 +360,6 @@
         padding-right:0px;
         overflow-y:overflow;
         overflow-x:hidden;
-    }
-
-    .btn-modify-video2.focus, .btn-modify-video2:focus, .btn-modify-video2:hover {color: #eaff00;}
-    .btn-modify-video2 {
-        background: rgba(0,0,0,0);
-        border: 0px;
-        padding: 0px;
-        padding-left:10px;
-        color: #fff;font-size: 18px;}
-
-    .profile.pull-left{
-        border-radius: 50%;
-        height: 80px;
-        margin-right: 25px;
-        overflow: hidden;
-        width: 80px;
-    }
-
-    .profile.pull-right{
-        margin-right: 25px;
     }
 
     #logoutBtn{
@@ -481,10 +425,8 @@
                                 <div class="timer-block" id="timeContainer" hidden>
                                     <div id="localtime" class="panel-seassion">
                                         <div class="col-xs-6">
-                                            <p id="currentTimeArea" class="time-function" title="" data-original-title="Current Local Time">13:29:58</p>
-                                        </div>
-                                        <div class="col-xs-6">
-                                          <p id="currentTimeZoneArea" class="time-function" title="" data-original-title="Time Zone">Asia/Calcutta</p>
+                                            <p id="currentTimeZoneArea" class="time-function" title="Time Zone">Asia/Calcutta</p>
+                                            <p id="currentTimeArea" class="time-function" title="Current Local Time">13:29:58</p>
                                         </div>
                                         <!--                             
                                         <div class="col-xs-6">
@@ -499,14 +441,12 @@
 
                                     <div id="remotetime" class="panel-seassion">
                                         <div class="col-xs-6">
-                                            <p id="remoteTimeArea" class="time-function" title="" data-original-title="Current Local Time"></p>
-                                        </div>
-                                        <div class="col-xs-6">
-                                          <p id="remoteTimeZoneArea" class="time-function" title="" data-original-title="Time Zone">Asia/Calcutta</p>
+                                            <p id="remoteTimeZoneArea" class="time-function" title="Time Zone">Asia/Calcutta</p>
+                                            <p id="remoteTimeArea" class="time-function" title="Time of Remote"></p>
                                         </div>
                                     </div>
 
-                                    <div id="countdown" class="panel-seassion">
+                                    <div id="countdown" class="panel-seassion" hidden>
                                         <div class="col-xs-4">
                                             <p id="countdownHours" class="time-function" title="Hours">0</p>
                                         </div>
@@ -724,7 +664,7 @@
                 userMetaDisplay:false,
                 userdetails:{
                       username: username,
-                      usercolor: '#ccccff',
+                      usercolor: '#a69afe',
                       useremail: useremail
                 }
             };
