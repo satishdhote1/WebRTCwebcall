@@ -14,6 +14,7 @@
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
     <link href="css/mainstyle.css" rel="stylesheet">
+
 </head>
 <style>
 
@@ -39,9 +40,6 @@
       background-color: darkgrey;
       outline: 1px solid slategrey;
     }
-    .over-lap {
-      display: block !important
-    }
 
     .header-part{
       height:100px;
@@ -61,6 +59,7 @@
     }
 
     .over-lap {
+        display: block !important;
         position: absolute;
         right: 5px;
         top: 0px;
@@ -104,27 +103,7 @@
 
 
     .panel-seassion{position:relative;}
-    .btn-modify-video.focus, .btn-modify-video:focus, .btn-modify-video:hover {color: #748970;}
-    .btn-modify-video {
-      background: rgba(0,0,0,0);
-      border: 0px;
-      padding: 5px;
-      color: #f60000;
-      font-size: 22px;
-    }
-    .bg-ssion{
-      border-radius:10px;background:#ffda96;padding:5px 0px}
-    .arrow {
-      border-radius: 50%;
-      display: inline-block;
-      height: auto;
-      left: -20px;
-      position: absolute;
-      text-align: center;
-      top: 0;
-      font-size: 22px;
-      color:#F00;
-    }
+
     .video-block{width:100%;}
 
     .video-header{
@@ -171,17 +150,7 @@
       height: 150px;
     }
 
-    .fileshareclass{
-        text-align: left ; 
-        padding:0px 2px;
-        background-color:transparent; 
-        border: none;
-        font-size: 15px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-family: arial;
-        cursor: pointer;
-    }
+
 
     .timer{    
         font-size: 15px;
@@ -203,33 +172,7 @@
         background:rgba(119, 119, 119, 0.28);
     }
 
-    .btn.btn-info.reconnect{font-size:15px;font-weight:bold;text-transform:uppercase; }
-    .btn.btn-info.reconnect > span {
-        background:#0099FF;
-        border-radius: 3px;
-        color:#FFF;
-        height: 34px;
-        left:16px;
-        line-height: 34px;
-        position: absolute;
-        text-align: center;
-        top: 0;
-        width: 34px;
-    }
-    .btn.btn-info.reconnect:hover span {background:#03F;}
 
-    .send-mesg{
-          background:#fff;
-          color:#000;
-          border-radius:8px;
-          padding:2px 0px 3px 5px;
-          height:auto;
-          border:0px;
-    }
-    .send-mesg:focus{
-      box-shadow:0px;}
-    .send-mesg::-moz-placeholder{
-      color:#FFF;}
 
 
     .chat-text-area {margin: 5px 0px;}
@@ -267,36 +210,36 @@
         display:none !important;
     }
 
-    .chat-class{
-      position:relative;    
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      overflow: hidden;
-      margin: 5px 0px;
+
+    /*------------------file share css --------------------*/
+    .fileshareclass{
+        text-align: left ; 
+        padding:0px 2px;
+        background-color:transparent; 
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: arial;
+        cursor: pointer;
     }
 
-    .screen-share-class{
-        border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
-
-    .seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
-    .seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
-
-
-    .file-share-class{
-        border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;
-    }
     .fileViewing-box{
         overflow-x: hidden;
         overflow-y: scroll;
-        border: 10px solid rgba(255, 255, 255, 0.58);
+        border-top: 5px solid rgba(255, 255, 255, 0.58);
+        border-bottom: 5px solid rgba(255, 255, 255, 0.58);
         height: 400px;
     }
     .filesharing-box{
-        border: 10px solid rgba(255, 255, 255, 0.58);
+        overflow-x: hidden;
+        overflow-y: scroll;
+        border-top: 5px solid rgba(255, 255, 255, 0.58);
+        border-bottom: 5px solid rgba(255, 255, 255, 0.58);
     }
 
-    .table-section { font-size:12px;}
-    .border-radius { border-radius: 15px; overflow: hidden; margin:5px 0px;}
+
+    
 
     .button-corner {
         float: right;
@@ -307,22 +250,6 @@
         float: right;
         margin-right: 20px;
     }
-    .btn.btn-info.recannect{font-size:15px;font-weight:bold;text-transform:uppercase; }
-    .btn.btn-info.recannect > span {
-        background:#0099FF;
-        border-radius: 3px;
-        color:#FFF;
-        height: 34px;
-        left:16px;
-        line-height: 34px;
-        position: absolute;
-        text-align: center;
-        top: 0;
-        width: 34px;
-      
-    }
-    .btn.btn-info.recannect:hover span {background:#03F;}
-    
     .centreDiv-class {
         background: rgba(255, 255, 255, 0.55);
         padding-right: 0px;
@@ -506,7 +433,7 @@
                                     <div class="sent-message-block-class" id="chatContainer" style="background-color: white;">
                                         <div class="panel-seassion">
                                             <div class="chating-area" id="chatBoard"> </div>
-                                            <div id="whoTyping"></div>
+                                            <div id="whoTyping"  hidden></div>
                                         </div>
                                     </div>
                                 </div>
@@ -581,9 +508,8 @@
         </div>
     </section>
 
-<script src="property.js"></script>
+    <script src="property.js"></script>
 <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-
     <script>
  
     $('document').ready(function(){
