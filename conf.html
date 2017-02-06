@@ -529,36 +529,42 @@
 
   $('document').ready(function(){
 
-      adjustelement();
+    adjustelement();
 
-      sessionid = init(true , function (sessionid){
+    sessionid = init(true , function (sessionid){
 
-          var searchParams = new URLSearchParams(window.location);
-          var role="participant",out_A=true, out_V=true ;
+    var searchParams = new URLSearchParams(window.location);
+    var role="participant",out_A=true, out_V=true ;
 
-          if(searchParams.get('audio')=="0"){
-              out_A=false;
-          }
+    if(searchParams.get('audio')=="0"){
+      out_A=false;
+    }
 
-          if(searchParams.get('video')=="0"){
-              out_V=false;
-          }
+    if(searchParams.get('video')=="0"){
+      out_V=false;
+    }
 
-          if(searchParams.get('name')){
-              username=searchParams.get('name');
-          }else{
-              username="Expert";
-          }
+    if(searchParams.get('name')){
+      username=searchParams.get('name');
+    }else{
+      username="Expert";
+    }
 
-          if(searchParams.get('email')){
-              useremail=searchParams.get('email');
-          }else{
-              useremail="abc@gmail.com";
-          }
+    if(searchParams.get('email')){
+      useremail=searchParams.get('email');
+    }else{
+      useremail="abc@gmail.com";
+    }
 
-      var webrtcdomobj;
+    if(searchParams.get('role')){
+       role=searchParams.get('role');
+    }else{
+       role="participant";
+    }
 
-      console.log("searchParams" , searchParams);
+    var webrtcdomobj;
+
+    console.log("searchParams" , searchParams);
 
     var local={
         video: "myAloneVideo",
@@ -567,50 +573,51 @@
         userDisplay:false,
         userMetaDisplay:false,
         userdetails:{
-              username: username,
-              usercolor: '#c7c2e6',
-              useremail: useremail
+            username: username,
+            usercolor: '#c7c2e6',
+            useremail: useremail,
+            role: role
         }
     };
 
     var remote={
-      videoarr: ["myConferenceVideo", "otherConferenceVideo","otherConferenceVideo2"],
-      videoClass:"video-class",
-      maxAllowed: 6,
-      videoContainer : "confVideoContainer",
-      userDisplay:false,
-      userMetaDisplay:false,
-      dynamicVideos: false ,
+        videoarr: ["myConferenceVideo", "otherConferenceVideo","otherConferenceVideo2"],
+        videoClass:"video-class",
+        maxAllowed: 6,
+        videoContainer : "confVideoContainer",
+        userDisplay:false,
+        userMetaDisplay:false,
+        dynamicVideos: false ,
         userdetails:{
-              username: 'REMOTE',
-              usercolor: '#a69afe',
-              useremail: 'unknown'
+            username: 'REMOTE',
+            usercolor: '#a69afe',
+            useremail: 'unknown'
         }
     };
 
-      var incoming={
-          audio:  true,
-          video:  true,
-          data:   true,
-          screen: true
-      };
+    var incoming={
+      audio:  true,
+      video:  true,
+      data:   true,
+      screen: true
+    };
 
-      var outgoing={
-          audio:  true,
-          video:  true,
-          data:   true,
-          screen: true
-      };
+    var outgoing={
+      audio:  true,
+      video:  true,
+      data:   true,
+      screen: true
+    };
 
-      webrtcdomobj= new WebRTCdom(
-          local, remote, incoming, outgoing
-      );
+    webrtcdomobj= new WebRTCdom(
+      local, remote, incoming, outgoing
+    );
 
-        var session ={
-            sessionid : sessionid,
-            socketAddr: props.signaller,
-            turn:"none"
-        };
+    var session ={
+        sessionid : sessionid,
+        socketAddr: props.signaller,
+        turn:"none"
+    };
 
         /*
         {
@@ -626,72 +633,72 @@
         var widgets={
             debug       : false,
             reconnect   :{
-                            active: true,
-                            button:{
-                                id: "reconnectBtn",
-                                class:"btn btn-success glyphicon glyphicon-refresh topPanelButton",
-                                html:"Reconnect",
-                                resyncfiles:false
-                            }
+                        active: true,
+                        button:{
+                            id: "reconnectBtn",
+                            class:"btn btn-success glyphicon glyphicon-refresh topPanelButton",
+                            html:"Reconnect",
+                            resyncfiles:false
+                        }
+                    },
+            timer   :{
+                        active:true,
+                        type: "backward",
+                        counter:{
+                            hours: "countdownHours",
+                            minutes:"countdownMinutes",
+                            seconds :"countdownSeconds"
                         },
-            timer      :{
-                            active:true,
-                            type: "backward",
-                            counter:{
-                                hours: "countdownHours",
-                                minutes:"countdownMinutes",
-                                seconds :"countdownSeconds"
-                            },
-                            upperlimit: {
-                                hour:0 , 
-                                min: 3 , 
-                                sec: 60 
-                            },
-                            span:{
-                                currentTime_id:"currentTimeArea",
-                                currentTimeZone_id:"currentTimeZoneArea",
-                                remoteTime_id :"remoteTimeArea",
-                                remoteTimeZone_id:"remoteTimeZoneArea",
-                                class_on:""
-                            },
-                            container:{
-                                id:'timeContainer',
-                                minbutton_id:'minimizeTimerButton'
-                            },
+                        upperlimit: {
+                            hour:0 , 
+                            min: 3 , 
+                            sec: 60 
                         },
+                        span:{
+                            currentTime_id:"currentTimeArea",
+                            currentTimeZone_id:"currentTimeZoneArea",
+                            remoteTime_id :"remoteTimeArea",
+                            remoteTimeZone_id:"remoteTimeZoneArea",
+                            class_on:""
+                        },
+                        container:{
+                            id:'timeContainer',
+                            minbutton_id:'minimizeTimerButton'
+                        }
+                    },
             chat    :{
-                            active: true,
-                            container: {
-                                id: "chatContainer"
-                            },
-                            inputBox:{
-                                text_id:"chatInputText",
-                                sendbutton_id:"chatSendButton",
-                                minbutton_id:"minimizeChatButton"
-                            },
-                            chatBox:{
-                                id: "chatBoard"
-                            },
-                            button:{
-                                class_on:"btn btn-warning glyphicon glyphicon-font topPanelButton",
-                                html_on:"Chat",
-                                class_off:"btn btn-success glyphicon glyphicon-font topPanelButton",
-                                html_off:"Chat"
-                            }
+                        active: true,
+                        container: {
+                            id: "chatContainer"
+                        },
+                        inputBox:{
+                            text_id:"chatInputText",
+                            sendbutton_id:"chatSendButton",
+                            minbutton_id:"minimizeChatButton"
+                        },
+                        chatBox:{
+                            id: "chatBoard"
+                        },
+                        button:{
+                            class_on:"btn btn-warning glyphicon glyphicon-font topPanelButton",
+                            html_on:"Chat",
+                            class_off:"btn btn-success glyphicon glyphicon-font topPanelButton",
+                            html_off:"Chat"
+                        }
                     },
             fileShare :{
-                          active : true,
-                          fileShareContainer : "fileSharingRow",
-                          fileListContainer : "fileListingRow",
-                          button:{
-                              id: "fileshareBtn",
-                              class:"btn btn-success glyphicon glyphicon-file topPanelButton",
-                              html:"File"
-                          },
-                          props:{
-                              fileShare:"divided",   //Can be divided , chatpreview  , single   , hidden 
-                              fileList:"divided"     //Can be divided , single   , hidden
-                          }
+                        active : true,
+                        fileShareContainer : "fileSharingRow",
+                        fileListContainer : "fileListingRow",
+                        button:{
+                          id: "fileshareBtn",
+                          class:"btn btn-success glyphicon glyphicon-file topPanelButton",
+                          html:"File"
+                        },
+                        props:{
+                          fileShare:"single",   //Can be divided , chatpreview  , single   , hidden 
+                          fileList:"single"     //Can be divided , single   , hidden
+                        }
                       },
             mute    :{
                         active: true,
@@ -744,6 +751,9 @@
                     },
             fullscreen :{
                         active : true,
+                        pointer:{
+                            class_on: "fa fa-hand-o-up fa-3x"
+                        },
                         button:{
                             id: 'fullScreenButton',
                             class_on:"pull-right btn btn-modify-video2 videoButtonClass On",

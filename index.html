@@ -561,6 +561,12 @@
               useremail="abc@gmail.com";
             }
 
+            if(searchParams.get('role')){
+               role=searchParams.get('role');
+            }else{
+               role="participant";
+            }
+
             var webrtcdomobj;
 
             console.log("searchParams" , searchParams);
@@ -574,7 +580,8 @@
                 userdetails:{
                       username: username,
                       usercolor: '#c7c2e6',
-                      useremail: useremail
+                      useremail: useremail,
+                      role: role
                 }
             };
 
