@@ -452,15 +452,24 @@
                                 <div class="panel-seassion">
                                     <div class="timer">
                                         <input id="fileshareBtn" class="col-xs-8 text-center fileshareclass" value="SHARE A FILE" title="Select Files to Upload">
+                                        <!-- <i class="fa fa-file" aria-hidden="true"></i> -->
                                     </div>
                                 </div>
 
                                 <!-- Screenshare -->
                                 <div class="panel-seassion">
                                     <div class="timer">
-                                        <div id="scrShareButton" class="col-xs-8 text-center screen-btn off" title="Screen Share" style="padding:0px 2px">Screen Share </div>
+                                        <div id="scrShareButton" class="col-xs-8 text-center glyphicon glyphicon-blackboard screen-btn off" title="Screen Share" style="padding:0px 2px"> Screen Share </div>
                                         <div display="none" id="scrInstallButton" class="col-xs-8 text-center screenInstall-btn off" title="Install Screen Share" style="padding:0px 2px">Install Screenshare </div>
                                         <div display="none" id="scrViewButton" title="desktop"  class="col-xs-8 text-center" style="padding:0px 2px"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Listen In -->
+                                <div class="panel-seassion">
+                                    <div class="timer">
+                                        <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" style="padding:0px 2px">Listen In </div>
+                                        <i class="fa fa-file" aria-hidden="true"></i>
                                     </div>
                                 </div>
 
@@ -691,7 +700,7 @@
                             fileListContainer : "fileListingRow",
                             button:{
                                 id: "fileshareBtn",
-                                class_on: "btn btn-success glyphicon glyphicon-file topPanelButton",
+                                class_on: "col-xs-8 text-center fileshareclass",
                                 html:"File"
                             },
                             props:{
@@ -731,18 +740,18 @@
                                 }
                             },
                 snapshot :{
-                                active : true,
-                                snapshotContainer: true,
-                                button:{
-                                    class_on:"pull-right btn btn-modify-video2 videoButtonClass",
-                                    html_on:"<i class='fa fa-th-large' title='Take a snapshot'></i>"
-                                }
-                            }, 
+                            active : true,
+                            snapshotContainer: true,
+                            button:{
+                                class_on:"pull-right btn btn-modify-video2 videoButtonClass",
+                                html_on:"<i class='fa fa-th-large' title='Take a snapshot'></i>"
+                            }
+                        }, 
                 cursor :{
                             active : true,
                             pointer:{
                                 class_on: "fa fa-hand-o-up fa-3x"
-                            }
+                            },
                             button:{
                                 id: 'shareCursorButton',
                                 class_on:"pull-right btn btn-modify-video2 videoButtonClass On",
@@ -800,14 +809,14 @@
                                     },
                                     shareButton:{
                                         id:"scrShareButton",
-                                        class_on:"col-xs-8 text-center screen-btn on",
+                                        class_on:"col-xs-8 text-center glyphicon glyphicon-blackboard screen-btn on",
                                         html_on:"Stop Sharing",
-                                        class_off:"col-xs-8 text-center screen-btn off",
+                                        class_off:"col-xs-8 text-center glyphicon glyphicon-blackboard screen-btn off",
                                         html_off:"ScreenShare"
                                     },
                                     viewButton:{
                                         id:"scrViewButton",
-                                        class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton on",
+                                        class_on:"btn btn-warning glyphicon glyphicon-expand topPanelButton on",
                                         html_on:"Stop Viewing",
                                         class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton off",
                                         html_off:"View Screen"
