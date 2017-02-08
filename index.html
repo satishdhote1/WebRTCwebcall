@@ -89,18 +89,6 @@
         position: relative;
     }
     .main-block{width:95%;margin:auto;}
-    .time-function {
-        background: none repeat scroll 0 0;
-        border-radius: 5px;
-        font-family: Helvetica;
-        font-size: 12px;
-        letter-spacing: 1px;
-        padding: 7px 0;
-        text-align: center;
-        width: 100%;
-        background-color: white;
-    }
-
 
     .panel-seassion{position:relative;}
 
@@ -150,7 +138,9 @@
       height: 150px;
     }
 
+    /* time block related stuff ---------------------------*/
     .timer{    
+
         font-size: 15px;
         font-weight: bold;
         text-transform: uppercase;
@@ -171,6 +161,23 @@
         background:rgba(119, 119, 119, 0.28);
     }
 
+    .timer-panel{
+        position:relative;
+        margin: 3px;        
+    }
+
+    .time-function {
+        background: none repeat scroll 0 0;
+        border-radius: 5px;
+        font-family: Helvetica;
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 7px 0;
+        text-align: center;
+        width: 100%;
+        padding:3px;
+        background-color: white;
+    }
 
 
 
@@ -323,11 +330,9 @@
                                 </div>
 
                                 <div class="timer-block" id="timeContainer" hidden>
-                                    <div id="localtime" class="panel-seassion">
-                                        <div class="col-xs-6">
-                                            <p id="currentTimeZoneArea" class="time-function" title="Time Zone">Asia/Calcutta</p>
-                                            <p id="currentTimeArea" class="time-function" title="Current Local Time">13:29:58</p>
-                                        </div>
+                                    <div id="localtime" class="timer-panel row">
+                                        <span id="currentTimeZoneArea" class="time-function" title="Time Zone"></span>
+                                        <span id="currentTimeArea" class="time-function" title="Current Local Time"></span>
                                         <!--                             
                                         <div class="col-xs-6">
                                           <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
@@ -339,23 +344,15 @@
                                         </div> -->
                                     </div>
 
-                                    <div id="remotetime" class="panel-seassion">
-                                        <div class="col-xs-6">
-                                            <p id="remoteTimeZoneArea" class="time-function" title="Time Zone">Asia/Calcutta</p>
-                                            <p id="remoteTimeArea" class="time-function" title="Time of Remote"></p>
-                                        </div>
+                                    <div id="remotetime" class="timer-panel row">
+                                        <span id="remoteTimeZoneArea" class="time-function" title="Time Zone"></span>
+                                        <span id="remoteTimeArea" class="time-function" title="Time of Remote"></span>
                                     </div>
 
-                                    <div id="countdown" class="panel-seassion" hidden>
-                                        <div class="col-xs-4">
-                                            <p id="countdownHours" class="time-function" title="Hours">0</p>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <p id="countdownMinutes" class="time-function" title="Minutes">3</p>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <p id="countdownSeconds" class="time-function" title="Seconds">-15</p>
-                                        </div>
+                                    <div id="countdown" class="timer-panel row">
+                                        <span id="countdownHours" class="time-function" title="Hours">0</span>
+                                        <span id="countdownMinutes" class="time-function" title="Minutes">0</span>
+                                        <span id="countdownSeconds" class="time-function" title="Seconds">0</span>
                                     </div>
 
                                 </div>
@@ -459,40 +456,39 @@
                                 <!-- Screenshare -->
                                 <div class="panel-seassion">
                                     <div class="timer">
-                                        <div id="scrShareButton" class="col-xs-8 text-center glyphicon glyphicon-blackboard screen-btn off" title="Screen Share" style="padding:0px 2px"> Screen Share </div>
-                                        <div display="none" id="scrInstallButton" class="col-xs-8 text-center screenInstall-btn off" title="Install Screen Share" style="padding:0px 2px">Install Screenshare </div>
-                                        <div display="none" id="scrViewButton" title="desktop"  class="col-xs-8 text-center" style="padding:0px 2px"></div>
+                                        <div id="scrShareButton" class="col-xs-8 text-center screen-btn off" title="Screen Share" > Screen Share </div>
+                                        <div id="scrInstallButton" class="col-xs-8 text-center screenInstall-btn off" title="Install Screen Share" display="none" >Install Screenshare </div>
+                                        <div id="scrViewButton" class="col-xs-8 text-center" display="none" > Screen View </div>
                                     </div>
                                 </div>
-
+   
                                 <!-- Listen In -->
                                 <div class="panel-seassion">
                                     <div class="timer">
                                         <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" style="padding:0px 2px">Listen In </div>
-                                        <i class="fa fa-file" aria-hidden="true"></i>
                                     </div>
                                 </div>
 
                                  <!-- Drawboard  -->
                                 <div class="panel-seassion" hidden>
-                                      <div class="icon-markup-block"> 
-                                            <div class="col-xs-2 text-center" style="padding:0px;">
-                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
-                                            </div>
-                                            <div class="col-xs-2 text-center" style="padding:0px;">
-                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
-                                            </div>
-                                            <div class="col-xs-2 text-center" style="padding:0px;">
-                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
-                                            </div>
-                                            <div class="col-xs-2 text-center" style="padding:0px;">
-                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
-                                            </div>
-                                            <div class="col-xs-2 text-center" style="padding:0px;">
-                                              <button class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                      </div>
+                                    <div class="icon-markup-block"> 
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
+                                        </div>
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
+                                        </div>
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
+                                        </div>
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
+                                        </div>
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
 
                                 <div style="padding-top:0px;" class="panel-seassion">
@@ -634,17 +630,6 @@
                 }
             };
 
-            /*
-                { 
-                      username    : props.xirsys.username,
-                      secretkey   : props.xirsys.secretkey,
-                      domain      : props.xirsys.domain,
-                      application : props.xirsys.application,
-                      room        : props.xirsys.room,
-                      secure      : props.xirsys.secure
-                }
-            */
-
             var widgets={
                 debug       : false,
                 reconnect   :{
@@ -658,7 +643,7 @@
                             },
                 timer      :{
                                 active: true,
-                                type: "backward",
+                                type: "forward",
                                 counter:{
                                     hours: "countdownHours",
                                     minutes:"countdownMinutes",
@@ -823,9 +808,9 @@
                                     },
                                     viewButton:{
                                         id:"scrViewButton",
-                                        class_on:"btn btn-warning glyphicon glyphicon-expand topPanelButton on",
+                                        class_on:"screeninstall-btn on",
                                         html_on:"Stop Viewing",
-                                        class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton off",
+                                        class_off:"screeninstall-btn off",
                                         html_off:"View Screen"
                                     }
                                 }
