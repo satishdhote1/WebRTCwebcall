@@ -474,8 +474,8 @@
                                 </div>
 
                                  <!-- Drawboard  -->
-                                <div class="panel-seassion" hidden>
-                                    <div class="icon-markup-block"> 
+                                <div class="panel-seassion">
+                                    <div id="drawButton" class="icon-markup-block"> 
                                         <div class="col-xs-2 text-center" style="padding:0px;">
                                           <button class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
                                         </div>
@@ -780,7 +780,7 @@
                         },
 
                 screenrecord:{
-                            active : true,
+                            active : false,
                             videoRecordContainer: true,
                             button:{
                                 id: "scrRecordBtn",
@@ -818,7 +818,13 @@
                                         html_off:"View Screen"
                                     }
                                 }
+                        },
+                listenin :{
+                        active:false,
+                        button:{
+                            id:"ListenInButton"
                         }
+                    }
             };
 
             var webrtcdevobj = new WebRTCdev ( session , widgets  );
