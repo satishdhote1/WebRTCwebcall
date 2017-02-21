@@ -114,6 +114,7 @@
     .btn-modify-video2.focus, .btn-modify-video2:focus, .btn-modify-video2:hover {
         color: #eaff00;
     }
+
     .btn-modify-video2 {
         background: rgba(0,0,0,0);
         border: 0px;
@@ -121,6 +122,16 @@
         color: #fff;
         font-size: 18px;
     }
+
+    .btn-modify-video2_on{
+        background: rgba(0,0,0,0);
+        border: 0px;
+        padding: 5px;
+        color: #fff;
+        font-size: 18px;
+        color: #eaff00;
+    }
+
     .send-chat-header-class{
         border-radius: 10px;
         background: #676a84;
@@ -711,7 +722,7 @@
                                     button:{
                                         class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
                                         html_on:"<i class='fa fa-microphone'></i>",
-                                        class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
+                                        class_off:"pull-right btn btn-modify-video2_on videoButtonClass off",
                                         html_off:"<i class='fa fa-microphone'></i>"
                                     }
                                 },
@@ -720,7 +731,7 @@
                                     button:{
                                         class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
                                         html_on:"<i class='fa fa-video-camera'></i>",
-                                        class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
+                                        class_off:"pull-right btn btn-modify-video2_on videoButtonClass off",
                                         html_off:"<i class='fa fa-video-camera'></i>"
                                     }
                                 }
@@ -729,7 +740,7 @@
                                 active : true,
                                 videoRecordContainer : true,
                                 button:{
-                                    class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
+                                    class_on:"pull-right btn btn-modify-video2_on videoButtonClass on",
                                     html_on:"<i class='fa fa-circle' title='Stop recording this Video'></i>",
                                     class_off:"pull-right btn btn-modify-video2 videoButtonClass off",
                                     html_off:"<i class='fa fa-circle' title='Record this Video'></i>"
