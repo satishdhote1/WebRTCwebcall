@@ -190,7 +190,14 @@
         background-color: white;
     }
 
+.icon-markup-block{
+    height: 36px;
+    background-color: #f3f3f3;
+    border: 5px solid;
+    border-color: #7D71A3;
+    padding: 2px;
 
+}
 
     .chat-text-area {margin: 5px 0px;}
     .chating-area {overflow-y: scroll; overflow-x: hidden;}
@@ -256,7 +263,9 @@
     }
 
 
-    
+    .icon-markup-btn{
+            padding: 0px;
+    }
 
     .button-corner {
         float: right;
@@ -339,7 +348,7 @@
                                         Timer <i class="fa fa-clock-o" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                                        <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                        <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus"></i></button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -387,14 +396,6 @@
                                         <div class="col-xs-6">
                                           <p id="outgoingbandwidth" class="time-function" >1Mbps</p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Reconnect Button -->
-                            <div class="panel-seassion">
-                                <div class="timer">
-                                    <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
                                     </div>
                                 </div>
                             </div>
@@ -477,6 +478,14 @@
                                     </div>
                                 </div>
    
+                                <!-- Reconnect Button -->
+                                <div class="panel-seassion">
+                                    <div class="timer">
+                                        <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <!-- Listen In -->
                                 <div class="panel-seassion">
                                     <div class="timer">
@@ -486,28 +495,22 @@
 
                                  <!-- Drawboard  -->
                                 <div class="panel-seassion">
-                                    <div id="drawButton" class="icon-markup-block"> 
+                                    <div id="drawButton" class="timer icon-markup-block"> 
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
                                         </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-
-                                <div style="padding-top:0px;" class="panel-seassion">
-                                    <div class="icon-markup-block">           
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -718,7 +721,7 @@
                 mute    :{
                             active : true,
                             audio   :{
-                                    active: true,
+                                    active: false,
                                     button:{
                                         class_on:"pull-right btn btn-modify-video2 videoButtonClass on",
                                         html_on:"<i class='fa fa-microphone'></i>",
