@@ -190,14 +190,14 @@
         background-color: white;
     }
 
-.icon-markup-block{
-    height: 36px;
-    background-color: #f3f3f3;
-    border: 5px solid;
-    border-color: #7D71A3;
-    padding: 2px;
+    .icon-markup-block{
+        height: 36px;
+        background-color: #f3f3f3;
+        border: 5px solid;
+        border-color: #7D71A3;
+        padding: 2px;
 
-}
+    }
 
     .chat-text-area {margin: 5px 0px;}
     .chating-area {overflow-y: scroll; overflow-x: hidden;}
@@ -300,7 +300,6 @@
     }
 
     canvas { background: black; }
-
 </style>
 
 <body>
@@ -332,8 +331,8 @@
 
                         <div class="main-block">
 
-                            <input type="file" id="inputrecordedScreenvideo"/> 
-                            <inout type="file" id="inputrecordedScreenAudio"/>
+                            Screen's Video File : <input type="file" id="inputrecordedScreenVideo"/> <br/>
+                            Screen's Audio File :<input type="file" id="inputrecordedScreenAudio"/>
 
                             <button id="mergeButton">Merge</button>
                             <button id="playButton">Play</button>
@@ -356,11 +355,33 @@
     <script>
  
     $('document').ready(function(){
-        document.getElementById("mergeButton").onclick=function(){
 
+        document.getElementById("mergeButton").onclick=function(){
+            setTimeout(function(){ 
+                alert("wait for the screen recoridng to compile ");
+
+                var scrrecordStreamBlob = 
+                console.log(" ===2 blobs====", scrrecordStreamBlob , scrrecordAudioStreamBlob); 
+                convertStreams(scrrecordStreamBlob , scrrecordAudioStreamBlob);
+
+             }, 5000);
         };
 
         document.getElementById("playButton").onclick=function(){
+            var file = document.getElementById("inputrecordedScreenVideo").files[0];
+            var type = file.type ;
+            var videoNode = document.getElementById('recordedScreenVideo');
+            var fileURL = URL.createObjectURL(file);
+            videoNode.src = fileURL;
+
+            var audiofile = document.getElementById("inputrecordedScreenAudio").files[0];
+            var type = audiofile.type ;
+            var audioNode = document.getElementById('recordedScreenAudio');
+            var fileURL = URL.createObjectURL(audiofile);
+            audioNode.src = fileURL;
+
+            videoNode.play();
+            audioNode.play();
 
         };
     });
