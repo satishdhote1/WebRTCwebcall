@@ -1,3 +1,46 @@
+body{
+  /*overflow:hidden;*/
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.header-part{
+  height:100px;
+}
+
+.mainContainer{
+    background: url(images/background.jpg) 100% 100%;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    background-attachment: fixed;
+}
+.col-xs-8{
+    width: inherit;
+    margin-left: 10px;
+}
+
+.logo{padding:10px 0px;}
+
+.logoClass{
+  height: 85px; 
+    width: 100%;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+
+
 @charset "utf-8";
 /* CSS Document */
 
@@ -107,16 +150,16 @@ h1.search-title {
 .result-profile{width:50px;height:50px;margin:0px auto;border-radius:50%;overflow:hidden;}
 .result-profile img{width:100%;height:100%;}
 .list-group-modify::-webkit-scrollbar-thumb{
-background-color:#B03C3F;
-border-radius:10px;
+  background-color:#B03C3F;
+  border-radius:10px;
 }
 .list-group-modify::-webkit-scrollbar-thumb:hover{
-background-color:#BF4649;
-border:1px solid #333333;
+  background-color:#BF4649;
+  border:1px solid #333333;
 }
 .list-group-modify::-webkit-scrollbar-thumb:active{
-background-color:#A6393D;
-border:1px solid #333333;
+  background-color:#A6393D;
+  border:1px solid #333333;
 } 
 
 .connect-btn {
@@ -376,20 +419,20 @@ to { left: -100%; }
 }
 .hidden { display: none; }
 .select-item {
-    border: 6px solid #c7adf6;
-    height: 75px;
-    left: -15px;
-    position: absolute;
-    top: -9px;
-    width: 75px;
-  background:#fff; border-radius: 3px;}
+  border: 6px solid #c7adf6;
+  height: 75px;
+  left: -15px;
+  position: absolute;
+  top: -9px;
+  width: 75px;
+  background:#fff; border-radius: 3px;
+}
 .panel-box {
     background:url(../images/sba-services.jpg) center no-repeat;background-size:cover;
     border-radius: 3px;
     height: 560px;
     margin: 30px auto 0 auto;
     width: 90%;
-  
 }
 .search-header {
     background: #363965;
@@ -406,26 +449,26 @@ to { left: -100%; }
   letter-spacing:1px;
 }
 .search-header span {
-    color:#ff7676;
-    font-size: 22px;
-    padding-left: 15px;
-    position: absolute;
-    top: 13px;
+  color:#ff7676;
+  font-size: 22px;
+  padding-left: 15px;
+  position: absolute;
+  top: 13px;
 }
 
 .search-inner-block {
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.4);
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    height: 100%;
-    max-height: 510px;
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.4);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  height: 100%;
+  max-height: 510px;
   padding: 15px;
   overflow-y: scroll;
   margin-bottom:15px;
 }
 .seclect-box {
-    background: #fff;
-    padding: 5px;
+  background: #fff;
+  padding: 5px;
   margin-bottom: 5px;
   
 }
@@ -445,16 +488,16 @@ to { left: -100%; }
 }
 
 .squaredOne {
-     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #d6d6d6 0%, #eaffd1 40%, #aeaeae 100%) repeat scroll 0 0;
-    box-shadow: 0 1px 1px white inset, 0 1px 3px rgba(0, 0, 0, 0.5);
-    height: 35px;
-    margin: 20px auto;
-    position: relative;
-    width: 35px;
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #d6d6d6 0%, #eaffd1 40%, #aeaeae 100%) repeat scroll 0 0;
+  box-shadow: 0 1px 1px white inset, 0 1px 3px rgba(0, 0, 0, 0.5);
+  height: 35px;
+  margin: 20px auto;
+  position: relative;
+  width: 35px;
   box-shadow: 0 0 5px #666;
 }
 .squaredOne label::after {
-     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #666 0%, #000 100%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #666 0%, #000 100%) repeat scroll 0 0;
     box-shadow: 0 1px 1px white inset, 0 1px 3px rgba(0, 0, 0, 0.5);
     content: "";
     height: 22px;
@@ -916,6 +959,245 @@ to { left: -100%; }
     }
 
 
+.over-lap {
+    display: block !important;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+}
+
+video{
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: width .5s ease;
+    margin: 0;
+    background-color: #000;
+    border-radius: 50px;
+    width: 100%!important; 
+}
+.videoButtonClass {
+    padding :5px;
+}
+
+/*------------STYLE RULES ONLY FOR RTC-VIDEO PAGE-START---------*/
+
+.right-section{
+    background: rgba(255, 255, 255, 0.27);
+    border-radius: 30px;
+    padding: 10px 0px 0px;
+    margin-top: 20px;
+    position: relative;
+}
+.main-block{width:95%;margin:auto;}
+
+.panel-seassion{position:relative;}
+
+.video-block{width:100%;}
+
+.video-header{
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    /* background-color: #7D71A3; */
+    margin: 5px;
+    border-radius: 5px;
+    height: 20px;
+    padding: 0px 2px;
+}
+
+.controler-video {
+    margin: 0;
+    padding: 3px 0 9px;
+    position:relative;
+}
+.btn-modify-video2.focus, .btn-modify-video2:focus, .btn-modify-video2:hover {
+    color: #eaff00;
+}
+
+.btn-modify-video2 {
+    background: rgba(0,0,0,0);
+    border: 0px;
+    padding: 5px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.btn-modify-video2_on{
+    background: rgba(0,0,0,0);
+    border: 0px;
+    padding: 5px;
+    color: #fff;
+    font-size: 18px;
+    color: #eaff00;
+}
+
+.send-chat-header-class{
+    border-radius: 10px;
+    background: #676a84;
+    padding: 4px 0px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+}
+.send-message-block-class{
+  margin:3px 0px;
+  height:150px;
+  overflow-x: scroll;
+  overflow-x: -moz-hidden-unscrollable; 
+  background: rgb(218, 209, 209);
+  height: 150px;
+}
+
+/* time block related stuff ---------------------------*/
+.timer{    
+
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #7D71A3;
+    margin: 5px;
+    border-radius: 5px;
+    height: 20px;
+    padding:0px 2px
+}
+
+.timer-block{
+    margin:3px 0px;
+    height:150px;
+    width:100%;
+    overflow-x: scroll;
+    overflow-x: -moz-hidden-unscrollable; 
+    background:rgba(119, 119, 119, 0.28);
+}
+
+.timer-panel{
+    position:relative;
+    margin: 3px;        
+}
+
+.time-function {
+    background: none repeat scroll 0 0;
+    border-radius: 5px;
+    font-family: Helvetica;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 7px 0;
+    text-align: center;
+    width: 100%;
+    padding:3px;
+    background-color: white;
+}
+
+.icon-markup-block{
+height: 36px;
+background-color: #f3f3f3;
+border: 5px solid;
+border-color: #7D71A3;
+padding: 2px;
+
+}
+
+.chat-text-area {margin: 5px 0px;}
+.chating-area {overflow-y: scroll; overflow-x: hidden;}
+
+.video-container-class-local{
+  position:relative; background-color: #c7c2e6;
+}
+.video-container-class-remote{
+  position:relative; background-color: #a69afe;
+}
+
+.video-class{
+   /*background:transparent url('images/logo.png') no-repeat 0 0; */
+   -webkit-background-size:cover; 
+   -moz-background-size:cover; 
+   -o-background-size:cover; 
+   background-size:cover; 
+}
+
+.video-class::-webkit-media-controls {
+    display: none;
+}
+-webkit-media-controls-play-button {}
+
+-webkit-media-controls-volume-slider {}
+
+-webkit-media-controls-mute-button {}
+
+-webkit-media-controls-timeline {}
+
+-webkit-media-controls-current-time-display {}
+
+-webkit-media-controls-enclosure {
+    display:none !important;
+}
 
 
+/*------------------file share css --------------------*/
+.fileshareclass{
+    text-align: left ; 
+    padding:0px 2px;
+    background-color:transparent; 
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: arial;
+    cursor: pointer;
+}
 
+.fileViewing-box{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-top: 5px solid rgba(255, 255, 255, 0.58);
+    border-bottom: 5px solid rgba(255, 255, 255, 0.58);
+    height: 400px;
+}
+.filesharing-box{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-top: 5px solid rgba(255, 255, 255, 0.58);
+    border-bottom: 5px solid rgba(255, 255, 255, 0.58);
+}
+
+
+.icon-markup-btn{
+        padding: 0px;
+}
+
+.button-corner {
+    float: right;
+    margin-right: 5px;
+    cursor:pointer;
+}
+.minTimerBtn{
+    float: right;
+    margin-right: 20px;
+}
+.centreDiv-class {
+    background: rgba(255, 255, 255, 0.55);
+    padding-right: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.rightDiv-class{
+    padding-right:0px;
+    overflow-y:overflow;
+    overflow-x:hidden;
+}
+
+.screen-btn{
+    padding:0px 2px
+}
+
+#logoutBtn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+canvas { background: black; }
