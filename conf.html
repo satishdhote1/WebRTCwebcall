@@ -380,10 +380,17 @@
       local, remote, incoming, outgoing
     );
 
-    var session ={
+    var session = {
         sessionid : sessionid,
         socketAddr: props.signaller,
-        turn:"none"
+        turn:{ 
+              username    : props.xirsys.username,
+              secretkey   : props.xirsys.secretkey,
+              domain      : props.xirsys.domain,
+              application : props.xirsys.application,
+              room        : props.xirsys.room,
+              secure      : props.xirsys.secure
+        }
     };
 
         /*
