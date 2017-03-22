@@ -47,12 +47,12 @@ body::-webkit-scrollbar-thumb {
   overflow-y:overflow;
   overflow-x:hidden;
 }
-.righ-section{
-  background: rgba(255, 255, 255, 0.27);
-  border-radius: 30px;
-  padding: 10px 0px 0px;
-  margin-top: 20px;
-  position: relative;
+.right-section {
+    background: rgba(255, 255, 255, 0.27);
+    border-radius: 30px;
+    padding: 10px 0px 0px;
+    margin-top: 20px;
+    position: relative;
 }
 .centreDiv-class{
   padding-right: 0px;
@@ -66,59 +66,7 @@ body::-webkit-scrollbar-thumb {
   top: 0px;
 }
 .panel-seassion {position: relative;}
-.connect-btn {
-  background: #fff none repeat scroll 0 0;
-  border-radius: 10px;
-  color: #333;
-  margin-top: 8px;
-  padding: 3px 7px;transition:all 0.3s ease-in-out 0s;
-}
-.connect-btn:hover{background:#666;color:#fff;
-
-/*-----------------------NEW SEARCH POAGE--------------------*/
-.container-bg{min-height:700px;position:relative;}
-.margin-left20{margin-left:20px}
-
-button {
-  background: none;
-  border: none;
-}
-
-.bar {
-  display: block;
-  height: 5px;
-  width: 30px;
-  background: #fff;
-  margin: 10px auto;
-}
-
-.btn-nav {
-  background: #ffc000;
-  border-radius: 3px;
-  display: block;
-  height: auto;
-  left: 20px;
-  margin: 30px auto;
-  overflow: hidden;
-  padding: 0px 0;
-  position: absolute;
-  transition: all 1s ease 0s;
-  width: 240px;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-.panel-box {
-  background:url(../images/sba-services.jpg) center no-repeat;background-size:cover;
-  border-radius: 3px;
-  height: 560px;
-  margin: 30px auto 0 auto;
-  width: 90%;
-}
-
-.timer{    
+.timer {
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
@@ -130,14 +78,21 @@ button {
   padding: 0px 2px;
 }
 
-.timer-block{
-    margin: 3px 0px;
-    height: 150px;
-    width: 100%;
-    overflow-x: scroll;
-    background: rgba(119, 119, 119, 0.28);
+.timer-block {
+  margin: 3px 0px;
+  height: 150px;
+  width: 100%;
+  overflow-x: scroll;
+  background: rgba(119, 119, 119, 0.28);
 }
-
+.connect-btn {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 10px;
+  color: #333;
+  margin-top: 8px;
+  padding: 3px 7px;transition:all 0.3s ease-in-out 0s;
+}
+.connect-btn:hover{background:#666;color:#fff;}
 /* --------------chat class --------------------*/
 .send-chat-header-class{
     border-radius: 10px;
@@ -170,27 +125,27 @@ button {
 .chat-text-area {margin: 5px 0px;}
 .chating-area {overflow-y: scroll; overflow-x: hidden;}
 
-    .send-mesg{background:#efbf00;color:#fff;border-radius:8px;padding:2px 0px 3px 5px;height:auto;border:0px;}
-    .send-mesg:focus{box-shadow:0px;}
-    .send-mesg::-moz-placeholder{color:#FFF;}
+.send-mesg{background:#efbf00;color:#fff;border-radius:8px;padding:2px 0px 3px 5px;height:auto;border:0px;}
+.send-mesg:focus{box-shadow:0px;}
+.send-mesg::-moz-placeholder{color:#FFF;}
 
-    .chat-text-area {margin: 5px 0px;}
-    .chating-area {overflow-y: scroll; overflow-x: hidden;}
-    .chat-class{position:relative;}
+.chat-text-area {margin: 5px 0px;}
+.chating-area {overflow-y: scroll; overflow-x: hidden;}
+.chat-class{position:relative;}
 
-    .screen-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
+.screen-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
 
-    .seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
-    .seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
+.seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
+.seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
 
-    
-    .btn-modify-chat {
-      background: rgba(0,0,0,0);
-      border: 0px;
-      color: #666;
-      font-size: 16px;
-      padding: 3px 0px
-    }
+
+.btn-modify-chat {
+  background: rgba(0,0,0,0);
+  border: 0px;
+  color: #666;
+  font-size: 16px;
+  padding: 3px 0px
+}
 
 /* --------------File share class --------*/
 .file-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
@@ -226,11 +181,7 @@ button {
     border-top: 5px solid rgba(255, 255, 255, 0.58);
     border-bottom: 5px solid rgba(255, 255, 255, 0.58);
 }
-    .button-corner {
-        float: right;
-        margin-right: 5px;
-        cursor:pointer;
-    }
+
 
 /* ---------- not sure  where its used , its for recoonect button ----------*/
 .btn.btn-info.recannect{font-size:15px;font-weight:bold;text-transform:uppercase; }
@@ -261,13 +212,10 @@ video{
     border-radius: 50px;
     width: 100%!important; 
 }
-
 .videoButtonClass {
     padding :5px;
 }
 .video-block{width:100%;}
-
-
 .controler-video {
     margin: 0;
     padding: 3px 0 9px;
@@ -385,11 +333,6 @@ video{
     border-bottom: 5px solid rgba(255, 255, 255, 0.58);
 }
 
-.button-corner {
-    float: right;
-    margin-right: 5px;
-    cursor:pointer;
-}
 
 .screen-btn{
     padding:0px 2px

@@ -25,7 +25,39 @@
         <div class="container-fluid">
             <div class="row">
         
-                <div id="centreDiv" class="col-md-9 centreDiv-class">
+                <!-- Left Div -->
+                <div id="leftDiv" class="col-md-3 leftDiv-class">
+                    <div class="left-section">
+
+                        <div class="main-block">
+
+                            <!-- when remotes are connected -->
+                            <div id="confVideoContainer" style="display: block;">
+
+                                <!-- Remotes video -->
+                                <div class="video-container-class-remote">
+                                    <div class="video-header">
+                                        <div class="text-center">Remote</div>
+                                    </div>
+
+                                    <div class="block-section">
+                                        <video controls="" class="video-class" name="otherConferenceVideo2" ></video>
+                                    </div>
+
+                                    <div class="block-section">
+                                        <video controls="" class="video-block" name="otherConferenceVideo3"></video>
+                                    </div>
+
+                                    <br><br>
+                                </div> 
+
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+
+                <!-- Centre Div -->
+                <div id="centreDiv" class="col-md-6 centreDiv-class">
                     <div id="screenShareRow" style="margin: 10px;"></div>
                     <div id="screenRecordRow" style="margin: 10px;" hidden></div>
                     <div id="drawBoardRow" style="margin: 10px;"></div>
@@ -33,6 +65,7 @@
                     <div id="fileListingRow" style="margin: 10px;"></div>
                 </div>
 
+                <!-- Right Div -->
                 <div id="rightDiv" class="col-md-3 rightDiv-class">
                     <div class="right-section">
 
@@ -194,10 +227,6 @@
                                         <video controls class="video-block" name="otherConferenceVideo"></video>
                                     </div>
 
-                                    <div class="block-section">
-                                        <video controls class="video-block" name="otherConferenceVideo2"></video>
-                                    </div>
-
                                     <br/><br/>
                                 </div> 
 
@@ -207,6 +236,7 @@
                                         <input id="fileshareBtn" class="col-xs-8 text-center fileshareclass" value="SHARE A FILE" title="Select Files to Upload">
                                     </div>
                                 </div>
+
 
                                 <!-- Screenshare -->
                                 <div class="panel-seassion">
@@ -251,27 +281,18 @@
 
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
 
-<script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
-
+    <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
+    <script src="js/ve.js"> </script>
 
 <script>
 
     //$('video' ).css('cursor', 'move').draggable().resizable();
 
-  function adjustelement(){
-    /*$("#mainDiv").height(window.innerHeight- $(".header-part").height())*/
-    $("#mainDiv").height(window.innerHeight);
-    $("#rightDiv").height($("#mainDiv").height()-20);
-    $("#centreDiv").height($("#mainDiv").height()-20);
-    $(".fileViewing1Box").css("height",$("#mainDiv").height()-150);
-    $(".filesharing1Box").css("height","130px");
-    $('[data-toggle="tooltip"]').tooltip();
-  }
 
   $('document').ready(function(){
 
@@ -567,9 +588,6 @@
 
     });
 
-    document.getElementById("logoutBtn").onclick=function(){
-      window.location="https://www.villageexperts.com/";
-    }
 
 </script>
 
