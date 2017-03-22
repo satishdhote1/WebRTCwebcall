@@ -298,111 +298,100 @@
 
     adjustelement();
 
-    sessionid = init(true , function (sessionid){
+    init(true , function (sessionid){
 
-    var searchParams = new URLSearchParams(window.location);
-    var role="participant",out_A=true, out_V=true ;
+        var searchParams = new URLSearchParams(window.location);
+        var role="participant",out_A=true, out_V=true ;
 
-    if(searchParams.get('audio')=="0"){
-      out_A=false;
-    }
-
-    if(searchParams.get('video')=="0"){
-      out_V=false;
-    }
-
-    if(searchParams.get('name')){
-      username=searchParams.get('name');
-    }else{
-      username="Expert";
-    }
-
-    if(searchParams.get('email')){
-      useremail=searchParams.get('email');
-    }else{
-      useremail="abc@gmail.com";
-    }
-
-    if(searchParams.get('role')){
-       role=searchParams.get('role');
-    }else{
-       role="participant";
-    }
-
-    var webrtcdomobj;
-
-    console.log("searchParams" , searchParams);
-
-    var local={
-        video: "myAloneVideo",
-        videoClass:"video-class",
-        videoContainer : "singleVideoContainer",
-        userDisplay:false,
-        userMetaDisplay:false,
-        userdetails:{
-            username: username,
-            usercolor: '#c7c2e6',
-            useremail: useremail,
-            role: role
+        if(searchParams.get('audio')=="0"){
+          out_A=false;
         }
-    };
 
-    var remote={
-        videoarr: ["myConferenceVideo", "otherConferenceVideo","otherConferenceVideo2" , "otherConferenceVideo3"],
-        videoClass:"video-class",
-        maxAllowed: 8,
-        videoContainer : "confVideoContainer",
-        userDisplay:false,
-        userMetaDisplay:false,
-        dynamicVideos: false ,
-        userdetails:{
-            username: 'REMOTE',
-            usercolor: '#a69afe',
-            useremail: 'unknown'
+        if(searchParams.get('video')=="0"){
+          out_V=false;
         }
-    };
 
-    var incoming={
-      audio:  true,
-      video:  true,
-      data:   true,
-      screen: true
-    };
-
-    var outgoing={
-      audio:  true,
-      video:  true,
-      data:   true,
-      screen: true
-    };
-
-    webrtcdomobj= new WebRTCdom(
-      local, remote, incoming, outgoing
-    );
-
-    var session = {
-        sessionid : sessionid,
-        socketAddr: props.signaller,
-        turn:{ 
-              username    : props.xirsys.username,
-              secretkey   : props.xirsys.secretkey,
-              domain      : props.xirsys.domain,
-              application : props.xirsys.application,
-              room        : props.xirsys.room,
-              secure      : props.xirsys.secure
+        if(searchParams.get('name')){
+          username=searchParams.get('name');
+        }else{
+          username="Expert";
         }
-    };
 
-        /*
-        {
+        if(searchParams.get('email')){
+          useremail=searchParams.get('email');
+        }else{
+          useremail="abc@gmail.com";
+        }
+
+        if(searchParams.get('role')){
+           role=searchParams.get('role');
+        }else{
+           role="participant";
+        }
+
+        var webrtcdomobj;
+
+        console.log("searchParams" , searchParams);
+
+        var local={
+            video: "myAloneVideo",
+            videoClass:"video-class",
+            videoContainer : "singleVideoContainer",
+            userDisplay:false,
+            userMetaDisplay:false,
+            userdetails:{
+                username: username,
+                usercolor: '#c7c2e6',
+                useremail: useremail,
+                role: role
+            }
+        };
+
+        var remote={
+            videoarr: ["myConferenceVideo", "otherConferenceVideo","otherConferenceVideo2" , "otherConferenceVideo3"],
+            videoClass:"video-class",
+            maxAllowed: 8,
+            videoContainer : "confVideoContainer",
+            userDisplay:false,
+            userMetaDisplay:false,
+            dynamicVideos: false ,
+            userdetails:{
+                username: 'REMOTE',
+                usercolor: '#a69afe',
+                useremail: 'unknown'
+            }
+        };
+
+        var incoming={
+          audio:  true,
+          video:  true,
+          data:   true,
+          screen: true
+        };
+
+        var outgoing={
+          audio:  true,
+          video:  true,
+          data:   true,
+          screen: true
+        };
+
+        webrtcdomobj= new WebRTCdom(
+          local, remote, incoming, outgoing
+        );
+
+        var session = {
+            sessionid : sessionid,
+            socketAddr: props.signaller,
+            turn:{ 
                   username    : props.xirsys.username,
                   secretkey   : props.xirsys.secretkey,
                   domain      : props.xirsys.domain,
                   application : props.xirsys.application,
                   room        : props.xirsys.room,
                   secure      : props.xirsys.secure
-              }
-        */
+            }
+        };
 
         var widgets={
             debug       : false,
