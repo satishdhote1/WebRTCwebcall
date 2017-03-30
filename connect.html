@@ -1,0 +1,12 @@
+<html>
+<body>
+<button id="btn" value="Redirect to session" onclick="redirect()"></button>
+<script>
+var sessionid=1234;
+
+function redirect(){
+ window.location="https://"+window.location.hostname+":8084/#"+sessionid;
+}
+</script>
+</body>
+</html>

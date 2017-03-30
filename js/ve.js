@@ -10,5 +10,5 @@ function adjustelement(){
 }
 
 document.getElementById("logoutBtn").onclick=function(){
-  window.location="https://www.villageexperts.com/";
+  window.location="https://"+window.location.hostname+"/";
 }
