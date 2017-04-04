@@ -12,4 +12,5 @@ function adjustelement(){
 document.getElementById("logoutBtn").onclick=function(){
   //window.location="https://"+window.location.hostname+"/";
   window.location="https://"+window.location.hostname+"/connect.php?endTime="+sessionid;
+
 }
