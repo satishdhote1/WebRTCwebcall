@@ -1,51 +1,54 @@
-body{
-  /*overflow:hidden;*/
-  cursor: pointer;
+body {
+    /*overflow:hidden;*/
+    cursor: pointer;
 }
-
 body::-webkit-scrollbar {
     width: 1em;
 }
- 
 body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
 body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
 }
-
-.header-part{
-  height:100px;
+.header-part {
+    height: 100px;
 }
-
-.mainContainer{
-  background: url(/images/background.jpg) 100% 100%;
-  background-size: cover;
-  font-family: Arial, Helvetica, sans-serif;
-  background-attachment: fixed;
+.mainContainer {
+    background: url(/images/background.jpg) 100% 100%;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    background-attachment: fixed;
 }
-.col-xs-8{
+.col-xs-8 {
     width: inherit;
     margin-left: 10px;
 }
-
 .main-block {
     width: 95%;
     margin: auto;
     position: relative;
 }
-.logo{padding:10px 0px;}
-.logoClass{
-  height: 85px; 
-  width: 100%;
-  background: rgba(255, 255, 255, 0.76);
+.logo {
+    padding: 10px 0px;
 }
-.rightDiv-class{
-  padding-right:0px;
-  overflow-y:overflow;
-  overflow-x:hidden;
+.logoClass {
+    height: 85px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.76);
+}
+
+.leftDiv-class {
+    padding: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.rightDiv-class {
+    padding: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .right-section {
     background: rgba(255, 255, 255, 0.27);
@@ -54,102 +57,141 @@ body::-webkit-scrollbar-thumb {
     margin-top: 20px;
     position: relative;
 }
-.centreDiv-class{
-  padding-right: 0px;
-  overflow-x: hidden;
-  overflow-y: auto;
+.centreDiv-class {
+    padding-right: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .over-lap {
-  display: block !important;
-  position: absolute;
-  right: 5px;
-  top: 0px;
+    display: block !important;
+    position: absolute;
+    right: 5px;
+    top: 0px;
 }
-.panel-seassion {position: relative;}
+.panel-seassion {
+    position: relative;
+}
 .timer {
-  font-size: 15px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-color: #7D71A3;
-  margin: 5px;
-  border-radius: 5px;
-  height: 20px;
-  padding: 0px 2px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #7D71A3;
+    margin: 5px;
+    border-radius: 5px;
+    height: 20px;
+    padding: 0px 2px;
 }
-
 .timer-block {
-  margin: 3px 0px;
-  height: 150px;
-  width: 100%;
-  overflow-x: scroll;
-  background: rgba(119, 119, 119, 0.28);
+    margin: 3px 0px;
+    height: 150px;
+    width: 100%;
+    overflow-x: scroll;
+    background: rgba(119, 119, 119, 0.28);
 }
 .connect-btn {
-  background: #fff none repeat scroll 0 0;
-  border-radius: 10px;
-  color: #333;
-  margin-top: 8px;
-  padding: 3px 7px;transition:all 0.3s ease-in-out 0s;
+    background: #fff none repeat scroll 0 0;
+    border-radius: 10px;
+    color: #333;
+    margin-top: 8px;
+    padding: 3px 7px;
+    transition: all 0.3s ease-in-out 0s;
 }
-.connect-btn:hover{background:#666;color:#fff;}
+.connect-btn:hover {
+    background: #666;
+    color: #fff;
+}
 /* --------------chat class --------------------*/
-.send-chat-header-class{
+
+.send-chat-header-class {
     border-radius: 10px;
-    background: #676a84;
+    background: #c2d5e6;
     padding: 4px 0px;
     overflow: hidden;
     width: 100%;
     margin: 0;
 }
-.send-message-block-class{
-  margin:3px 0px;
-  height:150px;
-  overflow-x: scroll;
-  overflow-x: -moz-hidden-unscrollable; 
-  background: rgb(218, 209, 209);
-  height: 150px;
+.send-message-block-class {
+    margin: 3px 0px;
+    height: 150px;
+    overflow-x: scroll;
+    overflow-x: -moz-hidden-unscrollable;
+    background: rgb(218, 209, 209);
+    height: 150px;
 }
-.send-chat-header-class{
+.send-message-block-class {
+    margin: 3px 0px;
+    height: 150px;
+    overflow-x: scroll;
+    overflow-x: -moz-hidden-unscrollable;
+    background: #b2b2b2;
+}
+.chat-text-area {
+    margin: 5px 0px;
+}
+.chating-area {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.send-mesg {
+    color: #fff;
+    border-radius: 8px;
+    padding: 2px 0px 3px 5px;
+    height: auto;
+    border: 0px;
+}
+.send-mesg:focus {
+    box-shadow: 0px;
+}
+.send-mesg::-moz-placeholder {
+    color: #FFF;
+}
+.chat-text-area {
+    margin: 5px 0px;
+}
+.chating-area {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.chat-class {
+    position: relative;
+    margin-top: 5px;
+}
+.screen-share-class {
     border-radius: 10px;
-    background: #09F;
-    padding: 4px 0px;
-    overflow: hidden;
-    width: 100%;
-    margin: 0;
+    padding: 5px 5px;
+    background: #e2f0d9;
+    margin: 5px 0px;
+    /*border:1px solid #F00;*/
 }
-.send-message-block-class{
-  margin:3px 0px;height:150px;overflow-x: scroll;overflow-x: -moz-hidden-unscrollable; background: #b2b2b2;
+.seceen-btn {
+    background: #0033CC;
+    color: #fff;
+    border-radius: 8px;
+    border: 0px;
 }
-
-.chat-text-area {margin: 5px 0px;}
-.chating-area {overflow-y: scroll; overflow-x: hidden;}
-
-.send-mesg{background:#efbf00;color:#fff;border-radius:8px;padding:2px 0px 3px 5px;height:auto;border:0px;}
-.send-mesg:focus{box-shadow:0px;}
-.send-mesg::-moz-placeholder{color:#FFF;}
-
-.chat-text-area {margin: 5px 0px;}
-.chating-area {overflow-y: scroll; overflow-x: hidden;}
-.chat-class{position:relative;}
-
-.screen-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
-
-.seceen-btn{background:#0033CC;color:#fff;border-radius:8px;border:0px;}
-.seceen-btn:hover{background:#0CF;color:#fff;border-radius:8px;border:0px;}
-
-
+.seceen-btn:hover {
+    background: #0CF;
+    color: #fff;
+    border-radius: 8px;
+    border: 0px;
+}
 .btn-modify-chat {
-  background: rgba(0,0,0,0);
-  border: 0px;
-  color: #666;
-  font-size: 16px;
-  padding: 3px 0px
+    background: rgba(0, 0, 0, 0);
+    border: 0px;
+    color: #666;
+    font-size: 16px;
+    padding: 3px 0px
 }
-
 /* --------------File share class --------*/
-.file-share-class{border-radius:10px;padding:5px 5px;background:#e2f0d9;margin:5px 0px;/*border:1px solid #F00;*/}
 
+.file-share-class {
+    border-radius: 10px;
+    padding: 5px 5px;
+    background: #e2f0d9;
+    margin: 5px 0px;
+    /*border:1px solid #F00;*/
+}
 .fileUpload {
     border-radius: 10px;
     position: relative;
@@ -168,41 +210,32 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
     filter: alpha(opacity=0);
 }
-.fileViewing-box{
-    overflow-x: hidden;
-    overflow-y: scroll;
-    border-top: 5px solid rgba(255, 255, 255, 0.58);
-    border-bottom: 5px solid rgba(255, 255, 255, 0.58);
-    height: 400px;
-}
-.filesharing-box {
-    overflow-x: hidden;
-    overflow-y: scroll;
-    border-top: 5px solid rgba(255, 255, 255, 0.58);
-    border-bottom: 5px solid rgba(255, 255, 255, 0.58);
-}
-
 
 /* ---------- not sure  where its used , its for recoonect button ----------*/
-.btn.btn-info.recannect{font-size:15px;font-weight:bold;text-transform:uppercase; }
+
+.btn.btn-info.recannect {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 .btn.btn-info.recannect > span {
-    background:#0099FF;
+    background: #0099FF;
     border-radius: 3px;
-    color:#FFF;
+    color: #FFF;
     height: 34px;
-    left:16px;
+    left: 16px;
     line-height: 34px;
     position: absolute;
     text-align: center;
     top: 0;
     width: 34px;
-  
 }
-.btn.btn-info.recannect:hover span {background:#03F;}
-
-
+.btn.btn-info.recannect:hover span {
+    background: #03F;
+}
 /*------------Vieo style Guide---------*/
-video{
+
+video {
     position: relative;
     top: 0;
     left: 0;
@@ -210,25 +243,29 @@ video{
     margin: 0;
     background-color: #000;
     border-radius: 50px;
-    width: 100%!important; 
+    width: 100%!important;
+    max-width: 300px;
 }
 .videoButtonClass {
-    padding :5px;
+    padding: 5px;
 }
-.video-block{width:100%;}
+.video-block {
+    width: 100%;
+}
 .controler-video {
     margin: 0;
     padding: 3px 0 9px;
-    position:relative;
+    position: relative;
 }
-
-.video-container-class-local{
-  position:relative; background-color: #c7c2e6;
+.video-container-class-local {
+    position: relative;
+    background-color: #c7c2e6;
 }
-.video-container-class-remote{
-  position:relative; background-color: #a69afe;
+.video-container-class-remote {
+    position: relative;
+    background-color: #a69afe;
 }
-.video-header{
+.video-header {
     font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
@@ -239,78 +276,64 @@ video{
     height: 20px;
     padding: 0px 2px;
 }
-.video-class{
-   /*background:transparent url('images/logo.png') no-repeat 0 0; */
-   -webkit-background-size:cover; 
-   -moz-background-size:cover; 
-   -o-background-size:cover; 
-   background-size:cover; 
+.video-class {
+    /*background:transparent url('images/logo.png') no-repeat 0 0; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-
 .video-class::-webkit-media-controls {
     display: none;
 }
--webkit-media-controls-play-button {}
-
--webkit-media-controls-volume-slider {}
-
--webkit-media-controls-mute-button {}
-
--webkit-media-controls-timeline {}
-
--webkit-media-controls-current-time-display {}
-
--webkit-media-controls-enclosure {
-    display:none !important;
-}
+-webkit-media-controls-play-button {} -webkit-media-controls-volume-slider {} -webkit-media-controls-mute-button {} -webkit-media-controls-timeline {} -webkit-media-controls-current-time-display {} -webkit-media-controls-enclosure {
+                                                                                                                                                                                                          display: none !important;
+                                                                                                                                                                                                      }
 .btn-modify-video2 {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     border: 0px;
     padding: 5px;
     color: #fff;
     font-size: 18px;
 }
-
 .videoButtonClass {
     padding: 5px;
 }
 /* -----------------time block related stuff ---------------------------*/
 
-.timer-panel{
-    position:relative;
-    margin: 3px;        
+.timer-panel {
+    position: relative;
+    margin: 3px;
 }
 .time-function {
-  background: none repeat scroll 0 0;
-  border-radius: 5px;
-  font-family: Helvetica;
-  font-size: 12px;
-  letter-spacing: 1px;
-  padding: 7px 0;
-  text-align: center;
-  width: 100%;
-  padding:3px;
-  background-color: white;
+    background: none repeat scroll 0 0;
+    border-radius: 5px;
+    font-family: Helvetica;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 7px 0;
+    text-align: center;
+    width: 100%;
+    padding: 3px;
+    background-color: white;
 }
-.minTimerBtn{
-  float: right;
-  margin-right: 20px;
+.minTimerBtn {
+    float: right;
+    margin-right: 20px;
 }
-
-.icon-markup-block{
-  height: 36px;
-  background-color: #f3f3f3;
-  border: 5px solid;
-  border-color: #7D71A3;
-  padding: 2px;
+.icon-markup-block {
+    height: 36px;
+    background-color: #f3f3f3;
+    border: 5px solid;
+    border-color: #7D71A3;
+    padding: 2px;
 }
-
-
 /*------------------file share css --------------------*/
-.fileshareclass{
-    text-align: left ; 
-    padding:0px 2px;
-    background-color:transparent; 
+
+.fileshareclass {
+    text-align: left;
+    padding: 0px 2px;
+    background-color: transparent;
     border: none;
     font-size: 15px;
     font-weight: bold;
@@ -318,30 +341,27 @@ video{
     font-family: arial;
     cursor: pointer;
 }
-
-.fileViewing-box{
+.fileViewing-box {
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     border-top: 5px solid rgba(255, 255, 255, 0.58);
     border-bottom: 5px solid rgba(255, 255, 255, 0.58);
     height: 400px;
 }
-.filesharing-box{
+.filesharing-box {
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     border-top: 5px solid rgba(255, 255, 255, 0.58);
     border-bottom: 5px solid rgba(255, 255, 255, 0.58);
 }
-
-
-.screen-btn{
-    padding:0px 2px
+.screen-btn {
+    padding: 0px 2px
 }
-
-#logoutBtn{
+#logoutBtn {
     position: absolute;
     top: 20px;
     right: 20px;
 }
-
-canvas { background: black; }
+canvas {
+    background: black;
+}
