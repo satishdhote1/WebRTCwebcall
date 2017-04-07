@@ -71,6 +71,19 @@ body::-webkit-scrollbar-thumb {
 .panel-seassion {
     position: relative;
 }
+
+.widgetBtnClass{
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #7D71A3;
+    margin: 5px;
+    border-radius: 5px;
+    height: 40px;
+    width:100%;
+    padding: 0px 2px;
+}
 .timer {
     font-size: 15px;
     font-weight: bold;
@@ -134,7 +147,7 @@ body::-webkit-scrollbar-thumb {
     overflow-x: hidden;
 }
 .send-mesg {
-    color: #fff;
+    color: #333;
     border-radius: 8px;
     padding: 2px 0px 3px 5px;
     height: auto;
@@ -244,8 +257,11 @@ video {
     background-color: #000;
     border-radius: 50px;
     width: 100%!important;
+}
+#singleVideoContainer video , confVideoContainer video{
     max-width: 300px;
 }
+
 .videoButtonClass {
     padding: 5px;
 }

@@ -18,14 +18,14 @@ var file = new _static.Server("./", {
     indexFile: "index.html"
 });
 
-var options = {
+/*var options = {
   key: fs.readFileSync('/etc/apache2/ssl/villageexperts.key'),
   cert: fs.readFileSync('/etc/apache2/ssl/f8c35162ebd1b827.crt'),
   ca: fs.readFileSync('/etc/apache2/ssl/gd_bundle-g2-g1.crt'),
   requestCert: true,
   rejectUnauthorized: false
-};
-/*
+};*/
+
 var options = {
   key: fs.readFileSync('ssl_certs/server.key'),
   cert: fs.readFileSync('ssl_certs/server.crt'),
@@ -33,7 +33,7 @@ var options = {
   requestCert: true,
   rejectUnauthorized: false
 };
-*/
+
 var app = https.createServer(options, function(request, response){
         request.addListener('end', function () {
         file.serve(request, response);

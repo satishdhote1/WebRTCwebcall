@@ -56,7 +56,6 @@
 
                             <!-- Timer and monitization -->
                             <div class="panel-seassion">
-
                                 <div class="timer">
                                     <div class="col-xs-8 text-center" style="padding:0px 2px"> 
                                         Timer <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -66,7 +65,6 @@
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-
                                 <div class="timer-block" id="timeContainer" hidden>
                                     <div id="localtime" class="timer-panel row">
                                         <span id="currentTimeZoneArea" class="time-function" title="Time Zone"></span>
@@ -114,11 +112,55 @@
                                 </div>
                             </div>
 
-                            <!-- Recording -->
-                            <div class="panel-seassion">
-                                <div class="timer">
-                                    <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off" style="padding:0px 2px">Session Record <i class='fa fa-circle'></i></div>
+                            <div class="row">
+
+                                <!-- Recording -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off" style="padding:0px 2px">Session Record <i class='fa fa-circle'></i></div>
+                                    </div>
                                 </div>
+
+                                <!-- File share -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <input id="fileshareBtn" class="col-xs-8 text-center fileshareclass" value="SHARE A FILE" title="Select Files to Upload">
+                                        <!-- <i class="fa fa-file" aria-hidden="true"></i> -->
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <!-- Screenshare -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <div id="scrShareButton" class="col-xs-8 text-center screen-btn off" title="Screen Share" > Screen Share </div>
+                                        <div id="scrInstallButton" class="col-xs-8 text-center screenInstall-btn off" title="Install Screen Share" display="none" >Install Screenshare </div>
+                                        <div id="scrViewButton" class="col-xs-8 text-center" display="none" hidden> Screen View </div>
+                                    </div>
+                                </div>
+
+                                <!-- Reconnect Button -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <!-- Listen In -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" style="padding:0px 2px">Listen In </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                             <!-- when no remote -->
@@ -173,38 +215,6 @@
                                         <video class="video-block" controls name="myConferenceVideo"></video>
                                     </div>
                                     <br/><br/>
-                                </div>
-                                
-                                <!-- File share -->
-                                <div class="panel-seassion">
-                                    <div class="timer">
-                                        <input id="fileshareBtn" class="col-xs-8 text-center fileshareclass" value="SHARE A FILE" title="Select Files to Upload">
-                                        <!-- <i class="fa fa-file" aria-hidden="true"></i> -->
-                                    </div>
-                                </div>
-
-                                <!-- Screenshare -->
-                                <div class="panel-seassion">
-                                    <div class="timer">
-                                        <div id="scrShareButton" class="col-xs-8 text-center screen-btn off" title="Screen Share" > Screen Share </div>
-                                        <div id="scrInstallButton" class="col-xs-8 text-center screenInstall-btn off" title="Install Screen Share" display="none" >Install Screenshare </div>
-                                        <div id="scrViewButton" class="col-xs-8 text-center" display="none" hidden> Screen View </div>
-                                    </div>
-                                </div>
-   
-                                <!-- Reconnect Button -->
-                                <div class="panel-seassion">
-                                    <div class="timer">
-                                        <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Listen In -->
-                                <div class="panel-seassion">
-                                    <div class="timer">
-                                        <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" style="padding:0px 2px">Listen In </div>
-                                    </div>
                                 </div>
 
                                  <!-- Drawboard  -->
