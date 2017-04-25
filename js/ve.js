@@ -21,6 +21,9 @@ for (x in allvids) {
 }
 
 if (count > 2) {
-    document.getElementsByClassName("left-section").hidden = false;
+    document.getElementsByClassName("leftDiv1").hidden = false;
+}
+if (count > 4) {
+    document.getElementsByClassName("leftDiv2").hidden = false;
 }
 
