@@ -1,4 +1,4 @@
-
+﻿
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -26,7 +26,7 @@
             <div class="row">
         
                 <!-- Left Div -->
-                <div id="leftDiv" class="col-md-3 leftDiv-class">
+                <div id="leftDiv" class="col-md-2 leftDiv-class">
                     <div class="left-section">
 
                         <div class="main-block">
@@ -56,6 +56,29 @@
                     </div>
                 </div>
 
+                <div id="leftDiv" class="col-md-2 leftDiv-class">
+                    <div class="left-section">
+                        <div class="main-block">
+                            <!-- when remotes are connected -->
+                            <div id="confVideoContainer" style="display: block;">
+                                <!-- Remotes video -->
+                                <div class="video-container-class-remote">
+                                    <div class="video-header">
+                                        <div class="text-center">Remote</div>
+                                    </div>
+                                    <div class="block-section">
+                                        <video controls="" class="video-class" name="otherConferenceVideo4" hidden></video>
+                                    </div>
+                                    <div class="block-section">
+                                        <video controls="" class="video-block" name="otherConferenceVideo5" hidden></video>
+                                    </div>
+                                    <br><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Centre Div -->
                 <div id="centreDiv" class="col-md-6 centreDiv-class">
                     <div id="screenShareRow" style="margin: 10px;"></div>
@@ -66,7 +89,7 @@
                 </div>
 
                 <!-- Right Div -->
-                <div id="rightDiv" class="col-md-3 rightDiv-class">
+                <div id="rightDiv" class="col-md-2 rightDiv-class">
                     <div class="right-section">
 
                         <div class="container-fluid header-part">
@@ -347,7 +370,7 @@
         };
 
         var remote={
-            videoarr: ["myConferenceVideo", "otherConferenceVideo","otherConferenceVideo2" , "otherConferenceVideo3"],
+            videoarr: ["myConferenceVideo", "otherConferenceVideo", "otherConferenceVideo2", "otherConferenceVideo3", "otherConferenceVideo4", "otherConferenceVideo5"],
             videoClass:"video-class",
             maxAllowed: 8,
             videoContainer : "confVideoContainer",

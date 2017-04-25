@@ -49,6 +49,7 @@ body::-webkit-scrollbar-thumb {
 .rightDiv-class {
     padding: 0px;
     max-width : 310px;
+    float:right;
     overflow-y: auto;
     overflow-x: hidden;
 }

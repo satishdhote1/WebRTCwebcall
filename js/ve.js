@@ -13,3 +13,14 @@ document.getElementById("logoutBtn").onclick=function(){
   //window.location="https://"+window.location.hostname+"/";
   window.location="https://"+window.location.hostname+"/connect.php?endTime="+sessionid;
 }
+
+var allvids = document.getElementsByTagName("video");
+var count;
+for (x in allvids) {
+    if (x.src) count++;
+}
+
+if (count > 2) {
+    document.getElementsByClassName("left-section").hidden = false;
+}
+
