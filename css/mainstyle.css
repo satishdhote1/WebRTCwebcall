@@ -41,12 +41,14 @@ body::-webkit-scrollbar-thumb {
 
 .leftDiv-class {
     padding: 0px;
+    max-width: 310px;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .rightDiv-class {
     padding: 0px;
+    max-width : 310px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -178,6 +180,7 @@ body::-webkit-scrollbar-thumb {
     /*border:1px solid #F00;*/
 }
 .seceen-btn {
+    position:fixed;
     background: #0033CC;
     color: #fff;
     border-radius: 8px;
