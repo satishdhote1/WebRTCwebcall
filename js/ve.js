@@ -14,16 +14,20 @@ document.getElementById("logoutBtn").onclick=function(){
   window.location="https://"+window.location.hostname+"/connect.php?endTime="+sessionid;
 }
 
+function onVideoAdded() {
+    var allvids = document.getElementsByTagName("video");
+    var count;
+    for (x in allvids) {
+        if (x.src) count++;
+    }
+
+    if (count > 3) {
+        document.getElementsByClassName("leftDiv1").hidden = false;
+    }
+    if (count > 5) {
+        document.getElementsByClassName("leftDiv2").hidden = false;
+    }
+}
+
 var allvids = document.getElementsByTagName("video");
-var count;
-for (x in allvids) {
-    if (x.src) count++;
-}
-
-if (count > 2) {
-    document.getElementsByClassName("leftDiv1").hidden = false;
-}
-if (count > 4) {
-    document.getElementsByClassName("leftDiv2").hidden = false;
-}
-
+allvids.addEventListener('onplaying', onVideoAdded, false);
