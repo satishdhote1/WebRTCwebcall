@@ -41,14 +41,14 @@ body::-webkit-scrollbar-thumb {
 
 .leftDiv-class {
     padding: 0px;
-    max-width: 310px;
+ /*   max-width: 310px;*/
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .rightDiv-class {
     padding: 0px;
-    max-width : 310px;
+/*   max-width : 310px;*/
     float:right;
     overflow-y: auto;
     overflow-x: hidden;

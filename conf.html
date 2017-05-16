@@ -112,90 +112,111 @@
 
                             <div class="panel-seassion" style="padding:0px 2px;color:white"> Conference </div>
 
-                                    <!-- Timer and monitization -->
+                            <!-- Timer and monitization -->
+                            <div class="panel-seassion">
+                                <div class="timer">
+                                    <div class="col-xs-8 text-center" style="padding:0px 2px"> 
+                                        Timer <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
+                                        <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="timer-block" id="timeContainer" hidden>
+                                    <div id="localtime" class="timer-panel row">
+                                        <span id="currentTimeZoneArea" class="time-function" title="Time Zone"></span>
+                                        <span id="currentTimeArea" class="time-function" title="Current Local Time"></span>
+                                        <!--                             
+                                        <div class="col-xs-6">
+                                          <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
+                                          <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
+                                            <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
+                                        </div> -->
+                                    </div>
+
+                                    <div id="remotetime" class="timer-panel row">
+                                        <span id="remoteTimeZoneArea" class="time-function" title="Time Zone"></span>
+                                        <span id="remoteTimeArea" class="time-function" title="Time of Remote"></span>
+                                    </div>
+
+                                    <div id="countdown" class="timer-panel row">
+                                        <span id="countdownHours" class="time-function" title="Hours">0</span>
+                                        <span id="countdownMinutes" class="time-function" title="Minutes">0</span>
+                                        <span id="countdownSeconds" class="time-function" title="Seconds">0</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Bandwidth and Network stats -->
+                            <div class="panel-seassion" hidden>
+                                <div class="timer">
+                                    <div class="col-xs-8 text-center" style="padding:0px 2px"> Network stats </div>
+                                    <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
+                                        <button id="minimizeBandwidthButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
+                                    </div>
+                                  <div class="clearfix"></div>
+                                </div>
+                                <div class="timer-block" id="bandwidthContainer" hidden>
                                     <div class="panel-seassion">
-
-                                        <div class="timer">
-                                            <div class="col-xs-8 text-center" style="padding:0px 2px"> 
-                                                Timer <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                                                <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-
-                                        <div class="timer-block" id="timeContainer" hidden>
-                                            <div id="localtime" class="panel-seassion">
-                                                <div class="col-xs-6">
-                                                    <p id="currentTimeZoneArea" class="time-function" title="Time Zone">Asia/Calcutta</p>
-                                                    <p id="currentTimeArea" class="time-function" title="Current Local Time">13:29:58</p>
-                                                </div>
-                                                <!--                             
-                                                <div class="col-xs-6">
-                                                  <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
-                                                  <p class="time-function" data-placement="top" data-toggle="tooltip" title="Alloted Time">45:00 mins</p>
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    <p class="time-function" data-placement="top" data-toggle="tooltip" title="Current Session Charges">$14.80</p>
-                                                    <p class="time-function" data-placement="top" data-toggle="tooltip" title="Session Allocated Charges">$150.00</p>
-                                                </div> -->
-                                            </div>
-
-                                            <div id="remotetime" class="panel-seassion">
-                                                <div class="col-xs-6">
-                                                    <p id="remoteTimeZoneArea" class="time-function" title="Time Zone">Asia/Calcutta</p>
-                                                    <p id="remoteTimeArea" class="time-function" title="Time of Remote"></p>
-                                                </div>
-                                            </div>
-
-                                            <div id="countdown" class="panel-seassion" hidden>
-                                                <div class="col-xs-4">
-                                                    <p id="countdownHours" class="time-function" title="Hours">0</p>
-                                                </div>
-                                                <div class="col-xs-4">
-                                                    <p id="countdownMinutes" class="time-function" title="Minutes">3</p>
-                                                </div>
-                                                <div class="col-xs-4">
-                                                    <p id="countdownSeconds" class="time-function" title="Seconds">-15</p>
-                                                </div>
-                                            </div>
-
+                                        <div class="col-xs-6">
+                                          <p id="outgoingbandwidth" class="time-function" >1Mbps</p>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <!-- Bandwidth and Network stats -->
-                                    <div class="panel-seassion" hidden>
-                                        <div class="timer">
-                                            <div class="col-xs-8 text-center" style="padding:0px 2px"> Network stats </div>
-                                            <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
-                                                <button id="minimizeBandwidthButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
-                                            </div>
-                                          <div class="clearfix"></div>
-                                        </div>
-                                        <div class="timer-block" id="bandwidthContainer" hidden>
-                                            <div class="panel-seassion">
-                                                <div class="col-xs-6">
-                                                  <p id="outgoingbandwidth" class="time-function" >1Mbps</p>
-                                                </div>
-                                            </div>
+                            <div class="row">
+
+                                <!-- Recording -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off" style="padding:0px 2px">Session Record <i class='fa fa-circle'></i></div>
+                                    </div>
+                                </div>
+
+                                <!-- File share -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <input id="fileshareBtn" class="col-xs-8 text-center fileshareclass" value="SHARE A FILE" title="Select Files to Upload">
+                                        <!-- <i class="fa fa-file" aria-hidden="true"></i> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <!-- Screenshare -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <div id="scrShareButton" class="col-xs-8 text-center screen-btn off" title="Screen Share" > Screen Share </div>
+                                        <div id="scrInstallButton" class="col-xs-8 text-center screenInstall-btn off" title="Install Screen Share" display="none" >Install Screenshare </div>
+                                        <div id="scrViewButton" class="col-xs-8 text-center" display="none" hidden> Screen View </div>
+                                    </div>
+                                </div>
+
+                                <!-- Reconnect Button -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <!-- Reconnect Button -->
-                                    <div class="panel-seassion">
-                                        <div class="timer">
-                                            <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="row">
 
-                                    <!-- Recording -->
-                                    <div class="panel-seassion">
-                                        <div class="timer">
-                                            <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off" style="padding:0px 2px">Session Record <i class='fa fa-circle'></i></div>
-                                        </div>
+                                <!-- Listen In -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" style="padding:0px 2px">Listen In </div>
                                     </div>
+                                </div>
+                            </div>
 
                             <!-- when no remote -->
                             <div id="singleVideoContainer" class="row" hidden>
@@ -253,41 +274,23 @@
                                     <br/><br/>
                                 </div> 
 
-                                <!-- File share -->
+                                 <!-- Drawboard  -->
                                 <div class="panel-seassion">
-                                    <div class="timer">
-                                        <input id="fileshareBtn" class="col-xs-8 text-center fileshareclass" value="SHARE A FILE" title="Select Files to Upload">
-                                    </div>
-                                </div>
-
-                                <!-- Screenshare -->
-                                <div class="panel-seassion">
-                                    <div class="timer">
-                                        <div id="scrShareButton" class="col-xs-8 text-center screen-btn off" title="Screen Share" style="padding:0px 2px">Screen Share </div>
-                                        <div display="none" id="scrInstallButton" class="col-xs-8 text-center screenInstall-btn off" title="Install Screen Share" style="padding:0px 2px">Install Screenshare </div>
-                                        <div display="none" id="scrViewButton" title="desktop"  class="col-xs-8 text-center" style="padding:0px 2px"></div>
-                                    </div>
-                                </div>
-                                 
-                                <div class="panel-seassion">
-                                    <div class="icon-markup-block"> 
-                                        <div style="padding-right:0px;" class="col-xs-2 text-center">
-                                          <button id="shareCursorButton" data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Share cursor pointers"><img src="images/13.png"></button>
+                                    <div id="drawButton" class="timer icon-markup-block"> 
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button data-placement="top" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
-                                        </div>
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button data-placement="bottom" data-toggle="tooltip" class="btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
