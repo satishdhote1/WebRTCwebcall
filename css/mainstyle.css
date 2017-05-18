@@ -12,6 +12,11 @@ body::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     outline: 1px solid slategrey;
 }
+.col-xs-8 {
+    width: inherit;
+    margin: 0px;
+    padding: 2px;
+}
 .header-part {
     height: 100px;
 }
@@ -21,10 +26,7 @@ body::-webkit-scrollbar-thumb {
     font-family: Arial, Helvetica, sans-serif;
     background-attachment: fixed;
 }
-.col-xs-8 {
-    width: inherit;
-    margin-left: 10px;
-}
+
 .main-block {
     width: 95%;
     margin: auto;
@@ -73,6 +75,8 @@ body::-webkit-scrollbar-thumb {
 }
 .panel-seassion {
     position: relative;
+        margin: 0px;
+    padding: 2px;
 }
 
 .widgetBtnClass{
@@ -81,11 +85,9 @@ body::-webkit-scrollbar-thumb {
     text-transform: uppercase;
     color: #ffffff;
     background-color: #7D71A3;
-    margin: 5px;
     border-radius: 5px;
     height: 40px;
-    width:100%;
-    padding: 0px 2px;
+    padding: 0px;
 }
 .timer {
     font-size: 15px;

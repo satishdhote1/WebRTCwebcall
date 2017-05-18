@@ -18,9 +18,11 @@ function onVideoAdded() {
     var allvids = document.getElementsByTagName("video");
     var count;
     for (x in allvids) {
-        if (x.src) count++;
+        if (document.getElementsByName(x) && document.getElementsByName(x).length>0 && document.getElementsByName(x)[0].src) 
+            count++;
     }
 
+    alert(" on video added");
     if (count > 3) {
         document.getElementsByClassName("leftDiv1").hidden = false;
     }
@@ -30,4 +32,7 @@ function onVideoAdded() {
 }
 
 var allvids = document.getElementsByTagName("video");
-allvids.addEventListener('onplaying', onVideoAdded, false);
+for (x in allvids) {
+    if (document.getElementsByName(x) && document.getElementsByName(x).length>0 && document.getElementsByName(x)[0].src) 
+        document.getElementsByName(x)[0].addEventListener('onplaying', onVideoAdded, false);
+}
