@@ -21,12 +21,12 @@
 
   <div class="row alertDiv" id="alertBox" hidden="true"></div>
 
-    <section id="mainDiv" contenteditable class="video-section mainContainer">
+    <section id="mainDiv" class="video-section mainContainer">
         <div class="container-fluid">
             <div class="row">
         
                 <!-- Left Div -->
-                <div id="leftDiv1" class="col-md-2 leftDiv-class" hidden>
+                <div id="leftDiv1" class="col-md-2 leftDiv-class" hidden="true">
                     <div class="left-section">
 
                         <div class="main-block">
@@ -56,7 +56,7 @@
                     </div>
                 </div>
 
-                <div id="leftDiv2" class="col-md-2 leftDiv-class" hidden>
+                <div id="leftDiv2" class="col-md-2 leftDiv-class" hidden="true">
                     <div class="left-section">
                         <div class="main-block">
                             <!-- when remotes are connected -->
@@ -601,6 +601,45 @@
         });
 
         document.getElementById(timerobj.container.id).hidden=true;
+
+        onSessionConnect=function(){
+            // Peer has connected 
+            var allvids = document.getElementsByTagName("video");
+            for (x in allvids) {
+                if (document.getElementsByName(x) && document.getElementsByName(x).length>0 && document.getElementsByName(x)[0].src) {
+                    console.log(" videoss.......................", document.getElementsByName(x)[0]);
+                    //document.getElementsByName(x)[0].onplay = function(){
+                            var count=0;
+                            for (x in allvids) {
+                                if (document.getElementsByName(x) && document.getElementsByName(x).length>0 && document.getElementsByName(x)[0].src) 
+                                    count++;
+                            }
+
+                            if (count > 3) {
+                                document.getElementsByClassName("leftDiv1").hidden = false;
+                                //document.getElementById("leftDiv1").removeAttribute("hidden");
+                                if(document.getElementById("centreDiv").classList.contains('col-md-10') )
+                                {
+                                    document.getElementById("centreDiv").classList.remove('col-md-10');
+                                    document.getElementById("centreDiv").classList.add('col-md-8');
+                                }
+                            }
+                            if (count > 5) {
+                                document.getElementById("leftDiv2").hidden = false;
+                                if(document.getElementById("centreDiv").classList.contains('col-md-8') )
+                                {
+                                    document.getElementById("centreDiv").classList.remove('col-md-8');
+                                    document.getElementById("centreDiv").classList.add('col-md-6');
+                                }
+                            }
+
+                            console.log("/////////////////////" , count);
+                    //};
+                }
+            }
+            
+        };
+
 
     });
 
