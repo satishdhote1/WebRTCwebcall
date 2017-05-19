@@ -545,7 +545,17 @@
                             html_off:"<i class=' fa fa-laptop' title='full Screen'></i>"
                         }                   
                     },
-
+            drawCanvas  :{
+                        active: true,
+                        drawCanvasContainer: "drawBoardRow",
+                        button:{
+                            id: "drawButton" , 
+                            class_on:"btn btn-warning glyphicon glyphicon-edit topPanelButton",
+                            html_on:"close Draw",
+                            class_off:"btn btn-success glyphicon glyphicon-edit topPanelButton",
+                            html_off:"Draw"
+                        }
+                    }, 
             screenrecord:{
                         active : true,
                         videoRecordContainer: true,
@@ -616,7 +626,7 @@
                             }
 
                             if (count > 3) {
-                                document.getElementsByClassName("leftDiv1").hidden = false;
+                                document.getElementById("leftDiv1").hidden = false;
                                 //document.getElementById("leftDiv1").removeAttribute("hidden");
                                 if(document.getElementById("centreDiv").classList.contains('col-md-10') )
                                 {
