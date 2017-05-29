@@ -254,14 +254,6 @@
                                 </div>
                             </div>
 
-                             <!-- Reconnect  -->
-                            <div class="col-md-6 panel-seassion">
-                                <div class="widgetBtnClass">
-                                    <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost">Reconnect <span class="fa fa-refresh"> </span>
-                                    </div>
-                                </div>
-                            </div>
-
 
                     </div>
                 </div>
@@ -543,6 +535,10 @@
                 drawCanvas  :{
                         active: true,
                         drawCanvasContainer: "drawBoardRow",
+                        container:{
+                                id:'drawContainer',
+                                minbutton_id:'minimizeDrawButton'
+                            },
                         button:{
                             id: "drawButton" , 
                             class_on:"widgetBtnClass",
