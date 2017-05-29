@@ -44,7 +44,7 @@
                                   <div class="profile pull-left"> <img hidden style="visibility: hidden !important;" src="images/img-3.jpg" class="img-responsive"> </div>
                                   <div class="pull-right">
                                     <p id="loginname" class="loginname">...</p>
-                                    <button id="logoutBtn" class="timer">End Session</button>
+                                    <button id="logoutBtn" class="widgetBtnClass">End Session</button>
                                   </div>
                                   <div class="clearfix"></div>
                                 </div>
@@ -55,12 +55,12 @@
                         <div class="main-block">
 
                             <!-- Timer and monitization -->
-                            <div class="panel-seassion">
-                                <div class="timer">
-                                    <div class="col-xs-8 text-center" style="padding:0px 2px"> 
+                            <div class="col-md-12 panel-seassion">
+                                <div class="widgetBtnClass">
+                                    <div class="col-xs-8 text-center" > 
                                         Timer <i class="fa fa-clock-o" aria-hidden="true"></i>
                                     </div>
-                                    <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
+                                    <div class="col-xs-2 text-center minTimerBtn" >
                                         <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus"></i></button>
                                     </div>
                                     <div class="clearfix"></div>
@@ -97,8 +97,8 @@
                             <!-- Bandwidth and Network stats -->
                             <div class="panel-seassion" hidden>
                                 <div class="timer">
-                                    <div class="col-xs-8 text-center" style="padding:0px 2px"> Network stats </div>
-                                    <div class="col-xs-2 text-center minTimerBtn" style="padding:0px 2px">
+                                    <div class="col-xs-8 text-center" > Network stats </div>
+                                    <div class="col-xs-2 text-center minTimerBtn" >
                                         <button id="minimizeBandwidthButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus-square"></i></button>
                                     </div>
                                   <div class="clearfix"></div>
@@ -117,7 +117,7 @@
                                 <!-- Recording -->
                                 <div class="col-md-6 panel-seassion">
                                     <div class="widgetBtnClass">
-                                        <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off" style="padding:0px 2px">Session Record <i class='fa fa-circle'></i></div>
+                                        <div id="scrRecordBtn" class="col-xs-8 text-center screenRecordBtnClass Off" >Session Record <i class='fa fa-circle'></i></div>
                                     </div>
                                 </div>
 
@@ -144,7 +144,7 @@
                                 <!-- Reconnect Button -->
                                 <div class="col-md-6 panel-seassion">
                                     <div class="widgetBtnClass">
-                                        <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
+                                        <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost" >Reconnect <span class="fa fa-refresh"> </span>
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                                 <!-- Listen In -->
                                 <div class="col-md-6 panel-seassion">
                                     <div class="widgetBtnClass">
-                                        <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" style="padding:0px 2px">Listen In </div>
+                                        <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" >Listen In </div>
                                     </div>
                                 </div>
                             </div>
@@ -214,23 +214,28 @@
                                     <br/><br/>
                                 </div>
 
-                                 <!-- Drawboard  -->
+                                 <!-- Reconnect and Drawboard  -->
                                 <div class="panel-seassion">
+                                    <div class="widgetBtnClass">
+                                        <div id="reconnectBtn" class="col-xs-8 text-center" title="Reconnect if session is lost" style="padding:0px 2px">Reconnect <span class="fa fa-refresh"> </span>
+                                        </div>
+                                    </div>
+
                                     <div id="drawButton" class="timer icon-markup-block"> 
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/14.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Pencil"><img src="images/14.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/15.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Eraser"><img src="images/15.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/16.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="Makrer"><img src="images/16.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
                                           <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/17.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="Demo"><img src="images/18.png"></button>
+                                          <button class="icon-markup-btn btn-modify-chat" title="More"><img src="images/18.png"></button>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -513,14 +518,24 @@
                                 }  
                             }                    
                         },
-
+                drawCanvas  :{
+                        active: true,
+                        drawCanvasContainer: "drawBoardRow",
+                        button:{
+                            id: "drawButton" , 
+                            class_on:"btn btn-warning glyphicon glyphicon-edit topPanelButton",
+                            html_on:"close Draw",
+                            class_off:"btn btn-success glyphicon glyphicon-edit topPanelButton",
+                            html_off:"Draw"
+                        }
+                    }, 
                 screenrecord:{
                             active : true,
                             videoRecordContainer: true,
                             button:{
                                 id: "scrRecordBtn",
                                 class_on:"col-xs-8 text-center screenRecordBtnClass On",
-                                html_on:"Session is Recording <i class='fa fa-stop'></i>",
+                                html_on:"Session Recording <i class='fa fa-stop'></i>",
                                 class_off:"col-xs-8 text-center screenRecordBtnClass Off",
                                 html_off:"Session Record <i class='fa fa-circle'></i>"
                             }
