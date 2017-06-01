@@ -13,7 +13,7 @@
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.css">
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
-    <script src="node_modules/webrtcdevelopment/client/build/minScripts/drawBoardScript.js"> </script>
+    
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/drawBoardCss.css">
     <link href="css/mainstyle.css" rel="stylesheet">
 
@@ -235,13 +235,13 @@
 
                                     <div id="tool-box" class="timer icon-markup-block"> 
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button id="pencil-icon" class="icon-markup-btn btn-modify-chat" title="Pencil"><img src="images/14.png"></button>
+                                          <button  class="icon-markup-btn btn-modify-chat" title="Pencil"><img src="images/14.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
                                           <button class="icon-markup-btn btn-modify-chat" title="Marker"><img src="images/15.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button id="eraser-icon" class="icon-markup-btn btn-modify-chat" title="Eraser"><img src="images/16.png"></button>
+                                          <button  class="icon-markup-btn btn-modify-chat" title="Eraser"><img src="images/16.png"></button>
                                         </div>
                                         <div class="col-xs-2 text-center" style="padding:0px;">
                                           <button class="icon-markup-btn btn-modify-chat" title="Delete"><img src="images/17.png"></button>
@@ -249,8 +249,22 @@
                                         <div class="col-xs-2 text-center" style="padding:0px;">
                                           <button class="icon-markup-btn btn-modify-chat" title="More"><img src="images/18.png"></button>
                                         </div>
-                                        <canvas id="drag-last-path" width="40" height="40"></canvas>
-                                        <canvas id="drag-all-paths" width="40" height="40"></canvas>
+        <canvas id="pencil-icon" width="40" height="40"></canvas>
+        <canvas id="eraser-icon" width="40" height="40"></canvas>
+        <canvas id="text-icon" width="40" height="40"></canvas>
+        <canvas id="drag-last-path" width="40" height="40"></canvas>
+        <canvas id="drag-all-paths" width="40" height="40"></canvas>
+
+        <canvas id="line" class="selected-shape" width="40" height="40"></canvas>
+        <canvas id="arc" width="40" height="40"></canvas>
+        <canvas id="rectangle" width="40" height="40"></canvas>
+        <canvas id="quadratic-curve" width="40" height="40"></canvas>
+        <canvas id="bezier-curve" width="40" height="40"></canvas>
+
+        <canvas id="line-width" width="40" height="40"></canvas>
+        <canvas id="colors" width="40" height="40"></canvas>
+        <canvas id="additional" width="40" height="40" style="display:none"></canvas>
+        
                                         <div class="clearfix"></div>
                                     </div>
 
@@ -270,7 +284,7 @@
         <div id="cursor2" class='fa fa-hand-o-up fa-3x' style="display:none"></div>
 
     </section>
-
+    <script src="node_modules/webrtcdevelopment/client/build/minScripts/drawBoardScript.js"> </script>
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
     <script src="js/ve.js"> </script>
     
