@@ -14,7 +14,6 @@
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment_header.js"> </script>
     <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.css">
     
-    <link rel=stylesheet href="node_modules/webrtcdevelopment/client/build/minScripts/drawBoardCss.css">
     <link href="css/mainstyle.css" rel="stylesheet">
 
     <script src="property.js"></script>
@@ -31,10 +30,7 @@
                 <div id="centreDiv" class="col-md-9 centreDiv-class">
                     <div id="screenShareRow" style="margin: 10px;"></div>
                     <div id="screenRecordRow" style="margin: 10px;" hidden></div>
-                    <div id="drawBoardRow" style="margin: 10px;height:500px ; width:500px" hidden>
-                        <canvas id="main-canvas" style="background: white;height:500px ; width:500px"></canvas>
-                        <canvas id="temp-canvas" style="background: white;height:500px ; width:500px"></canvas>
-                    </div>
+                    <div id="drawBoardRow" style="margin: 10px;height:500px ; width:500px" hidden></div>
                     <div id="fileSharingRow" style="margin: 10px;"></div>
                     <div id="fileListingRow" style="margin: 10px;"></div>
                 </div>
@@ -44,7 +40,7 @@
 
                         <div class="container-fluid header-part">
                             <div class="row" style="height:100px">
-                              <div class="col-md-12 text-center">
+                              <dfiv class="col-md-12 text-center">
                                 <div class="logo"> <img class="logoClass" src="images/villagexpertslogo2.png" alt="logo" > </div>
                                 <div class="over-lap">
                                   <div class="profile pull-left"> <img hidden style="visibility: hidden !important;" src="images/img-3.jpg" class="img-responsive"> </div>
@@ -264,7 +260,7 @@
         <canvas id="line-width" width="40" height="40"></canvas>
         <canvas id="colors" width="40" height="40"></canvas>
         <canvas id="additional" width="40" height="40" style="display:none"></canvas>
-        
+
                                         <div class="clearfix"></div>
                                     </div>
 
@@ -284,7 +280,6 @@
         <div id="cursor2" class='fa fa-hand-o-up fa-3x' style="display:none"></div>
 
     </section>
-    <script src="node_modules/webrtcdevelopment/client/build/minScripts/drawBoardScript.js"> </script>
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
     <script src="js/ve.js"> </script>
     
@@ -391,16 +386,17 @@
             var session = {
                 sessionid : sessionid,
                 socketAddr: props.signaller,
-                turn: { 
+                turn: "none"
+            };
+/*
+{ 
                       username    : props.xirsys.username,
                       secretkey   : props.xirsys.secretkey,
                       domain      : props.xirsys.domain,
                       application : props.xirsys.application,
                       room        : props.xirsys.room,
                       secure      : props.xirsys.secure
-                }
-            };
-
+                }*/
             var widgets={
                 debug       : false,
                 reconnect   :{
@@ -554,9 +550,9 @@
                             },
                         button:{
                             id: "drawButton" , 
-                            class_on:"widgetBtnClass",
+                            class_on:"widgetBtnClass On",
                             html_on:'<div class="col-xs-8 text-center" >   Draw <i class="fa fa-clock-o" aria-hidden="true"></i></div>',
-                            class_off:"widgetBtnClass",
+                            class_off:"widgetBtnClass Off",
                             html_off:'<div class="col-xs-8 text-center" >  Draw <i class="fa fa-clock-o" aria-hidden="true"></i>  </div> '
                         }
                     }, 
