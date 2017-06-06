@@ -30,7 +30,7 @@
                 <div id="centreDiv" class="col-md-9 centreDiv-class">
                     <div id="screenShareRow" style="margin: 10px;"></div>
                     <div id="screenRecordRow" style="margin: 10px;" hidden></div>
-                    <div id="drawBoardRow" style="margin: 10px;height:500px ; width:500px" hidden></div>
+                    <div id="drawBoardRow" style="margin: 10px;" hidden></div>
                     <div id="fileSharingRow" style="margin: 10px;"></div>
                     <div id="fileListingRow" style="margin: 10px;"></div>
                 </div>
@@ -69,8 +69,8 @@
                                 </div>
                                 <div class="timer-block" id="timeContainer" hidden>
                                     <div id="localtime" class="timer-panel row">
-                                        <span id="currentTimeZoneArea" class="time-function" title="Time Zone"></span>
-                                        <span id="currentTimeArea" class="time-function" title="Current Local Time"></span>
+                                        <span id="currentTimeZoneArea" class="label label-default" title="Time Zone"></span>
+                                        <span id="currentTimeArea" class="label label-default" title="Current Local Time"></span>
                                         <!--                             
                                         <div class="col-xs-6">
                                           <p class="time-function" data-placement="top" data-toggle="tooltip" title="Elapsed Time ">12:15 mins</p>
@@ -83,19 +83,55 @@
                                     </div>
 
                                     <div id="remotetime" class="timer-panel row">
-                                        <span id="remoteTimeZoneArea" class="time-function" title="Time Zone"></span>
-                                        <span id="remoteTimeArea" class="time-function" title="Time of Remote"></span>
+                                        <span id="remoteTimeZoneArea" class="label label-default" title="Time Zone"></span>
+                                        <span id="remoteTimeArea" class="label label-default" title="Time of Remote"></span>
                                     </div>
 
                                     <div id="countdown" class="timer-panel row">
-                                        <span id="countdownHours" class="time-function" title="Hours">0</span>
-                                        <span id="countdownMinutes" class="time-function" title="Minutes">0</span>
-                                        <span id="countdownSeconds" class="time-function" title="Seconds">0</span>
+                                        <span id="countdownHours" class="label label-default" title="Hours">0</span>
+                                        <span id="countdownMinutes" class="label label-default" title="Minutes">0</span>
+                                        <span id="countdownSeconds" class="label label-default" title="Seconds">0</span>
                                     </div>
 
                                 </div>
                             </div>
 
+                            <!-- Draw -->
+                            <div class="col-md-12 panel-seassion">
+                                <div id="drawButton" class="widgetBtnClass">
+                                    <div class="col-xs-8 text-center" > 
+                                        Draw <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-xs-2 text-center minTimerBtn" >
+                                        <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="timer-block" id="drawContainer" hidden>
+
+                                    <div id="tool-box" class="timer icon-markup-block"> 
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button  class="icon-markup-btn btn-modify-chat" title="Pencil"><img src="images/14.png"></button>
+                                        </div>
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button class="icon-markup-btn btn-modify-chat" title="Marker"><img src="images/15.png"></button>
+                                        </div>
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button  class="icon-markup-btn btn-modify-chat" title="Eraser"><img src="images/16.png"></button>
+                                        </div>
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button class="icon-markup-btn btn-modify-chat" title="Delete"><img src="images/17.png"></button>
+                                        </div>
+                                        <div class="col-xs-2 text-center" style="padding:0px;">
+                                          <button class="icon-markup-btn btn-modify-chat" title="More"><img src="images/18.png"></button>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
                             <!-- Bandwidth and Network stats -->
                             <div class="col-md-12 panel-seassion" hidden>
                                 <div class="widgetBtnClass">
@@ -157,7 +193,7 @@
                                 <!-- Listen In -->
                                 <div class="col-md-6 panel-seassion">
                                     <div class="widgetBtnClass">
-                                        <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" >Listen In </div>
+                                        <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" data-toggle="modal" data-target="#myModal">Listen In </div>
                                     </div>
                                 </div>
                             </div>
@@ -216,57 +252,6 @@
                                     <br/><br/>
                                 </div>
 
-                            <!-- Draw -->
-                            <div class="col-md-12 panel-seassion">
-                                <div id="drawButton" class="widgetBtnClass">
-                                    <div class="col-xs-8 text-center" > 
-                                        Draw <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="col-xs-2 text-center minTimerBtn" >
-                                        <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus"></i></button>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="timer-block" id="drawContainer" hidden>
-
-                                    <div id="tool-box" class="timer icon-markup-block"> 
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button  class="icon-markup-btn btn-modify-chat" title="Pencil"><img src="images/14.png"></button>
-                                        </div>
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="Marker"><img src="images/15.png"></button>
-                                        </div>
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button  class="icon-markup-btn btn-modify-chat" title="Eraser"><img src="images/16.png"></button>
-                                        </div>
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="Delete"><img src="images/17.png"></button>
-                                        </div>
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="More"><img src="images/18.png"></button>
-                                        </div>
-        <canvas id="pencil-icon" width="40" height="40"></canvas>
-        <canvas id="eraser-icon" width="40" height="40"></canvas>
-        <canvas id="text-icon" width="40" height="40"></canvas>
-        <canvas id="drag-last-path" width="40" height="40"></canvas>
-        <canvas id="drag-all-paths" width="40" height="40"></canvas>
-
-        <canvas id="line" class="selected-shape" width="40" height="40"></canvas>
-        <canvas id="arc" width="40" height="40"></canvas>
-        <canvas id="rectangle" width="40" height="40"></canvas>
-        <canvas id="quadratic-curve" width="40" height="40"></canvas>
-        <canvas id="bezier-curve" width="40" height="40"></canvas>
-
-        <canvas id="line-width" width="40" height="40"></canvas>
-        <canvas id="colors" width="40" height="40"></canvas>
-        <canvas id="additional" width="40" height="40" style="display:none"></canvas>
-
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                </div>
-                            </div>
-
 
                     </div>
                 </div>
@@ -278,6 +263,27 @@
 
         <div id="cursor1" class='fa fa-hand-o-up fa-3x' style="display:none"></div>
         <div id="cursor2" class='fa fa-hand-o-up fa-3x' style="display:none"></div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     </section>
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
@@ -550,10 +556,10 @@
                             },
                         button:{
                             id: "drawButton" , 
-                            class_on:"widgetBtnClass On",
-                            html_on:'<div class="col-xs-8 text-center" >   Draw <i class="fa fa-clock-o" aria-hidden="true"></i></div>',
+                            class_on:"widgetBtnClass2 On",
+                            html_on:'<div class="col-xs-8 text-center" >  Close Draw <i class="fa fa-paint-brush" aria-hidden="true"></i></div>',
                             class_off:"widgetBtnClass Off",
-                            html_off:'<div class="col-xs-8 text-center" >  Draw <i class="fa fa-clock-o" aria-hidden="true"></i>  </div> '
+                            html_off:'<div class="col-xs-8 text-center" >  Draw <i class="fa fa-paint-brush" aria-hidden="true"></i>  </div> '
                         }
                     }, 
                 screenrecord:{

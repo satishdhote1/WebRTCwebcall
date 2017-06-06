@@ -79,6 +79,17 @@ body::-webkit-scrollbar-thumb {
     padding: 2px;
 }
 
+.widgetBtnClass2{
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #337ab7;
+    border-radius: 5px;
+    height: 31px;
+    padding: 0px;
+    padding-left: 6px;
+}
 .widgetBtnClass{
     font-size: 14px;
     font-weight: bold;
@@ -93,9 +104,7 @@ body::-webkit-scrollbar-thumb {
 
 .timer-block {
     margin: 3px 0px;
-    height: 150px;
     width: 100%;
-    overflow-x: scroll;
     background: rgba(119, 119, 119, 0.28);
 }
 .connect-btn {
@@ -141,6 +150,7 @@ body::-webkit-scrollbar-thumb {
 .chating-area {
     overflow-y: scroll;
     overflow-x: hidden;
+    height: 200px;
 }
 .send-mesg {
     color: #333;
@@ -363,6 +373,7 @@ video {
     overflow-y: auto;
     border-top: 5px solid rgba(255, 255, 255, 0.58);
     border-bottom: 5px solid rgba(255, 255, 255, 0.58);
+    height: 200px;
 }
 .screen-btn {
     padding: 0px 2px
