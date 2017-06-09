@@ -96,41 +96,6 @@
                                 </div>
                             </div>
 
-                            <!-- Draw -->
-                            <div class="col-md-12 panel-seassion">
-                                <div id="drawButton" class="widgetBtnClass">
-                                    <div class="col-xs-8 text-center" > 
-                                        Draw <i class="fa fa-paint-brush" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="col-xs-2 text-center minTimerBtn" >
-                                        <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus"></i></button>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="timer-block" id="drawContainer" hidden>
-
-                                    <div id="tool-box" class="timer icon-markup-block"> 
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button  class="icon-markup-btn btn-modify-chat" title="Pencil"><img src="images/14.png"></button>
-                                        </div>
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="Marker"><img src="images/15.png"></button>
-                                        </div>
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button  class="icon-markup-btn btn-modify-chat" title="Eraser"><img src="images/16.png"></button>
-                                        </div>
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="Delete"><img src="images/17.png"></button>
-                                        </div>
-                                        <div class="col-xs-2 text-center" style="padding:0px;">
-                                          <button class="icon-markup-btn btn-modify-chat" title="More"><img src="images/18.png"></button>
-                                        </div>
-
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                </div>
-                            </div>
                             
                             <!-- Bandwidth and Network stats -->
                             <div class="col-md-12 panel-seassion" hidden>
@@ -195,6 +160,42 @@
                                     <div class="widgetBtnClass">
                                         <div id="ListenInButton" class="col-xs-8 text-center screen-btn off" title="show listen In Link in popup Window" data-toggle="modal" data-target="#myModal">Listen In </div>
                                     </div>
+                                </div>
+
+                                <!-- Draw -->
+                                <div class="col-md-6 panel-seassion">
+                                    <div id="drawButton" class="widgetBtnClass">
+                                        <div class="col-xs-8 text-center" > 
+                                            Draw <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="col-xs-2 text-center minTimerBtn" >
+                                            <button id="minimizeTimerButton" class="btn btn-modify-video2" title="Minimize"><i class="fa fa-minus"></i></button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--                                 
+                                    <div class="timer-block" id="drawContainer" hidden>
+
+                                        <div id="tool-box" class="timer icon-markup-block"> 
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button  class="icon-markup-btn btn-modify-chat" title="Pencil"><img src="images/14.png"></button>
+                                            </div>
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button class="icon-markup-btn btn-modify-chat" title="Marker"><img src="images/15.png"></button>
+                                            </div>
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button  class="icon-markup-btn btn-modify-chat" title="Eraser"><img src="images/16.png"></button>
+                                            </div>
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button class="icon-markup-btn btn-modify-chat" title="Delete"><img src="images/17.png"></button>
+                                            </div>
+                                            <div class="col-xs-2 text-center" style="padding:0px;">
+                                              <button class="icon-markup-btn btn-modify-chat" title="More"><img src="images/18.png"></button>
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div> -->
                                 </div>
                             </div>
 
@@ -263,27 +264,6 @@
 
         <div id="cursor1" class='fa fa-hand-o-up fa-3x' style="display:none"></div>
         <div id="cursor2" class='fa fa-hand-o-up fa-3x' style="display:none"></div>
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
 
     </section>
     <script src="node_modules/webrtcdevelopment/client/build/minScripts/webrtcdevelopment.js"></script>
@@ -603,7 +583,7 @@
                                 }
                         },
                 listenin :{
-                        active:false,
+                        active: true,
                         button:{
                             id:"ListenInButton"
                         }
