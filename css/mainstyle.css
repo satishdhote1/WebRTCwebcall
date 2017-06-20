@@ -75,7 +75,7 @@ body::-webkit-scrollbar-thumb {
 }
 .panel-seassion {
     position: relative;
-        margin: 0px;
+    margin: 0px;
     padding: 2px;
 }
 
@@ -150,7 +150,7 @@ body::-webkit-scrollbar-thumb {
 .chating-area {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 200px;
+    max-height: 200px;
 }
 .send-mesg {
     color: #333;
@@ -168,34 +168,12 @@ body::-webkit-scrollbar-thumb {
 .chat-text-area {
     margin: 5px 0px;
 }
-.chating-area {
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
+
 .chat-class {
     position: relative;
     margin-top: 5px;
 }
-.screen-share-class {
-    border-radius: 10px;
-    padding: 5px 5px;
-    background: #e2f0d9;
-    margin: 5px 0px;
-    /*border:1px solid #F00;*/
-}
-.seceen-btn {
-    position:fixed;
-    background: #0033CC;
-    color: #fff;
-    border-radius: 8px;
-    border: 0px;
-}
-.seceen-btn:hover {
-    background: #0CF;
-    color: #fff;
-    border-radius: 8px;
-    border: 0px;
-}
+
 .btn-modify-chat {
     background: rgba(0, 0, 0, 0);
     border: 0px;
