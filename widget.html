@@ -13,8 +13,8 @@
 	</section>
 
 	<section id="tool-box" class="tool-box" style="height: 250px">
-        <canvas id="pencil-icon" width="40" height="40"></canvas>
-        <canvas id="eraser-icon" width="40" height="40"></canvas>
+        <canvas id="pencil-icon" width="40" height="40" title="pencil"></canvas>
+        <canvas id="eraser-icon" width="40" height="40" title="eraser"></canvas>
         <canvas id="text-icon" width="40" height="40"></canvas>
 		<canvas id="drag-last-path" width="40" height="40"></canvas>
 		<canvas id="drag-all-paths" width="40" height="40"></canvas>
@@ -65,14 +65,14 @@
 		</div>
 	</section>
 	
-	<section id="line-width-container" class="context-popup">
+	<section id="line-width-container" class="context-popup" title="line width">
 		<label for="line-width-text">Line Width:</label>
 		<input id="line-width-text" class="line-width-text" type="text" value="2">
 		
 		<button id="line-width-done" class="done">Done</button>
 	</section>
 		
-	<section id="colors-container" class="context-popup colors-container">
+	<section id="colors-container" class="context-popup colors-container" title="stroke">
 		<div class="input-div">
 			<label for="stroke-style">Stroke Style:</label>
 			<input id="stroke-style" type="color" value="#6c96c8">
