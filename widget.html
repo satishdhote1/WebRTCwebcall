@@ -29,11 +29,11 @@
 		<canvas id="colors" width="40" height="40"></canvas>
 		<canvas id="additional" width="40" height="40" style="display:none"></canvas>
 
-		<div type="trashBtn" class="btn btn-info">
+		<div id="trashBtn" class="btn btn-info">
           <img src="images/trash.png" width="40" height="40"/> 
         </div>
 
-        <div type="saveBtn" class="btn btn-info">
+        <div id="saveBtn" class="btn btn-info">
           <img src="images/save.png" width="40" height="40"/> 
         </div>
 
@@ -160,5 +160,19 @@
     
     <div id="fade"></div>
 
+    <script>
+    document.getElementById("trashBtn").onclick = function() {
+    tempContext.clearRect(0, 0, canvas.width, canvas.height),
+    context.clearRect(0, 0, mainCanvas.width, mainCanvas.height),
+    alert("Trash ")
+}
+,
+document.getElementById("saveBtn").onclick = function() {
+    var e = mainCanvas.toDataURL("image/png")
+      , a = window.open("about:blank", "image from canvas");
+    a.document.write("<img src='" + e + "' alt='from canvas'/>"),
+    alert(" Save ")
+}
+    </script>
 </body>
 </html>
