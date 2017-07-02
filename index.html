@@ -298,15 +298,16 @@
             }
 
             if(searchParams.get('name')){
-               username=searchParams.get('name');
+               username = searchParams.get('name');
+               console.info("username " , username);
             }else{
-               username="LOCAL";
+               username = "LOCAL";
             }
 
             if(searchParams.get('email')){
-              useremail=searchParams.get('email');
+              useremail = searchParams.get('email');
             }else{
-              useremail="abc@gmail.com";
+              useremail = "abc@gmail.com";
             }
 
             if(searchParams.get('role')){
