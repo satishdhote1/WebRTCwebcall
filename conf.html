@@ -48,6 +48,14 @@
                                         <video controls="" class="video-block" name="otherConferenceVideo3" hidden></video>
                                     </div>
 
+                                    <div class="block-section">
+                                        <video controls="" class="video-block" name="otherConferenceVideo4" hidden></video>
+                                    </div>
+
+                                    <div class="block-section">
+                                        <video controls="" class="video-block" name="otherConferenceVideo5" hidden></video>
+                                    </div>
+
                                     <br><br>
                                 </div> 
 
@@ -66,12 +74,23 @@
                                     <div class="video-header">
                                         <div class="text-center">Remote</div>
                                     </div>
+                                    
                                     <div class="block-section">
-                                        <video controls="" class="video-class" name="otherConferenceVideo4" hidden></video>
+                                        <video controls="" class="video-class" name="otherConferenceVideo6" hidden></video>
                                     </div>
+                                    
                                     <div class="block-section">
-                                        <video controls="" class="video-block" name="otherConferenceVideo5" hidden></video>
+                                        <video controls="" class="video-block" name="otherConferenceVideo7" hidden></video>
                                     </div>
+
+                                    <div class="block-section">
+                                        <video controls="" class="video-block" name="otherConferenceVideo8" hidden></video>
+                                    </div>
+
+                                    <div class="block-section">
+                                        <video controls="" class="video-block" name="otherConferenceVideo9" hidden></video>
+                                    </div>
+
                                     <br><br>
                                 </div>
                             </div>
@@ -359,7 +378,7 @@
         };
 
         var remote={
-            videoarr: ["myConferenceVideo", "otherConferenceVideo", "otherConferenceVideo2", "otherConferenceVideo3", "otherConferenceVideo4", "otherConferenceVideo5"],
+            videoarr: ["myConferenceVideo", "otherConferenceVideo", "otherConferenceVideo2", "otherConferenceVideo3", "otherConferenceVideo4", "otherConferenceVideo5" , "otherConferenceVideo6" , "otherConferenceVideo7", "otherConferenceVideo8", "otherConferenceVideo9"],
             videoClass:"video-class",
             maxAllowed: 8,
             videoContainer : "confVideoContainer",
@@ -557,32 +576,32 @@
                 },
                     
             screenshare : {
-                            active:true,
-                            screenshareContainer: "screenShareRow",
-                            extensionID: props.extensionID,
-                            button:{
-                                installButton:{
-                                    id:"scrInstallButton",
-                                    class_on:"screeninstall-btn on",
-                                    html_on:"Stop Install",
-                                    class_off:"screeninstall-btn off",
-                                    html_off:"Install Screen Share"
-                                },
-                                shareButton:{
-                                    id:"scrShareButton",
-                                    class_on:"screen-btn on",
-                                    html_on:"Stop Sharing",
-                                    class_off:"screen-btn off",
-                                    html_off:"ScreenShare"
-                                },
-                                viewButton:{
-                                    id:"scrViewButton",
-                                    class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton on",
-                                    html_on:"Stop Viewing",
-                                    class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton off",
-                                    html_off:"View Screen"
-                                }
+                        active:true,
+                        screenshareContainer: "screenShareRow",
+                        extensionID: props.extensionID,
+                        button:{
+                            installButton:{
+                                id:"scrInstallButton",
+                                class_on:"screeninstall-btn on",
+                                html_on:"Stop Install",
+                                class_off:"screeninstall-btn off",
+                                html_off:"Install Screen Share"
+                            },
+                            shareButton:{
+                                id:"scrShareButton",
+                                class_on:"screen-btn on",
+                                html_on:"Stop Sharing",
+                                class_off:"screen-btn off",
+                                html_off:"ScreenShare"
+                            },
+                            viewButton:{
+                                id:"scrViewButton",
+                                class_on:"btn btn-warning  glyphicon glyphicon-expand topPanelButton on",
+                                html_on:"Stop Viewing",
+                                class_off:"btn btn-success glyphicon glyphicon-expand topPanelButton off",
+                                html_off:"View Screen"
                             }
+                        }
                     }
             };
 
@@ -605,7 +624,7 @@
             var allvids = document.getElementsByTagName("video");
             for (x in allvids) {
                 if (document.getElementsByName(x) && document.getElementsByName(x).length>0 && document.getElementsByName(x)[0].src) {
-                    console.log(" videoss.......................", document.getElementsByName(x)[0]);
+                    console.log(" videos .......................", document.getElementsByName(x)[0]);
                     //document.getElementsByName(x)[0].onplay = function(){
                             var count=0;
                             for (x in allvids) {
@@ -622,7 +641,7 @@
                                     document.getElementById("centreDiv").classList.add('col-md-8');
                                 }
                             }
-                            if (count > 5) {
+                            if (count > 7) {
                                 document.getElementById("leftDiv2").hidden = false;
                                 if(document.getElementById("centreDiv").classList.contains('col-md-8') )
                                 {
@@ -631,7 +650,7 @@
                                 }
                             }
 
-                            console.log("/////////////////////" , count);
+                            console.log("count" , count);
                     //};
                 }
             }
