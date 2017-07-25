@@ -325,7 +325,7 @@
                 video: "myAloneVideo",
                 videoClass:"video-class",
                 videoContainer : "singleVideoContainer",
-                userDisplay:false,
+                userDisplay: true,
                 userMetaDisplay:false,
                 userdetails:{
                       username: username,
@@ -340,7 +340,7 @@
                 videoClass:"video-class",
                 maxAllowed: 6,
                 videoContainer : "confVideoContainer",
-                userDisplay:false,
+                userDisplay:true,
                 userMetaDisplay:false,
                 dynamicVideos: false ,
                 userdetails:{
@@ -556,32 +556,32 @@
                     },
                         
                 screenshare : {
-                                active : true,
-                                screenshareContainer: "screenShareRow",
-                                extensionID: props.extensionID,
-                                button:{
-                                    installButton:{
-                                        id:"scrInstallButton",
-                                        class_on:"screeninstall-btn on",
-                                        html_on:"Stop Install",
-                                        class_off:"screeninstall-btn off",
-                                        html_off:"Install Screen Share"
-                                    },
-                                    shareButton:{
-                                        id:"scrShareButton",
-                                        class_on:"col-xs-8 text-center screen-btn on",
-                                        html_on:"Stop Sharing",
-                                        class_off:"col-xs-8 text-center screen-btn off",
-                                        html_off:"ScreenShare"
-                                    },
-                                    viewButton:{
-                                        id:"scrViewButton",
-                                        class_on:"screeninstall-btn on",
-                                        html_on:"Stop Viewing",
-                                        class_off:"screeninstall-btn off",
-                                        html_off:"View Screen"
-                                    }
+                            active : true,
+                            screenshareContainer: "screenShareRow",
+                            extensionID: props.extensionID,
+                            button:{
+                                installButton:{
+                                    id:"scrInstallButton",
+                                    class_on:"screeninstall-btn on",
+                                    html_on:"Stop Install",
+                                    class_off:"screeninstall-btn off",
+                                    html_off:"ScreenShare"
+                                },
+                                shareButton:{
+                                    id:"scrShareButton",
+                                    class_on:"col-xs-8 text-center screen-btn on",
+                                    html_on:"Stop Sharing",
+                                    class_off:"col-xs-8 text-center screen-btn off",
+                                    html_off:"ScreenShare"
+                                },
+                                viewButton:{
+                                    id:"scrViewButton",
+                                    class_on:"screeninstall-btn on",
+                                    html_on:"Stop Viewing",
+                                    class_off:"screeninstall-btn off",
+                                    html_off:"View Screen"
                                 }
+                            }
                         },
                 listenin :{
                         active: true,
