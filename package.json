@@ -3,30 +3,25 @@
     "version": "1.2.0",
     "description": "webrtc project",
     "main": "webserver.js",
-    
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node webrtcserver.js"
     },
-
     "repository": {
         "type": "git",
         "url": "git@github.com:satishdhote1/WebRTCwebcall.git"
     },
-
     "engines": {
         "node": "5.*"
     },
-
     "dependencies": {
         "googleapis": "^3.1.0",
         "node-static": "^0.7.7",
         "socket.io": "0.9.*",
         "supervisor": "^0.10.0",
         "restify": "*",
-        "webrtcdevelopment":"*"
+        "webrtcdevelopment": "*"
     },
-
     "devDependencies": {
         "apidoc": "*",
         "grunt": "*",
@@ -34,10 +29,10 @@
         "grunt-contrib-jshint": "*",
         "grunt-contrib-nodeunit": "*",
         "grunt-contrib-uglify": "*",
-        "grunt-ec2":"*",
-        "grunt-rsync":"*",
-        "grunt-git-deploy":"*",
-        "grunt-contrib-watch":"*",
+        "grunt-ec2": "*",
+        "grunt-rsync": "*",
+        "grunt-git-deploy": "*",
+        "grunt-contrib-watch": "*",
         "gulp": "*",
         "gulp-add-src": "*",
         "gulp-base64": "*",
@@ -49,13 +44,11 @@
         "gulp-uglify": "*",
         "jshint": "*"
     },
-
     "keywords": [
         "altanai",
         "webserver",
         "https"
     ],
-
     "author": "altanai <tara181989@gmail.com>",
     "license": ""
 }
