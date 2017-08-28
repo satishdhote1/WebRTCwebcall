@@ -364,3 +364,8 @@ video {
 canvas {
     background: black;
 }
+.logger-section{
+    height:200px;
+    overflow-y:scroll;
+    background:white;
+}
