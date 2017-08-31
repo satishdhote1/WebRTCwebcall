@@ -25,6 +25,7 @@ body::-webkit-scrollbar-thumb {
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     background-attachment: fixed;
+    height: 100% !important;
 }
 
 .main-block {
@@ -344,14 +345,14 @@ video {
     overflow-y: auto;
     border-top: 5px solid rgba(255, 255, 255, 0.58);
     border-bottom: 5px solid rgba(255, 255, 255, 0.58);
-    height: 400px;
+    height: 100%;
 }
 .filesharing-box {
     overflow-x: hidden;
     overflow-y: auto;
     border-top: 5px solid rgba(255, 255, 255, 0.58);
     border-bottom: 5px solid rgba(255, 255, 255, 0.58);
-    height: 200px;
+    height: 100%;
 }
 .screen-btn {
     padding: 0px 2px
